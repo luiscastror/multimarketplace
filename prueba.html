@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom alrededor del puntero</title>
+    <style>
+        .contenedor {
+            position: relative;
+            overflow: hidden;
+            width: 300px; /* Ancho del contenedor */
+            height: 300px; /* Altura del contenedor */
+        }
+
+        .imagen {
+            width: 100%;
+            transition: transform 0.5s ease; /* Transición suave durante 0.5 segundos al cambiar la propiedad transform */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor" onmousemove="zoom(event)">
+        <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-products%2FSupplierProductGroups%2Fco%2FdJdx6G94wQ6u-Vpc4BeN8%2FDNQNP2X961120MCO54840410449042023F-1681919850718.webp&w=2048&q=75" alt="Imagen" class="imagen">
+    </div>
+
+    <script>
+        function zoom(event) {
+            const contenedor = document.querySelector('.contenedor');
+            const imagen = document.querySelector('.imagen');
+
+            const contenedorRect = contenedor.getBoundingClientRect();
+            const mouseX = event.clientX - contenedorRect.left;
+            const mouseY = event.clientY - contenedorRect.top;
+
+            const scaleValue = 2; // Puedes ajustar este valor según la cantidad de zoom deseada
+
+            const translateX = (contenedorRect.width / 2 - mouseX) * (scaleValue - 1);
+            const translateY = (contenedorRect.height / 2 - mouseY) * (scaleValue - 1);
+
+            imagen.style.transform = `scale(${scaleValue}) translate(${translateX}px, ${translateY}px)`;
+        }
+
+        function resetZoom() {
+            const imagen = document.querySelector('.imagen');
+            imagen.style.transform = 'scale(1) translate(0, 0)';
+        }
+
+        const contenedor = document.querySelector('.contenedor');
+        contenedor.addEventListener('mouseleave', resetZoom);
+    </script>
+</body>
+</html>
