@@ -78,6 +78,14 @@ nav {
     margin-left: 10px;
     margin-right: 10px;
 }
+.hrVertical2 {
+    height: 20px;
+    width: 1px;
+    color: #655c5c;
+    background-color: #575252;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 .imgInfo {
     width: 70px;
@@ -94,4 +102,18 @@ nav {
 }
 .colorImg{
     color: green;
+}
+.porEncima{
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos en el eje transversal */
+    justify-content: center;
+    padding-bottom: 10px; 
+    transition: color 0.3s ease; 
+    
+}
+.porEncima:hover{
+    color:rgb(140,131,251);
+    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom */
+    transition: color 0.1s ease; 
+    
 }
