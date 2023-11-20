@@ -1,3 +1,86 @@
 body {
     background-color: #f0f0f0 !important;
+    margin: 0px;
+}
+
+nav {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    display: flex;
+    font-size: small;
+}
+
+.col-5 {
+    padding-left: 10px;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: small;
+    display: flex;
+}
+
+.iconos {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.btn-Superiores {
+    border-radius: 50px;
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 5px 5px 0px 5px
+}
+
+.productos {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: x-small;
+}
+
+.imgProductos {
+    height: 70px;
+    width: 100px;
+}
+
+.containImgProduc {
+    width: 130px;
+    height: 80px;
+    background-color: white;
+    border-radius: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recomendaciones {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.hrVertical {
+    height: 100px;
+    width: 1px;
+    border-width: 0;
+    color: #655c5c;
+    background-color: #575252;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.imgInfo {
+    width: 70px;
+    height: 70px;
 }
