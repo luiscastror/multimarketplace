@@ -14,6 +14,9 @@
 
 <body>
 
+
+
+
     <div style="z-index: 1000; position: fixed; Top: 0; width: 100%;">
         <nav class="navbar navbar-expand-lg bg-white navbar-light border-bottom">
             <div class="container d-flex justify-content-around">
@@ -38,7 +41,7 @@
                             aria-expanded="false">
                             <img src="./iconos/colombia.png" alt="" class="iconos">Paises
                         </a>
-    
+
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#"><img src="./iconos/colombia.png" alt=""
                                         class="iconos">Colombia</a></li>
@@ -54,6 +57,9 @@
                             <p>¿Eres Proovedor?</p>
                         </a>
                     </div>
+
+                    <button class="btn btn-app">¿Registrarme?</button>
+
                     <div class="btn-Superiores d-flex align-items-center" style="background-color: rgb(34, 43, 84);">
                         <a href="" class="nav-link">
                             <p style="color: white;">¿Registrarme?</p>
@@ -70,7 +76,7 @@
                     </div>
                     <div class="col-4 porEncima">
                         <a class="nav-link"><strong>Proveedores</strong></a>
-                        
+
                     </div>
                     <div class="col-4 porEncima">
                         <a class="nav-link"><strong>Marcas</strong></a>
@@ -83,15 +89,15 @@
                     <div class="col-7 d-flex justify-content-start">
                         <a href="" class="nav-link" style="padding-top: 9px;">
                             <p style="font-size: medium; text-align: center;" class="porEncima">
-                                <img src="./iconos/envios.png" alt="" width="40px" height="40px"> 
-                                <strong>Envios a todo el país</strong>  *Aplica T&C
+                                <img src="./iconos/envios.png" alt="" width="40px" height="40px">
+                                <strong>Envios a todo el país</strong> *Aplica T&C
                             </p>
                         </a>
                     </div>
                     <div class="col-2 d-flex justify-content-center">
                         <a href="" class="nav-link" style="padding-top: 15px;">
                             <p style="font-size: medium; text-align: center;" class="porEncima">
-                                  Ayuda/PQR
+                                Ayuda/PQR
                             </p>
                         </a>
                     </div>
@@ -107,7 +113,28 @@
             </div>
         </nav>
     </div>
-    
+
+
+    <nav class="bg-white" style="margin-top: 20vh;">
+        <div class="container">
+            <div id="menu" class="d-flex justify-content-between w-100 bg-primary p-3">
+                <div class="d-flex  w-100 bg-danger p-3">
+                    <div class="text-white fw-bold">Logo</div>
+                    <div class="text-white fw-bold">Logo</div>
+                </div>
+                <div class="d-flex justify-content-center w-100 bg-success p-3">
+                    <div>
+                        <input type="text" class="form-control" placeholder="Buscar">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end w-100 bg-success p-3 gap-5">
+                    <button class="btn btn-app">Login</button>
+                    <button class="btn btn-app">Login</button>
+                    <button class="btn btn-app">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="">
@@ -263,36 +290,67 @@
         </div>
     </div>
 
-    <div class="mt-2 mb-2">
-        <div class="row recomendaciones">
-            <div class="col" style="display: flex; align-items: center; flex-direction:row">
-                <div>
-                    <img src="./iconos//tienda.png" alt="" class="imgInfo">
-                </div>
-                <hr class="hrVertical">
-                <div>
-                    <h4>Surte tu negocio en un mismo lugar</h4>
-                    <h5>Encuentra más de 8.000 productos de las mejores marcas.</h5>
-                </div>
+    <section class="bg-danger my-3 py-3 ">
+        <div class="container-fluid">
+            <div class="row bg-white">
+                <div class="col-12 col-md-6 col-lg-1 border bg-info">Demo 1</div>
+                <div class="col-12 col-md-6 border bg-warning">Demo 3</div>
             </div>
-            <div class="col" style="display: flex; align-items: center; flex-direction:row">
-                <div>
-                    <img src="./iconos/billetes.png" alt="" class="imgInfo">
-                </div>
-                <hr class="hrVertical">
-                <div>
-                    <h4>Aumenta las ganancias de tu negocio.</h4>
-                    <h5>Con una rentabilidad de hasta 35% en pedidos grandes.</h5>
-                </div>
+        </div>
+    </section>
+    <section class="bg-success my-3 py-3">
+        <div class="container">
+            <div class="row bg-white">
+                <div class="col-4 border">Demo</div>
+                <div class="col-4 border">Demo</div>
+                <div class="col-4 border">Demo</div>
             </div>
-            <div class="col" style="display: flex; align-items: center; flex-direction:row">
-                <div>
-                    <img src="./iconos/caja.png" alt="" class="imgInfo">
+        </div>
+    </section>
+    <section class="bg-success my-3 py-3">
+        <div class="container">
+            <div class="row bg-white">
+                <div class="col-4 border">Demo</div>
+                <div class="col-4 border">Demo</div>
+                <div class="col-4 border">Demo</div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container">
+        <div class="mt-2 mb-2">
+            <div class="row recomendaciones">
+                <div class="col" style="display: flex; align-items: center; flex-direction:row">
+                    <div>
+                        <img src="./iconos//tienda.png" alt="" class="imgInfo">
+                    </div>
+                    <hr class="hrVertical">
+                    <div>
+                        <h4>Surte tu negocio en un mismo lugar</h4>
+                        <h5>Encuentra más de 8.000 productos de las mejores marcas.</h5>
+                    </div>
                 </div>
-                <hr class="hrVertical">
-                <div>
-                    <h4>  Envío gratis y pago contra entrega.</h4>
-                    <h5>Te regalamos el costo de envío por pedidos mínimos de $1.000.000.</h5>
+                <div class="col" style="display: flex; align-items: center; flex-direction:row">
+                    <div>
+                        <img src="./iconos/billetes.png" alt="" class="imgInfo">
+                    </div>
+                    <hr class="hrVertical">
+                    <div>
+                        <h4>Aumenta las ganancias de tu negocio.</h4>
+                        <h5>Con una rentabilidad de hasta 35% en pedidos grandes.</h5>
+                    </div>
+                </div>
+                <div class="col" style="display: flex; align-items: center; flex-direction:row">
+                    <div>
+                        <img src="./iconos/caja.png" alt="" class="imgInfo">
+                    </div>
+                    <hr class="hrVertical">
+                    <div>
+                        <h4> Envío gratis y pago contra entrega.</h4>
+                        <h5>Te regalamos el costo de envío por pedidos mínimos de $1.000.000.</h5>
+                    </div>
                 </div>
             </div>
         </div>
@@ -310,18 +368,21 @@
         <div class="container mt-3 mb-4">
             <div class="row">
                 <div class="col-12">
-                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNUTRA.386283cc.png&w=2048&q=75" alt="" style="width: 100%;">
+                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNUTRA.386283cc.png&w=2048&q=75"
+                        alt="" style="width: 100%;">
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-6">
-                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSMARTA.2ead5ec8.png&w=2048&q=75" alt="" style="width: 100%;">
+                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSMARTA.2ead5ec8.png&w=2048&q=75"
+                        alt="" style="width: 100%;">
                 </div>
                 <div class="col-6">
-                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FISOFIT.991719fc.png&w=2048&q=75" alt="" style="width: 100%;">
+                    <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FISOFIT.991719fc.png&w=2048&q=75"
+                        alt="" style="width: 100%;">
                 </div>
             </div>
-        </div>                
+        </div>
     </div>
 
     <div class="contenedorMarcas">
@@ -332,22 +393,28 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
                 </div>
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
                 </div>
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
                 </div>
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
                 </div>
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
                 </div>
                 <div class="col">
-                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75" alt="">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
                 </div>
             </div>
             <div class="row">
@@ -358,10 +425,11 @@
     <div class="" style="background-color:rgb(140,131,251); padding-top: 10px; padding-bottom: 1opx;">
         <div class="row">
             <p style="font-size: medium; color: white; text-align: center;">
-                <img src="./iconos/envios.png" alt="" width="20px" height="20px"> 
+                <img src="./iconos/envios.png" alt="" width="20px" height="20px">
                 Envios gratuitos a partir de 1'000.000 COP para pagos online
             </p>
-            <p style="color: rgb(43, 39, 39); text-align: center;">*Aplican términos y condiciones. Sujeto a ofertas especiales cada mes.</p>
+            <p style="color: rgb(43, 39, 39); text-align: center;">*Aplican términos y condiciones. Sujeto a ofertas
+                especiales cada mes.</p>
 
         </div>
     </div>
@@ -382,11 +450,14 @@
                 </div>
             </div>
             <div class="col">
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Privacidad</a>
+                <a href="" class="nav-link" style="color: white; font-size: small;"><i
+                        class='bx bx-right-arrow-alt colorImg'></i> Privacidad</a>
                 <p></p>
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Términos y condiciones</a>
+                <a href="" class="nav-link" style="color: white; font-size: small;"><i
+                        class='bx bx-right-arrow-alt colorImg'></i> Términos y condiciones</a>
                 <p></p>
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Nuestra compañía</a>
+                <a href="" class="nav-link" style="color: white; font-size: small;"><i
+                        class='bx bx-right-arrow-alt colorImg'></i> Nuestra compañía</a>
             </div>
             <div class="col">
                 <p style="color: white;">
@@ -399,7 +470,8 @@
     </footer>
     <div class="" style="padding-top: 10px; padding-bottom: 1opx;">
         <div class="row">
-            <p style="color: rgb(43, 39, 39); text-align: center;"><strong>Seri Tech 2023.</strong>Todos los derechos reservados.</p>
+            <p style="color: rgb(43, 39, 39); text-align: center;"><strong>Seri Tech 2023.</strong>Todos los derechos
+                reservados.</p>
 
         </div>
     </div>

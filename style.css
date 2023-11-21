@@ -78,6 +78,7 @@ nav {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .hrVertical2 {
     height: 20px;
     width: 1px;
@@ -91,29 +92,59 @@ nav {
     width: 70px;
     height: 70px;
 }
-.contenedorMarcas{
+
+.contenedorMarcas {
     background-color: white;
 }
-.margenMarcas{
+
+.margenMarcas {
     padding-left: 200px;
     padding-right: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.colorImg{
+
+.colorImg {
     color: green;
 }
-.porEncima{
+
+.porEncima {
     display: flex;
-    align-items: center; /* Centra verticalmente los elementos en el eje transversal */
+    align-items: center;
+    /* Centra verticalmente los elementos en el eje transversal */
     justify-content: center;
-    padding-bottom: 10px; 
-    transition: color 0.3s ease; 
-    
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+
 }
-.porEncima:hover{
-    color:rgb(140,131,251);
-    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom */
-    transition: color 0.1s ease; 
-    
+
+.porEncima:hover {
+    color: rgb(140, 131, 251);
+    border-bottom: 2px solid rgb(140, 131, 251);
+    /* Agrega una línea roja como borderBottom */
+    transition: color 0.1s ease;
+
+}
+
+
+
+
+/* Luis */
+
+:root {
+    --principal-color: #0b263f;
+}
+
+.btn {
+    border-radius: 5rem !important;
+}
+
+.btn-app {
+    background-color: var(--principal-color);
+    color: #fff;
+
+    &:hover {
+        background-color: #1f3952;
+        color: #fff;
+    }
 }
