@@ -38,6 +38,19 @@ nav {
     /* align-items: center; */
     padding: 5px 5px 0px 5px
 }
+.cardss{
+    width: 15rem;
+}
+
+.txtPrecios{
+    font-size: medium; 
+    display: block;
+}
+
+.txtPrecios2{
+    font-size: x-small; 
+    background-color: bisque;
+}
 
 .productos {
     align-items: center;
@@ -70,22 +83,17 @@ nav {
 }
 
 .hrVertical {
-    height: 100px;
+    height: 120px;
     width: 1px;
-    border-width: 0;
     color: #655c5c;
-    background-color: #575252;
-    margin-left: 10px;
-    margin-right: 10px;
+    background-color: #655c5c;
 }
 
 .hrVertical2 {
-    height: 20px;
+    height: 30px;
     width: 1px;
     color: #655c5c;
-    background-color: #575252;
-    margin-left: 10px;
-    margin-right: 10px;
+    background-color: #655c5c;
 }
 
 .imgInfo {
@@ -97,15 +105,8 @@ nav {
     background-color: white;
 }
 
-.margenMarcas {
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
 .colorImg {
-    color: green;
+    color: yellow;
 }
 
 .porEncima {
@@ -124,6 +125,9 @@ nav {
     /* Agrega una línea roja como borderBottom */
     transition: color 0.1s ease;
 
+}
+.txtCenter{
+    text-align: center;
 }
 
 
