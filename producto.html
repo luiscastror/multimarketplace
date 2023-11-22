@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Multimarketplace</title>
+    <title>Productos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,200 +15,348 @@
 
 <body>
 
-    <div style="Top: 0; width: 100%;">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light border-bottom">
-            <div class="container d-flex justify-content-around">
-                <div class="col-4 d-flex justify-content-evenly">
-                    <a class="navbar-brand d-flex align-items-center" href="#">
-                        <img src="https://www.seeri.co/logo.svg" alt="" class="w-25 h-25">
-                    </a>
-                    <a class="nav-link  d-flex align-items-center" href="#">
-                        <p><img src="./iconos/mapa.png" alt="" class="iconos">Enviar a: Barranquilla</p>
-                    </a>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Que estas buscando"
-                            aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                    </form>
-                </div>
-                <div class="col-5 d-flex justify-content-around">
-                    <div class="dropdown d-flex align-items-center">
-                        <a class="btn btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="./iconos/colombia.png" alt="" class="iconos">Paises
+    <nav class="bg-white">
+        <div class="container">
+            <div class="row py-2 w-100">
+                <div class="col-4">
+                    <div class="row w-100">
+                        <a class="navbar-brand col d-flex align-items-center justify-content-start" href="#">
+                            <img src="https://www.seeri.co/logo.svg" alt="" class="w-50 h-50">
                         </a>
+                        <a class="nav-link  col d-flex align-items-center justify-content-end" href="#">
+                            <p><img src="./iconos/mapa.png" alt="" class="iconos">Enviar a: Barranquilla</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row w-100">
+                        <form class="d-flex justify-content-center" role="search">
+                            <input class="form-control me-2 " type="search" placeholder="Que estas buscando"
+                                aria-label="Search">
+                            <button class="btn btn-outline-primary w-25" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="row w-100">
+                        <div class="dropdown col d-flex align-items-start">
+                            <a class="btn btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="./iconos/colombia.png" alt="" class="iconos">Paises
+                            </a>
     
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><img src="./iconos/colombia.png" alt=""
-                                        class="iconos">Colombia</a></li>
-                            <li><a class="dropdown-item" href="#"><img src="./iconos/colombia.png" alt=""
-                                        class="iconos">Otros paises</a></li>
-                        </ul>
-                    </div>
-                    <a class="nav-link d-flex align-content-center align-items-center" href="#">
-                        <p><img src="./iconos/usuario.png" alt="" class="iconos">Iniciar Sesion</p>
-                    </a>
-                    <div class="btn-Superiores d-flex align-items-center">
-                        <a href="" class="nav-link">
-                            <p>¿Eres Proovedor?</p>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><img src="./iconos/colombia.png" alt=""
+                                            class="iconos">Colombia</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="./iconos/colombia.png" alt=""
+                                            class="iconos">Otros paises</a></li>
+                            </ul>
+                        </div>
+                        <a class="nav-link d-flex align-items-center col" href="#">
+                            <p><img src="./iconos/usuario.png" alt="" class="iconos">Iniciar Sesion</p>
                         </a>
+                        <button class="col btn text-sm-center d-flex align-items-center">¿Eres Proovedor?</button>
+                        <button class="col btn btn-app text-sm-center d-flex align-items-center">¿Registrarme?</button>
                     </div>
-                    <div class="btn-Superiores d-flex align-items-center" style="background-color: rgb(34, 43, 84);">
-                        <a href="" class="nav-link">
-                            <p style="color: white;">¿Registrarme?</p>
-                        </a>
+                    </div>
+            </div>
+            <div class="row w-100">
+                <div class="col-4">
+                    <div class="row w-100">
+                        <div class="col porEncima">
+                            <button class="btn" type="button"><i class='bx bx-menu bx-md'></i></button>
+                        </div>
+                        <div class="col porEncima">
+                            <button class="btn" type="button">Proveedores</button>
+                        </div>
+                        <div class="col porEncima">
+                            <button class="btn" type="button">Marcas</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg bg-white navbar-light border-bottom">
-            <div class="container">
-                <div class="col-4 d-flex justify-content-evenly align-items-center">
-                    <div class="col-2 porEncima">
-                        <a href="" class="nav-link"><i class='bx bx-menu bx-md'></i></a>
-                    </div>
-                    <div class="col-4 porEncima">
-                        <a class="nav-link"><strong>Proveedores</strong></a>
+                <div class="col-1">
+                    <hr class="hrVertical2"/>
+                </div>
+                <div class="col-5">
+                    <div class="row w-100">
+                        <div class="col-9 porEncima">
+                            <button class="btn">
+                                <p class="text-dark d-flex justify-content-center">
+                                    <i class='bx bxs-truck bx-md dark '></i>
+                                    <strong>Envios a todo el pais</strong> *Aplica T&C
+                                </p>
+                            </button>
+                        </div>
+                        <div class="col-3 porEncima">
+                            <button class="btn">
+                                <p class="">
+                                    Ayuda/PQR
+                                </p>
+                            </button>
+                        </div>
                         
                     </div>
-                    <div class="col-4 porEncima">
-                        <a class="nav-link"><strong>Marcas</strong></a>
-                    </div>
                 </div>
-                <div class="col-1 buscar mx-2">
+                <div class="col-1">
                     <hr class="hrVertical2">
                 </div>
-                <div class="col-7 d-flex justify-content-evenly align-items-center">
-                    <div class="col-7 d-flex justify-content-start">
-                        <a href="" class="nav-link" style="padding-top: 9px;">
-                            <p style="font-size: medium; text-align: center;" class="porEncima">
-                                <img src="./iconos/envios.png" alt="" width="40px" height="40px"> 
-                                <strong>Envios a todo el país</strong>  *Aplica T&C
-                            </p>
-                        </a>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <a href="" class="nav-link" style="padding-top: 15px;">
-                            <p style="font-size: medium; text-align: center;" class="porEncima">
-                                  Ayuda/PQR
-                            </p>
-                        </a>
-                    </div>
-                    <div class="col-1">
-                        <hr class="hrVertical2">
-                    </div>
-                    <div class="col-2 porEncima d-flex justify-content-center">
-                        <a href="" class="nav-link">
+                <div class="col-1 porEncima">
+                    <div class="row w-100">
+                        <button class="btn d-flex justify-content-start">
                             <i class='bx bx-cart-add bx-sm'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="bg-light">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-8 mt-1">
+                        <div class="row w-100 h-100">
+                            <div class="row w-100 mt-3">
+                                <hr class="border-2">
+                                <a href="" class="nav-link"> <p>Visita la tienda de <strong>UNIVERSAL</strong></p></a>
+                                <h5>Creatina Universal 300gr</h5>
+                                <hr class="border-2">
+                            </div>
+                            <div class="row contenedorProductos w-100" >
+                                <div class="col-2 rounded">
+                                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-products%2FSupplierProductGroups%2Fco%2FdJdx6G94wQ6u-Vpc4BeN8%2FDNQNP2X961120MCO54840410449042023F-1681919850718.webp&w=2048&q=75" alt="" width="100px">
+                                </div>
+                                <div class="col-10 rounded contenedorImg" onmousemove="zoom(event)" onmouseleave="resetZoom()">
+                                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-products%2FSupplierProductGroups%2Fco%2FdJdx6G94wQ6u-Vpc4BeN8%2FDNQNP2X961120MCO54840410449042023F-1681919850718.webp&w=2048&q=75" alt="" width="500px" class="imgProduc">
+                                </div>
+                            </div>
+                            <div class="row w-100 mb-3">
+                                    <h5>Tamaño</h5>
+                                    <div class="row w-100 grap-2">
+                                        <div class="col-auto">
+                                            <button type="button" class="btn opciones">
+                                                <p class="text-dark text-sm-center text-lowercase"><small>300gr</small></p>
+                                            </button>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn opciones">
+                                                <p class="text-dark text-sm-center text-lowercase"><small>300gr</small></p>
+                                            </button>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn opciones">
+                                                <p class="text-dark text-sm-center text-lowercase"><small>300gr</small></p>
+                                            </button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-4 mt-3">
+                    <div class="row bg-white w-100 h-50 border border-light-subtle rounded-5 py-2">
+                        <div class="row w-100 mx-2 mt-3 d-flex justify-content-evenly">
+                            <b class="">Distribuidor
+                                <a href="" class="nav-link"><strong class="color-dark">Nombre del distribuidor</strong></a>
+                            </b>
+                            <a href="" class="nav-link"><small>Ver Descuentos <i class='bx bxs-purchase-tag bx-xs dark '></i></small></a>
+                            <p>$<s>70.000</s></p>
+                            <strong>*PSVP $56.000</strong>
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="btn resta" onclick="restar()">-</button>
+                                <p class="num">1</p>
+                                <button type="button" class="btn" onclick="sumar()">+</button>
+                            </div>
+                            <button class="btn w-75 btn-Superiores">Añadir al carrito</button>
+                            
+                        </div>
+                    </div>
+                    <div class="row ">                  
+                            <p>¿Quieres ser proveedor? 
+                                <button class="btn">
+                                    <u><b>registrate aqui</b></u>
+                                </button>
+                            </p> 
+                    </div>
+                </div>
+            </div>
+            <div class="row w-75">
+                <h2 class="border-bottom border-success border-3 w-25 py-2">Descripcion</h2>
+                <hr class="border-2">
+                <p class="text-ligth text-center w-100">Atletas de toda clase seguro se benefician de la ingesta de creatina debido a
+                     su habilidad de maximizar la performance muscular y resistencia durante entrenamiento
+                      de alta intensidad, añadiendo energía y poder adicional. La creatina junto con la
+                       proteína, es uno de los pilares d.
+                </p>
+                <hr class="border-2">
+            </div>
+            <div class="row w-100 d-flex justify-content-center">
+                <h3 class="border-bottom border-success border-3 py-2 w-75 text-center">
+                    Productos de "Nombre de la distribuidora"
+                </h3>
+            </div>
+            <div>
+                <div class="row w-100 mb-5">
+                    <div class="col">
+                        <div class="card cardss">
+                            <div class="card-body text-center">
+                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
+                                <p class="text-left mt-2">Producto</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <strong class="txtPrecios">$42.000</strong>
+                                        <span class="txtPrecios2">*PSPV
+                                            $60.000</span>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card cardss">
+                            <div class="card-body text-center">
+                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
+                                <p class="text-left mt-2">Producto</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <strong class="txtPrecios">$42.000</strong>
+                                        <span class="txtPrecios2">*PSPV
+                                            $60.000</span>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card cardss">
+                            <div class="card-body text-center">
+                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
+                                <p class="text-left mt-2">Producto</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <strong class="txtPrecios">$42.000</strong>
+                                        <span class="txtPrecios2">*PSPV
+                                            $60.000</span>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card cardss">
+                            <div class="card-body text-center">
+                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
+                                <p class="text-left mt-2">Producto</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <strong class="txtPrecios">$42.000</strong>
+                                        <span sclass="txtPrecios2">*PSPV
+                                            $60.000</span>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-warning py-3">
+        <div class="container">
+            <div class="row w-100">
+                <p class="text-white text-center">
+                    <img src="./iconos/envios.png" alt="" width="20px" height="20px">
+                    <small>Envios gratuitos a partir de 1'000.000 COP para pagos online</small>
+                </p>
+                <p class="text-dark text-center">
+                    <small>*Aplican términos y condiciones. Sujeto a ofertas
+                        especiales cada mes.</small></p>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-secondary">
+        <div class="container">
+            <div class="row px-5 py-4 w-100">
+                <div class="col-4 d-flex justify-content-center align-items-start">
+                    <div class="row w-100">
+                        <img src="https://seeri.co/logo_white.svg" alt="" class="w-75">
+                    </div>
+                </div>
+                <div class="col-3 text-white px-4">
+                    <div class="row w-100">
+                        <h6>Contáctanos</h6>
+                        <a href="" class="nav-link mb-2">orlando@gmail.com</a>
+                        <p>Celular: 3023984726</p>
+                        <div class="d-flex gap-3">
+                            <a href=""><i class='bx bxl-whatsapp bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-facebook bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-linkedin bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-instagram bx-sm colorImg'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row w-100">
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Privacidad</small>
+                            </p>
+                        </a>
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Términos y condiciones</small>
+                            </p>
+                        </a>
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Nuestra compañía</small>
+                            </p>
                         </a>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="col-7">
-                    <div class="row mt-3">
-                        <hr style="border-width: 2px;">
-                        <a href="" class="nav-link"> <p>Visita la tienda de <strong>UNIVERSAL</strong></p></a>
-                        <h5>Creatina Universal 300gr</h5>
-                        <hr style="border-width: 2px;">
-                    </div>
-                    <div class="row contenedorProductos" >
-                        <div class="col-2 rounded">
-                            <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-products%2FSupplierProductGroups%2Fco%2FdJdx6G94wQ6u-Vpc4BeN8%2FDNQNP2X961120MCO54840410449042023F-1681919850718.webp&w=2048&q=75" alt="" width="100px">
-                        </div>
-                        <div class="col-10 rounded contenedorImg" onmousemove="zoom(event)" onmouseleave="resetZoom()">
-                            <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-products%2FSupplierProductGroups%2Fco%2FdJdx6G94wQ6u-Vpc4BeN8%2FDNQNP2X961120MCO54840410449042023F-1681919850718.webp&w=2048&q=75" alt="" width="500px" class="imgProduc">
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column mb-3">
-                        <h5>Tamaño</h5>
-                        <div class="d-flex flex-row justify-content-evenly">
-                            <div class="opciones d-flex align-items-center">
-                                <a href="" class="nav-link">
-                                    <p class="text-secondary text-sm-center text-lowercase">300gr</p>
-                                </a>
-                            </div>
-                            <div class="opciones d-flex align-items-center">
-                                <a href="" class="nav-link">
-                                    <p class="text-secondary text-sm-center text-lowercase">100gr</p>
-                                </a>
-                            </div>
-                            <div class="opciones d-flex align-items-center">
-                                <a href="" class="nav-link">
-                                    <p class="text-secondary text-sm-center text-lowercase">90gr</p>
-                                </a>
-                            </div>
-                        </div>
-                        
+                <div class="col-3">
+                    <div class="row w-100">
+                        <p class="text-white ">
+                            Descarga nuestra app
+                            Gestiona y haz seguimiento de tus pedidos.
+                            ¡Fácil, rápido y seguro!
+                        </p>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-4"></div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="" style="background-color:rgb(140,131,251); padding-top: 10px; padding-bottom: 1opx;">
-        <div class="row">
-            <p style="font-size: medium; color: white; text-align: center;">
-                <img src="./iconos/envios.png" alt="" width="20px" height="20px"> 
-                Envios gratuitos a partir de 1'000.000 COP para pagos online
-            </p>
-            <p style="color: rgb(43, 39, 39); text-align: center;">*Aplican términos y condiciones. Sujeto a ofertas especiales cada mes.</p>
-
-        </div>
-    </div>
-    <footer style="background-color: rgb(12,36,60);">
-        <div class="row" style="padding: 50px 300px 50px 300px;">
-            <div class="col">
-                <img src="https://seeri.co/logo_white.svg" alt="" width="150px">
-            </div>
-            <div class="col" style="color: white; padding-left: 20px; padding-right: 20px;">
-                <h6>Contáctanos</h6>
-                <a href="" class="nav-link" style="text-decoration: underline;">orlando@gmail.com</a>
-                <p>Celular: 3023984726</p>
-                <div style="display: flex; justify-content: space-around; padding-right: 40px;">
-                    <a href=""><i class='bx bxl-whatsapp bx-sm colorImg'></i></a>
-                    <a href=""><i class='bx bxl-facebook bx-sm colorImg'></i></a>
-                    <a href=""><i class='bx bxl-linkedin bx-sm colorImg'></i></a>
-                    <a href=""><i class='bx bxl-instagram bx-sm colorImg'></i></a>
-                </div>
-            </div>
-            <div class="col">
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Privacidad</a>
-                <p></p>
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Términos y condiciones</a>
-                <p></p>
-                <a href="" class="nav-link" style="color: white; font-size: small;"><i class='bx bx-right-arrow-alt colorImg'></i> Nuestra compañía</a>
-            </div>
-            <div class="col">
-                <p style="color: white;">
-                    Descarga nuestra app
-                    Gestiona y haz seguimiento de tus pedidos.
-                    ¡Fácil, rápido y seguro!
-                </p>
             </div>
         </div>
     </footer>
-    <div class="" style="padding-top: 10px; padding-bottom: 1opx;">
+    <div class="py-2">
         <div class="row">
-            <p style="color: rgb(43, 39, 39); text-align: center;"><strong>Seri Tech 2023.</strong>Todos los derechos reservados.</p>
-
+            <p class="text-dark text-center"><strong>Seri Tech 2023.</strong>Todos los derechos
+                reservados.</p>
         </div>
-    </div>
-
-
-    </div>
-    </div>
-    </div>
     </div>
 
 </body>

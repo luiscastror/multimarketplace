@@ -16,6 +16,22 @@ nav {
     font-size: small;
     display: flex;
 }
+.cardss{
+    width: 15rem;
+}
+.txtPrecios{
+    font-size: medium; 
+    display: block;
+}
+
+.txtPrecios2{
+    font-size: x-small; 
+    background-color: bisque;
+}
+.imgProductos {
+    height: 70px;
+    width: 100px;
+}
 
 .iconos {
     width: 15px;
@@ -26,7 +42,6 @@ nav {
 .btn-Superiores {
     border-radius: 50px;
     border: solid 1px black;
-    /* align-items: center; */
     padding: 5px 5px 0px 5px
 }
 
@@ -47,7 +62,7 @@ nav {
 }
 .porEncima:hover{
     color:rgb(140,131,251);
-    border-bottom: 2px solid rgb(177, 174, 212); /* Agrega una línea roja como borderBottom */
+    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom */
     transition: color 0.1s ease; 
     
 }
@@ -69,7 +84,7 @@ nav {
 
 }
 .opciones{
-    padding: 10px 10px 5px 10px;
+    padding: 5px 5px 0px 5px;
     background-color:  rgb(177, 174, 212);
     border-radius: 20px;
     border: solid 1px rgb(140,131,251);

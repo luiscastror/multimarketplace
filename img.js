@@ -21,3 +21,17 @@ function resetZoom() {
 
 const contenedor = document.querySelector('.contenedorImg');
 contenedor.addEventListener('mouseleave', resetZoom);
+
+function sumar() {
+    let numElement = document.querySelector('.num');
+    let numValue = parseInt(numElement.textContent); 
+    numValue += 1;
+    numElement.textContent = numValue; 
+ }
+
+ function restar(){
+    let numElement = document.querySelector('.num');
+    let numValue = parseInt(numElement.textContent); 
+    numValue -= 1;
+    numElement.textContent = numValue; 
+ }

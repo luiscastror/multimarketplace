@@ -17,18 +17,18 @@
         <div class="container">
             <div class="row py-2 w-100">
                 <div class="col-4">
-                    <div class="row">
-                        <a class="navbar-brand col d-flex align-items-center" href="#">
+                    <div class="row w-100">
+                        <a class="navbar-brand col d-flex align-items-center justify-content-start" href="#">
                             <img src="https://www.seeri.co/logo.svg" alt="" class="w-50 h-50">
                         </a>
-                        <a class="nav-link  col d-flex align-items-center" href="#">
+                        <a class="nav-link  col d-flex align-items-center justify-content-end" href="#">
                             <p><img src="./iconos/mapa.png" alt="" class="iconos">Enviar a: Barranquilla</p>
                         </a>
 
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="row">
+                    <div class="row w-100">
                         <form class="d-flex justify-content-center" role="search">
                             <input class="form-control me-2 " type="search" placeholder="Que estas buscando"
                                 aria-label="Search">
@@ -61,7 +61,7 @@
             </div>
             <div class="row w-100">
                 <div class="col-4">
-                    <div class="row">
+                    <div class="row w-100">
                         <div class="col porEncima">
                             <button class="btn" type="button"><i class='bx bx-menu bx-md'></i></button>
                         </div>
@@ -77,8 +77,8 @@
                     <hr class="hrVertical2"/>
                 </div>
                 <div class="col-5">
-                    <div class="row">
-                        <div class="col-7 porEncima">
+                    <div class="row w-100">
+                        <div class="col-9 porEncima">
                             <button class="btn">
                                 <p class="text-dark d-flex justify-content-center">
                                     <i class='bx bxs-truck bx-md dark '></i>
@@ -86,7 +86,7 @@
                                 </p>
                             </button>
                         </div>
-                        <div class="col-5 porEncima">
+                        <div class="col-3 porEncima">
                             <button class="btn">
                                 <p class="">
                                     Ayuda/PQR
@@ -100,9 +100,11 @@
                     <hr class="hrVertical2">
                 </div>
                 <div class="col-1 porEncima">
-                    <button class="btn d-flex justify-content-start">
-                        <i class='bx bx-cart-add bx-sm'></i>
-                    </button>
+                    <div class="row w-100">
+                        <button class="btn d-flex justify-content-start">
+                            <i class='bx bx-cart-add bx-sm'></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,15 +123,13 @@
                 <div class="mt-5">
                     <div class="row w-100">
                         <section class="col-3">
-                            <div>
+                            <div class="row w-100">
                                 <h6 class="txtCenter">ABASTECE TU STOCK POR</h6>
-                                <h3 class="txtCenter text-warning">
-                                    CATEGORIAS
-                                </h3>
+                                <u class="txtCenter text-warning"><h3 >CATEGORIAS</h3></u>
                             </div>
                         </section>
                         <section class="col-9">
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col productos">
                                     <div class="containImgProduc">
                                         <img src="./iconos/reloj.png" alt="" class="imgProductos">
@@ -263,6 +263,7 @@
             </div>
         </div>
     </main>
+
     <div class="bg-white">
         <div class="container mt-2 mb-2">
                 <div class="row w-100 recomendaciones">
@@ -314,7 +315,7 @@
     
     <div class="container">
         <div class="mt-5 mb-2">
-            <div class="row">
+            <div class="row w-100">
                 <div class="mb-5">
                     <h6 class="txtCenter">RENTABILIZA TU INVERSION</h6>
                     <h3 class="txtCenter">MEJORA LA ROTACION DE TUSTOCK</h3>
@@ -382,7 +383,7 @@
                     </div>
                 </div>
                 <div class="row py-3">
-                    <a href="" class=" nav-link txtCenter"> Ver Todas las marcas</a>
+                    <a href="" class=" nav-link txtCenter"> <u>Ver Todas las marcas</u></a>
                 </div>
             </div>
         </div>
@@ -390,60 +391,69 @@
 
 
     <div class="bg-warning py-3">
-        <div class="row">
-            <p class="text-white text-center">
-                <img src="./iconos/envios.png" alt="" width="20px" height="20px">
-                <small>Envios gratuitos a partir de 1'000.000 COP para pagos online</small>
-            </p>
-            <p class="text-dark text-center">
-                <small>*Aplican términos y condiciones. Sujeto a ofertas
-                    especiales cada mes.</small></p>
-
+        <div class="container">
+            <div class="row w-100">
+                <p class="text-white text-center">
+                    <img src="./iconos/envios.png" alt="" width="20px" height="20px">
+                    <small>Envios gratuitos a partir de 1'000.000 COP para pagos online</small>
+                </p>
+                <p class="text-dark text-center">
+                    <small>*Aplican términos y condiciones. Sujeto a ofertas
+                        especiales cada mes.</small></p>
+            </div>
         </div>
     </div>
     <footer class="bg-secondary">
         <div class="container">
             <div class="row px-5 py-4 w-100">
                 <div class="col-4 d-flex justify-content-center align-items-start">
-                    <img src="https://seeri.co/logo_white.svg" alt="" width="150px">
+                    <div class="row w-100">
+                        <img src="https://seeri.co/logo_white.svg" alt="" class="w-75">
+                    </div>
                 </div>
                 <div class="col-3 text-white px-4">
-                    <h6>Contáctanos</h6>
-                    <a href="" class="nav-link mb-2">orlando@gmail.com</a>
-                    <p>Celular: 3023984726</p>
-                    <div class="d-flex gap-3">
-                        <a href=""><i class='bx bxl-whatsapp bx-sm colorImg'></i></a>
-                        <a href=""><i class='bx bxl-facebook bx-sm colorImg'></i></a>
-                        <a href=""><i class='bx bxl-linkedin bx-sm colorImg'></i></a>
-                        <a href=""><i class='bx bxl-instagram bx-sm colorImg'></i></a>
+                    <div class="row w-100">
+                        <h6>Contáctanos</h6>
+                        <a href="" class="nav-link mb-2">orlando@gmail.com</a>
+                        <p>Celular: 3023984726</p>
+                        <div class="d-flex gap-3">
+                            <a href=""><i class='bx bxl-whatsapp bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-facebook bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-linkedin bx-sm colorImg'></i></a>
+                            <a href=""><i class='bx bxl-instagram bx-sm colorImg'></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
-                    <a href="" class="nav-link ">
-                        <p class="text-white">
-                            <i class='bx bx-right-arrow-alt colorImg'></i>
-                            <small>Privacidad</small>
-                        </p>
-                    </a>
-                    <a href="" class="nav-link ">
-                        <p class="text-white">
-                            <i class='bx bx-right-arrow-alt colorImg'></i>
-                            <small>Términos y condiciones</small>
-                        </p>
-                    </a>
-                    <a href="" class="nav-link ">
-                        <p class="text-white">
-                            <i class='bx bx-right-arrow-alt colorImg'></i>
-                            <small>Nuestra compañía</small>
-                        </p>
-                    </a>
+                    <div class="row w-100">
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Privacidad</small>
+                            </p>
+                        </a>
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Términos y condiciones</small>
+                            </p>
+                        </a>
+                        <a href="" class="nav-link ">
+                            <p class="text-white">
+                                <i class='bx bx-right-arrow-alt colorImg'></i>
+                                <small>Nuestra compañía</small>
+                            </p>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <p class="text-white ">
-                        Descarga nuestra app
-                        Gestiona y haz seguimiento de tus pedidos.
-                        ¡Fácil, rápido y seguro!
-                    </p>
+                    <div class="row w-100">
+                        <p class="text-white ">
+                            Descarga nuestra app
+                            Gestiona y haz seguimiento de tus pedidos.
+                            ¡Fácil, rápido y seguro!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
