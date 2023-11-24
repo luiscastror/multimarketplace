@@ -1,4 +1,4 @@
-html, body {
+/* html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 100% de la altura del viewport */
+    min-height: 100vh; /* 100% de la altura del viewport 
 }
 
 nav {
@@ -65,16 +65,16 @@ nav {
 }
 .porEncima:hover{
     color:rgb(140,131,251);
-    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom */
+    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom 
     transition: color 0.1s ease; 
     
 }
 
 .imgProduc {
     width: 100%;
-    transition: transform 0.5s ease; /* Agrega una transición suave al efecto de zoom */
+    transition: transform 0.5s ease; /* Agrega una transición suave al efecto de zoom 
     
-}
+} */
 
 /* .footer{
     position: fixed;

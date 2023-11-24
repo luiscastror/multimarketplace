@@ -9,13 +9,6 @@ nav {
     align-items: center;
 }
 
-.logo {
-    /* align-items: flex-start; */
-    justify-content: space-between;
-    display: flex;
-    font-size: small;
-}
-
 .col-5 {
     padding-left: 10px;
     justify-content: space-around;
@@ -109,26 +102,48 @@ nav {
     color: yellow;
 }
 
-.porEncima {
-    display: flex;
-    align-items: center;
-    /* Centra verticalmente los elementos en el eje transversal */
-    justify-content: center;
-    padding-bottom: 10px;
-    transition: color 0.3s ease;
 
-}
-
-.porEncima:hover {
-    color: rgb(140, 131, 251);
-    border-bottom: 2px solid rgb(140, 131, 251);
-    /* Agrega una línea roja como borderBottom */
-    transition: color 0.1s ease;
-
-}
 .txtCenter{
     text-align: center;
 }
+.porEncima{
+    padding-bottom: 10px; 
+    transition: color 0.3s ease; 
+    
+}
+.porEncima:hover{
+    color:rgb(140,131,251);
+    border-bottom: 2px solid rgb(140,131,251); /* Agrega una línea roja como borderBottom */
+    transition: color 0.1s ease; 
+    
+}
+
+/* producto */
+.contenedorImg {
+    position: relative;
+    overflow: hidden;
+    width: 400px; /* Ancho del contenedor */
+    height: 400px; /* Altura del contenedor */
+}
+
+.imgProduc {
+    width: 100%;
+    transition: transform 0.5s ease; /* Agrega una transición suave al efecto de zoom */
+}
+
+.contenedorProductos{
+    display: flex;
+    justify-content: space-around;
+
+}
+.opciones{
+    padding: 5px 5px 0px 5px;
+    background-color:  rgb(177, 174, 212);
+    border-radius: 20px;
+    border: solid 1px rgb(140,131,251);
+}
+
+
 
 
 
