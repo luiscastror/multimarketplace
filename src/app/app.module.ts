@@ -19,6 +19,12 @@ import { CategoryComponent } from './pages/marketplace/category/category.compone
 import { SearchComponent } from './pages/marketplace/search/search.component';
 import { LoginComponent } from './pages/marketplace/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { ProductComponent } from './components/product/product.component';
+import { CardProductComponent } from './components/card-product/card-product.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WallComponent } from './components/wall/wall.component';
+import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
+import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 
 
 @NgModule({
@@ -34,7 +40,13 @@ import { BannerComponent } from './components/banner/banner.component';
     SearchComponent,
     NavComponent,
     LoginAdminComponent,
-    BannerComponent
+    BannerComponent,
+    ProductComponent,
+    CardProductComponent,
+    FooterComponent,
+    WallComponent,
+    TitleSubtitleComponent,
+    BrandsComponent
   ],
   imports: [
     BrowserModule,

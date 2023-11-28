@@ -1,0 +1,18 @@
+.sizeCard {
+    width: 15rem;
+}
+
+.imgProductos {
+    height: 70px;
+    width: 100px;
+}
+
+.txtPrecios {
+    font-size: medium;
+    display: block;
+}
+
+.txtPrecios2 {
+    font-size: x-small;
+    background-color: bisque;
+}

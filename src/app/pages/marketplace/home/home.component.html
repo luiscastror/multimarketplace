@@ -1,170 +1,138 @@
 <app-nav></app-nav>
-<p>home works!</p>
 
 <main>
     <div class="container">
-        <div class="">
-
-            <div class="row">
-                <div class="col-8">
-                    <app-banner
-                        img="https://storage.googleapis.com/seeri-banners/banners/co/4c109c3a6b1137b17aa7e60c05fa576b/bannerweb4-1696950167874.png"></app-banner>
-                </div>
-                <div class="col-4">
-                    <app-banner></app-banner>
-                </div>
+        <div class="row">
+            <div class="col-8">
+                <app-banner
+                    img="https://storage.googleapis.com/seeri-banners/banners/co/4c109c3a6b1137b17aa7e60c05fa576b/bannerweb4-1696950167874.png"></app-banner>
             </div>
-
-
-            <div class="mt-5">
-                <div class="row w-100">
-                    <section class="col-3">
-                        <div class="row w-100">
-                            <h6 class="txtCenter">ABASTECE TU STOCK POR</h6>
-                            <u class="txtCenter text-warning">
-                                <h3>CATEGORIAS</h3>
-                            </u>
-                        </div>
-                    </section>
-                    <section class="col-9">
-                        <div class="row w-100">
-                            <div class="col productos">
-                                <div class="containImgProduc">
-                                    <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                </div>
-                                <span class="fw-semibold fs3">Producto</span>
-                            </div>
-                            <div class="col productos">
-                                <div class="containImgProduc">
-                                    <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                </div>
-                                <span class="fw-semibold fs3">Producto</span>
-                            </div>
-                            <div class="col productos">
-                                <div class="containImgProduc">
-                                    <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                </div>
-                                <span class="fw-semibold fs3">Producto</span>
-                            </div>
-                            <div class="col productos">
-                                <div class="containImgProduc">
-                                    <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                </div>
-                                <span class="fw-semibold fs3">Producto</span>
-                            </div>
-                            <div class="col productos">
-                                <div class="containImgProduc">
-                                    <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                </div>
-                                <span class="fw-semibold fs3">Producto</span>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+            <div class="col-4">
+                <app-banner></app-banner>
             </div>
+        </div>
 
 
-
-            <div class="mt-5 mb-2">
-                <div class="row w-100">
-                    <div class="mb-5">
-                        <h6 class="txtCenter fw-semibold">OPTIMIZA TU INVENTARIO</h6>
-                        <h3 class="txtCenter fw-bolder">COMPRA LO QUE MAS SE VENDE
-                        </h3>
+        <div class="mt-5">
+            <div class="row w-100">
+                <section class="col-12 col-md-3">
+                    <div class="row w-100">
+                        <h6 class="txtCenter">ABASTECE TU STOCK POR</h6>
+                        <u class="txtCenter text-warning">
+                            <h3>CATEGORIAS</h3>
+                        </u>
                     </div>
-                </div>
+                </section>
+                <section class="col-12 col-md-9">
+                    <div class="row w-100">
+                        <div class="col-12 col-md-4 productos">
+                            <app-components-product></app-components-product>
+                        </div>
+                        <div class="col-12 col-md-4 productos">
+                            <app-components-product></app-components-product>
+                        </div>
+                        <div class="col-12 col-md-4 productos">
+                            <app-components-product></app-components-product>
+                        </div>
+                        <div class="col-12 col-md-4 productos">
+                            <app-components-product></app-components-product>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-
-            <app-banner
-                [img]="'https://storage.googleapis.com/seeri-banners/banners/co/44531b804ad56ef73de6e2658cf2a226/MEGA-1697037355077.png'"></app-banner>
-
-
-            <div>
-                <div class="row w-100 mb-5">
-                    <div class="col">
-                        <div class="card cardss">
-                            <div class="card-body text-center">
-                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                <p class="text-left mt-2">Producto</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <strong class="txtPrecios">$42.000</strong>
-                                        <span class="txtPrecios2">*PSPV
-                                            $60.000</span>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-primary">Comprar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card cardss">
-                            <div class="card-body text-center">
-                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                <p class="text-left mt-2">Producto</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <strong class="txtPrecios">$42.000</strong>
-                                        <span class="txtPrecios2">*PSPV
-                                            $60.000</span>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-primary">Comprar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card cardss">
-                            <div class="card-body text-center">
-                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                <p class="text-left mt-2">Producto</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <strong class="txtPrecios">$42.000</strong>
-                                        <span class="txtPrecios2">*PSPV
-                                            $60.000</span>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-primary">Comprar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card cardss">
-                            <div class="card-body text-center">
-                                <img src="./iconos/reloj.png" alt="" class="imgProductos">
-                                <p class="text-left mt-2">Producto</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <strong class="txtPrecios">$42.000</strong>
-                                        <span sclass="txtPrecios2">*PSPV
-                                            $60.000</span>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-primary">Comprar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+        </div>
+        <div class="mt-5 mb-2">
+            <div class="row w-100">
+                <app-components-title-subtitle title="OPTIMIZA TU INVENTARIO"
+                    subtitle="COMPRA LO QUE MAS SE VENDE"></app-components-title-subtitle>
+            </div>
+        </div>
+        <div>
+            <div class="row w-100 mb-5">
+                <div class="col">
+                    <app-components-card-product></app-components-card-product>
+                </div>
+                <div class="col">
+                    <app-components-card-product></app-components-card-product>
+                </div>
+                <div class="col">
+                    <app-components-card-product></app-components-card-product>
+                </div>
+                <div class="col">
+                    <app-components-card-product></app-components-card-product>
                 </div>
             </div>
         </div>
+
+        <app-components-wall></app-components-wall>
+
+        <div class="mt-5 mb-2">
+            <div class="row w-100">
+                <app-components-title-subtitle title="RENTABILIZA TU INVERSION"
+                    subtitle="MEJORA LA ROTACION DE TU STOCK"></app-components-title-subtitle>
+            </div>
+        </div>
+        <div class="container mt-3 mb-4">
+            <div class="row w-100">
+                <div class="col-12">
+                    <a href="" class="nav-link">
+                        <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNUTRA.386283cc.png&w=2048&q=75"
+                            class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row w-100 mt-5">
+                <div class="col-6">
+                    <a href="" class="nav-link">
+                        <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSMARTA.2ead5ec8.png&w=2048&q=75"
+                            class="w-100" alt="">
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="" class="nav-link">
+                        <img src="https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FISOFIT.991719fc.png&w=2048&q=75"
+                            class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white d-flex align-items-center flex-column py-3 my-2 rounded--5">
+            <app-components-title-subtitle title="+ de 180 Marcas"
+                subtitle="En un solo lugar"></app-components-title-subtitle>
+
+            <div class="row">
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
+                </div>
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
+                </div>
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
+                </div>
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
+                </div>
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75"
+                        alt="">
+                </div>
+                <div class="col">
+                    <img src="https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75"
+                        alt="">
+                </div>
+            </div>
+
+            <a routerLink="/brands"><u>Ver todas las marcas</u></a>
+        </div>
+
+
     </div>
 </main>
+
+<app-components-footer></app-components-footer>
