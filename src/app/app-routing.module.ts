@@ -7,9 +7,11 @@ import { CartComponent } from './pages/marketplace/cart/cart.component';
 import { LoginComponent } from './pages/marketplace/login/login.component';
 import { CategoriesComponent } from './pages/marketplace/categories/categories.component';
 import { BrandsComponent } from './pages/marketplace/brands/brands.component';
+import { BlankComponent } from './pages/marketplace/blank/blank.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: BlankComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'item', component: ItemComponent },
     { path: 'cart', component: CartComponent },
     { path: 'search', component: SearchComponent },

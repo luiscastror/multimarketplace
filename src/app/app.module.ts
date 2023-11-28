@@ -25,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { WallComponent } from './components/wall/wall.component';
 import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
 import { BrandsComponent } from './pages/marketplace/brands/brands.component';
+import { BlankComponent } from './pages/marketplace/blank/blank.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BrandsComponent } from './pages/marketplace/brands/brands.component';
     FooterComponent,
     WallComponent,
     TitleSubtitleComponent,
-    BrandsComponent
+    BrandsComponent,
+    BlankComponent
   ],
   imports: [
     BrowserModule,
