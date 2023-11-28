@@ -1,4 +1,5 @@
-<div class="col-12 mb-5 d-flex align-items-center flex-column ">
-    <h6 class="txtCenter fw-semibold">{{subtitle}}</h6>
-    <h3 class="txtCenter fw-bolder">{{title}}</h3>
+<div class="mb-5 d-flex flex-column w-100"
+    [ngClass]="{'align-items-center':justify=='center','align-items-end':justify=='end','align-items-start':justify=='start'}">
+    <div class="fw-semibold">{{subtitle}}</div>
+    <div class="fw-bolder">{{title}}</div>
 </div>

@@ -15,26 +15,9 @@
 
         <div class="mt-5">
             <div class="row w-100">
-                <section class="col-12 col-md-3">
+                <section class="col-12">
                     <div class="row w-100">
-                        <h6 class="txtCenter">ABASTECE TU STOCK POR</h6>
-                        <u class="txtCenter text-warning">
-                            <h3>CATEGORIAS</h3>
-                        </u>
-                    </div>
-                </section>
-                <section class="col-12 col-md-9">
-                    <div class="row w-100">
-                        <div class="col-12 col-md-4 productos">
-                            <app-components-product></app-components-product>
-                        </div>
-                        <div class="col-12 col-md-4 productos">
-                            <app-components-product></app-components-product>
-                        </div>
-                        <div class="col-12 col-md-4 productos">
-                            <app-components-product></app-components-product>
-                        </div>
-                        <div class="col-12 col-md-4 productos">
+                        <div class="col-12 col-md-3 productos" *ngFor="let item of categories">
                             <app-components-product></app-components-product>
                         </div>
                     </div>
@@ -43,8 +26,18 @@
         </div>
         <div class="mt-5 mb-2">
             <div class="row w-100">
-                <app-components-title-subtitle title="OPTIMIZA TU INVENTARIO"
-                    subtitle="COMPRA LO QUE MAS SE VENDE"></app-components-title-subtitle>
+                <div class="col-4">
+                    <app-components-title-subtitle title="OPTIMIZA TU INVENTARIO" justify="center"
+                        subtitle="COMPRA LO QUE MAS SE VENDE"></app-components-title-subtitle>
+                </div>
+                <div class="col-4">
+                    <app-components-title-subtitle title="OPTIMIZA TU INVENTARIO" justify="end"
+                        subtitle="COMPRA LO QUE MAS SE VENDE"></app-components-title-subtitle>
+                </div>
+                <div class="col-4">
+                    <app-components-title-subtitle title="OPTIMIZA TU INVENTARIO" justify="start"
+                        subtitle="COMPRA LO QUE MAS SE VENDE"></app-components-title-subtitle>
+                </div>
             </div>
         </div>
         <div>
