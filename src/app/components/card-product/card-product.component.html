@@ -13,7 +13,10 @@
                     $60.000</span>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-primary" (click)="clear()">Limpiar carrito</button>
+                <button type="button" class="btn btn-primary" (click)="removeStore()">Quitar tienda</button>
+                <button type="button" class="btn btn-primary" (click)="remove()">Quitar</button>
+                <button type="button" class="btn btn-primary" (click)="add()">Comprar</button>
             </div>
         </div>
     </div>
