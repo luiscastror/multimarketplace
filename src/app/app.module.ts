@@ -26,6 +26,7 @@ import { WallComponent } from './components/wall/wall.component';
 import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
 import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
+import { ProductCartComponent } from './components/product-cart/product-cart.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BlankComponent } from './pages/marketplace/blank/blank.component';
     WallComponent,
     TitleSubtitleComponent,
     BrandsComponent,
-    BlankComponent
+    BlankComponent,
+    ProductCartComponent
   ],
   imports: [
     BrowserModule,

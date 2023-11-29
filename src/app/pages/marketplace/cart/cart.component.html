@@ -1,2 +1,16 @@
 <app-nav></app-nav>
-<p>cart works!</p>
+<div class="container bg-light">
+    <div class="row">
+        <h2 class="border-bottom border-success border-3 w-25  px-5 mx-5 my-3">Descripcion</h2>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <div class="row" *ngFor="let item of listProducts">
+            <app-components-product-cart></app-components-product-cart>
+        </div>
+    </div>
+</main>
+
+<app-components-footer></app-components-footer>
