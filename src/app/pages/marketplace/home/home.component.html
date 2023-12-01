@@ -1,4 +1,125 @@
 <app-nav></app-nav>
+<div class="container">
+    <div class="row my-3">
+        <div class="col-12">
+            <app-banner [img]="banners[0]"></app-banner>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
+                [justify]="enum[0].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-6 col-md-2" *ngFor="let item of categories">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <span class="material-symbols-outlined fs-1 color-secondary">
+                        verified
+                    </span>
+                    <p class="fw-bold text-center">Categoría</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle"
+                [justify]="enum[1].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
+            <app-components-card-product></app-components-card-product>
+        </div>
+    </div>
+</div>
+<app-components-wall [blocks]="blocks"></app-components-wall>
+<div class="container">
+    <div class="row my-5">
+        <app-components-title-subtitle [title]="enum[2].title" [subtitle]="enum[2].subtitle"
+            [justify]="enum[2].justify">
+        </app-components-title-subtitle>
+    </div>
+    <div class="row my-3">
+        <div class="col-12">
+            <app-banner [img]="banners[1]"></app-banner>
+        </div>
+        <div class="col-12 col-md-8">
+            <app-banner [img]="banners[2]"></app-banner>
+        </div>
+        <div class="col-12 col-md-4">
+            <app-banner [img]="banners[1]"></app-banner>
+            <app-banner [img]="banners[3]"></app-banner>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle"
+                [justify]="enum[1].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
+            <app-components-card-product></app-components-card-product>
+        </div>
+        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
+            <app-components-card-product></app-components-card-product>
+        </div>
+        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
+            <app-components-card-product></app-components-card-product>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
+                [justify]="enum[0].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-6 col-md-2" *ngFor="let item of [0,0,0,0,0,0]">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <span class="material-symbols-outlined fs-1 color-secondary">
+                        verified
+                    </span>
+                    <p class="fw-bold text-center">Categoría</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white w-100 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <app-components-title-subtitle [title]="enum[3].title" [subtitle]="enum[3].subtitle"
+                    [justify]="enum[3].justify">
+                </app-components-title-subtitle>
+            </div>
+
+
+            <div class="col-6 col-md-3 mb-3" *ngFor="let item of images">
+                <div class="card">
+                    <img class="card-img-top" [src]="item" style="width:100%">
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <p class="text-center">
+                    <a routerLink="/brands" class="color-secondary">Ver todas las marcas</a>
+                </p>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<app-components-footer></app-components-footer>
+
+<!-- <app-nav></app-nav>
 
 <main>
     <div class="container">
@@ -120,4 +241,4 @@
     </div>
 </main>
 
-<app-components-footer></app-components-footer>
+<app-components-footer></app-components-footer> -->

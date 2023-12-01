@@ -1,4 +1,25 @@
-<div class="bg-white">
+<div class="bg-white w-100  py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md mb-3" *ngFor="let item of blocks.content">
+                <div class="d-flex  justify-content-start align-items-center gap-3"
+                    [ngClass]="{'flex-column': blocks.type == 'column','flex-row': blocks.type == 'row'}">
+                    <div class="text-center">
+                        <span class="material-symbols-outlined fs-1">
+                            {{item.icon}}
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <p class="fw-bold f28">{{item.title}}</p>
+                        <p class="fw-light f16">{{item.message}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="bg-white">
     <div class="container my-2">
         <div class="row w-100 py-2">
             <div class="col-12 col-md-4">
@@ -39,4 +60,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

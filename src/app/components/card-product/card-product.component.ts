@@ -19,7 +19,7 @@ export class CardProductComponent implements OnInit {
   }
 
   add() {
-    this.MainService.SnackbarService.show("Demo");
+    this.MainService.SnackbarService.show("Añadido correctamente");
 
     const business = {
       name: "DEMO",

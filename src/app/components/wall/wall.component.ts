@@ -8,6 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WallComponent implements OnInit {
 
   @Input() img: string = 'https://th.bing.com/th/id/OIP.gpB7_qn-l-hIYeLufFtPWwAAAA?rs=1&pid=ImgDetMain'
+  @Input() blocks = {
+    type: 'row',
+    content: [
+      {
+        icon: 'redeem',
+        title: 'Mensaje',
+        message: 'Este es un mensaje'
+      }
+    ]
+  };
 
   constructor() { }
 

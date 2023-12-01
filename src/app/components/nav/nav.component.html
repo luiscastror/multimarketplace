@@ -1,9 +1,72 @@
+<nav class="bg-white py-3 border-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-md-3">
+                <img src="assets/img/logo.jpg" style="height: 50px;" routerLink="/">
+            </div>
+            <div class="col-8 col-md-5 d-none d-md-inline">
+                <mat-form-field class="w-100" appearance="outline" color="accent">
+                    <mat-label>Busca productos, marcas y más...</mat-label>
+                    <input matInput type="text" [(ngModel)]="searchInput">
+                    <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput=''">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
+                <div class="d-none d-md-inline">
+                    <button mat-stroked-button color="accent" routerLink="/login">
+                        <mat-icon>account_circle</mat-icon>
+                        <span>Iniciar sesión</span>
+                    </button>
+                </div>
+                <div class="d-none d-md-inline">
+                    <button mat-flat-button color="primary" routerLink="/cart">
+                        <mat-icon>shopping_cart</mat-icon>
+                        <span>Mi Carrito</span>
+                    </button>
+                </div>
+                <div class="d-inline d-md-none">
+                    <button mat-icon-button color="primary" routerLink="/search">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+                <div class="d-inline d-md-none">
+                    <button mat-icon-button color="primary" routerLink="/login">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                </div>
+                <div class="d-inline d-md-none">
+                    <button mat-icon-button color="accent" routerLink="/cart">
+                        <mat-icon>shopping_cart</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div
+                class="col-12 d-flex justify-content-md-start justify-content-evenly flex-wrap flex-row gap-3 gap-md-5 ">
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Categorías</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Tiendas</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Promociones</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary d-none d-md-inline" routerLink="/">
+                    Quiero vender, soy una tienda
+                </a>
+                <button mat-flat-button color="accent" routerLink="/login" class="d-inline d-md-none">
+                    <span>Quiero vender, soy una tienda</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- 
 <nav class="bg-white py-2">
     <div class="container">
         <div class="row py-2 w-100">
             <div class="col-6 col-md-3">
                 <a class="navbar-brand col d-flex align-items-center justify-content-start" routerLink="/">
-                    <img src="https://www.seeri.co/logo.svg" alt="" class="w-50 h-50">
+                    <img src="assets/img/logo.jpg" alt="" class="w-50 h-50">
                 </a>
             </div>
             <div class="col-6 col-md-4">
@@ -70,4 +133,4 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> -->

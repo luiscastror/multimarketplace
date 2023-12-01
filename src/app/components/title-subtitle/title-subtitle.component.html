@@ -1,5 +1,12 @@
-<div class="mb-5 d-flex flex-column w-100"
-    [ngClass]="{'align-items-center':justify=='center','align-items-end':justify=='end','align-items-start':justify=='start'}">
-    <div class="fw-semibold fs-6">{{subtitle}}</div>
-    <div class="fw-bolder fs-4">{{title}}</div>
+<div class="w-100 d-flex flex-column" [ngClass]="{
+        'align-items-center':justify=='center',
+        'align-items-end':justify=='end',
+        'align-items-start':justify=='start'
+    }">
+    <div class="fw-bolder fs-4 color-secondary">
+        {{title}}
+    </div>
+    <div class="fw-semibold fs-6">
+        {{subtitle}}
+    </div>
 </div>

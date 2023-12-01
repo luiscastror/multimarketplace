@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 // Components
 import { NavComponent } from './components/nav/nav.component';
@@ -32,6 +36,7 @@ import { SearchComponent } from './pages/marketplace/search/search.component';
 import { LoginComponent } from './pages/marketplace/login/login.component';
 import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -60,9 +65,14 @@ import { BlankComponent } from './pages/marketplace/blank/blank.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

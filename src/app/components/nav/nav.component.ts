@@ -8,6 +8,9 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class NavComponent implements OnInit {
 
+
+  searchInput!: string;
+
   constructor(
     public MainService: MainService
   ) { }
