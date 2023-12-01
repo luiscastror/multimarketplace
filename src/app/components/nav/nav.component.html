@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4 col-md-3">
-                <img src="assets/img/logo.jpg" style="height: 50px;" routerLink="/">
+                <img src="assets/img/logo.jpg" style="height: 50px;" routerLink="/home" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
                 <mat-form-field class="w-100" appearance="outline" color="accent">
@@ -23,7 +23,11 @@
                 <div class="d-none d-md-inline">
                     <button mat-flat-button color="primary" routerLink="/cart">
                         <mat-icon>shopping_cart</mat-icon>
-                        <span>Mi Carrito</span>
+                        <span>Mi Carrito
+                            <span *ngIf="MainService.CartService.count() > 0">
+                                ({{MainService.CartService.count()}})
+                            </span>
+                        </span>
                     </button>
                 </div>
                 <div class="d-inline d-md-none">
@@ -39,6 +43,9 @@
                 <div class="d-inline d-md-none">
                     <button mat-icon-button color="accent" routerLink="/cart">
                         <mat-icon>shopping_cart</mat-icon>
+                        <span class="badge-cart" *ngIf="MainService.CartService.count() > 0">
+                            {{MainService.CartService.count()}}
+                        </span>
                     </button>
                 </div>
             </div>
@@ -46,10 +53,12 @@
         <div class="row mt-3">
             <div
                 class="col-12 d-flex justify-content-md-start justify-content-evenly flex-wrap flex-row gap-3 gap-md-5 ">
-                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Categorías</a>
-                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Tiendas</a>
-                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/">Promociones</a>
-                <a class="fw-semibold text-dark text-decoration-none hv-secondary d-none d-md-inline" routerLink="/">
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary"
+                    routerLink="/categories">Categorías</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/stores">Tiendas</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary" routerLink="/promo">Promociones</a>
+                <a class="fw-semibold text-dark text-decoration-none hv-secondary d-none d-md-inline"
+                    routerLink="/login">
                     Quiero vender, soy una tienda
                 </a>
                 <button mat-flat-button color="accent" routerLink="/login" class="d-inline d-md-none">

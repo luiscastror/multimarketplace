@@ -53,6 +53,10 @@ p {
     color: var(--secondary) !important;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .f14 {
     font-size: 14px;
 }

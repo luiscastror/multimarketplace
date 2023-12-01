@@ -37,6 +37,8 @@ import { LoginComponent } from './pages/marketplace/login/login.component';
 import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { FormsModule } from '@angular/forms';
+import { StoresComponent } from './pages/marketplace/stores/stores.component';
+import { PromosComponent } from './pages/marketplace/promos/promos.component';
 
 
 
@@ -61,7 +63,9 @@ import { FormsModule } from '@angular/forms';
     TitleSubtitleComponent,
     BrandsComponent,
     BlankComponent,
-    ProductCartComponent
+    ProductCartComponent,
+    StoresComponent,
+    PromosComponent
   ],
   imports: [
     BrowserModule,

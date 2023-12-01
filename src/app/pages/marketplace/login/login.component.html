@@ -1,2 +1,28 @@
 <app-nav></app-nav>
-<p>login works!</p>
+<div class="container py-3 py-md-5 bg-white border-start border-end">
+    <div class="row">
+        <div class="col-6 col-md-3 mx-auto my-5">
+            <img src="/assets/img/logo.jpg" class="img-fluid ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 col-md-5 mx-auto d-flex flex-column">
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Correo electrónico</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Clave de acceso</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <button mat-flat-button color="primary" class="mb-3">
+                Iniciar sesión
+            </button>
+            <button mat-stroked-button color="primary" class="mb-3">
+                Crear una cuenta
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-components-footer></app-components-footer>

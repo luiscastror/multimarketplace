@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  @Input() listProducts: string[] = ['0', '0', '0', '0'];
-  constructor() { }
+  constructor(
+    public MainService: MainService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  changeCart() {
+    this.MainService.CartService.updateCart();
+  }
+
+  removeItem(businees: number, product: number) {
+    this.MainService.SnackbarService.show("Producto elminado correctamente")
+    this.MainService.CartService.listCart[businees].items.splice(product, 1);
+    this.changeCart();
+  }
 }

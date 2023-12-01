@@ -64,10 +64,12 @@ export class HomeComponent implements OnInit {
   }
 
   images: any = [
-    'https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75',
-    'https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75',
-    'https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2FTGGCwvCMRziO3q3frkWw%2Fimages%2FKWW1675445492238&w=2048&q=75',
-    'https://seeri.co/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fseeri-brands%2FBrands%2Fco%2F6df867b8-9461-420e-b10d-639ee8a7c29c%2Fimages%2F29C1685193469575&w=2048&q=75'
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
   ]
 
   categories: string[] = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'];

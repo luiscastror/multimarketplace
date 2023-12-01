@@ -1,1 +1,54 @@
-<p>store works!</p>
+<app-nav></app-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-2 pt-3 mb-3">
+            <div class="portada"></div>
+            <div class="logo"></div>
+            <p class="fw-bold f18 text-center text-uppercase">Nombre de la tienda</p>
+            <p class="fw-light f16 text-center mb-3 ">Tienda especializada en electro y cosas para el hogar</p>
+            <div class="d-none d-md-inline">
+                <app-components-title-subtitle title="Categorías" justify="start"></app-components-title-subtitle>
+                <div class="d-flex flex-column mb-3">
+                    <div class="pointer item-store py-2 px-3" *ngFor="let item of [0,0,0,0,0,0,0,0,0]; index as index;">
+                        Categoría {{index + 1}}
+                    </div>
+                </div>
+                <app-components-title-subtitle title="Sucursales" justify="start"></app-components-title-subtitle>
+                <div class="d-flex flex-column mb-3">
+                    <div class="pointer item-store py-2 px-3" *ngFor="let item of [0,0,0]; index as index;">
+                        Sucursal {{index + 1}}
+                    </div>
+                </div>
+            </div>
+            <app-components-title-subtitle title="Redes sociales" justify="start"></app-components-title-subtitle>
+            <div class="d-flex flex-row flex-md-column justify-content-between mb-3">
+                <div class="pointer item-store py-2 px-3">Facebook</div>
+                <div class="pointer item-store py-2 px-3">Instagram</div>
+                <div class="pointer item-store py-2 px-3">Whastapp</div>
+            </div>
+        </div>
+        <div class="col-12 col-md-10 pt-3">
+            <div class="row mb-3">
+                <div class="col-12 d-flex flex-row justify-content-between">
+                    <app-components-title-subtitle title="Productos" subtitle="Estos son los productos de esta tienda"
+                        justify="start">
+                    </app-components-title-subtitle>
+                    <div class="d-flex flex-row justify-content-around gap-3">
+                        <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
+                            <mat-label>Busca productos</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <button mat-flat-button color="primary">Filtro</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]">
+                    <app-components-card-product></app-components-card-product>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-components-footer></app-components-footer>

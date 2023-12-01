@@ -11,7 +11,7 @@
                 [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2" *ngFor="let item of categories">
+        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" routerLink="/category">
             <div class="card mb-3">
                 <div class="card-body text-center">
                     <span class="material-symbols-outlined fs-1 color-secondary">
@@ -74,7 +74,7 @@
                 [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2" *ngFor="let item of [0,0,0,0,0,0]">
+        <div class="col-6 col-md-2 pointer" *ngFor="let item of [0,0,0,0,0,0]" routerLink="/category">
             <div class="card mb-3">
                 <div class="card-body text-center">
                     <span class="material-symbols-outlined fs-1 color-secondary">
@@ -94,7 +94,7 @@
                     [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
-            <div class="col-6 col-md-3 mb-3" *ngFor="let item of images">
+            <div class="col-6 col-md-2 mb-3 pointer" *ngFor="let item of images" routerLink="/store">
                 <div class="card">
                     <img class="card-img-top" [src]="item" style="width:100%">
                 </div>

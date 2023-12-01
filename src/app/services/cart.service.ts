@@ -10,12 +10,26 @@ export class CartService {
 
   constructor() {
     this.load();
+    this.count()
+  }
+
+  count() {
+    let count = 0;
+    if (this.listCart.length > 0) {
+      this.listCart.forEach((businees: any) => {
+        businees.items.forEach((item: any) => {
+          count += item.count
+        });
+      });
+    }
+    return count
   }
 
   load() {
     const cart = JSON.parse(localStorage.getItem('cartMultimarketplace') || '[]');
     this.listCart = cart;
     this.countCart = cart.length;
+    console.log("Cart", this.listCart)
   }
 
   add(payload: any) {
