@@ -39,6 +39,7 @@ import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { FormsModule } from '@angular/forms';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
+import { ProductSearchComponent } from './components/product-search/product-search.component';
 
 
 
@@ -65,7 +66,8 @@ import { PromosComponent } from './pages/marketplace/promos/promos.component';
     BlankComponent,
     ProductCartComponent,
     StoresComponent,
-    PromosComponent
+    PromosComponent,
+    ProductSearchComponent
   ],
   imports: [
     BrowserModule,

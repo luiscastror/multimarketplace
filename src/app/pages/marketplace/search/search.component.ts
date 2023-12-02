@@ -12,4 +12,26 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cantidad : number = 6;
+
+  marcas : string[] =['Xiomi','Samsung','iPhone','Nokia'];
+
+
+  filtros : any[] =[
+    {
+      "id":1,
+    "valor":'relevancia'
+    },
+    {
+      "id":2,
+    "valor":'Mayor a menor precio'
+    },
+    {
+      "id":3,
+    "valor":'Menor a mayor precio'
+    }
+  ];
+
+  listProducts : any[] = ['','','','','',''];
+
 }

@@ -1,0 +1,6 @@
+.imgProduc{
+    width: 300px;
+    height: 150px;
+    object-fit: contain; /* Puedes cambiar 'cover' por 'contain' dependiendo de tus necesidades */
+
+}
