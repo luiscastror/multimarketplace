@@ -6,7 +6,6 @@ import { SearchComponent } from './pages/marketplace/search/search.component';
 import { CartComponent } from './pages/marketplace/cart/cart.component';
 import { LoginComponent } from './pages/marketplace/login/login.component';
 import { CategoriesComponent } from './pages/marketplace/categories/categories.component';
-import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { StoreComponent } from './pages/marketplace/store/store.component';
 import { CategoryComponent } from './pages/marketplace/category/category.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'category', component: CategoryComponent },
     { path: 'categories', component: CategoriesComponent },
-    { path: 'brands', component: BrandsComponent },
     { path: 'stores', component: StoresComponent },
     { path: 'store', component: StoreComponent },
     { path: 'promo', component: PromosComponent },

@@ -16,11 +16,10 @@ export class ProductSearchComponent implements OnInit {
   }
 
   producto: any = {
-    "img":'https://http2.mlstatic.com/D_NQ_NP_923145-MLA54095248890_032023-O.webp',
-    "nombre":'Xiaomi Pocophone Poco X5 Pro 5G Dual SIM 256 GB negro 8 GB RAM',
-    "precio":'1.230.000',
-    "descuento":'20% OFF'
-
+    "img": 'https://http2.mlstatic.com/D_NQ_NP_923145-MLA54095248890_032023-O.webp',
+    "nombre": 'Xiaomi Pocophone Poco X5 Pro 5G Dual SIM 256 GB negro 8 GB RAM',
+    "precio": '1.230.000',
+    "descuento": '20% OFF'
   }
 
   add() {
@@ -44,7 +43,7 @@ export class ProductSearchComponent implements OnInit {
     }
 
     this.MainService.CartService.add(payload)
-  
+
   }
 
 }

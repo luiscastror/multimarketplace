@@ -7,22 +7,25 @@
             <div class="col-8 col-md-5 d-none d-md-inline">
                 <mat-form-field class="w-100" appearance="outline" color="accent">
                     <mat-label>Busca productos, marcas y más...</mat-label>
-                    <input matInput type="text" [(ngModel)]="searchInput">
-                    <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput=''">
+                    <input matInput type="text" [(ngModel)]="searchInput" (keyup.enter)="search()">
+                    <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="search()">
                         <mat-icon>search</mat-icon>
                     </button>
                 </mat-form-field>
             </div>
             <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
                 <div class="d-none d-md-inline">
-                    <button mat-stroked-button color="accent" routerLink="/login">
-                        <mat-icon>account_circle</mat-icon>
-                        <span>Iniciar sesión</span>
+                    <button mat-stroked-button color="accent"
+                        [routerLink]="MainService.AuthService.isAuth ? 'admin' : 'login'">
+                        <mat-icon class="me-1">account_circle</mat-icon>
+                        <span>
+                            {{MainService.AuthService.isAuth ? MainService.AuthService.userBody.name :'Iniciar sesión'}}
+                        </span>
                     </button>
                 </div>
                 <div class="d-none d-md-inline">
                     <button mat-flat-button color="primary" routerLink="/cart">
-                        <mat-icon>shopping_cart</mat-icon>
+                        <mat-icon class="me-1">shopping_cart</mat-icon>
                         <span>Mi Carrito
                             <span *ngIf="MainService.CartService.count() > 0">
                                 ({{MainService.CartService.count()}})
@@ -31,12 +34,13 @@
                     </button>
                 </div>
                 <div class="d-inline d-md-none">
-                    <button mat-icon-button color="primary" routerLink="/search">
+                    <button mat-icon-button color="primary" routerLink="/search" (click)="search()">
                         <mat-icon>search</mat-icon>
                     </button>
                 </div>
                 <div class="d-inline d-md-none">
-                    <button mat-icon-button color="primary" routerLink="/login">
+                    <button mat-icon-button color="primary"
+                        [routerLink]="MainService.AuthService.isAuth ? 'admin' : 'login'">
                         <mat-icon>account_circle</mat-icon>
                     </button>
                 </div>

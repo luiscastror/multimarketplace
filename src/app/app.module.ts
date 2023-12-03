@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,6 +22,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import { FooterComponent } from './components/footer/footer.component';
 import { WallComponent } from './components/wall/wall.component';
 import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
+import { ProductSearchComponent } from './components/product-search/product-search.component';
 
 // Pages admin
 import { LoginAdminComponent } from './pages/admin/login/login.component';
@@ -34,12 +36,9 @@ import { StoreComponent } from './pages/marketplace/store/store.component';
 import { CategoryComponent } from './pages/marketplace/category/category.component';
 import { SearchComponent } from './pages/marketplace/search/search.component';
 import { LoginComponent } from './pages/marketplace/login/login.component';
-import { BrandsComponent } from './pages/marketplace/brands/brands.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
-import { FormsModule } from '@angular/forms';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
-import { ProductSearchComponent } from './components/product-search/product-search.component';
 
 
 
@@ -62,7 +61,6 @@ import { ProductSearchComponent } from './components/product-search/product-sear
     FooterComponent,
     WallComponent,
     TitleSubtitleComponent,
-    BrandsComponent,
     BlankComponent,
     ProductCartComponent,
     StoresComponent,
