@@ -39,6 +39,8 @@ import { LoginComponent } from './pages/marketplace/login/login.component';
 import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
+import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
+import { TerminosYCondicionesComponent } from './components/terminos-ycondiciones/terminos-ycondiciones.component';
 
 
 
@@ -65,7 +67,9 @@ import { PromosComponent } from './pages/marketplace/promos/promos.component';
     ProductCartComponent,
     StoresComponent,
     PromosComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    TerminosYcondicionesComponent,
+    TerminosYCondicionesComponent
   ],
   imports: [
     BrowserModule,

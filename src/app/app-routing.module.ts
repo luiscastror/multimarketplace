@@ -11,6 +11,7 @@ import { StoreComponent } from './pages/marketplace/store/store.component';
 import { CategoryComponent } from './pages/marketplace/category/category.component';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
+import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
 
 const routes: Routes = [
     { path: '', component: BlankComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'stores', component: StoresComponent },
     { path: 'store', component: StoreComponent },
     { path: 'promo', component: PromosComponent },
+    { path: 'termiCondi', component: TerminosYcondicionesComponent },
 ];
 
 @NgModule({
