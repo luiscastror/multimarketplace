@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4 col-md-3">
-                <img src="assets/img/logo.jpg" style="height: 50px;" routerLink="/home" class="pointer">
+                <img src="assets/img/logo.jpg" style="height: 50px;" routerLink="/" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
                 <mat-form-field class="w-100" appearance="outline" color="accent">
@@ -16,7 +16,7 @@
             <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
                 <div class="d-none d-md-inline">
                     <button mat-stroked-button color="accent"
-                        [routerLink]="MainService.AuthService.isAuth ? 'admin' : 'login'">
+                        [routerLink]="MainService.AuthService.isAuth ? '/admin' : '/login'">
                         <mat-icon class="me-1">account_circle</mat-icon>
                         <span>
                             {{MainService.AuthService.isAuth ? MainService.AuthService.userBody.name :'Iniciar sesión'}}
@@ -40,7 +40,7 @@
                 </div>
                 <div class="d-inline d-md-none">
                     <button mat-icon-button color="primary"
-                        [routerLink]="MainService.AuthService.isAuth ? 'admin' : 'login'">
+                        [routerLink]="MainService.AuthService.isAuth ? '/admin' : '/login'">
                         <mat-icon>account_circle</mat-icon>
                     </button>
                 </div>

@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="container bg-white border-start border-end">
+    <div class="row">
+        <div class="col-12 col-md-2 py-3">
+            <div class="d-flex flex-column gap-3">
+                <h3 class="fw-bold color-primary">Usuario</h3>
+                <a routerLink="/admin/my-info" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mi cuenta
+                </a>
+                <a routerLink="/admin/my-orders" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mis pedidos
+                </a>
+                <a routerLink="/admin/my-address" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mis direcciones
+                </a>
+                <hr>
+                <h3 class="fw-bold color-primary">Tienda</h3>
+                <a routerLink="/admin/my-store-dashboard" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mi dashboard
+                </a>
+                <a routerLink="/admin/my-store-profile" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mi perfil
+                </a>
+                <a routerLink="/admin/my-store-items" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mis productos
+                </a>
+                <a routerLink="/admin/my-store-categories" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mis categorias
+                </a>
+                <a routerLink="/admin/my-store-orders" [routerLinkActive]="'color-secondary fw-bold'"
+                    class="color-primary text-decoration-none hv-secondary">
+                    Mis pedidos
+                </a>
+                <a routerLink="/" class="color-primary text-decoration-none hv-secondary">
+                    Salir
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-10 py-3 border-start">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<app-components-footer></app-components-footer>

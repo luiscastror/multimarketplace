@@ -23,9 +23,22 @@ import { FooterComponent } from './components/footer/footer.component';
 import { WallComponent } from './components/wall/wall.component';
 import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
+import { TerminosYCondicionesComponent } from './components/terminos-ycondiciones/terminos-ycondiciones.component';
 
 // Pages admin
-import { LoginAdminComponent } from './pages/admin/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminAddressComponent } from './pages/admin/admin-address/admin-address.component';
+import { AdminItemsComponent } from './pages/admin/admin-items/admin-items.component';
+import { AdminInfoComponent } from './pages/admin/admin-info/admin-info.component';
+import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.component';
+
+// Pages admin store
+import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
+import { StoreProfileComponent } from './pages/admin/store-profile/store-profile.component';
+import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
+import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
+import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
+
 
 // Pages marketplace
 import { HomeComponent } from './pages/marketplace/home/home.component';
@@ -40,7 +53,6 @@ import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
-import { TerminosYCondicionesComponent } from './components/terminos-ycondiciones/terminos-ycondiciones.component';
 
 
 
@@ -56,7 +68,6 @@ import { TerminosYCondicionesComponent } from './components/terminos-ycondicione
     CategoryComponent,
     SearchComponent,
     NavComponent,
-    LoginAdminComponent,
     BannerComponent,
     ProductComponent,
     CardProductComponent,
@@ -69,7 +80,17 @@ import { TerminosYCondicionesComponent } from './components/terminos-ycondicione
     PromosComponent,
     ProductSearchComponent,
     TerminosYcondicionesComponent,
-    TerminosYCondicionesComponent
+    TerminosYCondicionesComponent,
+    AdminItemsComponent,
+    AdminInfoComponent,
+    AdminOrdersComponent,
+    AdminComponent,
+    AdminAddressComponent,
+    StoreDashboardComponent,
+    StoreProfileComponent,
+    StoreItemsComponent,
+    StoreCategoriesComponent,
+    StoreOrdersComponent
   ],
   imports: [
     BrowserModule,

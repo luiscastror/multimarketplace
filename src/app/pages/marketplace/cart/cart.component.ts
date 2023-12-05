@@ -8,12 +8,21 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class CartComponent implements OnInit {
 
+  contentCart: any;
+
+
   constructor(
     public MainService: MainService
   ) { }
 
   ngOnInit(): void {
+
+    this.contentCart = this.MainService.CartService.listCart.length > 0 ? '' : '';
+
   }
+
+
+
 
   changeCart() {
     this.MainService.CartService.updateCart();
