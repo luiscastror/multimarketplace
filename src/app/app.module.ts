@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 // Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -12,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // Components
 import { NavComponent } from './components/nav/nav.component';
@@ -54,6 +57,7 @@ import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
 import { RegisterComponent } from './pages/marketplace/register/register.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
@@ -92,7 +96,8 @@ import { RegisterComponent } from './pages/marketplace/register/register.compone
     StoreItemsComponent,
     StoreCategoriesComponent,
     StoreOrdersComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +108,10 @@ import { RegisterComponent } from './pages/marketplace/register/register.compone
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
