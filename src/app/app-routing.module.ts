@@ -44,7 +44,7 @@ const routes: Routes = [
     { path: 'tyc', component: TerminosYcondicionesComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'storeRegister', component: StoreRegisterComponent },
-    { path: 'check', component: CheckoutComponent },
+    { path: 'checkout', component: CheckoutComponent },
     {
         path: 'admin',
         component: AdminComponent,
