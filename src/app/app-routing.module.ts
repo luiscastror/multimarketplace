@@ -31,7 +31,7 @@ import { StoreRegisterComponent } from './pages/marketplace/store-register/store
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'item', component: ItemComponent },
+    { path: 'item/:id', component: ItemComponent },
     { path: 'cart', component: CartComponent },
     { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },

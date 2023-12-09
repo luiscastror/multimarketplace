@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,13 +9,17 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class ItemComponent implements OnInit {
 
-  path_api: string = '/productos/E8F0C687-2E0C-4A98-A4DC-D1E6A074BBAF'
   item: any = {};
   loading: boolean = true;
   image!: string;
   imageSelected: number = 0;
+
+  id = this.ruta.snapshot.params.id;
+  path_api: string = '/productos/' + this.id;
+
   constructor(
-    private MainService: MainService
+    private MainService: MainService,
+    private ruta: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {

@@ -3,9 +3,10 @@
     height: 15vh;
     border-end-end-radius: 12px;
     border-end-start-radius: 15px;
-    background-image: url('https://s-media-cache-ak0.pinimg.com/originals/b9/9b/2c/b99b2c232d84a6059887c2fb79997608.jpg');
+    /* background-image: url('https://s-media-cache-ak0.pinimg.com/originals/b9/9b/2c/b99b2c232d84a6059887c2fb79997608.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: white;
 }
 
 
@@ -18,9 +19,10 @@
     margin-top: -60px;
     margin-bottom: 10px;
     border: 3px solid var(--secondary);
-    background-image: url('https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM');
+    /* background-image: url('https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM'); */
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: white;
 }
 
 .item-store:hover {

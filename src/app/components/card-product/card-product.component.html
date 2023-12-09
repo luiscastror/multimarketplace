@@ -1,21 +1,29 @@
 <div class="card mb-3">
-    <img class="card-img-top pointer" src="https://http2.mlstatic.com/D_NQ_NP_821669-MCO72777449727_112023-O.webp"
-        style="width:100%" routerLink="/item">
-    <div class="card-body pointer" routerLink="/item">
+    <!-- <img class="card-img-top pointer" [src]="item.Imagen" style="width:100%"> -->
+    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id"
+        [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
+    </div>
+    <span class="promo" *ngIf="item.Descuento > 0">
+        %{{item.Descuento}}
+    </span>
+    <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>
-        <p class="fw-light f14 text-truncate">Some example text some example text. John Doe is an architect and engineer
+        <p class="fw-light f14 text-truncate">{{item.Observacion}}
         </p>
     </div>
     <div class="card-footer bg-white py-3">
         <div class="w-100 d-flex flex-row justify-content-between align-items-center">
             <div>
-                <p class="text-decoration-line-through small text-black-50">$185.562</p>
-                <p class="color-secondary fw-bold">$185.562</p>
+                <p class=" small text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
+                    {{item.Descuento > 0 ? (item.Valor | number ): '¡APROVECHA!'}}
+                </p>
+                <p class="color-secondary fw-bold">
+                    ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
+                </p>
             </div>
             <div>
                 <button mat-flat-button color="primary" (click)="add()">
                     <mat-icon>add_shopping_cart</mat-icon>
-                    <span class="d-none d-md-inline">Comprar</span>
                 </button>
             </div>
         </div>

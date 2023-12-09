@@ -5,16 +5,18 @@
             <app-components-title-subtitle title="Tiendas" subtitle="Tiendas en vivesucre" justify="center">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]"
-            routerLink="/store">
-            <div class="card mb-3">
-                <div class="card-body text-center">
-                    <img src="https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM"
-                        class="img-fluid mx-auto">
-                    <p class="fw-bold text-center">Tienda</p>
+        <app-loading *ngIf="loading"></app-loading>
+        <ng-container *ngIf="!loading">
+            <div class="col-6 col-md-2 pointer" *ngFor="let item of items" [routerLink]="'/store/'+item.Id">
+                <div class="card mb-3">
+                    <div class="card-body text-center">
+                        <img [src]="item.Logo" class="img-fluid mx-auto mb-3">
+                        <p class="fw-bold text-center text-truncate">{{item.Descripcion}}</p>
+                        <p class="fw-light text-center text-truncate">{{item.Biografia}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>
 <app-components-footer></app-components-footer>

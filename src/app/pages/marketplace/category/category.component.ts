@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class CategoryComponent implements OnInit {
 
-  path_api: string = '/productosXcategoria/39953BEF-549A-4163-BF00-64E123257CC2'
   items: any = {};
   loading: boolean = true;
+  id = this.ruta.snapshot.params.id;
+  path_api: string = '/productosXcategoria/' + this.id;
 
   constructor(
-    private MainService: MainService
+    private MainService: MainService,
+    private ruta: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -30,5 +33,6 @@ export class CategoryComponent implements OnInit {
       console.error(error)
     }, () => { })
   }
+
 
 }

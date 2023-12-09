@@ -10,9 +10,7 @@
             <div class="col-6 col-md-2 pointer" *ngFor="let item of items" [routerLink]="'/category/'+item.Id">
                 <div class="card mb-3">
                     <div class="card-body text-center">
-                        <span class="material-symbols-outlined fs-1 color-secondary">
-                            verified
-                        </span>
+                        <img [src]="item.Imagen" class="img-fluid">
                         <p class="fw-bold text-center">
                             {{item.Descripcion}}
                         </p>
