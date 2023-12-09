@@ -8,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   banners: any = [
-    'https://storage.googleapis.com/seeri-banners/banners/co/4c109c3a6b1137b17aa7e60c05fa576b/bannerweb4-1696950167874.png',
-    'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNUTRA.386283cc.png&w=2048&q=75',
-    'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSMARTA.2ead5ec8.png&w=2048&q=75',
-    'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FISOFIT.991719fc.png&w=2048&q=75'
+    'https://http2.mlstatic.com/D_NQ_611165-MLA73047274550_112023-OO.webp',
+    'https://http2.mlstatic.com/D_NQ_611165-MLA73047274550_112023-OO.webp',
+    'https://http2.mlstatic.com/D_NQ_NP694875-MLA73046029363_112023-B.webp',
+  ]
+
+  images: any = [
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
+    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
   ]
 
   enum: any = [
@@ -63,14 +71,7 @@ export class HomeComponent implements OnInit {
     ]
   }
 
-  images: any = [
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-    'https://th.bing.com/th?id=OSK.639e3b0355a42430576f839817f2528e&w=148&h=148&c=7&o=6&dpr=1.1&pid=SANGAM',
-  ]
+
 
   categories: string[] = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'];
 

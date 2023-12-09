@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreOrdersComponent implements OnInit {
 
+  view: string = 'list';
+
   constructor() { }
 
   ngOnInit(): void {
