@@ -53,6 +53,7 @@ import { BlankComponent } from './pages/marketplace/blank/blank.component';
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
+import { RegisterComponent } from './pages/marketplace/register/register.component';
 
 
 
@@ -90,7 +91,8 @@ import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycon
     StoreProfileComponent,
     StoreItemsComponent,
     StoreCategoriesComponent,
-    StoreOrdersComponent
+    StoreOrdersComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

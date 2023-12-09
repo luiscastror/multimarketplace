@@ -13,6 +13,7 @@ import { CategoryComponent } from './pages/marketplace/category/category.compone
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
+import { RegisterComponent } from './pages/marketplace/register/register.component';
 
 // Admin
 import { AdminComponent } from './pages/admin/admin.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
     { path: 'store', component: StoreComponent },
     { path: 'promo', component: PromosComponent },
     { path: 'tyc', component: TerminosYcondicionesComponent },
+    { path: 'register', component: RegisterComponent },
     {
         path: 'admin',
         component: AdminComponent,
