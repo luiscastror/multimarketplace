@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   banners: any = [
-    'https://storage.googleapis.com/seeri-banners/banners/co/4c109c3a6b1137b17aa7e60c05fa576b/bannerweb4-1696950167874.png',
-    'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNUTRA.386283cc.png&w=2048&q=75',
+    '/assets/img/banners/banner2.jpg',
+    '/assets/img/banners/banner1.jpg',
     'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSMARTA.2ead5ec8.png&w=2048&q=75',
     'https://seeri.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FISOFIT.991719fc.png&w=2048&q=75'
   ]
