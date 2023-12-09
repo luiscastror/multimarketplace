@@ -8,12 +8,31 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class ItemComponent implements OnInit {
 
+  path_api: string = '/productos/E8F0C687-2E0C-4A98-A4DC-D1E6A074BBAF'
+  item: any = {};
+  loading: boolean = true;
+  image!: string;
+  imageSelected: number = 0;
   constructor(
     private MainService: MainService
   ) { }
 
   ngOnInit(): void {
+    this.load();
   }
+
+  load() {
+    this.loading = true;
+    this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
+      console.log(this.path_api, resp)
+      this.item = resp
+      this.loading = false;
+      this.image = this.item.Imagenes[0].Imagen;
+    }, (error) => {
+      console.error(error)
+    }, () => { })
+  }
+
 
 
   add() {

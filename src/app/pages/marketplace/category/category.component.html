@@ -1,9 +1,10 @@
 <app-nav></app-nav>
 <div class="container">
     <div class="row my-3">
-        <div class="col-12 d-flex flex-row justify-content-between">
-            <app-components-title-subtitle title="Categoría" subtitle="Estos son los productos de esta tienda"
-                justify="start">
+        <app-loading *ngIf="loading"></app-loading>
+        <div class="col-12 d-flex flex-row justify-content-between" *ngIf="!loading">
+            <app-components-title-subtitle [title]="items.Categoria.Descripcion"
+                subtitle="Estos son los productos de esta tienda" justify="start">
             </app-components-title-subtitle>
             <div class="d-flex flex-row justify-content-around gap-3">
                 <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
@@ -16,8 +17,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of items.Productos">
+            <app-components-card-product [item]="item"></app-components-card-product>
         </div>
     </div>
 </div>

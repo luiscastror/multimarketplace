@@ -5,17 +5,22 @@
             <app-components-title-subtitle title="Categorías" subtitle="Categorías en vivesucre" justify="center">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]"
-            routerLink="/category">
-            <div class="card mb-3">
-                <div class="card-body text-center">
-                    <span class="material-symbols-outlined fs-1 color-secondary">
-                        verified
-                    </span>
-                    <p class="fw-bold text-center">Categoría</p>
+        <app-loading *ngIf="loading"></app-loading>
+        <ng-container *ngIf="!loading">
+            <div class="col-6 col-md-2 pointer" *ngFor="let item of items" [routerLink]="'/category/'+item.Id">
+                <div class="card mb-3">
+                    <div class="card-body text-center">
+                        <span class="material-symbols-outlined fs-1 color-secondary">
+                            verified
+                        </span>
+                        <p class="fw-bold text-center">
+                            {{item.Descripcion}}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>
+
 <app-components-footer></app-components-footer>

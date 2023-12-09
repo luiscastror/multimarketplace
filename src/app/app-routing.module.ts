@@ -13,6 +13,7 @@ import { CategoryComponent } from './pages/marketplace/category/category.compone
 import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
+import { RegisterComponent } from './pages/marketplace/register/register.component';
 
 // Admin
 import { AdminComponent } from './pages/admin/admin.component';
@@ -26,6 +27,7 @@ import { StoreProfileComponent } from './pages/admin/store-profile/store-profile
 import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
 import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
+import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -33,12 +35,14 @@ const routes: Routes = [
     { path: 'cart', component: CartComponent },
     { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'category', component: CategoryComponent },
+    { path: 'category/:id', component: CategoryComponent },
     { path: 'categories', component: CategoriesComponent },
     { path: 'stores', component: StoresComponent },
-    { path: 'store', component: StoreComponent },
+    { path: 'store/:id', component: StoreComponent },
     { path: 'promo', component: PromosComponent },
     { path: 'tyc', component: TerminosYcondicionesComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'storeRegister', component: StoreRegisterComponent },
     {
         path: 'admin',
         component: AdminComponent,
