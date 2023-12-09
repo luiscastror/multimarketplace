@@ -59,6 +59,7 @@ import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycon
 import { RegisterComponent } from './pages/marketplace/register/register.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
+import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
 
 
 
@@ -99,7 +100,8 @@ import { StoreRegisterComponent } from './pages/marketplace/store-register/store
     StoreOrdersComponent,
     RegisterComponent,
     LoadingComponent,
-    StoreRegisterComponent
+    StoreRegisterComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
