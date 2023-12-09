@@ -98,7 +98,7 @@ import { StoreRegisterComponent } from './pages/marketplace/store-register/store
     StoreCategoriesComponent,
     StoreOrdersComponent,
     RegisterComponent,
-    LoadingComponent
+    LoadingComponent,
     StoreRegisterComponent
   ],
   imports: [
