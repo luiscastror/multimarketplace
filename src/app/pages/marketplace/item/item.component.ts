@@ -27,7 +27,7 @@ export class ItemComponent implements OnInit {
       console.log(this.path_api, resp)
       this.item = resp
       this.loading = false;
-      this.image = this.item.Imagenes[0].Imagen;
+      this.image = this.item.Imagenes[0].URL;
     }, (error) => {
       console.error(error)
     }, () => { })

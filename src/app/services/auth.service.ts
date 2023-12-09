@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
 
-  public isAuth: boolean = false;
+  public isAuth: boolean = true;
   public isStore: boolean = true;
   public userBody: any = {
     name: 'Luis Castro'

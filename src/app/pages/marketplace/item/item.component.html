@@ -7,10 +7,10 @@
         <div class="col-12 col-md-7 d-flex flex-column justify-content-center border-end py-5">
             <img class="img-fluid mx-auto" [src]="image">
             <div class="d-flex flex-row gap-2  justify-content-evenly">
-                <div [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}"
+                <div *ngFor="let item of item.Imagenes, index as index"
+                    [ngStyle]="{'background-image': 'url(' + item.URL + ')'}"
                     [ngClass]="{'opacity-100': index == imageSelected}" class="image img-thumbnail pointer"
-                    *ngFor="let item of item.Imagenes, index as index"
-                    (click)="image = item.Imagen; imageSelected = index"></div>
+                    (click)="image = item.URL; imageSelected = index"></div>
             </div>
         </div>
         <div class="col-12 col-md-5 py-5 px-3">
