@@ -58,6 +58,7 @@ import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
 import { RegisterComponent } from './pages/marketplace/register/register.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
 
 
 
@@ -98,6 +99,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     StoreOrdersComponent,
     RegisterComponent,
     LoadingComponent
+    StoreRegisterComponent
   ],
   imports: [
     BrowserModule,

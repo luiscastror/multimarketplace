@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<div class="container py-3 py-md-5 bg-white border-start border-end">
+    <div class="row">
+        <div class="col-6 col-md-3 mx-auto my-5">
+            <img src="/assets/img/logo.jpg" class="img-fluid ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 col-md-8 mx-auto d-flex flex-column">
+            <div class="d-flex flex-row justify-content-beetwen gap-5">
+                <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input matInput type="text" autocomplete="off">
+                </mat-form-field> 
+            </div>
+            <div class="d-flex flex-row justify-content-beetwen gap-5 my-3">
+                <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                    <mat-label>Categoria</mat-label>
+                    <input matInput type="text" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                    <mat-label>Direccion Tienda Fisica</mat-label>
+                    <input matInput type="text" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="d-flex flex-row justify-content-beetwen gap-5 ">
+                <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                    <mat-label>Correo Electronico De La Tienda</mat-label>
+                    <input matInput type="email" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                    <mat-label>Telefono De La Tienda</mat-label>
+                    <input matInput type="number" autocomplete="off">
+                </mat-form-field>
+            </div>
+            
+            <button mat-flat-button color="primary" class="mb-3">
+                Registrar Tienda
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-components-footer></app-components-footer>
