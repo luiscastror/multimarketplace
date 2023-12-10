@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row my-3">
         <div class="col-12">
-            <app-banner [img]="banners[0]"></app-banner>
+            <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
         </div>
     </div>
     <div class="row mb-5">
@@ -11,11 +11,13 @@
                 [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" routerLink="/category">
+        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" [routerLink]="'/category/'+item.Id">
             <div class="card mb-3">
                 <div class="card-body text-center">
-                    <img [src]="item.Imagen" alt=""class="imgCategories">
-                    <p class="fw-bold text-center">{{item.Descripcion}}</p>
+                    <img [src]="item.Imagen" class="img-fluid">
+                    <p class="fw-bold text-center">
+                        {{item.Descripcion}}
+                    </p>
                 </div>
             </div>
         </div>
@@ -40,14 +42,14 @@
     </div>
     <div class="row my-3">
         <div class="col-12">
-            <app-banner [img]="master"></app-banner>
+            <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner>
         </div>
         <div class="col-12 col-md-8">
-            <app-banner [img]="banners[2]"></app-banner>
+            <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
         </div>
         <div class="col-12 col-md-4">
-            <app-banner [img]="banners[2]"></app-banner>
-            <app-banner [img]="banners[2]"></app-banner>
+            <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
+            <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner>
         </div>
     </div>
     <div class="row mb-5">
@@ -59,12 +61,6 @@
         <div class="col-6 col-md-3" *ngFor="let item of products ; let i = index">
             <app-components-card-product [item]="products[i]"></app-components-card-product>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of products ; let i = index">
-            <app-components-card-product [item]="products[i]"></app-components-card-product>
-        </div>
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
-        </div>
     </div>
     <div class="row mb-5">
         <div class="col-12 mb-3">
@@ -72,11 +68,13 @@
                 [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" routerLink="/category">
+        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" [routerLink]="'/category/'+item.Id">
             <div class="card mb-3">
                 <div class="card-body text-center">
-                    <img [src]="item.Imagen" alt=""class="imgCategories">
-                    <p class="fw-bold text-center">{{item.Descripcion}}</p>
+                    <img [src]="item.Imagen" class="img-fluid">
+                    <p class="fw-bold text-center">
+                        {{item.Descripcion}}
+                    </p>
                 </div>
             </div>
         </div>
@@ -90,14 +88,12 @@
                     [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
-            <div class="col-6 col-md-2 mb-3 pointer" *ngFor="let item of stores; let i= index" routerLink="/store">
-                <div class="card py-2">
-                    <img class="card-img-top" [src]="item.Logo" class="imgStores" alt="image">
-                    <div class="card-body fw-normal">
-                        {{item.Biografia}}
-                    </div>
-                    <div class="card-footer fw-semibold">
-                        {{item.Descripcion}}
+            <div class="col-6 col-md-2 pointer" *ngFor="let item of stores" [routerLink]="'/store/'+item.Id">
+                <div class="card mb-3">
+                    <div class="card-body text-center">
+                        <img [src]="item.Logo" class="img-fluid mx-auto mb-3">
+                        <p class="fw-bold text-center text-truncate">{{item.Descripcion}}</p>
+                        <p class="fw-light text-center text-truncate">{{item.Biografia}}</p>
                     </div>
                 </div>
             </div>

@@ -74,13 +74,11 @@ export class HomeComponent implements OnInit {
 
 
 
-  categories: any;
   path_api_categories: string = '/categorias';
   path_api_products: string = '/productosXpromocion/';
   path_api_stores: string = '/tiendas';
   path_api_master: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
-  
-  loading: boolean = true;
+
 
   constructor(
     private MainService: MainService
@@ -90,9 +88,12 @@ export class HomeComponent implements OnInit {
     this.loadCategories();
     this.loadProducts();
     this.loadStores();
+    this.loadMaster();
   }
 
 
+  categories: any;
+  loading: boolean = true;
   loadCategories() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_categories).subscribe((resp: any) => {
@@ -131,21 +132,21 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  master: any;
+  Banners2: any;
   loading4: boolean = true;
   loadMaster() {
     this.loading4 = true;
     this.MainService.ApiService.get(this.path_api_master).subscribe((resp: any) => {
       console.log(this.path_api_master, resp)
-      this.master = resp.Banners;
+      this.Banners2 = resp.Banners;
       this.loading4 = false;
-    console.log(this.master);
+      console.log(this.Banners2);
 
     }, error => {
       console.error(error)
     })
 
-    console.log(this.master);
+    console.log(this.Banners2);
   }
 
 }
