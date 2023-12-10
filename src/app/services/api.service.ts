@@ -16,5 +16,16 @@ export class ApiService {
     return this.http.get(this.URL_API + path);
   }
 
+  post(path: string, payload: any) {
+    return this.http.post(this.URL_API + path, payload);
+  }
+
+  put(path: string, payload: any) {
+    return this.http.put(this.URL_API + path, payload);
+  }
+
+  delete(path: string) {
+    return this.http.delete(this.URL_API + path);
+  }
 
 }
