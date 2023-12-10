@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-home',
@@ -73,11 +74,78 @@ export class HomeComponent implements OnInit {
 
 
 
-  categories: string[] = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'];
+  categories: any;
+  path_api_categories: string = '/categorias';
+  path_api_products: string = '/productosXpromocion/';
+  path_api_stores: string = '/tiendas';
+  path_api_master: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
+  
+  loading: boolean = true;
 
-  constructor() { }
+  constructor(
+    private MainService: MainService
+  ) { }
 
   ngOnInit(): void {
+    this.loadCategories();
+    this.loadProducts();
+    this.loadStores();
+  }
+
+
+  loadCategories() {
+    this.loading = true;
+    this.MainService.ApiService.get(this.path_api_categories).subscribe((resp: any) => {
+      console.log(this.path_api_categories, resp)
+      this.categories = resp;
+      this.loading = false;
+    }, error => {
+      console.error(error)
+    })
+  }
+
+
+  products: any;
+  loading2: boolean = true;
+  loadProducts() {
+    this.loading2 = true;
+    this.MainService.ApiService.get(this.path_api_products).subscribe((resp: any) => {
+      console.log(this.path_api_products, resp)
+      this.products = resp;
+      this.loading2 = false;
+    }, error => {
+      console.error(error)
+    })
+  }
+
+  stores: any;
+  loading3: boolean = true;
+  loadStores() {
+    this.loading3 = true;
+    this.MainService.ApiService.get(this.path_api_stores).subscribe((resp: any) => {
+      console.log(this.path_api_stores, resp)
+      this.stores = resp;
+      this.loading3 = false;
+    }, error => {
+      console.error(error)
+    })
+  }
+
+  master: any;
+  loading4: boolean = true;
+  loadMaster() {
+    this.loading4 = true;
+    this.MainService.ApiService.get(this.path_api_master).subscribe((resp: any) => {
+      console.log(this.path_api_master, resp)
+      this.master = resp.Banners;
+      this.loading4 = false;
+    console.log(this.master);
+
+    }, error => {
+      console.error(error)
+    })
+
+    console.log(this.master);
   }
 
 }

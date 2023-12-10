@@ -14,10 +14,8 @@
         <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" routerLink="/category">
             <div class="card mb-3">
                 <div class="card-body text-center">
-                    <span class="material-symbols-outlined fs-1 color-secondary">
-                        verified
-                    </span>
-                    <p class="fw-bold text-center">Categoría</p>
+                    <img [src]="item.Imagen" alt=""class="imgCategories">
+                    <p class="fw-bold text-center">{{item.Descripcion}}</p>
                 </div>
             </div>
         </div>
@@ -28,8 +26,8 @@
                 [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of products ; let i = index">
+            <app-components-card-product [item]="products[i]"></app-components-card-product>
         </div>
     </div>
 </div>
@@ -42,7 +40,7 @@
     </div>
     <div class="row my-3">
         <div class="col-12">
-            <app-banner [img]="banners[1]"></app-banner>
+            <app-banner [img]="master"></app-banner>
         </div>
         <div class="col-12 col-md-8">
             <app-banner [img]="banners[2]"></app-banner>
@@ -58,11 +56,11 @@
                 [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of products ; let i = index">
+            <app-components-card-product [item]="products[i]"></app-components-card-product>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of products ; let i = index">
+            <app-components-card-product [item]="products[i]"></app-components-card-product>
         </div>
         <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
             <app-components-card-product></app-components-card-product>
@@ -74,13 +72,11 @@
                 [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of [0,0,0,0,0,0]" routerLink="/category">
+        <div class="col-6 col-md-2 pointer" *ngFor="let item of categories" routerLink="/category">
             <div class="card mb-3">
                 <div class="card-body text-center">
-                    <span class="material-symbols-outlined fs-1 color-secondary">
-                        verified
-                    </span>
-                    <p class="fw-bold text-center">Categoría</p>
+                    <img [src]="item.Imagen" alt=""class="imgCategories">
+                    <p class="fw-bold text-center">{{item.Descripcion}}</p>
                 </div>
             </div>
         </div>
@@ -94,9 +90,15 @@
                     [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
-            <div class="col-6 col-md-2 mb-3 pointer" *ngFor="let item of images" routerLink="/store">
-                <div class="card">
-                    <img class="card-img-top" [src]="item" style="width:100%">
+            <div class="col-6 col-md-2 mb-3 pointer" *ngFor="let item of stores; let i= index" routerLink="/store">
+                <div class="card py-2">
+                    <img class="card-img-top" [src]="item.Logo" class="imgStores" alt="image">
+                    <div class="card-body fw-normal">
+                        {{item.Biografia}}
+                    </div>
+                    <div class="card-footer fw-semibold">
+                        {{item.Descripcion}}
+                    </div>
                 </div>
             </div>
             <div class="col-12">
