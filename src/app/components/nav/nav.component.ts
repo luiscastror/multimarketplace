@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -14,12 +14,14 @@ export class NavComponent implements OnInit {
 
   constructor(
     public MainService: MainService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private ruta: ActivatedRoute,
+  ) {
+    this.searchInput = this.ruta.snapshot.queryParams.keyword || '';
+  }
 
   ngOnInit(): void {
   }
-
 
   search() {
     this.router.navigate(['/search'], { queryParams: { keyword: this.searchInput } });

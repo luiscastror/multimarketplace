@@ -9,7 +9,7 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class PromosComponent implements OnInit {
 
-  items: any = {};
+  items: any = [];
   loading: boolean = true;
   path_api: string = '/productosXpromocion/'
 
@@ -24,7 +24,6 @@ export class PromosComponent implements OnInit {
   load() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
-      console.log(this.path_api, resp)
       this.items = resp
       this.loading = false;
     }, (error) => {

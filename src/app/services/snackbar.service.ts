@@ -9,7 +9,6 @@ export class SnackbarService {
   constructor(private _snackBar: MatSnackBar) { }
 
   show(message: string) {
-    console.log(message)
     this._snackBar.open(message, '', {
       horizontalPosition: 'end',
       verticalPosition: 'bottom',

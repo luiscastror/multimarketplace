@@ -29,7 +29,6 @@ export class ItemComponent implements OnInit {
   load() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
-      console.log(this.path_api, resp)
       this.item = resp
       this.loading = false;
       this.image = this.item.Imagenes[0].URL;

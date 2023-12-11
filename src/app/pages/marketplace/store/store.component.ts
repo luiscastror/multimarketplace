@@ -28,7 +28,6 @@ export class StoreComponent implements OnInit {
   load_store() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
-      console.log(this.path_api_store, resp);
       this.info = resp;
     }, (error) => {
       console.error(error)
@@ -42,7 +41,6 @@ export class StoreComponent implements OnInit {
   load_store_items() {
     this.loading_items = true;
     this.MainService.ApiService.get(this.path_api_store_items).subscribe((resp: any) => {
-      console.log(this.path_api_store_items, resp);
       this.items = resp;
     }, (error) => {
       console.error(error)

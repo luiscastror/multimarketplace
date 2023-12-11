@@ -29,7 +29,6 @@ export class CartService {
     const cart = JSON.parse(localStorage.getItem('cartMultimarketplace') || '[]');
     this.listCart = cart;
     this.countCart = cart.length;
-    console.log("Cart", this.listCart)
   }
 
   add(payload: any) {

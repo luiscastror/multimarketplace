@@ -97,7 +97,6 @@ export class HomeComponent implements OnInit {
   loadCategories() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_categories).subscribe((resp: any) => {
-      console.log(this.path_api_categories, resp)
       this.categories = resp;
       this.loading = false;
     }, error => {
@@ -111,7 +110,6 @@ export class HomeComponent implements OnInit {
   loadProducts() {
     this.loading2 = true;
     this.MainService.ApiService.get(this.path_api_products).subscribe((resp: any) => {
-      console.log(this.path_api_products, resp)
       this.products = resp;
       this.loading2 = false;
     }, error => {
@@ -124,7 +122,6 @@ export class HomeComponent implements OnInit {
   loadStores() {
     this.loading3 = true;
     this.MainService.ApiService.get(this.path_api_stores).subscribe((resp: any) => {
-      console.log(this.path_api_stores, resp)
       this.stores = resp;
       this.loading3 = false;
     }, error => {
@@ -137,16 +134,11 @@ export class HomeComponent implements OnInit {
   loadMaster() {
     this.loading4 = true;
     this.MainService.ApiService.get(this.path_api_master).subscribe((resp: any) => {
-      console.log(this.path_api_master, resp)
       this.Banners2 = resp.Banners;
       this.loading4 = false;
-      console.log(this.Banners2);
-
     }, error => {
       console.error(error)
     })
-
-    console.log(this.Banners2);
   }
 
 }

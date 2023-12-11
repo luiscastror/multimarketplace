@@ -26,7 +26,6 @@ export class CategoryComponent implements OnInit {
   load() {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
-      console.log(this.path_api, resp)
       this.items = resp
       this.loading = false;
     }, (error) => {
