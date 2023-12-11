@@ -5,27 +5,18 @@
             <div class="col-12 col-md-3">
                 <div class="w-100 fw-semibold">
                     <div>Producto buscado:</div>
-                    <div class="text-success">{{cantidad}} resultados</div>
-                </div>
-                <div class="w-100 mt-3 bg-white rounded-2 p-2">
-                    <label class="fw-semibold w-100" for="opciones">Selecciona una opción:</label>
-                    <select class="w-100" id="opciones" class="btn" >
-                        <option value="{{item.id}}" *ngFor="let item of filtros">{{item.valor}}</option>
-                    </select>
-                </div>
-                <div class="w-100 my-5">
-                    <strong>Marcas:</strong>
-                    <div class="fw-light" *ngFor="let item of marcas">
-                        <button class="btn"> {{item}} </button>
-                    </div>
+                    <div class="text-success">{{search.Productos.length + search.Tiendas.length}} resultados</div>
                 </div>
             </div>
             <div class="col-12 col-md-9">
+                <div class="mb-3">
+                    <app-loading [type]="'bar'"></app-loading>
+                </div>
                 <div class="bg-white w-100 mb-2 rounded-5" *ngFor="let item of listProducts">
                     <app-components-product-search></app-components-product-search>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 
 </main>

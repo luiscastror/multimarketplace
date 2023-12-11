@@ -10,6 +10,7 @@ import { filter } from 'rxjs/operators';
 export class SearchComponent implements OnInit, AfterViewInit {
 
   queryParams: any;
+  search: any = [];
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
@@ -32,7 +33,8 @@ export class SearchComponent implements OnInit, AfterViewInit {
 
   load() {
     this.MainService.ApiService.get("/filter/" + this.queryParams.keyword).subscribe((resp: any) => {
-      console.log(resp)
+      console.log(resp);
+      this.search = resp;
     })
   }
 
