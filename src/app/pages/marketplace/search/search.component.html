@@ -10,7 +10,7 @@
                     <p class="fw-bold f18">Encontramos {{search.Tiendas.length}} tienda(s) que coinciden con tu
                         busqueda</p>
                 </div>
-                <div class="col-12 col-md-2" *ngFor="let item of search.Tiendas">
+                <div class="col-6 col-md-2" *ngFor="let item of search.Tiendas">
                     <app-card-store [item]="item"></app-card-store>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <p class="fw-bold f18">Encontramos {{search.Productos.length}} producto(s) que coinciden con tu
                         busqueda</p>
                 </div>
-                <div class="col-12 col-md-3" *ngFor="let item of search.Productos">
+                <div class="col-6 col-md-3" *ngFor="let item of search.Productos">
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
