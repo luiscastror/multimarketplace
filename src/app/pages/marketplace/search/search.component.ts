@@ -11,6 +11,9 @@ export class SearchComponent implements OnInit, AfterViewInit {
 
   queryParams: any;
   search: any = [];
+
+  searchInput!: any;
+
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
@@ -31,11 +34,19 @@ export class SearchComponent implements OnInit, AfterViewInit {
     this.load();
   }
 
+
+  loading: boolean = true;
   load() {
+    this.loading = true;
     this.MainService.ApiService.get("/filter/" + this.queryParams.keyword).subscribe((resp: any) => {
       console.log(resp);
+      this.loading = false;
       this.search = resp;
     })
+  }
+
+  searchIcon() {
+    this.router.navigate(['/search'], { queryParams: { keyword: this.searchInput } });
   }
 
   cantidad: number = 6;

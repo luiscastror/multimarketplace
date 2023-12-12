@@ -60,6 +60,7 @@ import { RegisterComponent } from './pages/marketplace/register/register.compone
 import { LoadingComponent } from './components/loading/loading.component';
 import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
+import { CardStoreComponent } from './components/card-store/card-store.component';
 
 
 
@@ -101,7 +102,8 @@ import { CheckoutComponent } from './pages/marketplace/checkout/checkout.compone
     RegisterComponent,
     LoadingComponent,
     StoreRegisterComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CardStoreComponent
   ],
   imports: [
     BrowserModule,

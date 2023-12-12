@@ -8,9 +8,7 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class CardProductComponent implements OnInit {
 
-  @Input() img: string = 'https://th.bing.com/th/id/OIP.gpB7_qn-l-hIYeLufFtPWwAAAA?rs=1&pid=ImgDetMain';
   @Input() item: any = {};
-
 
   constructor(
     private MainService: MainService

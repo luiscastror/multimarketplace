@@ -89,17 +89,11 @@
                 </app-components-title-subtitle>
             </div>
             <div class="col-6 col-md-2 pointer" *ngFor="let item of stores" [routerLink]="'/store/'+item.Id">
-                <div class="card mb-3">
-                    <div class="card-body text-center">
-                        <img [src]="item.Logo" class="img-fluid mx-auto mb-3">
-                        <p class="fw-bold text-center text-truncate">{{item.Descripcion}}</p>
-                        <p class="fw-light text-center text-truncate">{{item.Biografia}}</p>
-                    </div>
-                </div>
+                <app-card-store [item]="item"></app-card-store>
             </div>
             <div class="col-12">
                 <p class="text-center">
-                    <a routerLink="/brands" class="color-secondary">Ver todas las marcas</a>
+                    <a routerLink="/stores/" class="color-secondary">Ver todas las marcas</a>
                 </p>
             </div>
         </div>

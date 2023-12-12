@@ -1,23 +1,47 @@
 <app-nav></app-nav>
-<main class="">
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-12 col-md-3">
-                <div class="w-100 fw-semibold">
-                    <div>Producto buscado:</div>
-                    <div class="text-success">{{search.Productos.length + search.Tiendas.length}} resultados</div>
+<div class="container my-5" [ngClass]="{'h-50': queryParams && !queryParams.keyword}">
+    <div class="row" *ngIf="queryParams && queryParams.keyword">
+        <div class="col-12">
+            <div class="mb-3">
+                <app-loading [type]="'bar'" *ngIf="loading"></app-loading>
+            </div>
+            <div class="row mb-3" *ngIf="search.Tiendas.length > 0">
+                <div class="col-12 mb-3">
+                    <p class="fw-bold f18">Encontramos {{search.Tiendas.length}} tienda(s) que coinciden con tu
+                        busqueda</p>
+                </div>
+                <div class="col-12 col-md-2" *ngFor="let item of search.Tiendas">
+                    <app-card-store [item]="item"></app-card-store>
                 </div>
             </div>
-            <div class="col-12 col-md-9">
-                <div class="mb-3">
-                    <app-loading [type]="'bar'"></app-loading>
+            <div class="row mb-3" *ngIf="search.Productos.length > 0">
+                <div class="col-12 mb-3">
+                    <p class="fw-bold f18">Encontramos {{search.Productos.length}} producto(s) que coinciden con tu
+                        busqueda</p>
                 </div>
-                <div class="bg-white w-100 mb-2 rounded-5" *ngFor="let item of listProducts">
-                    <app-components-product-search></app-components-product-search>
+                <div class="col-12 col-md-3" *ngFor="let item of search.Productos">
+                    <app-components-card-product [item]="item"></app-components-card-product>
+                </div>
+            </div>
+            <div class="row mb-3" *ngIf="search.Tiendas.length  ==  0 && search.Productos.length == 0">
+                <div class="col-12 mb-3">
+                    <p class="fw-bold f18">No encontramos nada que coincida con tu busqueda :( "{{queryParams.keyword}}"
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-
-</main>
+    <div class="row h-100" *ngIf="queryParams && !queryParams.keyword">
+        <div class="col-12 col-md-6 mx-auto d-flex flex-column  justify-content-center">
+            <p class="text-start mb-3">Realiza una busqueda y oprime el icono de buscar</p>
+            <mat-form-field class="w-100" appearance="outline" color="accent">
+                <mat-label>Busca productos, marcas y más...</mat-label>
+                <input matInput type="text" [(ngModel)]="searchInput" (keyup.enter)="searchIcon()">
+                <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchIcon()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
 <app-components-footer></app-components-footer>

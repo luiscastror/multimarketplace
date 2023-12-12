@@ -21,6 +21,7 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchInput = this.ruta.snapshot.queryParams.keyword || '';
   }
 
   search() {
