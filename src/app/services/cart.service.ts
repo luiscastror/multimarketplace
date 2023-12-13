@@ -18,7 +18,7 @@ export class CartService {
     if (this.listCart.length > 0) {
       this.listCart.forEach((businees: any) => {
         businees.items.forEach((item: any) => {
-          count += item.count
+          count += item.cart_count
         });
       });
     }
@@ -32,22 +32,29 @@ export class CartService {
   }
 
   add(payload: any) {
-    const indexBusiness = this.listCart.findIndex((cart: any) => cart.business.uid == payload.business.uid);
+    const indexBusiness = this.listCart.findIndex((cart: any) => cart.TiendaId == payload.TiendaId);
     if (indexBusiness == -1) {
       this.listCart.push({
-        business: payload.business,
-        items: [
-          payload.item
-        ]
+        TiendaId: payload.TiendaId,
+        Tienda: payload.Tienda,
+        items: [{
+          ...payload,
+          cart_count: 1
+        }]
       })
     } else {
-      const indexItem = this.listCart[indexBusiness].items.findIndex((item: any) => item.uid == payload.item.uid);
+      const indexItem = this.listCart[indexBusiness].items.findIndex((item: any) => item.Id == payload.Id);
+      console.log(indexItem)
       if (indexItem == -1) {
-        this.listCart[indexBusiness].items.push(payload.item);
+        this.listCart[indexBusiness].items.push({
+          ...payload,
+          cart_count: 1
+        });
       } else {
-        this.listCart[indexBusiness].items[indexItem].count++;
+        this.listCart[indexBusiness].items[indexItem].cart_count++;
       }
     }
+    console.log(this.listCart)
     this.updateCart();
   }
 

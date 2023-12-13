@@ -29,6 +29,7 @@ import { StoreItemsComponent } from './pages/admin/store-items/store-items.compo
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
 import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
 import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
+import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -77,7 +78,11 @@ const routes: Routes = [
             },
             {
                 path: 'my-store-items',
-                component: StoreItemsComponent
+                component: StoreItemsComponent,
+            },
+            {
+                path: 'my-store-items/form',
+                component: StoreItemsFormComponent,
             },
             {
                 path: 'my-store-categories',

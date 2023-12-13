@@ -27,10 +27,7 @@
                 <p class="fw-bold h6 mb-2">Redes</p>
                 <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light"
                     *ngFor="let item of info.RedesSociales">
-                    <p>
-                        <img [src]="item.Icono">
-                        {{item.RedSocial}}
-                    </p>
+                    <p>{{item.RedSocial}}</p>
                 </a>
             </div>
             <div class="col-12 col-md-3 color-primary mb-3">

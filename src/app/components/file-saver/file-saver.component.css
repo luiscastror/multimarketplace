@@ -1,0 +1,31 @@
+.border-file {
+    background: #edf1f7;
+    border: 3px;
+    border-style: dashed;
+    padding: 20px;
+    border-color: #6c6c6c;
+    cursor: pointer;
+    color: #6c6c6c;
+    font-weight: 600;
+}
+
+.box-file {
+    background: #edf1f7;
+    border: 3px;
+    border-style: dashed;
+    padding: 5px;
+    border-color: #6c6c6c;
+    color: #6c6c6c;
+    font-weight: 600;
+    min-height: 150px;
+    max-height: 200px;
+}
+
+.image-control {
+    width: 100%;
+    min-height: 150px;
+    max-height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

@@ -6,7 +6,7 @@
     <div class="row border-bottom" *ngIf="!loading">
         <div class="col-12 col-md-7 d-flex flex-column justify-content-center border-end py-5">
             <img class="img-fluid mx-auto" [src]="image" style="max-height: 50vh;">
-            <div class="d-flex flex-row gap-2  justify-content-evenly mt-3">
+            <div class="d-flex flex-row gap-2  justify-content-start mt-3">
                 <div *ngFor="let item of item.Imagenes, index as index"
                     [ngStyle]="{'background-image': 'url(' + item.URL + ')'}"
                     [ngClass]="{'opacity-100 border': index == imageSelected}" class="image img-thumbnail pointer"
@@ -53,8 +53,8 @@
         </div>
     </div>
     <div class="row py-3">
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of itemsToo">
+            <app-components-card-product [item]="item"></app-components-card-product>
         </div>
     </div>
 </div>

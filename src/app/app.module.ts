@@ -61,7 +61,10 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
 import { CardStoreComponent } from './components/card-store/card-store.component';
-
+import { FileSaverComponent } from './components/file-saver/file-saver.component';
+import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -103,10 +106,13 @@ import { CardStoreComponent } from './components/card-store/card-store.component
     LoadingComponent,
     StoreRegisterComponent,
     CheckoutComponent,
-    CardStoreComponent
+    CardStoreComponent,
+    FileSaverComponent,
+    StoreItemsFormComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

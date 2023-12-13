@@ -3,8 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  firebase: {
+    apiKey: "AIzaSyC2L2pgcuYJUKEtzCw0hZQnC_WHnemSAxY",
+    authDomain: "marketplace-vivesucre.firebaseapp.com",
+    projectId: "marketplace-vivesucre",
+    storageBucket: "marketplace-vivesucre.appspot.com",
+    messagingSenderId: "370312727506",
+    appId: "1:370312727506:web:8434aeadef5a7dcbbfd60b",
+    measurementId: "G-XY57FL23FG"
+  },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

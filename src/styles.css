@@ -58,6 +58,10 @@ p {
     cursor: pointer;
 }
 
+.f12 {
+    font-size: 12px;
+}
+
 .f14 {
     font-size: 14px;
 }

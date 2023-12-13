@@ -8,29 +8,41 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class CartComponent implements OnInit {
 
-  contentCart: any;
-
-
   constructor(
     public MainService: MainService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-    this.contentCart = this.MainService.CartService.listCart.length > 0 ? '' : '';
+  calculate() {
+
+    let total = 0;
+    let discount = 0;
+    let subtotal = 0;
+
+    this.MainService.CartService.listCart.forEach((businees: any) => {
+      businees.items.forEach((item: any) => {
+        total += (item.Valor * item.cart_count) - (item.Descuento / 100 * item.Valor * item.cart_count);
+        discount += (item.Descuento / 100 * item.Valor * item.cart_count);
+        subtotal += (item.Valor * item.cart_count);
+      });
+    });
+
+    return {
+      discount: discount,
+      subtotal: subtotal,
+      total: total
+    };
 
   }
-
-
-
 
   changeCart() {
     this.MainService.CartService.updateCart();
   }
 
-  removeItem(businees: number, product: number) {
+  removeItem(businees: number, item: number) {
     this.MainService.SnackbarService.show("Producto elminado correctamente")
-    this.MainService.CartService.listCart[businees].items.splice(product, 1);
+    this.MainService.CartService.listCart[businees].items.splice(item, 1);
     this.changeCart();
   }
 }

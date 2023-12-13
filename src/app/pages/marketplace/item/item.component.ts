@@ -10,6 +10,7 @@ import { MainService } from 'src/app/services/main.service';
 export class ItemComponent implements OnInit {
 
   item: any = {};
+
   loading: boolean = true;
   image!: string;
   imageSelected: number = 0;
@@ -20,7 +21,13 @@ export class ItemComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
-  ) { }
+  ) {
+    this.ruta.params.subscribe(params => {
+      this.id = params['id'];
+      this.path_api = '/productos/' + this.id;
+      this.load();
+    });
+  }
 
   ngOnInit(): void {
     this.load();
@@ -32,72 +39,25 @@ export class ItemComponent implements OnInit {
       this.item = resp
       this.loading = false;
       this.image = this.item.Imagenes[0].URL;
+      this.loadToo();
     }, (error) => {
       console.error(error)
     }, () => { })
   }
 
 
+  itemsToo: any = []
+  loadToo() {
+    this.MainService.ApiService.get('/productosXtienda/' + this.item.Producto.TiendaId).subscribe((resp: any) => {
+      this.itemsToo = resp.Productos;
+    }, (error) => {
+      console.error(error)
+    }, () => { })
+  }
+
 
   add() {
     this.MainService.SnackbarService.show("Añadido correctamente");
-
-    const business = {
-      name: "DEMO",
-      uid: '7Ih3J0MEBe'
-    }
-
-    const item = {
-      uid: '57570819405',
-      name: 'Reloj',
-      value: 25000,
-      count: 1
-    }
-
-    const payload = {
-      business: business,
-      item: item
-    }
-
-    this.MainService.CartService.add(payload)
-
-    const business_2 = {
-      name: "DEMO",
-      uid: '4fa9f4a006b47c5'
-    }
-
-    const item_2 = {
-      uid: 'MKqgWSl8d',
-      name: 'Reloj',
-      value: 25000,
-      count: 1
-    }
-
-    const payload_2 = {
-      business: business_2,
-      item: item_2
-    }
-
-    this.MainService.CartService.add(payload_2)
-
-    const business_3 = {
-      name: "DEMO",
-      uid: '4fa9f4a006b47c5'
-    }
-
-    const item_3 = {
-      uid: 'MKqgWSl8wwwd',
-      name: 'Reloj',
-      value: 25000,
-      count: 1
-    }
-
-    const payload_3 = {
-      business: business_3,
-      item: item_3
-    }
-
-    this.MainService.CartService.add(payload_3)
-
+    this.MainService.CartService.add(this.item.Producto)
   }
 }
