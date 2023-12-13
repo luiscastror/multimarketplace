@@ -54,7 +54,6 @@ export class CartService {
         this.listCart[indexBusiness].items[indexItem].cart_count++;
       }
     }
-    console.log(this.listCart)
     this.updateCart();
   }
 

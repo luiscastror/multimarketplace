@@ -80,7 +80,7 @@
                                         (change)="changeCart()" [value]="item.cart_count" readonly>
                                     <button
                                         class="btn btn-cart-count bg-color-secondary text-white d-flex flex-row justify-content-center align-items-center"
-                                        (click)="item.cart_count = item.cart_count + 1; changeCart();">
+                                        (click)="item.cart_count = item.cart_count + 1;  changeCart();">
                                         <span class="material-symbols-outlined">
                                             add
                                         </span>
@@ -136,4 +136,5 @@
         </div>
     </div>
 </div>
+
 <app-components-footer></app-components-footer>

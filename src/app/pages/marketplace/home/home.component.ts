@@ -89,6 +89,7 @@ export class HomeComponent implements OnInit {
     this.loadProducts();
     this.loadStores();
     this.loadMaster();
+    this.getRandom();
   }
 
 
@@ -140,5 +141,19 @@ export class HomeComponent implements OnInit {
       console.error(error)
     })
   }
+
+
+
+
+  random: any;
+  getRandom() {
+    this.MainService.ApiService.get('/random').subscribe((resp: any) => {
+      this.random = resp;
+      console.log(this.random)
+    }, error => {
+      console.error(error)
+    })
+  }
+
 
 }

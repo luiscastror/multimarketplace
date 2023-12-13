@@ -19,7 +19,6 @@ export class CardProductComponent implements OnInit {
 
   add() {
     this.MainService.SnackbarService.show("Añadido correctamente");
-    console.log(this.item)
     this.MainService.CartService.add(this.item)
   }
 

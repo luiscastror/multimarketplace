@@ -28,4 +28,11 @@ export class ApiService {
     return this.http.delete(this.URL_API + path);
   }
 
+  getSecurity(path: string) {
+    return this.http.get(this.URL_API + path);
+  }
+
 }
+
+
+

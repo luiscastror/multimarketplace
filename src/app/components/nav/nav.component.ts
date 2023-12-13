@@ -27,4 +27,5 @@ export class NavComponent implements OnInit {
   search() {
     this.router.navigate(['/search'], { queryParams: { keyword: this.searchInput } });
   }
+
 }

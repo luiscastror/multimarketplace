@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 // Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -27,6 +30,9 @@ import { WallComponent } from './components/wall/wall.component';
 import { TitleSubtitleComponent } from './components/title-subtitle/title-subtitle.component';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
 import { TerminosYCondicionesComponent } from './components/terminos-ycondiciones/terminos-ycondiciones.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { CardStoreComponent } from './components/card-store/card-store.component';
+import { FileSaverComponent } from './components/file-saver/file-saver.component';
 
 // Pages admin
 import { AdminComponent } from './pages/admin/admin.component';
@@ -41,6 +47,7 @@ import { StoreProfileComponent } from './pages/admin/store-profile/store-profile
 import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
 import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
+import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
 
 
 // Pages marketplace
@@ -57,14 +64,10 @@ import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
 import { RegisterComponent } from './pages/marketplace/register/register.component';
-import { LoadingComponent } from './components/loading/loading.component';
 import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
-import { CardStoreComponent } from './components/card-store/card-store.component';
-import { FileSaverComponent } from './components/file-saver/file-saver.component';
-import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
+import { Interceptor } from './services/interceptor';
+
 
 
 @NgModule({
@@ -115,6 +118,7 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatIconModule,
@@ -125,7 +129,11 @@ import { environment } from 'src/environments/environment';
     MatProgressSpinnerModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: Interceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

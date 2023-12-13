@@ -1,16 +1,44 @@
 import { Injectable } from '@angular/core';
+import { jwtDecode } from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-
-  public isAuth: boolean = true;
   public isStore: boolean = true;
-  public userBody: any = {
-    name: 'Luis Castro'
+  public dataUser: any = {};
+
+  constructor() {
+
+    if (this.getToken()) {
+      this.getDatauser()
+    }
+
   }
 
-  constructor() { }
+  setToken(token: string) {
+    localStorage.setItem("tokens_multimarketplace", token);
+  }
+
+  getToken() {
+    return localStorage.getItem("tokens_multimarketplace");
+  }
+
+  deleteToken() {
+    localStorage.removeItem("tokens_multimarketplace");
+  }
+
+  getDatauser() {
+    let token = this.getToken();
+    let dato: any = jwtDecode(token || '');
+    console.log(dato)
+    this.dataUser = dato;
+  }
+
+  isAuth() {
+    return (this.getToken() !== null) ? true : false;
+  }
+
+
 }
