@@ -17,17 +17,18 @@ export class AdminComponent implements OnInit {
   }
 
   logout() {
-    this.MainService.AuthService.deleteToken();
+    this.MainService.AuthService.clearData();
     this.MainService.SnackbarService.show("Saliendo..")
   }
 
 
   stores: any = [];
   loadStores() {
-    this.MainService.ApiService.get('/admin/tiendas/97929F2A-4C7B-4E42-B431-35A57AD5CFE4').subscribe((resp: any) => {
+    this.MainService.ApiService.get('/admin/tiendas/' + this.MainService.AuthService.dataUser.UsuarioId).subscribe((resp: any) => {
       this.stores = resp;
       if (this.stores && this.stores.length > 0) {
         this.MainService.AuthService.setStore(this.stores[0])
+        this.MainService.AuthService.assignStore();
       }
     })
   }

@@ -30,13 +30,18 @@
                         class="color-primary text-decoration-none hv-secondary">
                         Mi perfil
                     </a>
-                    <a routerLink="/admin/my-store-items" [routerLinkActive]="'color-secondary fw-bold'"
+
+                    <a routerLink="/admin/my-store-locations" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
-                        Mis productos
+                        Mis sucursales
                     </a>
                     <a routerLink="/admin/my-store-categories" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
                         Mis categorias
+                    </a>
+                    <a routerLink="/admin/my-store-items" [routerLinkActive]="'color-secondary fw-bold'"
+                        class="color-primary text-decoration-none hv-secondary">
+                        Mis productos
                     </a>
                     <a routerLink="/admin/my-store-orders" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
@@ -49,8 +54,9 @@
             </div>
         </div>
         <div class="col-12 col-md-10 py-3 border-start">
-            <!-- <pre>{{ MainService.AuthService.dataUser | json}}</pre> -->
             <router-outlet></router-outlet>
+            <pre>{{MainService.AuthService.dataUser | json}}</pre>
+            <pre>{{MainService.AuthService.dataStore | json}}</pre>
         </div>
     </div>
 </div>

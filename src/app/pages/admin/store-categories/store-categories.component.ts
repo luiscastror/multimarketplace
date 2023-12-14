@@ -20,6 +20,7 @@ export class StoreCategoriesComponent implements OnInit {
 
   items: any = [];
   load() {
+    this.items = [];
     this.MainService.ApiService.get('/admin/subCategorias/' + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.items = resp;
     })

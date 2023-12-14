@@ -69,6 +69,8 @@ import { StoreRegisterComponent } from './pages/admin/store-register/store-regis
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
 import { Interceptor } from './services/interceptor';
 import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
+import { StoreLocationsComponent } from './pages/admin/store-locations/store-locations.component';
+import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/store-locations-form.component';
 
 
 
@@ -114,7 +116,9 @@ import { StoreCategoriesFormComponent } from './pages/admin/store-categories-for
     CardStoreComponent,
     FileSaverComponent,
     StoreItemsFormComponent,
-    StoreCategoriesFormComponent
+    StoreCategoriesFormComponent,
+    StoreLocationsComponent,
+    StoreLocationsFormComponent
   ],
   imports: [
     BrowserModule,

@@ -56,6 +56,9 @@ export class StoreRegisterComponent implements OnInit {
       this.MainService.ApiService.post('/admin/tiendas', this.form.value).subscribe((resp: any) => {
         this.MainService.SnackbarService.show("Tienda creada correctamente");
         this.router.navigate(['/admin/my-store-dashboard']);
+        setTimeout(() => {
+          window.location.reload()
+        }, 500);
       }, err => {
         this.MainService.SnackbarService.show(err.error.Error);
       })

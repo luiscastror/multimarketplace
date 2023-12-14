@@ -28,7 +28,7 @@
 .item-store:hover {
     transition: 0.5s;
     background-color: var(--secondary);
-    color: white;
+    color: white !important;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }

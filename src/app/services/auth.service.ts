@@ -10,12 +10,20 @@ export class AuthService {
   public dataStore: any = {};
 
   constructor() {
+
     this.dataStore = this.getStore();
 
     if (this.isAuth()) {
       this.getDatauser();
     }
 
+  }
+
+  clearData() {
+    this.deleteStore();
+    this.deleteToken();
+    this.dataStore = {};
+    this.dataUser = {};
   }
 
   setToken(token: string) {
@@ -43,6 +51,7 @@ export class AuthService {
 
   setStore(store: any) {
     localStorage.setItem("store_multimarketplace", JSON.stringify(store));
+    this.dataStore = this.getStore();
   }
 
   getStore() {
@@ -51,6 +60,10 @@ export class AuthService {
 
   deleteStore() {
     localStorage.removeItem("store_multimarketplace");
+  }
+
+  assignStore() {
+    this.dataStore = this.getStore();
   }
 
 }

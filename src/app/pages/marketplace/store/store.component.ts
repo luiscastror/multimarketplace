@@ -29,6 +29,7 @@ export class StoreComponent implements OnInit {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
       this.info = resp;
+      console.log(resp)
     }, (error) => {
       console.error(error)
     }, () => {
