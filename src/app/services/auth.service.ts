@@ -32,13 +32,11 @@ export class AuthService {
   getDatauser() {
     let token = this.getToken();
     let dato: any = jwtDecode(token || '');
-    console.log(dato)
     this.dataUser = dato;
   }
 
   isAuth() {
     return (this.getToken() !== null) ? true : false;
   }
-
 
 }

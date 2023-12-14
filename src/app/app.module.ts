@@ -64,7 +64,7 @@ import { StoresComponent } from './pages/marketplace/stores/stores.component';
 import { PromosComponent } from './pages/marketplace/promos/promos.component';
 import { TerminosYcondicionesComponent } from './pages/marketplace/terminos-ycondiciones/terminos-ycondiciones.component';
 import { RegisterComponent } from './pages/marketplace/register/register.component';
-import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
+import { StoreRegisterComponent } from './pages/admin/store-register/store-register.component';
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
 import { Interceptor } from './services/interceptor';
 

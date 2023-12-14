@@ -28,7 +28,7 @@ import { StoreProfileComponent } from './pages/admin/store-profile/store-profile
 import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
 import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
-import { StoreRegisterComponent } from './pages/marketplace/store-register/store-register.component';
+import { StoreRegisterComponent } from './pages/admin/store-register/store-register.component';
 import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
 
 const routes: Routes = [
@@ -44,7 +44,6 @@ const routes: Routes = [
     { path: 'promo', component: PromosComponent },
     { path: 'tyc', component: TerminosYcondicionesComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'storeRegister', component: StoreRegisterComponent },
     { path: 'checkout', component: CheckoutComponent },
     {
         path: 'admin',
@@ -91,6 +90,10 @@ const routes: Routes = [
             {
                 path: 'my-store-orders',
                 component: StoreOrdersComponent
+            },
+            {
+                path: 'new-store',
+                component: StoreRegisterComponent
             },
         ]
     }

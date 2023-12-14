@@ -22,6 +22,12 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchInput = this.ruta.snapshot.queryParams.keyword || '';
+    this.checkIsLogged();
+  }
+
+  isLog: boolean = false;
+  checkIsLogged() {
+    this.isLog = this.MainService.AuthService.isAuth();
   }
 
   search() {

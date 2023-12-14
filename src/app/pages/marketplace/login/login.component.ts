@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       this.MainService.ApiService.post(this.path_api, this.form.value).subscribe((resp: any) => {
         console.log(resp)
         this.MainService.AuthService.setToken(resp.token);
+        this.MainService.AuthService.getDatauser();
         this.MainService.SnackbarService.show("Bienvenido");
         this.router.navigate(['/admin/my-info']);
       }, err => {

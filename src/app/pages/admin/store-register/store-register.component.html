@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-6 col-md-3 mx-auto my-5">
+        <img src="/assets/img/logo.jpg" class="img-fluid ">
+    </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col-10 col-md-6 mx-auto d-flex flex-column">
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Nombre de la tienda</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Biografia</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Biografia</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Correo electrónico</mat-label>
+                <input matInput type="email" autocomplete="off" formControlName="Correo" required>
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Numero telefonico</mat-label>
+                <input matInput type="tel" autocomplete="off" formControlName="Telefono" required>
+            </mat-form-field>
+            <button mat-flat-button color="primary" class="mb-3" type="submit">Crear tienda</button>
+        </div>
+    </div>
+</form>
+<!-- <div class="row">
+    <div class="col-10 col-md-8 mx-auto d-flex flex-column">
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Nombre de la tienda</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Biografia</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Categoria</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Dirección</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput type="text" autocomplete="off">
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="mb-3">
+            Registrar Tienda
+        </button>
+    </div>
+</div> -->

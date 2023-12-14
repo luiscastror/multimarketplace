@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
       this.MainService.ApiService.post(this.path_api, this.form.value).subscribe((resp: any) => {
         this.MainService.SnackbarService.show("Cuenta creada correctamente");
         this.router.navigate(['/login']);
-
       })
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");
