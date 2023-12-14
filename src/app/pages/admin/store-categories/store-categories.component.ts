@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-store-categories',
@@ -9,9 +10,19 @@ export class StoreCategoriesComponent implements OnInit {
 
   view: string = 'list';
 
-  constructor() { }
+  constructor(
+    private MainService: MainService
+  ) { }
 
   ngOnInit(): void {
+    this.load();
+  }
+
+  items: any = [];
+  load() {
+    this.MainService.ApiService.get('/admin/subCategorias/' + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
+      this.items = resp;
+    })
   }
 
 }

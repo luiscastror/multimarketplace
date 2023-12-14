@@ -1,6 +1,4 @@
 <app-nav></app-nav>
-
-
 <div class="container bg-white border-start border-end">
     <div class="row">
         <div class="col-12 col-md-2 py-3">
@@ -22,8 +20,7 @@
                     Salir
                 </a>
                 <hr>
-                <div *ngIf="stores.length > 0">
-
+                <ng-container *ngIf="stores.length > 0">
                     <h3 class="fw-bold color-primary">Tienda</h3>
                     <a routerLink="/admin/my-store-dashboard" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
@@ -45,20 +42,16 @@
                         class="color-primary text-decoration-none hv-secondary">
                         Mis pedidos
                     </a>
-
-                </div>
-
+                </ng-container>
                 <button color="primary" routerLink="/admin/new-store" mat-flat-button *ngIf="stores.length ==0 ">
                     Crear tienda
                 </button>
-
             </div>
         </div>
         <div class="col-12 col-md-10 py-3 border-start">
-            <pre>{{ MainService.AuthService.dataUser | json}}</pre>
+            <!-- <pre>{{ MainService.AuthService.dataUser | json}}</pre> -->
             <router-outlet></router-outlet>
         </div>
     </div>
 </div>
-
 <app-components-footer></app-components-footer>

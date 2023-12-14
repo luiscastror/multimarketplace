@@ -14,11 +14,18 @@
                 <mat-label>Biografia</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
             </mat-form-field>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Biografia</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
+
+            <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
+                <mat-label>Categoría</mat-label>
+                <mat-select formControlName="CategoriaId">
+                    <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
+                </mat-select>
             </mat-form-field>
 
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Dirección</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Direccion" required>
+            </mat-form-field>
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
                 <mat-label>Correo electrónico</mat-label>
                 <input matInput type="email" autocomplete="off" formControlName="Correo" required>
@@ -31,34 +38,3 @@
         </div>
     </div>
 </form>
-<!-- <div class="row">
-    <div class="col-10 col-md-8 mx-auto d-flex flex-column">
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Nombre de la tienda</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Biografia</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Categoria</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Dirección</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Teléfono</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-            <mat-label>Correo electrónico</mat-label>
-            <input matInput type="text" autocomplete="off">
-        </mat-form-field>
-        <button mat-flat-button color="primary" class="mb-3">
-            Registrar Tienda
-        </button>
-    </div>
-</div> -->

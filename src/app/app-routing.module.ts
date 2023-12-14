@@ -30,6 +30,7 @@ import { StoreCategoriesComponent } from './pages/admin/store-categories/store-c
 import { StoreOrdersComponent } from './pages/admin/store-orders/store-orders.component';
 import { StoreRegisterComponent } from './pages/admin/store-register/store-register.component';
 import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-items-form.component';
+import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -86,6 +87,10 @@ const routes: Routes = [
             {
                 path: 'my-store-categories',
                 component: StoreCategoriesComponent
+            },
+            {
+                path: 'my-store-categories/form',
+                component: StoreCategoriesFormComponent,
             },
             {
                 path: 'my-store-orders',

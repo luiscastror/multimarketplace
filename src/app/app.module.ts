@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 // Components
 import { NavComponent } from './components/nav/nav.component';
@@ -67,6 +68,7 @@ import { RegisterComponent } from './pages/marketplace/register/register.compone
 import { StoreRegisterComponent } from './pages/admin/store-register/store-register.component';
 import { CheckoutComponent } from './pages/marketplace/checkout/checkout.component';
 import { Interceptor } from './services/interceptor';
+import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
 
 
 
@@ -111,7 +113,8 @@ import { Interceptor } from './services/interceptor';
     CheckoutComponent,
     CardStoreComponent,
     FileSaverComponent,
-    StoreItemsFormComponent
+    StoreItemsFormComponent,
+    StoreCategoriesFormComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +130,8 @@ import { Interceptor } from './services/interceptor';
     MatInputModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSelectModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

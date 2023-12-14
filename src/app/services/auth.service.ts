@@ -6,13 +6,14 @@ import { jwtDecode } from "jwt-decode";
 })
 export class AuthService {
 
-  public isStore: boolean = true;
   public dataUser: any = {};
+  public dataStore: any = {};
 
   constructor() {
+    this.dataStore = this.getStore();
 
-    if (this.getToken()) {
-      this.getDatauser()
+    if (this.isAuth()) {
+      this.getDatauser();
     }
 
   }
@@ -37,6 +38,19 @@ export class AuthService {
 
   isAuth() {
     return (this.getToken() !== null) ? true : false;
+  }
+
+
+  setStore(store: any) {
+    localStorage.setItem("store_multimarketplace", JSON.stringify(store));
+  }
+
+  getStore() {
+    return JSON.parse(localStorage.getItem("store_multimarketplace") || '{}');
+  }
+
+  deleteStore() {
+    localStorage.removeItem("store_multimarketplace");
   }
 
 }

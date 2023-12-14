@@ -20,7 +20,7 @@
                 grid_view
             </span>
         </button>
-        <button mat-flat-button color="primary" class="ms-3">Nuevo</button>
+        <button mat-flat-button color="primary" class="ms-3" routerLink="/admin/my-store-categories/form">Nuevo</button>
     </div>
 </div>
 
@@ -31,19 +31,13 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Dirección</th>
-                            <th>Barrio</th>
-                            <th>Ciudad</th>
-                            <th>País</th>
+                            <th>Descripcion</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0]">
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
+                        <tr *ngFor="let item of items">
+                            <td>{{item.Descripcion}}</td>
                             <td class="d-flex justify-content-center gap-3 w-auto">
                                 <button mat-flat-button color="primary">Acción</button>
                                 <button mat-flat-button color="accent">Acción</button>
