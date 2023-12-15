@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class StoreComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -29,9 +30,10 @@ export class StoreComponent implements OnInit {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
       this.info = resp;
-      console.log(resp)
     }, (error) => {
       console.error(error)
+      this.MainService.SnackbarService.show(error.error.message);
+      this.router.navigate(['/']);
     }, () => {
       this.loading = false;
     })

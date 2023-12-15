@@ -111,6 +111,10 @@ const routes: Routes = [
                 component: StoreLocationsFormComponent
             },
         ]
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
 

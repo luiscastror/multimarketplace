@@ -1,11 +1,12 @@
-<mat-progress-bar class="my-3" mode="determinate" [value]="progress" *ngIf="displayProgress"></mat-progress-bar>
 <div class="row mb-3">
     <div class="col-12">
-        <button type="button" class="border-file my-3 w-100" md-button (click)="imgFileInput.click()">Subir
-            imagenes</button>
+        <button type="button" class="border-file w-100" md-button (click)="imgFileInput.click()">
+            Subir imagenes
+        </button>
         <input hidden type="file" accept="image/png, image/jpeg" #imgFileInput (change)="onFileSelected($event)" />
     </div>
 </div>
+<mat-progress-bar class="my-3" mode="determinate" [value]="progress" *ngIf="displayProgress"></mat-progress-bar>
 <div *ngIf="showImages">
     <div class="row mb-3">
         <div class="col-12 col-md-4 mb-3" *ngFor="let file of files; index as index">

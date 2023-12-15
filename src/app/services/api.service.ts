@@ -13,6 +13,7 @@ export class ApiService {
   ) { }
 
   get(path: string) {
+    console.log(this.URL_API + path)
     return this.http.get(this.URL_API + path);
   }
 

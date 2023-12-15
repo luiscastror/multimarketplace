@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class ItemComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
+    private router: Router,
   ) {
     this.ruta.params.subscribe(params => {
       this.id = params['id'];
@@ -29,9 +30,7 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.load();
-  }
+  ngOnInit(): void { }
 
   load() {
     this.loading = true;
@@ -41,7 +40,8 @@ export class ItemComponent implements OnInit {
       this.image = this.item.Imagenes[0].URL;
       this.loadToo();
     }, (error) => {
-      console.error(error)
+      this.MainService.SnackbarService.show(error.error.message);
+      this.router.navigate(['/']);
     }, () => { })
   }
 

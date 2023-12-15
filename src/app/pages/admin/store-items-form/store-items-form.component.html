@@ -1,24 +1,41 @@
-<p>store-items-form works!</p>
-<app-file-saver></app-file-saver>
-<!-- <form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <p class="fw-bold f28 color-primary mb-3">Nueva producto</p>
     <div class="row">
-        <div class="col-10 col-md-6 mx-auto d-flex flex-column">
+        <div class="col-10 col-md-6">
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Nombre de la tienda</mat-label>
+                <mat-label>Nombre</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
             </mat-form-field>
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Biografia</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
+                <mat-label>Observación</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Observacion" required>
             </mat-form-field>
-
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Valor</mat-label>
+                <input matInput type="number" autocomplete="off" formControlName="Valor" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
+                <mat-label>Descuento</mat-label>
+                <mat-select formControlName="Descuento">
+                    <mat-option *ngFor="let item of [0,5,10,15,20,30,70,80,90,95]" [value]="item">{{item}}%</mat-option>
+                </mat-select>
+            </mat-form-field>
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Categoría</mat-label>
-                <mat-select formControlName="CategoriaId">
+                <mat-select formControlName="TiendaSubCategoriaId">
                     <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-flat-button color="primary" class="mb-3" type="submit">Crear tienda</button>
+            <button mat-flat-button color="accent" class="mb-3 w-100" type="submit">Crear</button>
+            <button mat-stroked-button class="mb-3 w-100" type="button" routerLink="/admin/my-store-items">
+                Atrás
+            </button>
+
+            <pre>{{form.value | json}}</pre>
+
+        </div>
+        <div class="col-10 col-md-6">
+            <app-file-saver (urlFile)="urlFile($event)" path="items"></app-file-saver>
         </div>
     </div>
-</form> -->
+</form>

@@ -14,7 +14,7 @@ export class FileSaverComponent implements OnInit {
   @Input() files: any = [];
   @Input() showImages: boolean = true;
   @Input() isString: boolean = false;
-
+  @Input() path: string = '';
 
   progress: number = 0;
   displayProgress = false;
@@ -31,7 +31,7 @@ export class FileSaverComponent implements OnInit {
     this.progress = 1;
     let n = Date.now();
     // let path = this.MainService.ConfigService.token + '/' + n;
-    let path = 'sdfsdfsdfsd' + n;
+    let path = '/vivesucre/tiendas/' + this.MainService.AuthService.dataStore.Id + '/' + this.path + '/' + n;
 
     let file = event.target.files[0];
     let filePath = path;

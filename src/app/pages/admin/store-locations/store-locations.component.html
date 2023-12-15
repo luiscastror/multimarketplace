@@ -35,7 +35,7 @@
                             <th>Dirección</th>
                             <th>Telefono</th>
                             <th>Correo</th>
-                            <th>Acciones</th>
+                            <th class="text-end">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,9 +44,17 @@
                             <td>{{item.Direccion}}</td>
                             <td>{{item.Telefono}}</td>
                             <td>{{item.Correo}}</td>
-                            <td class="d-flex justify-content-center gap-3 w-auto">
-                                <button mat-flat-button color="primary">Acción</button>
-                                <button mat-flat-button color="accent">Acción</button>
+                            <td class="text-end">
+                                <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                                <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1">
+                                    <span class=" material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

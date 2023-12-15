@@ -9,6 +9,8 @@ import { MainService } from 'src/app/services/main.service';
 export class CardProductComponent implements OnInit {
 
   @Input() item: any = {};
+  @Input() withCar: boolean = true;
+
 
   constructor(
     private MainService: MainService

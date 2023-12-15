@@ -20,7 +20,7 @@
                     ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
                 </p>
             </div>
-            <div>
+            <div *ngIf="withCar">
                 <button mat-flat-button color="primary" (click)="add()">
                     <mat-icon>add_shopping_cart</mat-icon>
                 </button>

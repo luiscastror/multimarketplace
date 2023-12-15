@@ -31,22 +31,51 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Dirección</th>
-                            <th>Barrio</th>
-                            <th>Ciudad</th>
-                            <th>País</th>
-                            <th>Acciones</th>
+                            <th>Nombre</th>
+                            <th class="text-end">Valor</th>
+                            <th class="text-end">Descuento</th>
+                            <th class="text-end">Público</th>
+                            <th class="text-end">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0]">
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                            <td class="d-flex justify-content-center gap-3 w-auto">
-                                <button mat-flat-button color="primary">Acción</button>
-                                <button mat-flat-button color="accent">Acción</button>
+                        <tr *ngFor="let item of items">
+                            <td>
+                                <p>
+                                    {{item.Descripcion}}
+                                    -
+                                    {{item.SubCategoria}}
+                                </p>
+                                <a [href]="'/item/'+item.Id" target="_blank" rel="noopener noreferrer">
+                                    Link del producto
+                                </a>
+                            </td>
+                            <td>
+                                <p class="text-end">
+                                    ${{item.Valor | number}}
+                                </p>
+                            </td>
+                            <td>
+                                <p class="fw-bold text-end" [ngClass]="{'text-success': item.Descuento > 0}">
+                                    -{{item.Descuento}}%
+                                </p>
+                            </td>
+                            <td>
+                                <p class="fw-bold text-end">
+                                    ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
+                                </p>
+                            </td>
+                            <td class="text-end">
+                                <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                                <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1">
+                                    <span class=" material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -58,8 +87,8 @@
 
 <ng-container *ngIf="view == 'grid'">
     <div class="row my-3">
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
+        <div class="col-6 col-md-3" *ngFor="let item of items">
+            <app-components-card-product [withCar]="false" [item]="item"></app-components-card-product>
         </div>
     </div>
 </ng-container>

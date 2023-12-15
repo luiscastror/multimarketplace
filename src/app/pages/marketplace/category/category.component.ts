@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class CategoryComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private ruta: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +30,8 @@ export class CategoryComponent implements OnInit {
       this.items = resp
       this.loading = false;
     }, (error) => {
-      console.error(error)
+      this.MainService.SnackbarService.show(error.error.message);
+      this.router.navigate(['/']);
     }, () => { })
   }
 
