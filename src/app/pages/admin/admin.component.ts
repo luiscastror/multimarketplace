@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
 
   stores: any = [];
   loadStores() {
-    this.MainService.ApiService.get('/admin/tiendas/' + this.MainService.AuthService.dataUser.UsuarioId).subscribe((resp: any) => {
+    this.MainService.ApiService.get('/admin/tiendas/').subscribe((resp: any) => {
       this.stores = resp;
       if (this.stores && this.stores.length > 0) {
         this.MainService.AuthService.setStore(this.stores[0])
