@@ -1,13 +1,33 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row d-flex flex-column justify-content-center align-content-center" style="height: 50vh;">
         <div class="col-10 col-md-6 mx-auto d-flex flex-column">
-            <p class="fw-bold f28 color-primary mb-3">Nueva categoría</p>
+            <p class="fw-bold f28 color-primary mb-3">{{activo ? 'Editar categoría':'Nueva categoría'}}</p>
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
                 <mat-label>Nombre de la categoría</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
+                <input matInput type="text" autocomplete="off" formControlName="Descripcion" required [value]="category.Descripcion">
             </mat-form-field>
-            <button mat-flat-button color="accent" class="mb-3" type="submit">Crear</button>
+            <button mat-flat-button color="accent" class="mb-3" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                {{activo ? 'Editar':'Crear'}}
+            </button>
             <button mat-stroked-button class="mb-3" type="button" routerLink="/admin/my-store-categories">Atrás</button>
         </div>
     </div>
 </form>
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

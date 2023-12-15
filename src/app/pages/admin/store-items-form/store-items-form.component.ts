@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -21,26 +21,57 @@ export class StoreItemsFormComponent implements OnInit {
     Imagenes: new FormControl(''),
   });
 
+  activo: boolean =false;
+  id: string ='';
   constructor(
     private MainService: MainService,
     private router: Router,
-  ) { }
+    private ruta: ActivatedRoute,
+  ) { 
+     this.id = this.ruta.snapshot.params.id;
+    console.log(this.id);
+
+  this.activo = this.id ? true : false;
+  }
 
   ngOnInit(): void {
     this.form.patchValue({
       TiendaId: this.MainService.AuthService.dataStore.Id,
     })
     this.loadCategorias();
+    this.loadProducto();
   }
+
+  // submit() {
+  //   if (this.form.valid) {
+  //     this.MainService.ApiService.post('/admin/productos', this.form.value).subscribe((resp: any) => {
+  //       this.MainService.SnackbarService.show("Item creado correctamente");
+  //       this.router.navigate(['/admin/my-store-items']);
+  //     }, err => {
+  //       this.MainService.SnackbarService.show(err.error.Error);
+  //     })
+  //   } else {
+  //     this.MainService.SnackbarService.show("Datos pendientes por llenar");
+  //   }
+  // }
 
   submit() {
     if (this.form.valid) {
-      this.MainService.ApiService.post('/admin/productos', this.form.value).subscribe((resp: any) => {
-        this.MainService.SnackbarService.show("Item creado correctamente");
-        this.router.navigate(['/admin/my-store-items']);
-      }, err => {
-        this.MainService.SnackbarService.show(err.error.Error);
-      })
+      const url = this.activo ? '/admin/productos/' + this.ruta.snapshot.params.id : '/admin/productos';
+      const message = this.activo ? "Item actualizado correctamente" : "Item creado correctamente";
+      const apiCall = this.activo ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
+      const aplicar = ()=>{
+        apiCall.subscribe(
+          (resp: any) => {
+            this.MainService.SnackbarService.show(message);
+            this.router.navigate(['/admin/my-store-items']);
+          },
+          (err) => {
+            this.MainService.SnackbarService.show(err.error.Error );
+          }
+        );
+      }
+      aplicar();
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");
     }
@@ -51,6 +82,15 @@ export class StoreItemsFormComponent implements OnInit {
     this.MainService.ApiService.get("/admin/subCategorias/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.categorias = resp;
       console.log(this.categorias)
+    })
+  }
+
+  producto: any = {};
+  loadProducto() {
+    this.MainService.ApiService.get("/productos/" + this.id).subscribe((resp: any) => {
+      this.producto = resp.Producto;
+      console.log(this.producto)
+      console.log(this.producto.Observacion);
     })
   }
 

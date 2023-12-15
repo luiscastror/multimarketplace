@@ -87,11 +87,19 @@ const routes: Routes = [
                 component: StoreItemsFormComponent,
             },
             {
+                path: 'my-store-items/form/:id',
+                component: StoreItemsFormComponent,
+            },
+            {
                 path: 'my-store-categories',
                 component: StoreCategoriesComponent
             },
             {
                 path: 'my-store-categories/form',
+                component: StoreCategoriesFormComponent,
+            },
+            {
+                path: 'my-store-categories/form/:id',
                 component: StoreCategoriesFormComponent,
             },
             {

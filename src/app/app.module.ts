@@ -71,6 +71,7 @@ import { Interceptor } from './services/interceptor';
 import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
 import { StoreLocationsComponent } from './pages/admin/store-locations/store-locations.component';
 import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/store-locations-form.component';
+import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
 
 
 
@@ -118,7 +119,8 @@ import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/
     StoreItemsFormComponent,
     StoreCategoriesFormComponent,
     StoreLocationsComponent,
-    StoreLocationsFormComponent
+    StoreLocationsFormComponent,
+    ModalEliminarComponent
   ],
   imports: [
     BrowserModule,
