@@ -1,8 +1,6 @@
-
 <div class="card">
     <a href="{{item.URL}}">
-        <div class="card-img-top pointer bg-image"
-            [ngStyle]="{'background-image': 'url(' + item.Icono + ')'}">
+        <div class="card-img-top pointer bg-image" [ngStyle]="{'background-image': 'url(' + item.Icono + ')'}">
         </div>
         <div class="card-body">
             <p class="fw-bold f18 text-truncate">{{item.RedSocial}}</p>
@@ -14,7 +12,7 @@
                         edit
                     </span>
                 </button>
-                <button mat-flat-button color="primary" >
+                <button mat-flat-button color="primary">
                     <span class="material-symbols-outlined">
                         delete
                     </span>

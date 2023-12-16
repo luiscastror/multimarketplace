@@ -11,21 +11,22 @@ import { MainService } from 'src/app/services/main.service';
 export class StoreCategoriesFormComponent implements OnInit {
 
   form = new FormGroup({
+    Id: new FormControl(''),
     Descripcion: new FormControl(''),
     TiendaId: new FormControl(''),
   });
-   
-  activo: boolean =false;
-  id : string = '';
+
+  edit: boolean = false;
+  id: string = '';
   constructor(
     private MainService: MainService,
     private router: Router,
     private ruta: ActivatedRoute,
-  ) { 
-  this.id = this.ruta.snapshot.params.id;
-  console.log(this.id);
+  ) {
+    this.id = this.ruta.snapshot.params.id;
+    console.log(this.id);
 
-  this.activo = this.id ? true : false;
+    this.edit = this.id ? true : false;
   }
 
 
@@ -33,7 +34,9 @@ export class StoreCategoriesFormComponent implements OnInit {
     this.form.patchValue({
       TiendaId: this.MainService.AuthService.dataStore.Id
     })
-    this.loadCategory();
+    if (this.edit) {
+      this.loadCategory();
+    }
   }
 
   // submit() {
@@ -49,20 +52,20 @@ export class StoreCategoriesFormComponent implements OnInit {
   //   }
   // }
 
-  
+
   submit() {
     if (this.form.valid) {
-      const url = this.activo ? '/admin/subCategorias/' + this.ruta.snapshot.params.id : '/admin/subCategorias';
-      const message = this.activo ? "Categoría actualizada correctamente" : "Categoría creada correctamente";
-      const apiCall = this.activo ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
-      const aplicar = ()=>{
+      const url = this.edit ? '/admin/subCategorias/' + this.ruta.snapshot.params.id : '/admin/subCategorias';
+      const message = this.edit ? "Categoría actualizada correctamente" : "Categoría creada correctamente";
+      const apiCall = this.edit ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
+      const aplicar = () => {
         apiCall.subscribe(
           (resp: any) => {
             this.MainService.SnackbarService.show(message);
             this.router.navigate(['/admin/my-store-categories']);
           },
           (err) => {
-            this.MainService.SnackbarService.show(err.error.Error );
+            this.MainService.SnackbarService.show(err.error.Error);
           }
         );
       }
@@ -72,15 +75,14 @@ export class StoreCategoriesFormComponent implements OnInit {
     }
   }
 
-  category: any = {};
   loadCategory() {
-    this.MainService.ApiService.get("/categorias/" + this.id).subscribe((resp: any) => {
-      this.category = resp;
-      console.log(this.category)
+    this.MainService.ApiService.get("/admin/subCategorias/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
+      this.form.patchValue(resp);
+      console.log('entro')
     })
   }
 
-  
+
 
 
 

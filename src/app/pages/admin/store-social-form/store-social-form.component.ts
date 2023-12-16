@@ -14,27 +14,31 @@ export class StoreSocialFormComponent implements OnInit {
   form = new FormGroup({
     ParRedId: new FormControl(''),
     URL: new FormControl(''),
-    Icono: new FormControl(''),
-    RedSocialId: new FormControl(''),
+    TiendaId: new FormControl('')
   });
 
-  activo: boolean =false;
-  id: string ='';
+  edit: boolean = false;
+  id: string = '';
   constructor(
     private MainService: MainService,
     private router: Router,
     private ruta: ActivatedRoute,
-  ) { 
-     this.id = this.ruta.snapshot.params.id;
+  ) {
+    this.id = this.ruta.snapshot.params.id;
     console.log(this.id);
 
-  this.activo = this.id ? true : false;
+    this.edit = this.id ? true : false;
   }
 
   ngOnInit(): void {
     this.form.patchValue({
       TiendaId: this.MainService.AuthService.dataStore.Id,
     })
+    this.loadSocial();
+
+    if (this.edit) {
+      this.oneLoadSocial();
+    }
   }
 
   submit() {
@@ -49,6 +53,29 @@ export class StoreSocialFormComponent implements OnInit {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");
     }
   }
+
+  social: any = []
+  loadSocial() {
+    this.MainService.ApiService.get("/admin/redesSociales/combos/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
+      this.social = resp;
+      console.log(this.social);
+    })
+  }
+
+  oneLoadSocial() {
+    this.MainService.ApiService.get("/admin/redesSociales/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
+      this.form.patchValue(resp);
+    })
+  }
+
+  // socialOne: any = []
+  // oneLoadSocial() {
+  //   this.MainService.ApiService.get("/admin/redesSociales/combos/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
+  //     this.social = resp;
+  //     console.log(this.social);
+  //   })
+  // }
+
 
   urlFile(file: any) {
 
