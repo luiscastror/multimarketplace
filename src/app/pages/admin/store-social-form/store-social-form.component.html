@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <p class="fw-bold f28 color-primary mb-3">{{activo ? 'Editar Red' : 'Nuevo Red'}}</p>
+    <div class="row">
+        <div class="col-10 col-md-6">
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>ParRedId</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="ParRedId" >
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>URL</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="URL" required >
+            </mat-form-field>
+            <button mat-flat-button color="accent" class="mb-3 w-100" type="submit">Crear</button>
+            <button mat-stroked-button class="mb-3 w-100" type="button" routerLink="/admin/my-store-social">
+                Atrás
+            </button>
+
+            <pre>{{form.value | json}}</pre>
+
+        </div>
+        <div class="col-10 col-md-6">
+            <app-file-saver (urlFile)="urlFile($event)" path="items"></app-file-saver>
+        </div>
+    </div>
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -11,12 +12,14 @@ export class StoreCategoriesComponent implements OnInit {
   view: string = 'list';
 
   constructor(
-    private MainService: MainService
+    private MainService: MainService,
   ) { }
 
   ngOnInit(): void {
     this.load();
   }
+
+ 
 
   items: any = [];
   load() {

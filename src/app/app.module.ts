@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Components
 import { NavComponent } from './components/nav/nav.component';
@@ -72,6 +73,9 @@ import { StoreCategoriesFormComponent } from './pages/admin/store-categories-for
 import { StoreLocationsComponent } from './pages/admin/store-locations/store-locations.component';
 import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/store-locations-form.component';
 import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
+import { AdminSocialNetworksComponent } from './pages/admin/admin-social-networks/admin-social-networks.component';
+import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-social-form.component';
+import { CardSocialComponent } from './components/card-social/card-social.component';
 
 
 
@@ -120,7 +124,10 @@ import { ModalEliminarComponent } from './components/modal-eliminar/modal-elimin
     StoreCategoriesFormComponent,
     StoreLocationsComponent,
     StoreLocationsFormComponent,
-    ModalEliminarComponent
+    ModalEliminarComponent,
+    AdminSocialNetworksComponent,
+    StoreSocialFormComponent,
+    CardSocialComponent
   ],
   imports: [
     BrowserModule,
@@ -137,7 +144,8 @@ import { ModalEliminarComponent } from './components/modal-eliminar/modal-elimin
     HttpClientModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

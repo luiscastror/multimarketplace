@@ -1,0 +1,16 @@
+.sizeCard {
+    width: 15rem;
+}
+
+.imgProductos {
+    height: 70px;
+    width: 100px;
+}
+
+.bg-image {
+    background-size: cover;
+    width: 100%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
