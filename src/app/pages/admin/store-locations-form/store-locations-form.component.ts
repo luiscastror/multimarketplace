@@ -38,7 +38,7 @@ export class StoreLocationsFormComponent implements OnInit {
         this.MainService.SnackbarService.show("Sucursal creada correctamente");
         this.router.navigate(['/admin/my-store-locations']);
       }, err => {
-        this.MainService.SnackbarService.show(err.error.Error);
+        this.MainService.SnackbarService.show(err.error.message);
       })
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");

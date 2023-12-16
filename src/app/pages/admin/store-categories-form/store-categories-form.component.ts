@@ -45,7 +45,7 @@ export class StoreCategoriesFormComponent implements OnInit {
   //       this.MainService.SnackbarService.show("Categoria creada correctamente");
   //       this.router.navigate(['/admin/my-store-categories']);
   //     }, err => {
-  //       this.MainService.SnackbarService.show(err.error.Error);
+  //       this.MainService.SnackbarService.show(err.error.message);
   //     })
   //   } else {
   //     this.MainService.SnackbarService.show("Datos pendientes por llenar");
@@ -65,7 +65,7 @@ export class StoreCategoriesFormComponent implements OnInit {
             this.router.navigate(['/admin/my-store-categories']);
           },
           (err) => {
-            this.MainService.SnackbarService.show(err.error.Error);
+            this.MainService.SnackbarService.show(err.error.message);
           }
         );
       }

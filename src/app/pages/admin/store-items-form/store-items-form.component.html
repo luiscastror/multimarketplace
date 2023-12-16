@@ -22,7 +22,7 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Categoría</mat-label>
-                <mat-select formControlName="TiendaSubCategoriaId">
+                <mat-select formControlName="SubCategoriaId">
                     <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
@@ -36,7 +36,7 @@
 
         </div>
         <div class="col-10 col-md-6">
-            <app-file-saver (urlFile)="urlFile($event)" path="items"></app-file-saver>
+            <app-file-saver [files]="files" (urlFile)="urlFile($event)" path="items"></app-file-saver>
         </div>
     </div>
 </form>

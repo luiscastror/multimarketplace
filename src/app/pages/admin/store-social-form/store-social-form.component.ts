@@ -12,7 +12,8 @@ import { MainService } from 'src/app/services/main.service';
 export class StoreSocialFormComponent implements OnInit {
 
   form = new FormGroup({
-    ParRedId: new FormControl(''),
+    Id: new FormControl(null),
+    RedSocialId: new FormControl(''),
     URL: new FormControl(''),
     TiendaId: new FormControl('')
   });
@@ -36,19 +37,25 @@ export class StoreSocialFormComponent implements OnInit {
     })
     this.loadSocial();
 
-    if (this.edit) {
-      this.oneLoadSocial();
-    }
+
   }
 
   submit() {
     if (this.form.valid) {
-      this.MainService.ApiService.post('/admin/redesSociales', this.form.value).subscribe((resp: any) => {
-        this.MainService.SnackbarService.show("Red creada correctamente");
-        this.router.navigate(['/admin/my-store-social']);
-      }, err => {
-        this.MainService.SnackbarService.show(err.error.Error);
-      })
+      if (this.edit)
+        this.MainService.ApiService.put('/admin/redesSociales', this.form.value).subscribe((resp: any) => {
+          this.MainService.SnackbarService.show("Red creada correctamente");
+          this.router.navigate(['/admin/my-store-social']);
+        }, err => {
+          this.MainService.SnackbarService.show(err.error.message);
+        })
+      else
+        this.MainService.ApiService.post('/admin/redesSociales', this.form.value).subscribe((resp: any) => {
+          this.MainService.SnackbarService.show("Red creada correctamente");
+          this.router.navigate(['/admin/my-store-social']);
+        }, err => {
+          this.MainService.SnackbarService.show(err.error.message);
+        })
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");
     }
@@ -56,8 +63,11 @@ export class StoreSocialFormComponent implements OnInit {
 
   social: any = []
   loadSocial() {
-    this.MainService.ApiService.get("/admin/redesSociales/combos/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
+    this.MainService.ApiService.get("/admin/redesSociales/combos/" + this.MainService.AuthService.dataStore.Id + "/" + this.edit).subscribe((resp: any) => {
       this.social = resp;
+      if (this.edit) {
+        this.oneLoadSocial();
+      }
       console.log(this.social);
     })
   }
@@ -65,16 +75,10 @@ export class StoreSocialFormComponent implements OnInit {
   oneLoadSocial() {
     this.MainService.ApiService.get("/admin/redesSociales/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
       this.form.patchValue(resp);
+      console.log(resp);
     })
   }
 
-  // socialOne: any = []
-  // oneLoadSocial() {
-  //   this.MainService.ApiService.get("/admin/redesSociales/combos/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
-  //     this.social = resp;
-  //     console.log(this.social);
-  //   })
-  // }
 
 
   urlFile(file: any) {

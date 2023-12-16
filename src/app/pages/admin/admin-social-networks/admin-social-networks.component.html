@@ -31,23 +31,24 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Redes</th>
-                            <th class="text-end">Acciones</th>
+                            <th class="text-center">Redes</th>
+                            <th class="text-center">Valor</th>
+                            <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of redes">
                             <td>{{item.RedSocial}}</td>
+                            <td>{{item.URL}}</td>
                             <td class="text-end">
-                                <button mat-icon-button color="primary" 
-                                class="bg-secondary bg-opacity-25" 
-                                [routerLink]="'/admin/my-store-social/form/'+item.Id"
-                                >
+                                <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25"
+                                    [routerLink]="'/admin/my-store-social/form/'+item.Id">
                                     <span class="material-symbols-outlined">
                                         edit
                                     </span>
                                 </button>
-                                <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1">
+                                <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1"
+                                    (click)="modal(item)">
                                     <span class=" material-symbols-outlined">
                                         delete
                                     </span>
@@ -63,11 +64,10 @@
 
 <!-- https://www.facebook.com/?locale=es_LA -->
 
- <ng-container *ngIf="view == 'grid'">
+<ng-container *ngIf="view == 'grid'">
     <div class="row my-3">
         <div class="col-6 col-md-3" *ngFor="let item of redes">
-            <app-components-card-social [item]="redes"></app-components-card-social>
+            <app-components-card-social [item]="item"></app-components-card-social>
         </div>
     </div>
-</ng-container> 
-
+</ng-container>

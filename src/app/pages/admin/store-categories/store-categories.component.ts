@@ -51,6 +51,8 @@ export class StoreCategoriesComponent implements OnInit {
   remove(item: any) {
     this.MainService.ApiService.delete(this.path_api + this.MainService.AuthService.dataStore.Id + '/' + item.Id).subscribe((resp: any) => {
       this.load();
+    }, (err) => {
+      this.MainService.SnackbarService.show(err.error.message);
     })
   }
 

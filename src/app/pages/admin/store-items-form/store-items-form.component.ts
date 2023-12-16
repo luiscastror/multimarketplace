@@ -16,7 +16,7 @@ export class StoreItemsFormComponent implements OnInit {
     Descripcion: new FormControl(''),
     Observacion: new FormControl(''),
     TiendaId: new FormControl(''),
-    TiendaSubCategoriaId: new FormControl(''),
+    SubCategoriaId: new FormControl(''),
     Valor: new FormControl(0),
     Descuento: new FormControl(0),
     Imagenes: new FormControl(''),
@@ -40,25 +40,13 @@ export class StoreItemsFormComponent implements OnInit {
       TiendaId: this.MainService.AuthService.dataStore.Id,
     })
     this.loadCategorias();
-    this.loadProducto();
+
   }
 
-  // submit() {
-  //   if (this.form.valid) {
-  //     this.MainService.ApiService.post('/admin/productos', this.form.value).subscribe((resp: any) => {
-  //       this.MainService.SnackbarService.show("Item creado correctamente");
-  //       this.router.navigate(['/admin/my-store-items']);
-  //     }, err => {
-  //       this.MainService.SnackbarService.show(err.error.Error);
-  //     })
-  //   } else {
-  //     this.MainService.SnackbarService.show("Datos pendientes por llenar");
-  //   }
-  // }
 
   submit() {
     if (this.form.valid) {
-      const url = this.edit ? '/admin/productos/' + this.ruta.snapshot.params.id : '/admin/productos';
+      const url = '/admin/productos';
       const message = this.edit ? "Item actualizado correctamente" : "Item creado correctamente";
       const apiCall = this.edit ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
       const aplicar = () => {
@@ -68,7 +56,7 @@ export class StoreItemsFormComponent implements OnInit {
             this.router.navigate(['/admin/my-store-items']);
           },
           (err) => {
-            this.MainService.SnackbarService.show(err.error.Error);
+            this.MainService.SnackbarService.show(err.error.message);
           }
         );
       }
@@ -82,14 +70,21 @@ export class StoreItemsFormComponent implements OnInit {
   loadCategorias() {
     this.MainService.ApiService.get("/admin/subCategorias/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.categorias = resp;
+      if (this.edit) {
+        this.loadProducto();
+      }
+
       console.log(this.categorias)
     })
   }
 
-
+  files: any = [];
   loadProducto() {
     this.MainService.ApiService.get("/admin/productos/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
       this.form.patchValue(resp);
+      resp.Imagenes.map((f: any, index: number) => {
+        this.files.push(f.URL)
+      })
     })
   }
 

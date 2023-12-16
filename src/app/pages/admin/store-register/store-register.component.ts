@@ -60,7 +60,7 @@ export class StoreRegisterComponent implements OnInit {
           window.location.reload()
         }, 500);
       }, err => {
-        this.MainService.SnackbarService.show(err.error.Error);
+        this.MainService.SnackbarService.show(err.error.message);
       })
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");

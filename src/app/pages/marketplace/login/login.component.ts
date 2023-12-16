@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.MainService.SnackbarService.show("Bienvenido");
         this.router.navigate(['/admin/my-info']);
       }, err => {
-        this.MainService.SnackbarService.show(err.error.Error);
+        this.MainService.SnackbarService.show(err.error.message);
       })
     } else {
       this.MainService.SnackbarService.show("Error en la solicitud");

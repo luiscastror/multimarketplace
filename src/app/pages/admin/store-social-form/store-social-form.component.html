@@ -4,7 +4,7 @@
         <div class="col-10 col-md-6">
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Redes</mat-label>
-                <mat-select formControlName="ParRedId">
+                <mat-select formControlName="RedSocialId">
                     <mat-option *ngFor="let item of social" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
