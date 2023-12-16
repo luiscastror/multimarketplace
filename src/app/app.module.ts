@@ -72,11 +72,10 @@ import { Interceptor } from './services/interceptor';
 import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
 import { StoreLocationsComponent } from './pages/admin/store-locations/store-locations.component';
 import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/store-locations-form.component';
-import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
 import { AdminSocialNetworksComponent } from './pages/admin/admin-social-networks/admin-social-networks.component';
 import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-social-form.component';
 import { CardSocialComponent } from './components/card-social/card-social.component';
-
+import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
 
 
 @NgModule({
@@ -124,10 +123,10 @@ import { CardSocialComponent } from './components/card-social/card-social.compon
     StoreCategoriesFormComponent,
     StoreLocationsComponent,
     StoreLocationsFormComponent,
-    ModalEliminarComponent,
     AdminSocialNetworksComponent,
     StoreSocialFormComponent,
-    CardSocialComponent
+    CardSocialComponent,
+    ModalConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -139,13 +138,13 @@ import { CardSocialComponent } from './components/card-social/card-social.compon
     MatSnackBarModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
