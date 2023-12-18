@@ -11,10 +11,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class StoreProfileComponent implements OnInit {
 
   form = new FormGroup({
-    Id: new FormControl(''),
-    Descripcion: new FormControl(''),
+    Id: new FormControl(this.MainService.AuthService.dataStore.Id),
     Biografia: new FormControl(''),
     CategoriaId: new FormControl(''),
+    Descripcion: new FormControl(''),
+    Logo: new FormControl(''),
+    Portada: new FormControl(''),
+    UsuarioId: new FormControl(this.MainService.AuthService.dataUser.UsuarioId),
   });
 
   constructor(
@@ -34,12 +37,11 @@ export class StoreProfileComponent implements OnInit {
     this.loading4 = true;
     this.MainService.ApiService.get('/admin/tiendas/' + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.form.patchValue(resp);
-      console.log(this.form.value);
-      console.log(resp)
       this.store = resp;
-      this.store.Id = this.MainService.AuthService.dataStore.Id;
-      this.store.UsuarioId = this.MainService.AuthService.dataUser.UsuarioId;
-      //this.store.CategoriaId = '91AD9E7D-6C7A-426A-90C8-0DC078E934A2';
+      console.log(this.form.value)
+      // this.store.Id = this.MainService.AuthService.dataStore.Id;
+      // this.store.UsuarioId = this.MainService.AuthService.dataUser.UsuarioId;
+      // this.store.CategoriaId = '91AD9E7D-6C7A-426A-90C8-0DC078E934A2';
       this.loading4 = false;
     })
   }
@@ -47,8 +49,7 @@ export class StoreProfileComponent implements OnInit {
 
   change() {
     this.MainService.ApiService.put('/admin/tiendas/', this.form.value).subscribe((resp: any) => {
-      console.log('Este es el form:' + this.form.value)
-      console.log(resp)
+      console.log(this.form.value);
       this.MainService.SnackbarService.show("Cambios guardados correctamente")
     })
   }
