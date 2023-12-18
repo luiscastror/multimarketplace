@@ -121,6 +121,10 @@ const routes: Routes = [
                 component: StoreLocationsFormComponent
             },
             {
+                path: 'my-store-locations/form/:id',
+                component: StoreLocationsFormComponent
+            },
+            {
                 path: 'my-store-social',
                 component: AdminSocialNetworksComponent
             },

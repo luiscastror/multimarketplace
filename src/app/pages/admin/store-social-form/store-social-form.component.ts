@@ -56,6 +56,21 @@ export class StoreSocialFormComponent implements OnInit {
         }, err => {
           this.MainService.SnackbarService.show(err.error.message);
         })
+      // const url = '/admin/productos';
+      // const message = this.edit ? "Red actualizada correctamente" : "Red creada correctamente";
+      // const apiCall = this.edit ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
+      // const aplicar = () => {
+      //   apiCall.subscribe(
+      //     (resp: any) => {
+      //       this.MainService.SnackbarService.show(message);
+      //       this.router.navigate(['/admin/my-store-social']);
+      //     },
+      //     (err) => {
+      //       this.MainService.SnackbarService.show(err.error.message);
+      //     }
+      //   );
+      // }
+      // aplicar();
     } else {
       this.MainService.SnackbarService.show("Datos pendientes por llenar");
     }
