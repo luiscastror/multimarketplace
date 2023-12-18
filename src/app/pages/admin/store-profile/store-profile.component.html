@@ -1,4 +1,4 @@
-<app-loading type="bar"></app-loading>
+<app-loading type="bar" *ngIf="loading"></app-loading>
 <form [formGroup]="form" (ngSubmit)="change()">
     <div class="row">
         <div class="col-12 col-md-4">
@@ -17,7 +17,6 @@
                 [showImages]="false">
             </app-file-saver>
         </div>
-
         <div class="col-12 col-md-6 d-flex flex-column">
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
                 <mat-label>Nombre de la tienda</mat-label>
@@ -34,7 +33,6 @@
                 </mat-select>
             </mat-form-field>
         </div>
-
         <div class="col-12">
             <div class="d-flex justify-content-center">
                 <button mat-flat-button color="primary" aparence="outline" class="mt-5" type="submit">
@@ -43,8 +41,4 @@
             </div>
         </div>
     </div>
-
 </form>
-
-
-<pre>{{store | json}}</pre>

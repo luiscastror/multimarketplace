@@ -3,7 +3,7 @@
         [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
     </div>
     <span class="promo" *ngIf="item.Descuento > 0">
-        %{{item.Descuento}}
+        -{{item.Descuento}}%
     </span>
     <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>
