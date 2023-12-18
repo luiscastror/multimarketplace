@@ -1,7 +1,7 @@
 <div class="row mb-3">
     <div class="col-12">
         <button type="button" class="border-file w-100" md-button (click)="imgFileInput.click()">
-            Subir imagenes
+            {{title}}
         </button>
         <input hidden type="file" accept="image/png, image/jpeg" #imgFileInput (change)="onFileSelected($event)" />
     </div>

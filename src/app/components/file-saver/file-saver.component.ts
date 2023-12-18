@@ -15,6 +15,7 @@ export class FileSaverComponent implements OnInit {
   @Input() showImages: boolean = true;
   @Input() isString: boolean = false;
   @Input() path: string = '';
+  @Input() title: string = 'Subir imagenes';
 
   progress: number = 0;
   displayProgress = false;

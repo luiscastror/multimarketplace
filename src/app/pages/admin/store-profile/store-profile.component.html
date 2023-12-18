@@ -1,23 +1,46 @@
-<div>
-    <div class="banner-container mb-3">
-        <app-banner [img]="img_portada"  *ngIf="!loading4"></app-banner>
-        <img [src]="img_logo" *ngIf="!loading4" alt="asdasd" class="mb-3 img_Logo">
-    </div>
-    <div class="d-flex flex-column gap-3">
-        <p class="mt-4 text-center mb-3 fs-2 fw-semibolder">{{store.Descripcion}}</p>
-        <div class="categoria d-flex justify-content-between">
-            <p class="text-center fw-semibold">Categoria:</p>
-            <p class="textBiografia">Aun no tiene categoria cargada</p>
+<app-loading type="bar"></app-loading>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <div class="logo"
+            [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logo.jpg' ) + ')'}">
         </div>
-        <div class="d-flex justify-content-between">
-            <p class="text-center fw-semibold">Biografia:</p>
-            <p class="textBiografia">{{store.Biografia}}</p>
-        </div>
+        <app-file-saver (urlFile)="store.Logo = $event" path="marca" [isString]="true" title="Subir logo"
+            [showImages]="false">
+        </app-file-saver>
     </div>
-    <div class="d-flex justify-content-center">
-        <button mat-flat-button color="primary" aparence="outline" 
-        class="mt-5" routerLink="">
-        Editar informacion
-    </button>
+    <div class="col-12 col-md-8">
+        <div class="portada"
+            [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logo.jpg' ) + ')'}">
+        </div>
+        <app-file-saver (urlFile)="store.Portada = $event" path="marca" [isString]="true" title="Subir portada"
+            [showImages]="false">
+        </app-file-saver>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex flex-column">
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Nombre de la tienda</mat-label>
+            <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Biografia</mat-label>
+            <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
+            <mat-label>Categoría</mat-label>
+            <mat-select formControlName="CategoriaId">
+                <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <button mat-flat-button color="primary" aparence="outline" class="mt-5" (click)="change()">
+                Guardar informacion
+            </button>
+        </div>
     </div>
 </div>
+
+<pre>{{store | json}}</pre>
