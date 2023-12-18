@@ -10,7 +10,6 @@ import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/mo
 })
 export class AdminSocialNetworksComponent implements OnInit {
 
-  view: string = 'list';
   path_api: string = '/admin/redesSociales/'
 
 

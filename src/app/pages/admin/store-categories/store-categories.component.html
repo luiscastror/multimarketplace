@@ -8,49 +8,39 @@
         </mat-form-field>
     </div>
     <div class="d-flex flex-row justify-content-end align-items-center">
-        <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
-            (click)="view = 'list'">
-            <span class="material-symbols-outlined">
-                list
-            </span>
-        </button>
-        <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
-            (click)="view = 'grid'">
-            <span class="material-symbols-outlined">
-                grid_view
-            </span>
-        </button>
+       
         <button mat-flat-button color="primary" class="ms-3" routerLink="/admin/my-store-categories/form">Nuevo</button>
     </div>
 </div>
 
-<ng-container *ngIf="view == 'list'">
     <div class="row my-3">
         <div class="col-12">
             <div class="table-responsive-sm">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Descripcion</th>
-                            <th class="text-end">Acciones</th>
+                            <th class="text-center">Descripcion</th>
+                            <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of items">
                             <td>{{item.Descripcion}}</td>
                             <td class="text-end">
-                                <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25"
-                                    [routerLink]="'/admin/my-store-categories/form/'+item.Id">
-                                    <span class="material-symbols-outlined">
-                                        edit
-                                    </span>
-                                </button>
-                                <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1"
-                                    (click)="modal(item)">
-                                    <span class=" material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
+                                <div class="d-flex flex-row gap-1 justify-content-center">
+                                    <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25"
+                                        [routerLink]="'/admin/my-store-categories/form/'+item.Id">
+                                        <span class="material-symbols-outlined">
+                                            edit
+                                        </span>
+                                    </button>
+                                    <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1"
+                                        (click)="modal(item)">
+                                        <span class=" material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -58,12 +48,4 @@
             </div>
         </div>
     </div>
-</ng-container>
 
-<ng-container *ngIf="view == 'grid'">
-    <div class="row my-3">
-        <div class="col-6 col-md-3" *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]">
-            <app-components-card-product></app-components-card-product>
-        </div>
-    </div>
-</ng-container>

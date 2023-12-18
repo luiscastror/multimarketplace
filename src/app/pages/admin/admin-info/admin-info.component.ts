@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-admin-info',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminInfoComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private MainService: MainService
+  ) { }
 
   ngOnInit(): void {
+    this.loadUser()
+  }
+
+  user: any = {};
+  loadUser() {
+    this.MainService.ApiService.get('/usuarios/Miperfil').subscribe((resp: any) => {
+      console.log(resp)
+      this.user = resp;
+      console.log(this.user)
+    })
   }
 
 }

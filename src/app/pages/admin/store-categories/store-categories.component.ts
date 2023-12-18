@@ -11,7 +11,6 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class StoreCategoriesComponent implements OnInit {
 
-  view: string = 'list';
   path_api: string = '/admin/subCategorias/';
 
   constructor(

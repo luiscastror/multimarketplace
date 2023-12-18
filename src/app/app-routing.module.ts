@@ -23,7 +23,6 @@ import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.co
 import { AdminAddressComponent } from './pages/admin/admin-address/admin-address.component';
 
 // Admin Store
-import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
 import { StoreProfileComponent } from './pages/admin/store-profile/store-profile.component';
 import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
@@ -72,10 +71,6 @@ const routes: Routes = [
                 component: AdminAddressComponent
             },
             // Tienda
-            {
-                path: 'my-store-dashboard',
-                component: StoreDashboardComponent
-            },
             {
                 path: 'my-store-profile',
                 component: StoreProfileComponent

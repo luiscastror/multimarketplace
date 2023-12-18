@@ -22,10 +22,6 @@
                 <hr>
                 <ng-container *ngIf="stores.length > 0">
                     <h3 class="fw-bold color-primary">Tienda</h3>
-                    <a routerLink="/admin/my-store-dashboard" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
-                        Mi dashboard
-                    </a>
                     <a routerLink="/admin/my-store-profile" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
                         Mi perfil
@@ -59,8 +55,8 @@
         </div>
         <div class="col-12 col-md-10 py-3 border-start">
             <router-outlet></router-outlet>
-            <pre>{{MainService.AuthService.dataUser | json}}</pre>
-            <pre>{{MainService.AuthService.dataStore | json}}</pre>
+            <!-- <pre>{{MainService.AuthService.dataUser | json}}</pre>
+            <pre>{{MainService.AuthService.dataStore | json}}</pre> -->
         </div>
     </div>
 </div>

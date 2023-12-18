@@ -10,7 +10,7 @@ import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/mo
 })
 export class StoreLocationsComponent implements OnInit {
 
-  view: string = 'list';
+  // view: string = 'list';
   path_api: string = '/admin/sucursales/';
 
   constructor(

@@ -44,7 +44,7 @@ export class StoreSocialFormComponent implements OnInit {
     if (this.form.valid) {
       if (this.edit)
         this.MainService.ApiService.put('/admin/redesSociales', this.form.value).subscribe((resp: any) => {
-          this.MainService.SnackbarService.show("Red creada correctamente");
+          this.MainService.SnackbarService.show("Red actualizada correctamente");
           this.router.navigate(['/admin/my-store-social']);
         }, err => {
           this.MainService.SnackbarService.show(err.error.message);

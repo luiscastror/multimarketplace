@@ -44,7 +44,6 @@ import { AdminInfoComponent } from './pages/admin/admin-info/admin-info.componen
 import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.component';
 
 // Pages admin store
-import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
 import { StoreProfileComponent } from './pages/admin/store-profile/store-profile.component';
 import { StoreItemsComponent } from './pages/admin/store-items/store-items.component';
 import { StoreCategoriesComponent } from './pages/admin/store-categories/store-categories.component';
@@ -108,7 +107,6 @@ import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-co
     AdminOrdersComponent,
     AdminComponent,
     AdminAddressComponent,
-    StoreDashboardComponent,
     StoreProfileComponent,
     StoreItemsComponent,
     StoreCategoriesComponent,

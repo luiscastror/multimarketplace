@@ -1,1 +1,23 @@
-<p>store-profile works!</p>
+<div>
+    <div class="banner-container mb-3">
+        <app-banner [img]="img_portada"  *ngIf="!loading4"></app-banner>
+        <img [src]="img_logo" *ngIf="!loading4" alt="asdasd" class="mb-3 img_Logo">
+    </div>
+    <div class="d-flex flex-column gap-3">
+        <p class="mt-4 text-center mb-3 fs-2 fw-semibolder">{{store.Descripcion}}</p>
+        <div class="categoria d-flex justify-content-between">
+            <p class="text-center fw-semibold">Categoria:</p>
+            <p class="textBiografia">Aun no tiene categoria cargada</p>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p class="text-center fw-semibold">Biografia:</p>
+            <p class="textBiografia">{{store.Biografia}}</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button mat-flat-button color="primary" aparence="outline" 
+        class="mt-5" routerLink="">
+        Editar informacion
+    </button>
+    </div>
+</div>
