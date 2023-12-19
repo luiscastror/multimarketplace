@@ -48,12 +48,11 @@ const routes: Routes = [
     { path: 'promo', component: PromosComponent },
     { path: 'tyc', component: TerminosYcondicionesComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'checkout', component: CheckoutComponent },
+    { path: 'checkout/:id', component: CheckoutComponent },
     {
         path: 'admin',
         component: AdminComponent,
         children: [
-            // Perfil usuario
             {
                 path: '',
                 component: AdminInfoComponent
