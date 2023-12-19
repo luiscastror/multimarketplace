@@ -13,8 +13,7 @@ export class StoreComponent implements OnInit {
   id = this.ruta.snapshot.params.id;
   path_api_store: string = '/tiendas/' + this.id;
   path_api_store_items: string = '/productosXtienda/' + this.id;
-  todosLosProductos : boolean = true;
-  productForCategory : boolean = false;
+  productsEvery : boolean = true;
 
   constructor(
     private MainService: MainService,
@@ -50,7 +49,7 @@ export class StoreComponent implements OnInit {
     this.MainService.ApiService.get(this.path_api_store_items).subscribe((resp: any) => {
       this.items = resp;
       this.items2 = resp.Productos;
-      //console.log(this.items2);
+      console.log(this.items2);
     }, (error) => {
       console.error(error)
     }, () => {
@@ -58,17 +57,33 @@ export class StoreComponent implements OnInit {
     })
   }
 
+  productForCategory : boolean = false;
   itemsForSubCategory: any = [];
-  load_items_subcategory(subcategory:string){
+  load_items_subcategory(subcategory:string){ //Carga array por subcategorias
     this.itemsForSubCategory = this.items2.filter((product:any) => product.SubCategoria == subcategory)
-    this.todosLosProductos = false;
+    this.productsEvery = false;
+    this.productForSearch = false;
     this.productForCategory = true;
     console.log(this.itemsForSubCategory);
   }
+  
+  productSearch: string = '';
+  groupProductSearch : any = []
+  productForSearch : boolean = false;
+  search(productSearch:string){ //Carga array por busqeueda sea por descripcion o Subcategoria
+    this.groupProductSearch = this.items2.filter(
+      (product) => product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 
+      || product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1,
+      );
+      this.productsEvery = false;
+      this.productForCategory = false;
+      this.productForSearch = true;
+      console.log(this.groupProductSearch);
+    }
 
-  cargar(){
-    this.todosLosProductos = !this.todosLosProductos;
-    this.productForCategory = !this.productForCategory;
-  }
-
+  cargar(){ //Para cargar todos los productos al presionar todas
+      this.productsEvery = true;
+      this.productForCategory = false;
+      this.productForSearch = false;
+    }
 }

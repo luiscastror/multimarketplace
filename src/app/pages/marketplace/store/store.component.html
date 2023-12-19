@@ -41,21 +41,29 @@
                         justify="start">
                     </app-components-title-subtitle>
                     <div class="d-flex flex-row justify-content-around gap-3">
-                        <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
+                        <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline" #buscar>
                             <mat-label>Busca productos</mat-label>
-                            <input matInput type="text">
+                            <input matInput type="text" [(ngModel)]="productSearch">
+                            <button matSuffix mat-icon-button aria-label="Clear" (click)="search(productSearch)">
+                                <mat-icon>search</mat-icon>
+                            </button>
                         </mat-form-field>
                         <button mat-flat-button color="primary">Filtro</button>
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="todosLosProductos">
+            <div class="row" *ngIf="productsEvery">
                 <div class="col-6 col-md-3" *ngFor="let item of items.Productos" >
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
             <div class="row" *ngIf="productForCategory">
                 <div class="col-6 col-md-3" *ngFor="let item of itemsForSubCategory" >
+                    <app-components-card-product [item]="item"></app-components-card-product>
+                </div>
+            </div>
+            <div class="row" *ngIf="productForSearch">
+                <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch" >
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
