@@ -9,26 +9,34 @@
             <div class="logo" [ngStyle]="{'background-image': 'url(' + info.Tienda.Logo + ')'}"></div>
             <p class="fw-bold f18 text-center text-uppercase">{{info.Tienda.Descripcion}}</p>
             <p class="fw-light f16 text-center mb-3 ">{{info.Tienda.Biografia}}</p>
-            <div class="d-none d-md-inline">
+            <!-- <div class="d-none d-md-inline"> -->
                 <app-components-title-subtitle title="Categorías" justify="start"></app-components-title-subtitle>
-                <div class="d-flex flex-column mb-3">
-                    <div class="pointer item-store py-2 px-3" (click)="cargar()">
+                <div class="d-flex flex-row flex-md-column mb-3 " style="overflow-x: auto;">
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between" (click)="cargar(); setActiveItem('all')">
                         Todas
+                        <mat-icon *ngIf="activeItem === 'all'" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
                     </div>
-                    <div class="pointer item-store py-2 px-3" *ngFor="let item of info.SubCategorias; index as index;"
-                    (click)="load_items_subcategory(item.Descripcion)">
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between" *ngFor="let item of info.SubCategorias; index as index;"
+                        (click)="load_items_subcategory(item.Descripcion); setActiveItem(index)">
                         {{item.Descripcion}}
+                        <mat-icon *ngIf="activeItem === index" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
                     </div>
                 </div>
                 <app-components-title-subtitle title="Sucursales" justify="start"></app-components-title-subtitle>
                 <div class="d-flex flex-column mb-3">
-                    <div class="pointer item-store py-2 px-3" *ngFor="let item of info.Sucursales; index as index;">
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between" 
+                    *ngFor="let item of info.Sucursales; index as index;" 
+                    (click)="showStore(); setActiveItem('store')" >
                         {{item.Descripcion}}
+                        <mat-icon *ngIf="activeItem === 'store'" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+                    </div>
+                    <div class="py-2 px-3" *ngIf="show">
+                        Esto es lo que queremos mostar cuando se presione el Orla Store
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
             <app-components-title-subtitle title="Redes sociales" justify="start"></app-components-title-subtitle>
-            <div class="d-flex flex-row flex-md-column justify-content-between mb-3">
+            <div class="d-flex flex-row flex-md-column justify-content-between mb-3" style="overflow-x: auto;">
                 <div class="pointer item-store py-2 px-3" *ngFor="let item of info.RedesSociales; index as index;">
                     <a class="text-dark text-decoration-none" [href]="item.URL" target="_blank">{{item.RedSocial}}</a>
                 </div>
@@ -37,19 +45,14 @@
         <div class="col-12 col-md-9 pt-3">
             <div class="row mb-3">
                 <div class="col-12 d-flex flex-row justify-content-between">
-                    <app-components-title-subtitle title="Productos" subtitle="Estos son los productos de esta tienda"
-                        justify="start">
-                    </app-components-title-subtitle>
-                    <div class="d-flex flex-row justify-content-around gap-3">
-                        <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline" #buscar>
-                            <mat-label>Busca productos</mat-label>
-                            <input matInput type="text" [(ngModel)]="productSearch">
-                            <button matSuffix mat-icon-button aria-label="Clear" (click)="search(productSearch)">
-                                <mat-icon>search</mat-icon>
-                            </button>
-                        </mat-form-field>
-                        <button mat-flat-button color="primary">Filtro</button>
-                    </div>
+                    <app-components-title-subtitle title="Productos"justify="start"></app-components-title-subtitle>
+                    <mat-form-field appearance="outline" color="accent" class="" #buscar>
+                        <mat-label>Busca productos</mat-label>
+                        <input matInput type="text" [(ngModel)]="productSearch" (input)="search(productSearch)">
+                        <button matSuffix mat-icon-button aria-label="Clear" (click)="search(productSearch)">
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </mat-form-field>
                 </div>
             </div>
             <div class="row" *ngIf="productsEvery">
@@ -66,6 +69,12 @@
                 <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch" >
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
+            </div>
+            <div class="row mt-5 fw-semibold fs-3 mx-5" *ngIf="vacio">
+                No se encontraron productos dentro de esta categoria
+            </div>
+            <div class="row mt-5 fw-semibold fs-3 mx-5" *ngIf="vacio2">
+                No se encontraron productos asimilados a "{{productSearch}}"
             </div>
         </div>
     </div>

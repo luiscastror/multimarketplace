@@ -59,17 +59,23 @@ export class StoreComponent implements OnInit {
 
   productForCategory : boolean = false;
   itemsForSubCategory: any = [];
+  vacio : boolean = false;
   load_items_subcategory(subcategory:string){ //Carga array por subcategorias
-    this.itemsForSubCategory = this.items2.filter((product:any) => product.SubCategoria == subcategory)
+    this.itemsForSubCategory = this.items2.filter((product:any) => product.SubCategoria == subcategory);
     this.productsEvery = false;
     this.productForSearch = false;
     this.productForCategory = true;
-    console.log(this.itemsForSubCategory);
+    this.vacio2 = false
+    this.show = false;
+    this.itemsForSubCategory.length == 0 ? this.vacio = true : this.vacio = false;
+    // console.log(this.vacio); 
+    // console.log(this.itemsForSubCategory);
   }
   
   productSearch: string = '';
   groupProductSearch : any = []
   productForSearch : boolean = false;
+  vacio2 : boolean = false;
   search(productSearch:string){ //Carga array por busqeueda sea por descripcion o Subcategoria
     this.groupProductSearch = this.items2.filter(
       (product) => product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 
@@ -77,13 +83,29 @@ export class StoreComponent implements OnInit {
       );
       this.productsEvery = false;
       this.productForCategory = false;
+      this.vacio = false
+      this.show = false;
       this.productForSearch = true;
-      console.log(this.groupProductSearch);
-    }
+      this.groupProductSearch.length == 0 ? this.vacio2 = true : this.vacio2 = false;
+      //console.log(this.groupProductSearch);
+  }
 
   cargar(){ //Para cargar todos los productos al presionar todas
-      this.productsEvery = true;
-      this.productForCategory = false;
-      this.productForSearch = false;
+    this.productForCategory = false;
+    this.productForSearch = false;
+    this.vacio = false;
+    this.vacio2 = false;
+    this.show = false;
+    this.productsEvery = true;
+  }
+
+    activeItem: string | number = 'all' || 'store' || 'redes';
+    setActiveItem(item: string | number) {
+      this.activeItem = item;
+    }
+
+    show : boolean = false;
+    showStore(){
+      this.show = true;
     }
 }

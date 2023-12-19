@@ -4,20 +4,29 @@
         <div class="col-12 d-flex flex-row justify-content-between">
             <app-components-title-subtitle title="Promociones"
                 subtitle="Estas son las promociones activas en vive sucre" justify="start">
-            </app-components-title-subtitle>
-            <div class="d-flex flex-row justify-content-around gap-3">
-                <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
-                    <mat-label>Busca productos</mat-label>
-                    <input matInput type="text">
-                </mat-form-field>
-
-                <button mat-flat-button color="primary">Filtro</button>
-            </div>
+            </app-components-title-subtitle>    
+            <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
+                <mat-label>Busca productos</mat-label>
+                <input matInput type="text" [(ngModel)]="productSearch" (input)="search(productSearch)">
+                <button matSuffix mat-icon-button aria-label="Clear" (click)="search(productSearch)">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-md-3" *ngFor="let item of items">
-            <app-components-card-product [item]="item"></app-components-card-product>
+        <div class="row" *ngIf="productsEvery">
+            <div class="col-6 col-md-3" *ngFor="let item of items">
+                <app-components-card-product [item]="item"></app-components-card-product>
+            </div>
+        </div>
+        <div class="row" *ngIf="productForSearch">
+            <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch" >
+                <app-components-card-product [item]="item"></app-components-card-product>
+            </div>
+        </div>
+        <div class="row mt-5 fw-semibold fs-3 mx-5" *ngIf="vacio2">
+            No se encontraron productos asimilados a "{{productSearch}}"
         </div>
     </div>
 </div>
