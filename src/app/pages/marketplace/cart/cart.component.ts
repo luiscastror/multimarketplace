@@ -14,28 +14,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  calculate() {
-
-    let total = 0;
-    let discount = 0;
-    let subtotal = 0;
-
-    this.MainService.CartService.listCart.forEach((businees: any) => {
-      businees.items.forEach((item: any) => {
-        total += (item.Valor * item.cart_count) - (item.Descuento / 100 * item.Valor * item.cart_count);
-        discount += (item.Descuento / 100 * item.Valor * item.cart_count);
-        subtotal += (item.Valor * item.cart_count);
-      });
-    });
-
-    return {
-      discount: discount,
-      subtotal: subtotal,
-      total: total
-    };
-
-  }
-
   changeCart() {
     this.MainService.CartService.updateCart();
   }

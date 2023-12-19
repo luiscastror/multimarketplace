@@ -28,7 +28,28 @@ export class CartService {
   load() {
     const cart = JSON.parse(localStorage.getItem('cartMultimarketplace') || '[]');
     this.listCart = cart;
-    this.countCart = cart.length;
+    this.listCart = this.listCart.filter((business: any) => business.items.length > 0);
+
+
+
+    this.listCart.map((businees: any) => {
+
+      let total = 0;
+      let discount = 0;
+      let subtotal = 0;
+
+      businees.items.map((item: any) => {
+        total += (item.Valor * item.cart_count) - (item.Descuento / 100 * item.Valor * item.cart_count);
+        discount += (item.Descuento / 100 * item.Valor * item.cart_count);
+        subtotal += (item.Valor * item.cart_count);
+      });
+
+      businees.discount = discount;
+      businees.subtotal = subtotal;
+      businees.total = total;
+
+    });
+
   }
 
   add(payload: any) {
@@ -63,6 +84,9 @@ export class CartService {
       const indexItem = this.listCart[indexBusiness].items.findIndex((item: any) => item.uid == payload.item.uid);
       if (indexItem != -1) {
         this.listCart[indexBusiness].items.splice(indexItem, 1);
+        if (this.listCart[indexBusiness].items.length == 0) {
+          this.listCart.splice(indexBusiness, 1)
+        }
       }
     }
     this.updateCart();
