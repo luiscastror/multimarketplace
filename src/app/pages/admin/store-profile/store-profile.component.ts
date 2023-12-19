@@ -40,6 +40,9 @@ export class StoreProfileComponent implements OnInit {
         UsuarioId: this.MainService.AuthService.dataUser.UsuarioId,
         Id: this.MainService.AuthService.dataStore.Id
       })
+
+      console.log(this.form.value)
+      console.log(this.store)
       this.loading = false;
     })
   }
@@ -57,4 +60,12 @@ export class StoreProfileComponent implements OnInit {
     })
   }
 
+
+  setForm(key: string, value: string) {
+
+    this.form.patchValue({
+      [key]: value
+    })
+
+  }
 }

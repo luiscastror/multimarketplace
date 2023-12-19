@@ -5,16 +5,16 @@
             <div class="logo"
                 [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logo.jpg' ) + ')'}">
             </div>
-            <app-file-saver (urlFile)="store.Logo = $event" path="marca" [isString]="true" title="Subir logo"
-                [showImages]="false">
+            <app-file-saver (urlFile)="store.Logo = $event; setForm('Logo', $event)" path="marca" [isString]="true"
+                title="Subir logo" [showImages]="false">
             </app-file-saver>
         </div>
         <div class="col-12 col-md-8">
             <div class="portada"
                 [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logo.jpg' ) + ')'}">
             </div>
-            <app-file-saver (urlFile)="store.Portada = $event" path="marca" [isString]="true" title="Subir portada"
-                [showImages]="false">
+            <app-file-saver (urlFile)="store.Portada = $event; setForm('Portada', $event);" path="marca"
+                [isString]="true" title="Subir portada" [showImages]="false">
             </app-file-saver>
         </div>
         <div class="col-12 col-md-6 d-flex flex-column">
@@ -42,3 +42,5 @@
         </div>
     </div>
 </form>
+
+<pre>{{form.value | json}}</pre>
