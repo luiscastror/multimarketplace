@@ -12,10 +12,11 @@
             <div class="d-none d-md-inline">
                 <app-components-title-subtitle title="Categorías" justify="start"></app-components-title-subtitle>
                 <div class="d-flex flex-column mb-3">
-                    <div class="pointer item-store py-2 px-3">
+                    <div class="pointer item-store py-2 px-3" (click)="cargar()">
                         Todas
                     </div>
-                    <div class="pointer item-store py-2 px-3" *ngFor="let item of info.SubCategorias; index as index;">
+                    <div class="pointer item-store py-2 px-3" *ngFor="let item of info.SubCategorias; index as index;"
+                    (click)="load_items_subcategory(item.Descripcion)">
                         {{item.Descripcion}}
                     </div>
                 </div>
@@ -48,8 +49,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-6 col-md-3" *ngFor="let item of items.Productos">
+            <div class="row" *ngIf="todosLosProductos">
+                <div class="col-6 col-md-3" *ngFor="let item of items.Productos" >
+                    <app-components-card-product [item]="item"></app-components-card-product>
+                </div>
+            </div>
+            <div class="row" *ngIf="productForCategory">
+                <div class="col-6 col-md-3" *ngFor="let item of itemsForSubCategory" >
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
