@@ -1,32 +1,44 @@
 <h3 class="color-primary fw-bold">Mis pedidos</h3>
-<p>Esta es la lista de tus pedidos</p>
 
-<div class="row my-3">
-    <div class="col-12">
-        <div class="table-responsive-sm">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Pedido</th>
-                        <th>Fecha</th>
-                        <th>Estado</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0]">
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                        <td>john@example.com</td>
-                        <td class="d-flex justify-content-center gap-3 w-auto">
-                            <button mat-flat-button color="primary">Acción</button>
-                            <button mat-flat-button color="accent">Acción</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<div *ngIf="num_items">
+    <p>Esta es la lista de tus {{num_items}} pedidos</p>
+    <div class="row my-3">
+        <div class="col-12">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Cliente</th>
+                            <th class="text-center">Fecha</th>
+                            <th class="text-center">Estado Pedido</th>
+                            <th class="text-center">Subtotal</th>
+                            <th class="text-center">Descuento</th>
+                            <th class="text-center">Total</th>
+                            <!-- <th class="text-center">Acciones</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of itemsForUser">
+                            <td>{{item.Id}}</td>
+                            <td>{{item.Nombres}}</td>
+                            <td>{{item.FechaCreacion}}</td>
+                            <td>{{item.EstadoPedido}}</td>
+                            <td>{{item.Valor}}</td>
+                            <td>{{item.Descuento}}</td>
+                            <td>{{item.Total}}</td>
+                            <!-- <td class="d-flex justify-content-center gap-3 w-auto">
+                                <button mat-flat-button color="primary">Acción</button>
+                                <button mat-flat-button color="accent">Acción</button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="!num_items">
+    No tienes pedidos registrados en el momento.
 </div>

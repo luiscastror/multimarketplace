@@ -1,60 +1,73 @@
 <h3 class="color-primary fw-bold">Mis pedidos</h3>
-<p>Gestiona tus pedidos del marketplace</p>
-<div class="w-100 d-flex flex-row justify-content-between align-items-center my-3">
-    <div class="w-50">
-        <mat-form-field class="w-100" appearance="outline" color="accent">
-            <mat-label>Buscador </mat-label>
-            <input matInput type="text">
-        </mat-form-field>
+
+<div *ngIf="num_items">
+    <p>Gestiona tus pedidos del marketplace</p>
+    <div class="w-100 d-flex flex-row justify-content-between align-items-center my-3">
+        <div class="w-50">
+            <mat-form-field class="w-100" appearance="outline" color="accent">
+                <mat-label>Buscador </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="d-flex flex-row justify-content-end align-items-center">
+            <!-- <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
+                (click)="view = 'list'">
+                <span class="material-symbols-outlined">
+                    list
+                </span>
+            </button>
+            <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
+                (click)="view = 'grid'">
+                <span class="material-symbols-outlined">
+                    grid_view
+                </span>
+            </button> -->
+            <button mat-flat-button color="primary" class="ms-3">Nuevo</button>
+        </div>
     </div>
-    <div class="d-flex flex-row justify-content-end align-items-center">
-        <!-- <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
-            (click)="view = 'list'">
-            <span class="material-symbols-outlined">
-                list
-            </span>
-        </button>
-        <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
-            (click)="view = 'grid'">
-            <span class="material-symbols-outlined">
-                grid_view
-            </span>
-        </button> -->
-        <button mat-flat-button color="primary" class="ms-3">Nuevo</button>
-    </div>
-</div>
 
 <!-- <ng-container *ngIf="view == 'list'"> -->
-    <div class="row my-3">
-        <div class="col-12">
-            <div class="table-responsive-sm">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Dirección</th>
-                            <th class="text-center">Barrio</th>
-                            <th class="text-center">Ciudad</th>
-                            <th class="text-center">País</th>
-                            <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of [0,0,0,0,0,0,0,0,0,0,0,0,0]">
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                            <td class="d-flex justify-content-center gap-3 w-auto">
-                                <div class="d-flex flex-row gap-1">
+    
+        <p>Esta es la lista de tus {{num_items}} pedidos</p>
+        <div class="row my-3">
+            <div class="col-12">
+                <div class="table-responsive-sm">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Cliente</th>
+                                <th class="text-center">Fecha</th>
+                                <th class="text-center">Estado Pedido</th>
+                                <th class="text-center">Subtotal</th>
+                                <th class="text-center">Descuento</th>
+                                <th class="text-center">Total</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" *ngFor="let item of itemsForStore">
+                                <td>{{item.Id}}</td>
+                                <td>{{item.Nombres}}</td>
+                                <td>{{item.FechaCreacion}}</td>
+                                <td>{{item.EstadoPedido}}</td>
+                                <td>${{item.Valor}}</td>
+                                <td>${{item.Descuento}}</td>
+                                <td>${{item.Total}}</td>
+                                <td class="d-flex justify-content-center gap-3 w-auto">
                                     <button mat-flat-button color="primary">Acción</button>
                                     <button mat-flat-button color="accent">Acción</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+    </div>
+    
+    <div *ngIf="!num_items">
+        No tienes pedidos registrados en el momento.
     </div>
 <!-- </ng-container>
 

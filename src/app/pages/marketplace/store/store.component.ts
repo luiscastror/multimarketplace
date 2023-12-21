@@ -71,7 +71,14 @@ export class StoreComponent implements OnInit {
     // console.log(this.vacio); 
     // console.log(this.itemsForSubCategory);
   }
-  
+
+  descriptionItem:string ='';
+  setDescripcionItem(descripcion : string){
+    this.descriptionItem = descripcion;
+    console.log(this.descriptionItem);
+  }
+
+
   productSearch: string = '';
   groupProductSearch : any = []
   productForSearch : boolean = false;
@@ -90,6 +97,9 @@ export class StoreComponent implements OnInit {
       //console.log(this.groupProductSearch);
   }
 
+
+  
+
   cargar(){ //Para cargar todos los productos al presionar todas
     this.productForCategory = false;
     this.productForSearch = false;
@@ -99,7 +109,7 @@ export class StoreComponent implements OnInit {
     this.productsEvery = true;
   }
 
-    activeItem: string | number = 'all' || 'store' || 'redes';
+    activeItem: string | number = 'all';
     setActiveItem(item: string | number) {
       this.activeItem = item;
     }

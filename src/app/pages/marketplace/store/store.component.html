@@ -17,7 +17,7 @@
                         <mat-icon *ngIf="activeItem === 'all'" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
                     </div>
                     <div class="pointer item-store py-2 px-3 d-flex justify-content-between" *ngFor="let item of info.SubCategorias; index as index;"
-                        (click)="load_items_subcategory(item.Descripcion); setActiveItem(index)">
+                        (click)="load_items_subcategory(item.Descripcion); setActiveItem(index); setDescripcionItem(item.Descripcion)">
                         {{item.Descripcion}}
                         <mat-icon *ngIf="activeItem === index" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
                     </div>
@@ -25,10 +25,8 @@
                 <app-components-title-subtitle title="Sucursales" justify="start"></app-components-title-subtitle>
                 <div class="d-flex flex-column mb-3">
                     <div class="pointer item-store py-2 px-3 d-flex justify-content-between" 
-                    *ngFor="let item of info.Sucursales; index as index;" 
-                    (click)="showStore(); setActiveItem('store')" >
+                    *ngFor="let item of info.Sucursales; index as index;" (click)="showStore()" >
                         {{item.Descripcion}}
-                        <mat-icon *ngIf="activeItem === 'store'" style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
                     </div>
                     <div class="py-2 px-3" *ngIf="show">
                         Esto es lo que queremos mostar cuando se presione el Orla Store
