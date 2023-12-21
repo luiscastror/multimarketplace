@@ -18,7 +18,7 @@ export class CartService {
     if (this.listCart.length > 0) {
       this.listCart.forEach((businees: any) => {
         businees.items.forEach((item: any) => {
-          count += item.cart_count
+          count += item.Cantidad
         });
       });
     }
@@ -39,9 +39,9 @@ export class CartService {
       let subtotal = 0;
 
       businees.items.map((item: any) => {
-        total += (item.Valor * item.cart_count) - (item.Descuento / 100 * item.Valor * item.cart_count);
-        discount += (item.Descuento / 100 * item.Valor * item.cart_count);
-        subtotal += (item.Valor * item.cart_count);
+        total += (item.Valor * item.Cantidad) - (item.Descuento / 100 * item.Valor * item.Cantidad);
+        discount += (item.Descuento / 100 * item.Valor * item.Cantidad);
+        subtotal += (item.Valor * item.Cantidad);
       });
 
       businees.discount = discount;
@@ -60,7 +60,7 @@ export class CartService {
         Tienda: payload.Tienda,
         items: [{
           ...payload,
-          cart_count: 1
+          Cantidad: 1,
         }]
       })
     } else {
@@ -69,10 +69,10 @@ export class CartService {
       if (indexItem == -1) {
         this.listCart[indexBusiness].items.push({
           ...payload,
-          cart_count: 1
+          Cantidad: 1,
         });
       } else {
-        this.listCart[indexBusiness].items[indexItem].cart_count++;
+        this.listCart[indexBusiness].items[indexItem].Cantidad++;
       }
     }
     this.updateCart();

@@ -28,7 +28,7 @@ export class CheckoutComponent implements OnInit {
     Departamento: new FormControl('', Validators.required),
     Ciudad: new FormControl('', Validators.required),
     Direccion: new FormControl('', Validators.required),
-    InformacionAdicional: new FormControl(''),
+    DireccionAdicional: new FormControl(''),
 
     Metodo: new FormControl('linea', Validators.required),
 
@@ -73,6 +73,11 @@ export class CheckoutComponent implements OnInit {
 
 
   submit() {
+
+
+    this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
+      console.log(resp)
+    })
 
     const referencia = this.id_store + '' + Number(new Date());
 

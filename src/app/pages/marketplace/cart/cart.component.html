@@ -67,25 +67,25 @@
                                 <div class="w-100 d-flex flex-row justify-content-between align-items-center">
                                     <p>Cantidad: </p>
                                     <div class="d-flex flex-row gap-1">
-                                        <button *ngIf="item.cart_count == 1"
+                                        <button *ngIf="item.Cantidad == 1"
                                             (click)="removeItem(indexBusiness,indexProduct)"
                                             class="btn btn-cart-count bg-danger text-white d-flex flex-row justify-content-center align-items-center">
                                             <span class="material-symbols-outlined">
                                                 delete
                                             </span>
                                         </button>
-                                        <button *ngIf="item.cart_count > 1"
-                                            (click)="item.cart_count = item.cart_count - 1; changeCart();"
+                                        <button *ngIf="item.Cantidad > 1"
+                                            (click)="item.Cantidad = item.Cantidad - 1; changeCart();"
                                             class="btn btn-cart-count bg-danger text-white d-flex flex-row justify-content-center align-items-center">
                                             <span class="material-symbols-outlined">
                                                 remove
                                             </span>
                                         </button>
                                         <input type="tel" class="form-control btn-cart-count" style="width: 50px;"
-                                            (change)="changeCart()" [value]="item.cart_count" readonly>
+                                            (change)="changeCart()" [value]="item.Cantidad" readonly>
                                         <button
                                             class="btn btn-cart-count bg-color-secondary text-white d-flex flex-row justify-content-center align-items-center"
-                                            (click)="item.cart_count = item.cart_count + 1;  changeCart();">
+                                            (click)="item.Cantidad = item.Cantidad + 1;  changeCart();">
                                             <span class="material-symbols-outlined">
                                                 add
                                             </span>
@@ -96,10 +96,10 @@
                                     <p>Total: </p>
                                     <p>
                                         <span class="text-decoration-line-through f12 text-secondary me-1">
-                                            ${{(item.Valor * item.cart_count) | number}}</span>
+                                            ${{(item.Valor * item.Cantidad) | number}}</span>
                                         <span class="color-secondary fw-bold ">
-                                            ${{(item.Valor * item.cart_count) - (item.Descuento/100 * item.Valor *
-                                            item.cart_count) | number}}
+                                            ${{(item.Valor * item.Cantidad) - (item.Descuento/100 * item.Valor *
+                                            item.Cantidad) | number}}
                                         </span>
                                     </p>
                                 </div>
