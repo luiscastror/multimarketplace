@@ -84,16 +84,29 @@ export class StoreComponent implements OnInit {
   productForSearch : boolean = false;
   vacio2 : boolean = false;
   search(productSearch:string){ //Carga array por busqeueda sea por descripcion o Subcategoria
-    this.groupProductSearch = this.items2.filter(
-      (product) => product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 
-      || product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1,
-      );
-      this.productsEvery = false;
-      this.productForCategory = false;
-      this.vacio = false
-      this.show = false;
-      this.productForSearch = true;
-      this.groupProductSearch.length == 0 ? this.vacio2 = true : this.vacio2 = false;
+    if(this.descriptionItem !== 'Todas'){
+      this.groupProductSearch = this.items2.filter(
+        (product) => (product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
+        || (product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
+        );
+        this.productsEvery = false;
+        this.productForCategory = false;
+        this.vacio = false
+        this.show = false;
+        this.productForSearch = true;
+        this.groupProductSearch.length == 0 ? this.vacio2 = true : this.vacio2 = false;
+    }else{
+      this.groupProductSearch = this.items2.filter(
+        (product) => (product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 
+        || product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 )
+        );
+        this.productsEvery = false;
+        this.productForCategory = false;
+        this.vacio = false
+        this.show = false;
+        this.productForSearch = true;
+        this.groupProductSearch.length == 0 ? this.vacio2 = true : this.vacio2 = false;
+    }
       //console.log(this.groupProductSearch);
   }
 
