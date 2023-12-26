@@ -32,8 +32,9 @@ import { StoreItemsFormComponent } from './pages/admin/store-items-form/store-it
 import { StoreCategoriesFormComponent } from './pages/admin/store-categories-form/store-categories-form.component';
 import { StoreLocationsFormComponent } from './pages/admin/store-locations-form/store-locations-form.component';
 import { StoreLocationsComponent } from './pages/admin/store-locations/store-locations.component';
-import { AdminSocialNetworksComponent } from './pages/admin/admin-social-networks/admin-social-networks.component';
+import { AdminSocialNetworksComponent } from './pages/admin/store-social-networks/admin-social-networks.component';
 import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-social-form.component';
+import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -101,6 +102,10 @@ const routes: Routes = [
             {
                 path: 'my-store-orders',
                 component: StoreOrdersComponent
+            },
+            {
+                path: 'my-store-ordersDetails/:id',
+                component: StoreOrderDetailsComponent
             },
             {
                 path: 'new-store',
