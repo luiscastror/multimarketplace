@@ -1,1 +1,88 @@
-<p>Estos son los detalles del pedido</p>
+<app-components-title-subtitle title="Pedido" justify="start"></app-components-title-subtitle>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <div class="row" style="max-height: 400px; overflow-y: auto;">
+                <div *ngFor="let item of ped.Items" class="d-flex flex-row justify-content-between card card2 mb-2 px-4 py-2 gap-3" >
+                    <div class="w-25">
+                        <img [src]="item.ImagenUrl" alt="Img produc" style="width: 70px;">
+                    </div>
+                    <div class="w-25">
+                        <div class="fw-semibold text-center mb-1">Producto</div>
+                        <p class="text-center fw-medium">"{{item.Nombre}}"</p>
+                    </div>
+                    <div class="w-25">
+                        <div class="fw-semibold text-center mb-1">Cantidad</div>
+                        <p class="text-center fw-medium">{{item.Cantidad}}</p>
+                    </div>
+                    <div class="w-25 gap-3 d-flex flex-column">
+                        <div>
+                            <div class="fw-semibold text-center mb-1">Subtotal</div>
+                            <p class="fw-medium text-center">${{(item.Valor | number)}}</p>
+                            <div class="fw-semibold text-center mb-1">Descuento</div>
+                            <p class="text-danger fw-medium text-center"><s>{{'$'+(item.Descuento | number)}}</s></p>
+                            <!-- <p class="text-danger fw-medium text-center"><s>{{item.Descuento > 0 ? '$'+(item.Descuento | number): ''}}</s></p> -->
+                        </div>
+                        <div>
+                            <div class="fw-semibold text-center mb-1">Precio total</div>
+                            <p class="text-success text-center fw-bold">${{(item.Total | number)}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body d-flex flex-column gap-2">
+                        <p class="fw-semibold fs-4 text-center">Descripción</p>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Nombre:</div>
+                            <div>{{ped.Nombres}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Dirección:</div>
+                            <div>{{ped.Direccion}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Telefono:</div>
+                            <div>{{ped.Telefono}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Correo:</div>
+                            <div>{{ped.Correo}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Subtotal:</div>
+                            <div class="fw-medium">${{(ped.Valor | number)}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Descuento:</div>
+                            <div class="text-danger fw-medium"><s>${{(ped.Descuento | number)}}</s></div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Total pedido:</div>
+                            <div class="text-success fw-medium fw-semibold"><u>${{(ped.Total | number)}}</u></div>
+                        </div>
+                        <button mat-stroked-button class="mb-3" type="button" routerLink="/admin/my-store-orders" class="w-100">Atras</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <p>{{ped.EstadoPedido}}</p>
+<p>{{ped.Nombres}}</p>
+<p>{{ped.Cantidad}}</p>
+<p>{{ped.Telefono}}</p>
+<p>{{ped.Valor}}</p>
+<p>{{ped.Descuento}}</p>
+<p>{{ped.Total}}</p> -->
