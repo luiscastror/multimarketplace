@@ -25,7 +25,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of itemsForUser" class="pointer">
+                            <tr *ngFor="let item of itemsForUser" class="pointer" [routerLink]="'/admin/my-store-ordersDetails/'+item.Id">
                                 <td>{{item.Id}}</td>
                                 <td>{{item.Nombres}}</td>
                                 <td>{{item.FechaCreacion}}</td>
