@@ -33,6 +33,16 @@
                 </mat-select>
             </mat-form-field>
         </div>
+        <div class="col-12 col-md-6 d-flex flex-column">
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Wompi publicKey</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="PublicKey" required>
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Wompi integrity</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Signature" required>
+            </mat-form-field>
+        </div>
         <div class="col-12">
             <div class="d-flex justify-content-center">
                 <button mat-flat-button color="primary" aparence="outline" class="mt-5" type="submit">
@@ -42,5 +52,3 @@
         </div>
     </div>
 </form>
-
-<pre>{{form.value | json}}</pre>

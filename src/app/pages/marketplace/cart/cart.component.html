@@ -18,9 +18,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <pre>{{MainService.CartService.listCart | json}}</pre> -->
-
     <ng-container *ngFor="let business of MainService.CartService.listCart; index as indexBusiness">
         <div class="row mb-5">
             <div class="col-12" *ngIf="business.items.length > 0">

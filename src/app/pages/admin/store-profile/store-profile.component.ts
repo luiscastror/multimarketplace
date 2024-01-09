@@ -18,6 +18,8 @@ export class StoreProfileComponent implements OnInit {
     Logo: new FormControl(''),
     Portada: new FormControl(''),
     UsuarioId: new FormControl(''),
+    PublicKey: new FormControl(''),
+    Signature: new FormControl(''),
   });
 
   constructor(

@@ -65,6 +65,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.MainService.ApiService.get('/tiendas/' + this.id_store).subscribe((resp: any) => {
+      console.log(resp)
       this.business = resp;
       this.loading = false;
     })
