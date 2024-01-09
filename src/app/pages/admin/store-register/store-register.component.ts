@@ -42,7 +42,6 @@ export class StoreRegisterComponent implements OnInit {
   loadCategorias() {
     this.MainService.ApiService.get("/categorias").subscribe((resp: any) => {
       this.categorias = resp;
-      console.log(this.categorias)
     })
   }
 

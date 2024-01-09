@@ -20,9 +20,7 @@ export class AdminInfoComponent implements OnInit {
   user: any = {};
   loadUser() {
     this.MainService.ApiService.get('/usuarios/Miperfil').subscribe((resp: any) => {
-      console.log(resp)
       this.user = resp;
-      console.log(this.user)
     })
   }
 

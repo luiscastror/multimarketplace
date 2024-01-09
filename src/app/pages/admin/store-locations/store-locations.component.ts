@@ -28,7 +28,6 @@ export class StoreLocationsComponent implements OnInit {
     this.items = [];
     this.MainService.ApiService.get(this.path_api + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.items = resp;
-      console.log(this.items)
     })
   }
 

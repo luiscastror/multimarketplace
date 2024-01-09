@@ -12,21 +12,20 @@
                     class="color-primary text-decoration-none hv-secondary">
                     Mis pedidos
                 </a>
-                <!-- <a routerLink="/admin/my-address" [routerLinkActive]="'color-secondary fw-bold'"
-                    class="color-primary text-decoration-none hv-secondary">
-                    Mis direcciones
-                </a> -->
                 <a routerLink="/" (click)="logout()" class="color-primary text-decoration-none hv-secondary">
                     Salir
                 </a>
                 <hr>
                 <ng-container *ngIf="stores.length > 0">
                     <h3 class="fw-bold color-primary">Tienda</h3>
+                    <a routerLink="/admin/my-store" [routerLinkActive]="'color-secondary fw-bold'"
+                        class="color-primary text-decoration-none hv-secondary">
+                        Mi tienda
+                    </a>
                     <a routerLink="/admin/my-store-profile" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
                         Mi perfil
                     </a>
-
                     <a routerLink="/admin/my-store-locations" [routerLinkActive]="'color-secondary fw-bold'"
                         class="color-primary text-decoration-none hv-secondary">
                         Mis sucursales

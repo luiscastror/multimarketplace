@@ -10,24 +10,40 @@ import { MainService } from 'src/app/services/main.service';
 export class StoreOrderDetailsComponent implements OnInit {
 
   id: string = '';
+
+  EstadoPedido!: string;
+  Estado!: string;
+
   constructor(
-    private MainService : MainService,
+    public MainService: MainService,
     private ruta: ActivatedRoute,
-  ) { 
+  ) {
     this.id = this.ruta.snapshot.params.id;
-    //console.log(this.id);
   }
 
   ngOnInit(): void {
     this.loadPed()
   }
 
-  ped : any = [];
-  loadPed(){
-    this.MainService.ApiService.get('/admin/pedidos/' + this.MainService.AuthService.dataStore.Id + '/' + this.id).subscribe((resp:any)=>{
+  ped: any = [];
+  loadPed() {
+    this.MainService.ApiService.get('/admin/pedidos/' + this.MainService.AuthService.dataStore.Id + '/' + this.id).subscribe((resp: any) => {
       this.ped = resp;
-      console.log(this.ped);
+
+      this.EstadoPedido = resp.EstadoPedido;
+      this.Estado = resp.Estado == 'PEN' ? 'PENDIENTE' : 'PAGADO';
     })
+  }
+
+
+  updateStatus() {
+
+    this.MainService.ApiService.put('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, { Estado: this.Estado }).subscribe(resp => {
+    })
+
+    this.MainService.ApiService.post('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, {}).subscribe(resp => {
+    })
+
   }
 
 }

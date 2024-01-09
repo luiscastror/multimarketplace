@@ -35,6 +35,7 @@ import { StoreLocationsComponent } from './pages/admin/store-locations/store-loc
 import { AdminSocialNetworksComponent } from './pages/admin/store-social-networks/admin-social-networks.component';
 import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-social-form.component';
 import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
+import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -71,6 +72,10 @@ const routes: Routes = [
                 component: AdminAddressComponent
             },
             // Tienda
+            {
+                path: 'my-store',
+                component: StoreDashboardComponent
+            },
             {
                 path: 'my-store-profile',
                 component: StoreProfileComponent

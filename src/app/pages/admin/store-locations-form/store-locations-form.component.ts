@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 
@@ -29,9 +29,8 @@ export class StoreLocationsFormComponent implements OnInit {
     private MainService: MainService,
     private router: Router,
     private ruta: ActivatedRoute,
-  ) { 
+  ) {
     this.id = this.ruta.snapshot.params.id;
-    console.log(this.id);
     this.edit = this.id ? true : false;
   }
 
@@ -39,7 +38,7 @@ export class StoreLocationsFormComponent implements OnInit {
     this.form.patchValue({
       TiendaId: this.MainService.AuthService.dataStore.Id
     })
-    if(this.edit){
+    if (this.edit) {
       this.loadSucursal()
     }
   }
@@ -57,15 +56,14 @@ export class StoreLocationsFormComponent implements OnInit {
   //   }
   // }
 
-  
+
   loadSucursal() {
     this.MainService.ApiService.get("/admin/sucursales/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
       this.form.patchValue(resp);
-      console.log(resp)
     })
   }
 
-  
+
   submit() {
     if (this.form.valid) {
       const url = '/admin/sucursales';

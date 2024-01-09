@@ -23,18 +23,17 @@ export class AdminOrdersComponent implements OnInit {
   num_items: number = 0;
   many_items: boolean = false;
   loading: boolean = false;
-  loadPedUser(){
+  loadPedUser() {
     this.loading = true;
-    this.MainService.ApiService.get(this.path_ped_user).subscribe((resp:any)=>{
+    this.MainService.ApiService.get(this.path_ped_user).subscribe((resp: any) => {
       this.itemsForUser = resp;
       this.num_items = resp.length;
       this.num_items > 0 ? this.many_items = true : this.many_items = false;
       this.loading = false;
-      //console.log('Pedidos Del usuario: '+ resp[0].Nombres +  resp[0].Valor);
     })
   }
 
 
-  
+
 
 }

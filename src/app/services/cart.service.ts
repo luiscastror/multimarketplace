@@ -65,7 +65,6 @@ export class CartService {
       })
     } else {
       const indexItem = this.listCart[indexBusiness].items.findIndex((item: any) => item.Id == payload.Id);
-      console.log(indexItem)
       if (indexItem == -1) {
         this.listCart[indexBusiness].items.push({
           ...payload,

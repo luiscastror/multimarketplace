@@ -30,7 +30,6 @@ export class StoreItemsFormComponent implements OnInit {
     private ruta: ActivatedRoute,
   ) {
     this.id = this.ruta.snapshot.params.id;
-    console.log(this.id);
 
     this.edit = this.id ? true : false;
   }
@@ -74,7 +73,6 @@ export class StoreItemsFormComponent implements OnInit {
         this.loadProducto();
       }
 
-      console.log(this.categorias)
     })
   }
 

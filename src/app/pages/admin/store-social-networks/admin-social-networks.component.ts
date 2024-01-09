@@ -27,7 +27,6 @@ export class AdminSocialNetworksComponent implements OnInit {
   loadSocial() {
     this.redes = [];
     this.MainService.ApiService.get(this.path_api + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
-      console.log(resp)
       this.redes = resp;
     })
   }

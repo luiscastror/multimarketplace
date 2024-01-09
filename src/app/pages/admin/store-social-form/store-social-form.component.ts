@@ -26,7 +26,6 @@ export class StoreSocialFormComponent implements OnInit {
     private ruta: ActivatedRoute,
   ) {
     this.id = this.ruta.snapshot.params.id;
-    console.log(this.id);
 
     this.edit = this.id ? true : false;
   }
@@ -83,14 +82,12 @@ export class StoreSocialFormComponent implements OnInit {
       if (this.edit) {
         this.oneLoadSocial();
       }
-      console.log(this.social);
     })
   }
 
   oneLoadSocial() {
     this.MainService.ApiService.get("/admin/redesSociales/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
       this.form.patchValue(resp);
-      console.log(resp);
     })
   }
 

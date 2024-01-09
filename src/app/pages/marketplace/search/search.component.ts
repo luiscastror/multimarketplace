@@ -39,7 +39,6 @@ export class SearchComponent implements OnInit, AfterViewInit {
   load() {
     this.loading = true;
     this.MainService.ApiService.get("/filter/" + this.queryParams.keyword).subscribe((resp: any) => {
-      console.log(resp);
       this.loading = false;
       this.search = resp;
     })

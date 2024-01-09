@@ -43,8 +43,6 @@ export class StoreProfileComponent implements OnInit {
         Id: this.MainService.AuthService.dataStore.Id
       })
 
-      console.log(this.form.value)
-      console.log(this.store)
       this.loading = false;
     })
   }

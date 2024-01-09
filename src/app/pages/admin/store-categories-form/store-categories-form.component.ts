@@ -24,8 +24,6 @@ export class StoreCategoriesFormComponent implements OnInit {
     private ruta: ActivatedRoute,
   ) {
     this.id = this.ruta.snapshot.params.id;
-    console.log(this.id);
-
     this.edit = this.id ? true : false;
   }
 
@@ -55,7 +53,7 @@ export class StoreCategoriesFormComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      const url =  '/admin/subCategorias/';
+      const url = '/admin/subCategorias/';
       const message = this.edit ? "Categoría actualizada correctamente" : "Categoría creada correctamente";
       const apiCall = this.edit ? this.MainService.ApiService.put(url, this.form.value) : this.MainService.ApiService.post(url, this.form.value);
       const aplicar = () => {
@@ -78,7 +76,6 @@ export class StoreCategoriesFormComponent implements OnInit {
   loadCategory() {
     this.MainService.ApiService.get("/admin/subCategorias/" + this.MainService.AuthService.dataStore.Id + "/" + this.id).subscribe((resp: any) => {
       this.form.patchValue(resp);
-      console.log('entro')
     })
   }
 

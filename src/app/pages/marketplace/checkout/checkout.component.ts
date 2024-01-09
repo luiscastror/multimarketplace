@@ -30,7 +30,7 @@ export class CheckoutComponent implements OnInit {
     Direccion: new FormControl('', Validators.required),
     DireccionAdicional: new FormControl(''),
 
-    Metodo: new FormControl('linea', Validators.required),
+    Metodo: new FormControl('entrega', Validators.required),
 
     Orden: new FormControl(''),
   });
@@ -65,7 +65,6 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.MainService.ApiService.get('/tiendas/' + this.id_store).subscribe((resp: any) => {
-      console.log(resp)
       this.business = resp;
       this.loading = false;
     })
@@ -77,50 +76,54 @@ export class CheckoutComponent implements OnInit {
 
 
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
-      console.log(resp)
-    })
 
-    const referencia = this.id_store + '' + Number(new Date());
+      if (this.form.controls["Metodo"].value == 'linea') {
 
-    const checkout = new WidgetCheckout({
-      currency: 'COP',
-      amountInCents: this.form.controls["Orden"].value["total"] + '00',
-      reference: referencia,
-      // publicKey: 'pub_test_QpcsOqMKJM29BMr0nllzxJpKgdcf2YHg',
-      publicKey: 'pub_prod_GFgqWv5ohczqTOsrO7xi9bK9HpYBFkCE',
-      signature: {
-        // integrity: 'test_integrity_9VRcLcgfnX7x1aO6Q7aYEyxhZMXCFxiN'
-        integrity: 'prod_integrity_l7juVOtVvUb1Jf2uKN3tGknFcsYzo4aQ'
-      },
-      redirectUrl: 'https://vivesucre.com', // Opcional
-      // expirationTime: '2023-06-09T20:28:50.000Z', // Opcional
-      // taxInCents: { // Opcional
-      //   vat: 1900,
-      //   consumption: 800
-      // },
-      customerData: { // Opcional
-        email: this.form.controls["Correo"].value,
-        fullName: this.form.controls["Nombres"].value,
-        phoneNumber: this.form.controls["Telefono"].value,
-        phoneNumberPrefix: '+57',
-        legalId: this.form.controls["Identificacion"].value,
-        legalIdType: 'CC'
-      },
-      shippingAddress: { // Opcional
-        addressLine1: this.form.controls["Direccion"].value,
-        city: this.form.controls["Ciudad"].value,
-        phoneNumber: this.form.controls["Telefono"].value,
-        region: this.form.controls["Departamento"].value,
-        country: "CO"
+        const referencia = this.id_store + '' + Number(new Date());
+
+        const checkout = new WidgetCheckout({
+          currency: 'COP',
+          amountInCents: this.form.controls["Orden"].value["total"] + '00',
+          reference: resp.Id,
+          // publicKey: 'pub_test_QpcsOqMKJM29BMr0nllzxJpKgdcf2YHg',
+          publicKey: this.business.Tienda.PublicKey,
+          signature: {
+            // integrity: 'test_integrity_9VRcLcgfnX7x1aO6Q7aYEyxhZMXCFxiN'
+            // integrity: 'prod_integrity_l7juVOtVvUb1Jf2uKN3tGknFcsYzo4aQ'
+            integrity: this.business.Tienda.Signature,
+          },
+          redirectUrl: 'https://vivesucre.com', // Opcional
+          // expirationTime: '2023-06-09T20:28:50.000Z', // Opcional
+          // taxInCents: { // Opcional
+          //   vat: 1900,
+          //   consumption: 800
+          // },
+          customerData: { // Opcional
+            email: this.form.controls["Correo"].value,
+            fullName: this.form.controls["Nombres"].value,
+            phoneNumber: this.form.controls["Telefono"].value,
+            phoneNumberPrefix: '+57',
+            legalId: this.form.controls["Identificacion"].value,
+            legalIdType: 'CC'
+          },
+          shippingAddress: { // Opcional
+            addressLine1: this.form.controls["Direccion"].value,
+            city: this.form.controls["Ciudad"].value,
+            phoneNumber: this.form.controls["Telefono"].value,
+            region: this.form.controls["Departamento"].value,
+            country: "CO"
+          }
+        })
+
+        checkout.open(function (result: any) {
+          var transaction = result.transaction;
+        });
+
       }
+
     })
 
 
-    checkout.open(function (result: any) {
-      var transaction = result.transaction;
-      console.log('Transaction ID: ', transaction.id);
-      console.log('Transaction object: ', transaction);
-    });
 
   }
 

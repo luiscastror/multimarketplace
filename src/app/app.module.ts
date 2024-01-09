@@ -76,6 +76,7 @@ import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-
 import { CardSocialComponent } from './components/card-social/card-social.component';
 import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
 import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
+import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
 
 
 @NgModule({
@@ -126,7 +127,8 @@ import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/s
     StoreSocialFormComponent,
     CardSocialComponent,
     ModalConfirmComponent,
-    StoreOrderDetailsComponent
+    StoreOrderDetailsComponent,
+    StoreDashboardComponent
   ],
   imports: [
     BrowserModule,
