@@ -37,17 +37,33 @@ export class StoreDashboardComponent implements OnInit {
   }
 
   data: any;
+  loading: boolean = false;
+  active: boolean = false;
+  active2: boolean = false;
+  active3: boolean = false;
+  pedidosPorDia : any = [];
+  producMasVendidos : any = [];
+  ventas : any = {};
   buscar() {
     let ini = new Date(this.buscador.controls['fechaInicial'].value);
     let end = new Date(this.buscador.controls['fechaFinal'].value);
-
-    console.log(ini, end)
-
+    //console.log(ini, end)
+    this.loading = true;
     this.MainService.ApiService.get('/admin/reportes/' + ini + '/' + end + '/' + this.MainService.AuthService.dataStore.Id).subscribe(resp => {
       console.log(resp)
       this.data = resp;
+      this.pedidosPorDia = this.data.PedidosPorDias;
+      this.producMasVendidos = this.data.ProductosMasvendidos;
+      this.ventas = this.data.Ventas;
+      // console.log(this.pedidosPorDia);
+      // console.log(this.producMasVendidos);
+      //console.log(this.ventas.Cantidad);
+      this.producMasVendidos.length>0 ? this.active = true : this.active = false; 
+      this.ventas.Cantidad> 0 ? this.active2 = true : this.active2 = false; 
+      this.producMasVendidos.length > 0 ? this.active3 = true : this.active3 = false;
+      console.log(this.active , this.active2, this.active3);
+      this.loading = false;
     })
-
   }
 
 }

@@ -1,4 +1,5 @@
 <div class="w-100 d-flex flex-row justify-content-between mb-3">
+    <app-components-title-subtitle title="Analisis de tu tienda" subtitle="Breve resumen sobre los datos mas importantes y necesarios" justify="start"></app-components-title-subtitle>
     <div class="d-flex flex-row flex-wrap align-items-center justify-content-between gap-3">
         <form [formGroup]="buscador" novalidate>
             <mat-form-field class="w-100" appearance="outline">
@@ -12,5 +13,78 @@
             </mat-form-field>
         </form>
         <button (click)="buscar()" mat-flat-button color="primary">Buscar</button>
+    </div>
+</div>
+<div *ngIf="loading">
+    <app-loading></app-loading>
+</div>
+<div *ngIf="!loading">
+    <div class="row">
+        <div *ngIf="active2" >
+            <div class="row">
+                <div class="col-4 mt-3" *ngFor="let item of producMasVendidos" >
+                    <div class="card-informativo py-3 rounded-1 h-100 border-bottom">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <strong class="fs-3">{{item.Cantidad}}</strong>
+                        </div>
+                        <div class=" d-flex flex-column align-items-center justify-content-center">
+                            <strong>{{item.Descripcion}}</strong>
+                            <small>Entre los productos mas vendidos</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3" *ngIf="active2">
+            <div class="card-informativo py-3 rounded-1 h-100 border-bottom">
+                <div class=" d-flex justify-content-center align-items-center">
+                    <strong class="fs-3">${{ventas.Total | number}}</strong>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    Total vendido
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3" *ngIf="active2">
+            <div class="card-informativo py-3 rounded-1 h-100 border-bottom">
+                <div class=" d-flex justify-content-center align-items-center">
+                    <strong class="fs-3">${{data.VentasMasAlta | number}}</strong>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <small>Venta mas alta</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3" *ngIf="active2">
+            <div class="card-informativo py-3 rounded-1 h-100 border-bottom">
+                <div class=" d-flex justify-content-center align-items-center">
+                    <strong class="fs-3">${{data.VentasMasBaja | number}}</strong>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <small>Venta mas baja</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3" *ngIf="active2">
+            <div class="card-informativo py-3 rounded-1 h-100 border-bottom">
+                <div class=" d-flex justify-content-center align-items-center">
+                    <strong class="fs-3">${{data.PromedioCompras | number}}</strong>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <small>Promedio de compra</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3" *ngIf="active2">
+            <div class="card-informativo py-3 rounded-1 border-bottom">
+                <div class=" d-flex justify-content-center align-items-center">
+                    <strong class="fs-3">{{ventas.Cantidad}}</strong>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <small>Venta mas realizadas</small>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -74,7 +74,6 @@ export class CheckoutComponent implements OnInit {
 
   submit() {
 
-
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
 
       if (this.form.controls["Metodo"].value == 'linea') {
@@ -120,6 +119,11 @@ export class CheckoutComponent implements OnInit {
         });
 
       }
+
+      
+        //this.MainService.CartService.listCart[businees].items.splice(item, 1);
+       
+      console.log(this.form.value, resp);
 
     })
 
