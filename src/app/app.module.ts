@@ -20,6 +20,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // Components
 import { NavComponent } from './components/nav/nav.component';
@@ -147,6 +149,8 @@ import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-das
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

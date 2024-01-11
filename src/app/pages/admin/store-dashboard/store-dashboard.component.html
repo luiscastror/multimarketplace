@@ -1,1 +1,16 @@
-<p>store-dashboard works!</p>
+<div class="w-100 d-flex flex-row justify-content-between mb-3">
+    <div class="d-flex flex-row flex-wrap align-items-center justify-content-between gap-3">
+        <form [formGroup]="buscador" novalidate>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Ingresa la fecha</mat-label>
+                <mat-date-range-input [rangePicker]="picker" [max]="maxDate">
+                    <input matStartDate formControlName="fechaInicial" [max]="maxDate" placeholder="fecha Inicio">
+                    <input matEndDate formControlName="fechaFinal" [max]="maxDate" placeholder="fecha Fin">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> <mat-date-range-picker #picker>
+                </mat-date-range-picker>
+            </mat-form-field>
+        </form>
+        <button (click)="buscar()" mat-flat-button color="primary">Buscar</button>
+    </div>
+</div>
