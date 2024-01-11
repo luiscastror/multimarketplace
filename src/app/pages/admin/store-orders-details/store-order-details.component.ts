@@ -38,11 +38,15 @@ export class StoreOrderDetailsComponent implements OnInit {
 
   updateStatus() {
 
-    this.MainService.ApiService.put('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, { Estado: this.Estado }).subscribe(resp => {
+    this.MainService.ApiService.put('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, { Estado: this.EstadoPedido }).subscribe(resp => {
+      location.reload();
     })
 
-    this.MainService.ApiService.post('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, {}).subscribe(resp => {
-    })
+    if (this.Estado != 'PEN') {
+      this.MainService.ApiService.post('/admin/pedidos/' + this.ped.TiendaId + '/' + this.ped.Id, {}).subscribe(resp => {
+      })
+    }
+
 
   }
 
