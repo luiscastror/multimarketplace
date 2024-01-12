@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 declare var WidgetCheckout: any;
@@ -37,7 +37,9 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private ruta: ActivatedRoute,
-    public MainService: MainService
+    public MainService: MainService,
+    private router: Router,
+
   ) {
 
     if (this.ruta.snapshot.params && this.ruta.snapshot.params.id) {
@@ -72,14 +74,14 @@ export class CheckoutComponent implements OnInit {
   }
 
 
+  ped : any = {};
+  idPed : string = '';
   submit() {
 
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
 
       if (this.form.controls["Metodo"].value == 'linea') {
-
         const referencia = this.id_store + '' + Number(new Date());
-
         const checkout = new WidgetCheckout({
           currency: 'COP',
           amountInCents: this.form.controls["Orden"].value["total"] + '00',
@@ -113,17 +115,20 @@ export class CheckoutComponent implements OnInit {
             country: "CO"
           }
         })
-
         checkout.open(function (result: any) {
           var transaction = result.transaction;
         });
-
       }
 
+      if (this.form.controls["Metodo"].value == 'entrega'){
+        this.ped = this.form.value;
+        this.idPed = resp.Id;
+        console.log(this.idPed, 'IdStore' , this.id_store);
+        this.router.navigate(['/produc-info/'+this.id_store+'/'+this.idPed]);
+      }
       
-        //this.MainService.CartService.listCart[businees].items.splice(item, 1);
+      //this.MainService.CartService.listCart[businees].items.splice(item, 1);
        
-      console.log(this.form.value, resp);
 
     })
 

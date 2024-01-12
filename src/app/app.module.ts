@@ -79,6 +79,7 @@ import { CardSocialComponent } from './components/card-social/card-social.compon
 import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
 import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
 import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
+import { ProductInformationComponent } from './pages/marketplace/product-information/product-information.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-das
     CardSocialComponent,
     ModalConfirmComponent,
     StoreOrderDetailsComponent,
-    StoreDashboardComponent
+    StoreDashboardComponent,
+    ProductInformationComponent
   ],
   imports: [
     BrowserModule,
