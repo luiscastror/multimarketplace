@@ -51,7 +51,7 @@ const routes: Routes = [
     { path: 'promo', component: PromosComponent },
     { path: 'tyc', component: TerminosYcondicionesComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'checkout/:id', component: CheckoutComponent },
+    { path: 'checkout/:id/:index', component: CheckoutComponent },
     { path: 'produc-info/:idStore/:id', component: ProductInformationComponent },
     {
         path: 'admin',

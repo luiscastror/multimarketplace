@@ -23,4 +23,10 @@ export class CartComponent implements OnInit {
     this.MainService.CartService.listCart[businees].items.splice(item, 1);
     this.changeCart();
   }
+
+
+  press(index:number){
+    console.log(index);
+  }
+
 }

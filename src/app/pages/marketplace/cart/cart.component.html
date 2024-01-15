@@ -129,7 +129,7 @@
                             </p>
                         </div>
                         <div>
-                            <button mat-flat-button color="accent" [routerLink]="'/checkout/'+business.TiendaId">
+                            <button mat-flat-button color="accent" [routerLink]="'/checkout/'+business.TiendaId+'/'+indexBusiness" (click)="press(indexBusiness)">
                                 <mat-icon>shopping_cart_checkout</mat-icon>
                                 <span>Procesar pedido -> Pagar -> ${{business.total| number}}</span>
                             </button>

@@ -16,6 +16,7 @@ export class CheckoutComponent implements OnInit {
   id_store!: string;
   loading: boolean = true;
   order: any = {};
+  index! : number;
 
   business: any = {};
 
@@ -44,6 +45,7 @@ export class CheckoutComponent implements OnInit {
 
     if (this.ruta.snapshot.params && this.ruta.snapshot.params.id) {
       this.id_store = this.ruta.snapshot.params.id;
+      this.index = this.ruta.snapshot.params.index;
     }
 
   }
@@ -71,6 +73,10 @@ export class CheckoutComponent implements OnInit {
       this.loading = false;
     })
 
+  }
+
+  changeCart() {
+    this.MainService.CartService.updateCart();
   }
 
 
@@ -129,7 +135,12 @@ export class CheckoutComponent implements OnInit {
       
       //this.MainService.CartService.listCart[businees].items.splice(item, 1);
        
-
+      const remover = ()=> {
+        //this.MainService.SnackbarService.show("Producto elminado correctamente");
+        this.MainService.CartService.listCart.splice(this.index, 1);
+        this.changeCart();
+      }
+      remover();
     })
 
 
