@@ -79,7 +79,8 @@ import { CardSocialComponent } from './components/card-social/card-social.compon
 import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
 import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
 import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
-import { ProductInformationComponent } from './pages/marketplace/product-information/product-information.component';
+import { OrderInformationComponent } from './pages/marketplace/order-information/order-information.component';
+import { AdminOrderDetailsComponent } from './pages/admin/admin-order-details/admin-order-details.component';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import { ProductInformationComponent } from './pages/marketplace/product-informa
     ModalConfirmComponent,
     StoreOrderDetailsComponent,
     StoreDashboardComponent,
-    ProductInformationComponent
+    OrderInformationComponent,
+    AdminOrderDetailsComponent
   ],
   imports: [
     BrowserModule,

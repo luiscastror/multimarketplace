@@ -4,10 +4,10 @@ import { MainService } from '../../../services/main.service';
 
 @Component({
   selector: 'app-product-information',
-  templateUrl: './product-information.component.html',
-  styleUrls: ['./product-information.component.css']
+  templateUrl: './order-information.component.html',
+  styleUrls: ['./order-information.component.css']
 })
-export class ProductInformationComponent implements OnInit {
+export class OrderInformationComponent implements OnInit {
 
   idStore = this.ruta.snapshot.params.idStore;
   id = this.ruta.snapshot.params.id;

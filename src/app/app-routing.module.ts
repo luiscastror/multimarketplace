@@ -36,7 +36,8 @@ import { AdminSocialNetworksComponent } from './pages/admin/store-social-network
 import { StoreSocialFormComponent } from './pages/admin/store-social-form/store-social-form.component';
 import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/store-order-details.component';
 import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
-import { ProductInformationComponent } from './pages/marketplace/product-information/product-information.component';
+import { AdminOrderDetailsComponent } from './pages/admin/admin-order-details/admin-order-details.component';
+import { OrderInformationComponent } from './pages/marketplace/order-information/order-information.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -52,7 +53,7 @@ const routes: Routes = [
     { path: 'tyc', component: TerminosYcondicionesComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'checkout/:id/:index', component: CheckoutComponent },
-    { path: 'produc-info/:idStore/:id', component: ProductInformationComponent },
+    { path: 'order-info/:idStore/:id', component: OrderInformationComponent },
     {
         path: 'admin',
         component: AdminComponent,
@@ -68,6 +69,10 @@ const routes: Routes = [
             {
                 path: 'my-orders',
                 component: AdminOrdersComponent
+            },
+            {
+                path: 'my-order-detail/:id',
+                component: AdminOrderDetailsComponent
             },
             {
                 path: 'my-address',

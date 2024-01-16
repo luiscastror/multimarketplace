@@ -130,7 +130,7 @@ export class CheckoutComponent implements OnInit {
         this.ped = this.form.value;
         this.idPed = resp.Id;
         console.log(this.idPed, 'IdStore' , this.id_store);
-        this.router.navigate(['/produc-info/'+this.id_store+'/'+this.idPed]);
+        this.router.navigate(['/order-info/'+this.id_store+'/'+this.idPed]);
       }
       
       //this.MainService.CartService.listCart[businees].items.splice(item, 1);
