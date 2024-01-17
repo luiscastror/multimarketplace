@@ -71,7 +71,7 @@ const routes: Routes = [
                 component: AdminOrdersComponent
             },
             {
-                path: 'my-order-detail/:id',
+                path: 'my-order-detail/:id/:idStore',
                 component: AdminOrderDetailsComponent
             },
             {

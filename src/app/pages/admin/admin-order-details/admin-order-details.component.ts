@@ -10,15 +10,17 @@ import { MainService } from 'src/app/services/main.service';
 export class AdminOrderDetailsComponent implements OnInit {
 
   id: string = '';
-
+  idStore: string = '';
   EstadoPedido!: string;
   Estado!: string;
+  rutePublic : string ="https://multimarketplace-d500d27833e2.herokuapp.com/admin/my-order-detail/"+this.id+"/"+this.idStore;
 
   constructor(
     public MainService: MainService,
     private ruta: ActivatedRoute,
   ) {
     this.id = this.ruta.snapshot.params.id;
+    this.idStore = this.ruta.snapshot.params.idStore;
   }
 
   ngOnInit(): void {

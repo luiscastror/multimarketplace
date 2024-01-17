@@ -26,7 +26,7 @@
                         </thead>
                         <tbody>
                             <tr class="d-flex" *ngFor="let item of itemsForUser" class="pointer"
-                                [routerLink]="'/admin/my-order-detail/'+item.Id">
+                                [routerLink]="'/admin/my-order-detail/'+item.Id+'/'+item.TiendaId">
                                 <td>{{item.Id.substring(item.Id.length - 5)}}</td>
                                 <td>{{item.FechaCreacion | date:'dd-MM-yyyy'}}</td>
                                 <td>{{item.NombreTienda}}</td>
