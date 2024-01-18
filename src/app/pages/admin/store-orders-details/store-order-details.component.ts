@@ -10,6 +10,7 @@ import { MainService } from 'src/app/services/main.service';
 export class StoreOrderDetailsComponent implements OnInit {
 
   id: string = '';
+  idStore: string = this.MainService.AuthService.dataStore.Id;
 
   EstadoPedido!: string;
   Estado!: string;
@@ -20,6 +21,7 @@ export class StoreOrderDetailsComponent implements OnInit {
   ) {
     this.id = this.ruta.snapshot.params.id;
   }
+
 
   ngOnInit(): void {
     this.loadPed()

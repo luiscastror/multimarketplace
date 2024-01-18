@@ -74,7 +74,45 @@
                         </div>
                     </div>
                 </div>
-               
+
+            </div>
+        </div>
+        <div class="row mt-5 d-flex justify-content-center rounded-1" *ngIf="showRating">
+            <div class="containerRating py-3 gap-4 d-flex flex-column align-items-center">
+                <app-components-title-subtitle title="Califique su experiencia"
+                    justify="center"></app-components-title-subtitle>
+
+                <div class="d-flex justify-content-between">
+                    <span class="material-symbols-outlined color" (click)="setRating(1)">
+                        star
+                    </span>
+                    <span class="material-symbols-outlined color" (click)="setRating(2)">
+                        star
+                    </span>
+                    <span class="material-symbols-outlined color" (click)="setRating(3)">
+                        star
+                    </span>
+                    <span class="material-symbols-outlined color" (click)="setRating(4)">
+                        star
+                    </span>
+                    <span class="material-symbols-outlined color" (click)="setRating(5)">
+                        star
+                    </span>
+
+                </div>
+
+                <div class="fw-medium">
+                    Seleccione con cuantas estrellas desea calificar su experiencia
+                </div>
+
+
+                <mat-form-field class="w-75 mb-3" appearance="outline" color="accent">
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="Descripcion">
+                </mat-form-field>
+                <button mat-flat-button color="primary" class="w-80" (click)="sendRating()">Enviar Calificación
+                </button>
+
             </div>
         </div>
     </div>

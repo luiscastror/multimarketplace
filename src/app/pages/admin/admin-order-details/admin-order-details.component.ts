@@ -13,7 +13,6 @@ export class AdminOrderDetailsComponent implements OnInit {
   idStore: string = '';
   EstadoPedido!: string;
   Estado!: string;
-  rutePublic : string ="https://multimarketplace-d500d27833e2.herokuapp.com/admin/my-order-detail/"+this.id+"/"+this.idStore;
 
   constructor(
     public MainService: MainService,
@@ -23,8 +22,11 @@ export class AdminOrderDetailsComponent implements OnInit {
     this.idStore = this.ruta.snapshot.params.idStore;
   }
 
+
+
   ngOnInit(): void {
     this.loadPed()
+    console.log(this.id, "  ", this.idStore);
   }
 
   ped: any = [];
