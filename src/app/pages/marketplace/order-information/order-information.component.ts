@@ -29,8 +29,8 @@ export class OrderInformationComponent implements OnInit {
 
   statePed: string = '';
   statePay: string = '';
-  showRating: boolean = true;
   calificacion!: number;
+  showRating: boolean = false;
 
   pedido: any = {};
   loadPed() {
@@ -39,25 +39,34 @@ export class OrderInformationComponent implements OnInit {
       this.statePed = resp.EstadoPedido;
       this.statePay = resp.Estado;
       this.calificacion = resp.Calificacion;
-      if (this.statePay == 'ACT' && this.statePed == 'RECIBIDO' && this.calificacion !== null) this.showRating = false;
+      //this.calificacion !== null ? this.showRating2 = false : this.showRating2 = true;
+      this.statePay == 'ACT' && this.statePed == 'RECIBIDO' && this.calificacion ==null ? this.showRating = true : this.showRating = false;
       console.log('Se encuentra en', this.showRating);
       console.log(this.pedido);
     })
   }
-
-  sendRating() {
-    this.MainService.ApiService.post('/pedidos/' + this.idStore + '/' + this.id, {
-      "Reseña": "comentario",
-      "Calificacion": this.rating
-    }).subscribe((resp: any) => {
-      console.log(resp);
-    })
-  }
-
+  
   rating!: number;
   setRating(val: number) {
     this.rating = val;
     console.log(this.rating);
   }
+
+  description : string = '';
+  setDescription(description:string){
+    this.description = description;
+  }
+
+  sendRating() {
+    this.MainService.ApiService.post('/pedidos/' + this.idStore + '/' + this.id, {
+      "Reseña": this.description,
+      "Calificacion": this.rating
+    }).subscribe((resp: any) => {
+      this.loadPed();
+      console.log(resp);
+    })
+    this.MainService.SnackbarService.show('Calificacion Enviada');
+  }
+
 
 }

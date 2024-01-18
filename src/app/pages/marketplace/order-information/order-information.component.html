@@ -83,19 +83,24 @@
                     justify="center"></app-components-title-subtitle>
 
                 <div class="d-flex justify-content-between">
-                    <span class="material-symbols-outlined color" (click)="setRating(1)">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(1)"
+                    [ngClass]="{'filled': rating >= 1}">
                         star
                     </span>
-                    <span class="material-symbols-outlined color" (click)="setRating(2)">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(2)"
+                    [ngClass]="{'filled': rating >= 2}">
                         star
                     </span>
-                    <span class="material-symbols-outlined color" (click)="setRating(3)">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(3)"
+                    [ngClass]="{'filled': rating >= 3}">
                         star
                     </span>
-                    <span class="material-symbols-outlined color" (click)="setRating(4)">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(4)"
+                    [ngClass]="{'filled': rating >= 4}">
                         star
                     </span>
-                    <span class="material-symbols-outlined color" (click)="setRating(5)">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(5)"
+                    [ngClass]="{'filled': rating >= 5}">
                         star
                     </span>
 
@@ -108,7 +113,7 @@
 
                 <mat-form-field class="w-75 mb-3" appearance="outline" color="accent">
                     <mat-label>Descripcion</mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="Descripcion">
+                    <input matInput type="text" autocomplete="off" [(ngModel)]="description" (input)="setDescription(description)">
                 </mat-form-field>
                 <button mat-flat-button color="primary" class="w-80" (click)="sendRating()">Enviar Calificación
                 </button>

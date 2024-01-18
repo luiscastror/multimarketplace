@@ -3,6 +3,10 @@
     width: 50rem;
 }
 
-span:hover {
+/* span:hover {
     color: rgb(225, 225, 29);
-}
+} */
+
+.filled {
+    color: rgb(243, 239, 9);
+  }
