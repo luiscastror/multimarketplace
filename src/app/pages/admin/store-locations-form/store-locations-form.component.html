@@ -1,25 +1,23 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-    <div class="row d-flex flex-column justify-content-center align-content-center" style="height: 50vh;">
-        <div class="col-10 col-md-6 mx-auto d-flex flex-column">
-            <p class="fw-bold f28 color-primary mb-3">{{edit?'Editar Sucursal':'Nueva Sucursal'}}</p>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Nombre de la sucursal</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
-            </mat-form-field>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Dirección</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Direccion" required>
-            </mat-form-field>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Telefono</mat-label>
-                <input matInput type="tel" autocomplete="off" formControlName="Telefono" required>
-            </mat-form-field>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Correo</mat-label>
-                <input matInput type="email" autocomplete="off" formControlName="Correo" required>
-            </mat-form-field>
-            <button mat-flat-button color="accent" class="mb-3" type="submit">{{edit?'Editar':'Crear'}}</button>
-            <button mat-stroked-button class="mb-3" type="button" routerLink="/admin/my-store-locations">Atrás</button>
-        </div>
+    <div class="col-10 col-md-6 mx-auto d-flex flex-column">
+        <div class="fw-bold f28 color-primary mb-3">{{edit?'Editar Sucursal':'Nueva Sucursal'}}</div>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Nombre de la sucursal</mat-label>
+            <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Dirección</mat-label>
+            <input matInput type="text" autocomplete="off" formControlName="Direccion" required>
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Telefono</mat-label>
+            <input matInput type="tel" autocomplete="off" formControlName="Telefono" required>
+        </mat-form-field>
+        <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" autocomplete="off" formControlName="Correo" required>
+        </mat-form-field>
+        <button mat-flat-button color="accent" class="mb-3" type="submit">{{edit?'Editar':'Crear'}}</button>
+        <button mat-stroked-button class="mb-3" type="button" routerLink="/admin/my-store-locations">Atrás</button>
     </div>
 </form>

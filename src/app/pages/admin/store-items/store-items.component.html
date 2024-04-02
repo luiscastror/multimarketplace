@@ -1,98 +1,101 @@
 <h3 class="color-primary fw-bold">Mis productos</h3>
 <p>Estos son los productos que vendes en el marketplace</p>
-<div class="w-100 d-flex flex-row justify-content-between align-items-center my-3">
-    <div class="w-50">
-        <mat-form-field class="w-100" appearance="outline" color="accent">
-            <mat-label>Buscador </mat-label>
-            <input matInput type="text">
-        </mat-form-field>
-    </div>
-    <div class="d-flex flex-row justify-content-end align-items-center">
-        <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
-            (click)="view = 'list'">
-            <span class="material-symbols-outlined">
-                list
-            </span>
-        </button>
-        <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
-            (click)="view = 'grid'">
-            <span class="material-symbols-outlined">
-                grid_view
-            </span>
-        </button>
-        <button mat-flat-button color="primary" class="ms-3" routerLink="/admin/my-store-items/form">Nuevo</button>
-    </div>
+<div *ngIf="loading">
+    <app-loading></app-loading>
 </div>
-
-<ng-container *ngIf="view == 'list'">
-    <div class="row my-3">
-        <div class="col-12">
-            <div class="table-responsive-sm">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Nombre</th>
-                            <th class="text-center">Valor</th>
-                            <th class="text-center">Descuento</th>
-                            <th class="text-center">Público</th>
-                            <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of items">
-                            <td>
-                                <p>
-                                    {{item.Descripcion}}
-                                    -
-                                    {{item.SubCategoria}}
-                                </p>
-                                <a [href]="'/item/'+item.Id" target="_blank" rel="noopener noreferrer">
-                                    Link del producto
-                                </a>
-                            </td>
-                            <td>
-                                <p class="text-end">
-                                    ${{item.Valor | number}}
-                                </p>
-                            </td>
-                            <td>
-                                <p class="fw-bold text-end" [ngClass]="{'text-success': item.Descuento > 0}">
-                                    -{{item.Descuento}}%
-                                </p>
-                            </td>
-                            <td>
-                                <p class="fw-bold text-end">
-                                    ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
-                                </p>
-                            </td>
-                            <td class="text-end">
-                                <div class="d-flex flex-row gap-1 justify-content-center">
-                                    <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25"
-                                        [routerLink]="'/admin/my-store-items/form/'+item.Id">
-                                        <span class="material-symbols-outlined">
-                                            edit
-                                        </span>
-                                    </button>
-                                    <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1"
-                                        (click)="modal(item)">
-                                        <span class=" material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<div *ngIf="!loading">
+    <div class="w-100 d-flex flex-row justify-content-between align-items-center my-3">
+        <div class="w-50">
+            <mat-form-field class="w-100" appearance="outline" color="accent">
+                <mat-label>Buscador </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="d-flex flex-row justify-content-end align-items-center">
+            <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
+                (click)="view = 'list'">
+                <span class="material-symbols-outlined">
+                    list
+                </span>
+            </button>
+            <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
+                (click)="view = 'grid'">
+                <span class="material-symbols-outlined">
+                    grid_view
+                </span>
+            </button>
+            <button mat-flat-button color="primary" class="ms-3" routerLink="/admin/my-store-items/form">Nuevo</button>
+        </div>
+    </div>
+    <ng-container *ngIf="view == 'list'">
+        <div class="row my-3">
+            <div class="col-12">
+                <div class="table-responsive-sm">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Valor</th>
+                                <th class="text-center">Descuento</th>
+                                <th class="text-center">Público</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items">
+                                <td>
+                                    <p>
+                                        {{item.Descripcion}}
+                                        -
+                                        {{item.SubCategoria}}
+                                    </p>
+                                    <a [href]="'/item/'+item.Id" target="_blank" rel="noopener noreferrer">
+                                        Link del producto
+                                    </a>
+                                </td>
+                                <td>
+                                    <p class="text-end">
+                                        ${{item.Valor | number}}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="fw-bold text-end" [ngClass]="{'text-success': item.Descuento > 0}">
+                                        -{{item.Descuento}}%
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="fw-bold text-end">
+                                        ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
+                                    </p>
+                                </td>
+                                <td class="text-end">
+                                    <div class="d-flex flex-row gap-1 justify-content-center">
+                                        <button mat-icon-button color="primary" class="bg-secondary bg-opacity-25"
+                                            [routerLink]="'/admin/my-store-items/form/'+item.Id">
+                                            <span class="material-symbols-outlined">
+                                                edit
+                                            </span>
+                                        </button>
+                                        <button mat-icon-button color="warn" class="bg-secondary bg-opacity-25 ms-1"
+                                            (click)="modal(item)">
+                                            <span class=" material-symbols-outlined">
+                                                delete
+                                            </span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-</ng-container>
-
-<ng-container *ngIf="view == 'grid'">
-    <div class="row my-3">
-        <div class="col-6 col-md-3" *ngFor="let item of items">
-            <app-components-card-product [withCar]="false" [item]="item"></app-components-card-product>
+    </ng-container>
+    <ng-container *ngIf="view == 'grid'">
+        <div class="row my-3">
+            <div class="col-6 col-md-3" *ngFor="let item of items">
+                <app-components-card-product [withCar]="false" [item]="item"></app-components-card-product>
+            </div>
         </div>
-    </div>
-</ng-container>
+    </ng-container>
+</div>

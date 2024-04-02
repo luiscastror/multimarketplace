@@ -12,6 +12,8 @@ import { MainService } from 'src/app/services/main.service';
 export class StoreCategoriesComponent implements OnInit {
 
   path_api: string = '/admin/subCategorias/';
+  loading: boolean = false;
+
 
   constructor(
     private MainService: MainService,
@@ -24,9 +26,11 @@ export class StoreCategoriesComponent implements OnInit {
 
   items: any = [];
   load() {
+    this.loading = true;
     this.items = [];
     this.MainService.ApiService.get(this.path_api + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.items = resp;
+      this.loading = false;
     })
   }
 
@@ -48,8 +52,10 @@ export class StoreCategoriesComponent implements OnInit {
   }
 
   remove(item: any) {
+    this.loading = true;
     this.MainService.ApiService.delete(this.path_api + this.MainService.AuthService.dataStore.Id + '/' + item.Id).subscribe((resp: any) => {
       this.load();
+      this.loading = false;
     }, (err) => {
       this.MainService.SnackbarService.show(err.error.message);
     })

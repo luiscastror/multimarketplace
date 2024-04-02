@@ -12,6 +12,7 @@ export class StoreLocationsComponent implements OnInit {
 
   // view: string = 'list';
   path_api: string = '/admin/sucursales/';
+  loading: boolean = false;
 
   constructor(
     private MainService: MainService,
@@ -25,9 +26,11 @@ export class StoreLocationsComponent implements OnInit {
 
   items: any = [];
   load() {
+    this.loading = true;
     this.items = [];
     this.MainService.ApiService.get(this.path_api + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.items = resp;
+      this.loading = false;
     })
   }
 
@@ -48,8 +51,10 @@ export class StoreLocationsComponent implements OnInit {
     });
   }
   remove(item: any) {
+    this.loading = true;
     this.MainService.ApiService.delete(this.path_api + this.MainService.AuthService.dataStore.Id + '/' + item.Id).subscribe((resp: any) => {
       this.load();
+      this.loading = false;
     }, (err) => {
       this.MainService.SnackbarService.show(err.error.message);
     })
