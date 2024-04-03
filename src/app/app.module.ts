@@ -81,6 +81,8 @@ import { StoreOrderDetailsComponent } from './pages/admin/store-orders-details/s
 import { StoreDashboardComponent } from './pages/admin/store-dashboard/store-dashboard.component';
 import { OrderInformationComponent } from './pages/marketplace/order-information/order-information.component';
 import { AdminOrderDetailsComponent } from './pages/admin/admin-order-details/admin-order-details.component';
+import { AdminPasswordEditComponent } from './pages/admin/admin-password-edit/admin-password-edit.component';
+import { ChangePasswordComponent } from './pages/marketplace/change-password/change-password.component';
 
 
 @NgModule({
@@ -134,7 +136,9 @@ import { AdminOrderDetailsComponent } from './pages/admin/admin-order-details/ad
     StoreOrderDetailsComponent,
     StoreDashboardComponent,
     OrderInformationComponent,
-    AdminOrderDetailsComponent
+    AdminOrderDetailsComponent,
+    AdminPasswordEditComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
