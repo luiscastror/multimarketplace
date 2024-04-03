@@ -40,6 +40,7 @@ import { AdminOrderDetailsComponent } from './pages/admin/admin-order-details/ad
 import { OrderInformationComponent } from './pages/marketplace/order-information/order-information.component';
 import { AdminPasswordEditComponent } from './pages/admin/admin-password-edit/admin-password-edit.component';
 import { ChangePasswordComponent } from './pages/marketplace/change-password/change-password.component';
+import { ChangePasswordTwoComponent } from './pages/marketplace/change-password-two/change-password-two.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
     { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },
     { path: 'sendEmail', component: ChangePasswordComponent },
+    { path: 'changePassword', component: ChangePasswordTwoComponent },
     { path: 'category/:id', component: CategoryComponent },
     { path: 'categories', component: CategoriesComponent },
     { path: 'stores', component: StoresComponent },
