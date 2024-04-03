@@ -44,6 +44,7 @@ export class StoreItemsFormComponent implements OnInit {
 
 
   submit() {
+    console.log(this.form);
     if (this.form.valid) {
       const url = '/admin/productos';
       const message = this.edit ? "Item actualizado correctamente" : "Item creado correctamente";

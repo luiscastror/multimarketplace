@@ -1,15 +1,8 @@
 <h3 class="color-primary fw-bold">Mi cuenta</h3>
 <div class="d-flex align-items-center flex-column mt-4 gap-1">
-        <img src="assets/img/logo.jpg" alt="asdasd" style="height: 50px; width: 100px;" class="mb-3">
-        <p class="fw-semibold fs-3">{{user.Nombres}}</p>
-        <small class="fw-medium fs-6">{{user.Telefono}}</small>
-        <small class="fw-medium fs-6">{{user.Correo}}</small>
-        <!-- <div class="d-flex fle-row gap-4">
-            <button mat-flat-button color="primary" aparence="outline" class="mt-5">
-                Cambio de clave
-            </button>
-            <button mat-flat-button color="primary" aparence="outline" class="mt-5">
-                Editar datos
-            </button>
-        </div> -->
-</div>  
+    <img src="assets/img/logo.jpg" alt="asdasd" style="height: 50px; width: 100px;" class="mb-3">
+    <p class="fw-semibold fs-3">{{user.Nombres}}</p>
+    <small class="fw-medium fs-6">{{user.Telefono}}</small>
+    <small class="fw-medium fs-6">{{user.Correo}}</small>
+</div>
+<!-- <a class="d-flex justify-content-center mt-5" [routerLink]="'/admin/editPassword/'+user.UsuarioId">Cambiar clave</a> -->

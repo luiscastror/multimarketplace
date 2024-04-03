@@ -22,9 +22,9 @@ export class StoreRegisterComponent implements OnInit {
     UsuarioId: new FormControl(''),
 
     // Sucursal
-    Direccion: new FormControl('Cl 24 a 17 19 Soledad'),
-    Telefono: new FormControl('3015376081'),
-    Correo: new FormControl('tienda@gmail.com'),
+    Direccion: new FormControl(''),
+    Telefono: new FormControl(''),
+    Correo: new FormControl(''),
   });
 
 

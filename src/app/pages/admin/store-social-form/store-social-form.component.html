@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-    <p class="fw-bold f28 color-primary mb-3">{{edit ? 'Editar Red' : 'Nuevo Red'}}</p>
     <div class="row">
-        <div class="col-10 col-md-6">
+        <div class="col-10 col-md-6 mx-auto d-flex flex-column">
+            <p class="fw-bold f28 color-primary mb-3">{{edit ? 'Editar Red' : 'Nuevo Red'}}</p>
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Redes</mat-label>
                 <mat-select formControlName="RedSocialId">

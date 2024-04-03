@@ -11,6 +11,7 @@ import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/mo
 export class AdminSocialNetworksComponent implements OnInit {
 
   path_api: string = '/admin/redesSociales/'
+  loading: boolean = false;
 
 
   constructor(
@@ -25,9 +26,11 @@ export class AdminSocialNetworksComponent implements OnInit {
 
   redes: any = [];
   loadSocial() {
+    this.loading = true;
     this.redes = [];
     this.MainService.ApiService.get(this.path_api + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.redes = resp;
+      this.loading = false;
     })
   }
 
@@ -49,8 +52,10 @@ export class AdminSocialNetworksComponent implements OnInit {
   }
 
   remove(item: any) {
+    this.loading = true;
     this.MainService.ApiService.delete(this.path_api + this.MainService.AuthService.dataStore.Id + '/' + item.Id).subscribe((resp: any) => {
       this.loadSocial();
+      this.loading = false;
     })
   }
 
