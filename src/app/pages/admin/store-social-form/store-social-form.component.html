@@ -4,7 +4,7 @@
             <p class="fw-bold f28 color-primary mb-3">{{edit ? 'Editar Red' : 'Nuevo Red'}}</p>
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Redes</mat-label>
-                <mat-select formControlName="RedSocialId">
+                <mat-select formControlName="RedSocialId" required>
                     <mat-option *ngFor="let item of social" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
