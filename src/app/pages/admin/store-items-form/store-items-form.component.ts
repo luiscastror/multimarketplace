@@ -70,6 +70,7 @@ export class StoreItemsFormComponent implements OnInit {
   loadCategorias() {
     this.MainService.ApiService.get("/admin/subCategorias/" + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
       this.categorias = resp;
+      console.log(this.categorias);
       if (this.edit) {
         this.loadProducto();
       }

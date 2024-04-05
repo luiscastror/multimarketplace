@@ -17,7 +17,7 @@
 
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Categoría</mat-label>
-                <mat-select formControlName="CategoriaId">
+                <mat-select formControlName="CategoriaId" required>
                     <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
