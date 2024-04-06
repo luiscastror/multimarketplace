@@ -122,7 +122,12 @@ export class StoreComponent implements OnInit {
   }
 
   show: boolean = false;
-  showStore() {
+  messageBranch: string = '';
+  showBranch(index: number) {
     this.show = true;
+    this.messageBranch = `Sucursal ${this.info.Sucursales[index].Descripcion},<br/>
+    Direccion: ${this.info.Sucursales[index].Direccion},<br/>
+    Telefono: ${this.info.Sucursales[index].Telefono},<br/>
+    Correo: ${this.info.Sucursales[index].Correo}`
   }
 }
