@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  URL_API: string = 'https://multimarketplace-d500d27833e2.herokuapp.com';
+  // URL_API: string = 'https://multimarketplace-d500d27833e2.herokuapp.com';
+  URL_API: string = 'https://marketplace-quilla-98cdd2d74ec0.herokuapp.com';
 
   constructor(
     private http: HttpClient

@@ -9,7 +9,8 @@ import { MainService } from 'src/app/services/main.service';
 export class FooterComponent implements OnInit {
 
   info: any;
-  path_api: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
+  // path_api: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
+  path_api: string = '/masters/6C093F6D-4997-42B8-AE30-3F1E6CBDA091';
   loading: boolean = true;
 
   constructor(
