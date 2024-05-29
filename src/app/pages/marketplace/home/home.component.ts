@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends BaseComponent implements OnInit {
 
   enum: any = [
     {
@@ -62,7 +63,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
     this.loadMaster();

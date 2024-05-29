@@ -1,27 +1,27 @@
-<div class="card mb-3">
-    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id"
-        [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
+<div class="card mb-3 border-0">
+    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id" [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
     </div>
-    <span class="promo" *ngIf="item.Descuento > 0">
+    <span class="promo" *ngIf="item.Descuento > 0" [style.backgroundColor]="color1" [style.color]="color2">
         -{{item.Descuento}}%
     </span>
     <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
+        <p class="small fw-light" [style.color]="color1">{{item.Tienda}}</p>
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>
         <p class="fw-light f14 text-truncate">{{item.Observacion}}
         </p>
     </div>
-    <div class="card-footer bg-white py-3">
+    <div class="card-footer border-top-0 bg-white py-3">
         <div class="w-100 d-flex flex-row justify-content-between align-items-center">
             <div>
                 <p class=" small text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
-                    {{item.Descuento > 0 ? (item.Valor | number ): '¡APROVECHA!'}}
+                    {{item.Descuento > 0 ? 'Antes: '+ (item.Valor | number ): '¡APROVECHA!'}}
                 </p>
-                <p class="color-secondary fw-bold">
-                    ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
+                <p class="fw-bold" [style.color]="color1">
+                    Ahora: ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
                 </p>
             </div>
             <div *ngIf="withCar">
-                <button mat-flat-button color="primary" (click)="add()">
+                <button mat-flat-button [style.backgroundColor]="color1" [style.color]="color4" (click)="add()">
                     <mat-icon>add_shopping_cart</mat-icon>
                 </button>
             </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent extends BaseComponent implements OnInit {
 
 
   searchInput!: string;
@@ -17,6 +18,7 @@ export class NavComponent implements OnInit {
     private router: Router,
     private ruta: ActivatedRoute,
   ) {
+    super();
     this.searchInput = this.ruta.snapshot.queryParams.keyword || '';
   }
 

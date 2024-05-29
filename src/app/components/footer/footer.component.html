@@ -1,4 +1,4 @@
-<div class="bg-color-secondary py-3">
+<div class=" py-3" [style.backgroundColor]="color3">
     <div class="container">
         <div class="row">
             <div class="text-white text-center">
@@ -10,7 +10,7 @@
         </div>
     </div>
 </div>
-<footer class="bg-white" *ngIf="!loading">
+<footer [style.backgroundColor]="color1" *ngIf="!loading">
     <div class="container">
         <div class="row px-5 py-4 w-100">
             <div class="col-12 col-md-3 mb-3">
@@ -18,33 +18,31 @@
                     <img [src]="info.Master.Logo" class="w-100" routerLink="/">
                 </div>
             </div>
-            <div class="col-12 col-md-3 color-primary mb-3">
+            <div class="col-12 col-md-3 text-white mb-3">
                 <p class="fw-bold h6 mb-2">Contáctanos</p>
                 <a href="" class="nav-link mb-2 fw-light">{{info.Master.Correo}}</a>
                 <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
             </div>
-            <div class="col-12 col-md-3 color-primary mb-3">
+            <div class="col-12 col-md-3 text-white  mb-3">
                 <p class="fw-bold h6 mb-2">Redes</p>
-                <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light"
-                    *ngFor="let item of info.RedesSociales">
+                <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light" *ngFor="let item of info.RedesSociales">
                     <p>{{item.RedSocial}}</p>
                 </a>
             </div>
-            <div class="col-12 col-md-3 color-primary mb-3">
+            <div class="col-12 col-md-3 text-white mb-3">
                 <p class="fw-bold h6 mb-2">Otros links</p>
-                <a [routerLink]="item.URL" class="nav-link mb-2 fw-light"
-                    *ngFor="let item of info.Links">{{item.Descripcion}}
+                <a [routerLink]="item.URL" class="nav-link mb-2 fw-light" *ngFor="let item of info.Links">{{item.Descripcion}}
                 </a>
             </div>
 
         </div>
     </div>
 </footer>
-<div class="w-100 bg-color-primary py-2">
+<div [style.backgroundColor]="color2" [style.color]="color1" class="w-100  py-2">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="text-white text-center"><strong>Vivesucre 2023.</strong> Todos los derechos reservados.</p>
+                <p class="text-center"><strong>{{marketplace}}</strong> Todos los derechos reservados.</p>
             </div>
         </div>
     </div>

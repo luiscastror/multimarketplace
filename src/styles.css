@@ -28,6 +28,9 @@ p {
     margin: 0 !important;
 }
 
+button {
+    border-radius: 12px !important;
+}
 
 .mat-form-field-wrapper {
     margin: 0px !important;

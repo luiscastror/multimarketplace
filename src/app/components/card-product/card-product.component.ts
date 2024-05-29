@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './card-product.component.html',
   styleUrls: ['./card-product.component.css']
 })
-export class CardProductComponent implements OnInit {
+export class CardProductComponent extends BaseComponent implements OnInit {
 
   @Input() item: any = {};
   @Input() withCar: boolean = true;
@@ -14,52 +15,18 @@ export class CardProductComponent implements OnInit {
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
+    console.log(this.item)
   }
 
   add() {
     this.MainService.SnackbarService.show("Añadido correctamente");
     this.MainService.CartService.add(this.item)
   }
-
-
-  remove() {
-    const business = {
-      name: "DEMO",
-      uid: '4fa9f4a006b47c5'
-    }
-
-    const item = {
-      uid: 'MKqgWSl8d',
-      name: 'Reloj',
-      value: 25000,
-      count: 1
-    }
-
-    const payload = {
-      business: business,
-      item: item
-    }
-
-    this.MainService.CartService.removeItem(payload)
-
-  }
-
-  removeStore() {
-    const business = {
-      name: "DEMO",
-      uid: '4fa9f4a006b47c5'
-    }
-
-    const payload = {
-      business: business
-    }
-
-    this.MainService.CartService.removeStore(payload)
-  }
-
 
   clear() {
     this.MainService.CartService.clear()

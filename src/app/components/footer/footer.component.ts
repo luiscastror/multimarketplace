@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent extends BaseComponent implements OnInit {
 
   info: any;
   // path_api: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
@@ -15,7 +16,9 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.load()
