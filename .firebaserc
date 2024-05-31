@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "marketplace-vivesucre"
+  },
+  "targets": {
+    "marketplace-vivesucre": {
+      "hosting": {
+        "marketplace-vivesucre": [
+          "marketplace-vivesucre"
+        ],
+        "quillavende": [
+          "quillavende"
+        ]
+      }
+    }
   }
 }
