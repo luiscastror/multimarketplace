@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,11 +7,13 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent extends BaseComponent implements OnInit {
 
   constructor(
     public MainService: MainService
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void { }
 
@@ -25,7 +28,7 @@ export class CartComponent implements OnInit {
   }
 
 
-  press(index:number){
+  press(index: number) {
     console.log(index);
   }
 

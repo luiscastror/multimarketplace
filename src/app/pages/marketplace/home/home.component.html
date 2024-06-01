@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div class="container">
+<div class="container-fluid">
     <div class="row my-3">
         <div class="col-12">
             <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
@@ -7,8 +7,7 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Categorias">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
-                [justify]="enum[0].justify">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle" [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
@@ -24,8 +23,7 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Productos">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle"
-                [justify]="enum[1].justify">
+            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-3" *ngFor="let item of random.Productos">
@@ -34,10 +32,9 @@
     </div>
 </div>
 <app-components-wall [blocks]="blocks"></app-components-wall>
-<div class="container">
+<div class="container-fluid">
     <div class="row my-5">
-        <app-components-title-subtitle [title]="enum[2].title" [subtitle]="enum[2].subtitle"
-            [justify]="enum[2].justify">
+        <app-components-title-subtitle [title]="enum[2].title" [subtitle]="enum[2].subtitle" [justify]="enum[2].justify">
         </app-components-title-subtitle>
     </div>
     <div class="row my-3">
@@ -54,8 +51,7 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Productos">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle"
-                [justify]="enum[1].justify">
+            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-3" *ngFor="let item of random.Productos">
@@ -64,8 +60,7 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Categorias">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
-                [justify]="enum[0].justify">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle" [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
@@ -81,11 +76,10 @@
     </div>
 </div>
 <div class="bg-white w-100 py-5" *ngIf="random && random.Tiendas">
-    <div class=" container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12 mb-3">
-                <app-components-title-subtitle [title]="enum[3].title" [subtitle]="enum[3].subtitle"
-                    [justify]="enum[3].justify">
+                <app-components-title-subtitle [title]="enum[3].title" [subtitle]="enum[3].subtitle" [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
             <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Tiendas" [routerLink]="'/store/'+item.Id">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseComponent implements OnInit {
 
   form = new FormGroup({
     Correo: new FormControl('', [Validators.email]),
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
     private MainService: MainService,
     private router: Router,
   ) {
+    super();
     this.MainService.AuthService.deleteToken();
   }
 

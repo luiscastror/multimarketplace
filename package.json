@@ -7,6 +7,8 @@
     "build": "ng build",
     "build:marketplace-vivesucre": "ng build marketplace-vivesucre",
     "build:quillavende": "ng build quillavende",
+    "deploy:quillavende": "npx firebase deploy --only hosting:quillavende",
+    "deploy:vivesucre": "npx firebase deploy --only hosting:marketplace-vivesucre",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

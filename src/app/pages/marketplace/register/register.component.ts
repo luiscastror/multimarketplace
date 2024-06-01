@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends BaseComponent implements OnInit {
 
   form = new FormGroup({
     Nombre: new FormControl(''),
@@ -22,7 +23,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private router: Router,
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
   }
