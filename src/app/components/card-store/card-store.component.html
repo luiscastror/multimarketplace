@@ -1,9 +1,8 @@
-<div class="card mb-3 pointer" [routerLink]="'/store/'+item.Id">
+<div class="card mb-3 pointer border-0" [routerLink]="'/store/'+item.Id">
     <div class="card-body text-center">
-        <div [ngStyle]="{'background-image': 'url(' + (item.Logo ? item.Logo : '/assets/img/logo.jpg')  + ')'}"
-            class="bg-image">
+        <div [ngStyle]="{'background-image': 'url(' + (item.Logo ? item.Logo : '/assets/img/logo.jpg')  + ')'}" class="bg-image">
         </div>
-        <p class="fw-bold text-center text-truncate f16">{{item.Descripcion}}</p>
-        <p class="fw-light text-center text-truncate f14">{{item.Biografia}}</p>
+        <!-- <p class="fw-bold text-center text-truncate f16">{{item.Descripcion}}</p>
+        <p class="fw-light text-center text-truncate f14">{{item.Biografia}}</p> -->
     </div>
 </div>

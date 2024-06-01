@@ -18,17 +18,17 @@ export class HomeComponent extends BaseComponent implements OnInit {
     {
       title: 'Vende con nosotros',
       subtitle: 'Muestra todos tus productos aquí',
-      justify: 'center'
+      justify: 'start'
     },
     {
       title: 'Promocionate aquí',
       subtitle: 'Muestra todos tus productos aquí',
-      justify: 'center'
+      justify: 'start'
     },
     {
       title: 'Más de 300 tiendas',
       subtitle: 'Compra en más de 300 tiendas',
-      justify: 'center'
+      justify: 'start'
     }
   ]
 

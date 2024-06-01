@@ -11,12 +11,18 @@
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
-            <div class="card mb-3">
-                <div class="card-body text-center">
-                    <img [src]="item.Imagen" class="img-fluid">
-                    <p class="fw-bold text-center">
-                        {{item.Descripcion}}
-                    </p>
+            <div class="card mb-3 border-0">
+                <div class="card-body">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <div class="w-50">
+                            <img [src]="item.Imagen" class="img-fluid">
+                        </div>
+                        <div class="w-50">
+                            <p class="fw-bold f28">
+                                {{item.Descripcion}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -26,7 +32,7 @@
             <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of random.Productos">
+        <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
             <app-components-card-product [item]="item"></app-components-card-product>
         </div>
     </div>
@@ -39,7 +45,8 @@
     </div>
     <div class="row my-3">
         <div class="col-12">
-            <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner>
+            <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
+            <!-- <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner> -->
         </div>
         <div class="col-12 col-md-8">
             <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
@@ -54,7 +61,7 @@
             <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-3" *ngFor="let item of random.Productos">
+        <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
             <app-components-card-product [item]="item"></app-components-card-product>
         </div>
     </div>
@@ -64,18 +71,24 @@
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
-            <div class="card mb-3">
-                <div class="card-body text-center">
-                    <img [src]="item.Imagen" class="img-fluid">
-                    <p class="fw-bold text-center">
-                        {{item.Descripcion}}
-                    </p>
+            <div class="card mb-3 border-0">
+                <div class="card-body">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <div class="w-50">
+                            <img [src]="item.Imagen" class="img-fluid">
+                        </div>
+                        <div class="w-50">
+                            <p class="fw-bold f28">
+                                {{item.Descripcion}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="bg-white w-100 py-5" *ngIf="random && random.Tiendas">
+<div class="w-100 py-5" *ngIf="random && random.Tiendas">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mb-3">
