@@ -60,6 +60,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   // path_api_master: string = '/masters/743BA848-EB22-4B52-A333-34C438BD2E72';
   path_api_master: string = '/masters/6C093F6D-4997-42B8-AE30-3F1E6CBDA091';
+  imgBanner: string = '../../assets/img/banner_1.jpg'
 
   constructor(
     private MainService: MainService

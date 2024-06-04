@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "build:marketplace-vivesucre": "ng build marketplace-vivesucre",
     "build:quillavende": "ng build quillavende",

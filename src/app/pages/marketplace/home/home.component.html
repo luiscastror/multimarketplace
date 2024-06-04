@@ -2,12 +2,30 @@
 <div class="container-fluid">
     <div class="row my-3">
         <div class="col-12">
-            <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
+            <app-banner [img]="imgBanner" *ngIf="!loading4"></app-banner>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <app-card-link></app-card-link>
+        </div>
+        <div class="col-12 col-md-4">
+            <app-card-link></app-card-link>
+        </div>
+        <div class="col-12 col-md-4">
+            <app-card-link></app-card-link>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+            <img [src]="img" alt="" class="img-fluid w-100 h-50 rounded-3 mx-1">
+            <img [src]="img" alt="" class="img-fluid w-100 h-50 rounded-3 mx-1">
         </div>
     </div>
     <div class="row mb-5" *ngIf="random && random.Categorias">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle" [justify]="enum[0].justify">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
+                [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
@@ -18,7 +36,7 @@
                             <img [src]="item.Imagen" class="img-fluid">
                         </div>
                         <div class="w-50">
-                            <p class="fw-bold f28">
+                            <p class="fw-bold fs-5">
                                 {{item.Descripcion}}
                             </p>
                         </div>
@@ -29,7 +47,16 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Productos">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
+            <app-components-title-subtitle title="Lo ultimo" [justify]="enum[1].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
+            <app-components-card-product [item]="item"></app-components-card-product>
+        </div>
+    </div>
+    <div class="row mb-5" *ngIf="random && random.Productos">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle title="Lo más vendido" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
@@ -37,54 +64,40 @@
         </div>
     </div>
 </div>
-<app-components-wall [blocks]="blocks"></app-components-wall>
+<!-- <app-components-wall [blocks]="blocks"></app-components-wall> -->
 <div class="container-fluid">
-    <div class="row my-5">
-        <app-components-title-subtitle [title]="enum[2].title" [subtitle]="enum[2].subtitle" [justify]="enum[2].justify">
-        </app-components-title-subtitle>
-    </div>
     <div class="row my-3">
         <div class="col-12">
             <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
             <!-- <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner> -->
         </div>
-        <div class="col-12 col-md-8">
+        <!-- <div class="col-12 col-md-8">
             <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
         </div>
         <div class="col-12 col-md-4">
             <app-banner [img]="Banners2[1].URL" *ngIf="!loading4"></app-banner>
             <app-banner [img]="Banners2[0].URL" *ngIf="!loading4"></app-banner>
-        </div>
+        </div> -->
     </div>
-    <div class="row mb-5" *ngIf="random && random.Productos">
-        <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[1].title" [subtitle]="enum[1].subtitle" [justify]="enum[1].justify">
-            </app-components-title-subtitle>
-        </div>
-        <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
-            <app-components-card-product [item]="item"></app-components-card-product>
-        </div>
-    </div>
-    <div class="row mb-5" *ngIf="random && random.Categorias">
-        <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle" [justify]="enum[0].justify">
-            </app-components-title-subtitle>
-        </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
-            <div class="card mb-3 border-0">
-                <div class="card-body">
-                    <div class="w-100 d-flex justify-content-between align-items-center">
-                        <div class="w-50">
-                            <img [src]="item.Imagen" class="img-fluid">
-                        </div>
-                        <div class="w-50">
-                            <p class="fw-bold f28">
-                                {{item.Descripcion}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+</div>
+<div class="container-fluid px-5">
+    <div class="row bg-white p-5 rounded-4">
+        <div class="col-12 col-md-6">
+            <div class="strong" style="color: #ED144C">
+                ¿Qué es quilla emprende?
             </div>
+            <div class="my-3">
+                Quilla emprende donde la inovacion y el emprendimiento se unen Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Perspiciatis, consequuntur porro? Magni nihil voluptas nisi numquam, dicta delectus
+                atque, sequi ab tempore velit, ea sed minima voluptatibus. Soluta, atque minus?
+            </div>
+            <button class="btn btn-success fs-4">¡REGISTRATE!</button>
+        </div>
+        <div class="col-12 col-md-6 mt-3" style="text-align:center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ppAnpOXNvxI?si=TLMC_PMuQ8KoUBpW"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -92,18 +105,48 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mb-3">
-                <app-components-title-subtitle [title]="enum[3].title" [subtitle]="enum[3].subtitle" [justify]="enum[3].justify">
+                <app-components-title-subtitle title="Marcas destacadas" [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
             <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Tiendas" [routerLink]="'/store/'+item.Id">
                 <app-card-store [item]="item"></app-card-store>
             </div>
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <p class="text-center">
                     <a routerLink="/stores/" class="color-secondary">Ver todas las marcas</a>
                 </p>
+            </div> -->
+        </div>
+    </div>
+</div>
+<div class="w-100">
+    <div class="container-fluid">
+        <div class="row bg-white mx-3">
+            <div class="col-3">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="red">Confiable y seguro</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="" alt="">
+                    <div>Atención al cliente</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="" alt="">
+                    <div>compra 100% segura</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="" alt="">
+                    <div></div>Envios a nivel nacional
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <app-components-footer></app-components-footer>
