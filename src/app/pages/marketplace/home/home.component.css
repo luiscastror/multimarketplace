@@ -22,8 +22,9 @@
     /* Ajusta este valor según tus necesidades */
 }
 
-.red {
-    color: var(--color1);
+.icon-img {
+    width: 65px;
+    height: 50px;
 }
 
 /* .categoriesss {

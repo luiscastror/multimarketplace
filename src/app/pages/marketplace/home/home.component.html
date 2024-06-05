@@ -6,15 +6,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4">
-            <app-card-link></app-card-link>
-        </div>
-        <div class="col-12 col-md-4">
-            <app-card-link></app-card-link>
-        </div>
-        <div class="col-12 col-md-4">
-            <app-card-link></app-card-link>
-        </div>
+        <app-card-link></app-card-link>
     </div>
     <div class="row">
         <div class="d-flex justify-content-between align-items-center">
@@ -91,7 +83,8 @@
                 adipisicing elit. Perspiciatis, consequuntur porro? Magni nihil voluptas nisi numquam, dicta delectus
                 atque, sequi ab tempore velit, ea sed minima voluptatibus. Soluta, atque minus?
             </div>
-            <button class="btn btn-success fs-4">¡REGISTRATE!</button>
+            <button class="btn fw-semibold fs-4" [style.background]="color3"
+                [style.color]="color1">¡REGISTRATE!</button>
         </div>
         <div class="col-12 col-md-6 mt-3" style="text-align:center;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ppAnpOXNvxI?si=TLMC_PMuQ8KoUBpW"
@@ -123,24 +116,24 @@
     <div class="container-fluid">
         <div class="row bg-white mx-3">
             <div class="col-3 d-flex align-items-center justify-content-center">
-                <div class="fs-5" style="color: #ED144C">Confiable y seguro</div>
+                <div class="fs-2 fw-semibold" [style.color]="color1">Confiable y seguro</div>
             </div>
             <div class="col-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/llamadas.png" alt="" class="w-25 h-25">
-                    <div class="fs-5 mt-3" style="color: #70555F">Atención al cliente</div>
+                    <img src="../../assets/img/llamadas.png" alt="" class="icon-img">
+                    <div class="fs-5 mt-3" [style.color]="color5">Atención al cliente</div>
                 </div>
             </div>
             <div class="col-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/verificado.png" alt="" class="w-25 h-25">
-                    <div class="fs-5 mt-3" style="color: #70555F">compra 100% segura</div>
+                    <img src="../../assets/img/verificado.png" alt="" class="icon-img">
+                    <div class="fs-5 mt-3" [style.color]="color5">compra 100% segura</div>
                 </div>
             </div>
             <div class="col-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/domicilio-1.png" alt="" class="w-25 h-25">
-                    <div class="fs-5 mt-3" style="color: #70555F">Envios a nivel nacional</div>
+                    <img src="../../assets/img/domicilio-1.png" alt="" class="icon-img">
+                    <div class="fs-5 mt-3" [style.color]="color5">Envios a nivel nacional</div>
                 </div>
             </div>
         </div>

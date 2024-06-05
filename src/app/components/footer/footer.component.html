@@ -1,4 +1,4 @@
-<div class=" py-3" [style.backgroundColor]="color3">
+<!-- <div class=" py-3" [style.backgroundColor]="color3">
     <div class="container">
         <div class="row">
             <div class="text-white text-center">
@@ -9,36 +9,67 @@
             </div>
         </div>
     </div>
-</div>
-<footer [style.backgroundColor]="color1" *ngIf="!loading">
+</div> -->
+<footer [style.backgroundColor]="color4" *ngIf="!loading" class="mt-4">
     <div class="container">
-        <div class="row px-5 py-4 w-100">
-            <div class="col-12 col-md-3 mb-3">
-                <div class="row w-100">
-                    <img [src]="info.Master.Logo" class="w-100" routerLink="/">
+        <div class="row">
+            <div class="col-12 col-md-12 mb-3">
+                <div class="w-100 d-flex justify-content-center pt-3">
+                    <img src="../../assets/img/logocolor.png" class="w-25" routerLink="/">
                 </div>
             </div>
-            <div class="col-12 col-md-3 text-white mb-3">
-                <p class="fw-bold h6 mb-2">Contáctanos</p>
-                <a href="" class="nav-link mb-2 fw-light">{{info.Master.Correo}}</a>
-                <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
+        </div>
+        <div class="row px-5 py-4 w-100">
+            <div class="col-12 col-md-4 mb-3" [style.color]="color5">
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <p class="fw-bold h6 mb-2">Secciones</p>
+                        <a href="" class="nav-link mb-2 fw-light">{{info.Master.Correo}}</a>
+                        <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <a href="" class="nav-link mb-2 fw-light mt-4">{{info.Master.Correo}}</a>
+                        <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-3 text-white  mb-3">
-                <p class="fw-bold h6 mb-2">Redes</p>
-                <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light" *ngFor="let item of info.RedesSociales">
-                    <p>{{item.RedSocial}}</p>
-                </a>
+            <div class="col-12 col-md-4  mb-3" [style.color]=" color5">
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <p class="fw-bold h6 mb-2">Secciones</p>
+                        <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light"
+                            *ngFor="let item of info.RedesSociales">
+                            <p>Politicas</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <a target="_blank" class="nav-link mb-2 fw-light mt-4">
+                            <p>Politicas</p>
+                        </a>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Politicas</p>
+                        </a>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Politicas</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-3 text-white mb-3">
-                <p class="fw-bold h6 mb-2">Otros links</p>
-                <a [routerLink]="item.URL" class="nav-link mb-2 fw-light" *ngFor="let item of info.Links">{{item.Descripcion}}
-                </a>
+            <div class="col-12 col-md-4 mb-3" [style.color]="color5">
+                <div class="d-flex flex-column justify-content-center align-items-center w-100">
+                    <div class="d-flex flex-row w-50 justify-content-around mb-4">
+                        <img src="../../assets/img/instagram.png" alt="" class="icon-img">
+                        <img src="../../assets/img/equis.png" alt="" class="icon-img">
+                        <img src="../../assets/img/facebook.png" alt="" class="icon-img">
+                    </div>
+                    <a href="" [style.background]="color2" class="btn ">www.quillaemprende.com</a>
+                </div>
             </div>
 
         </div>
     </div>
 </footer>
-<div [style.backgroundColor]="color2" [style.color]="color1" class="w-100  py-2">
+<!-- <div [style.backgroundColor]="color2" [style.color]="color1" class="w-100  py-2">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -46,4 +77,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
