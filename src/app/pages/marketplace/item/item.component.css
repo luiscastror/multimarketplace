@@ -4,3 +4,7 @@
     background-size: cover;
     opacity: 0.5;
 }
+
+.no-border {
+    border: none;
+}

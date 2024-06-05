@@ -22,6 +22,57 @@
     /* Ajusta este valor según tus necesidades */
 }
 
+/* Ajusta el tamaño de la fuente para pantallas medianas (md) */
+@media (max-width: 992px) {
+    .strong {
+        font-size: 50px;
+        /* Cambia este valor según tus necesidades */
+    }
+}
+
+/* Ajusta el tamaño de la fuente para pantallas pequeñas (col) */
+@media (max-width: 768px) {
+    .strong {
+        font-size: 30px;
+        /* Cambia este valor según tus necesidades */
+    }
+}
+
+.responsive-video {
+    width: 560px;
+    height: 315px;
+}
+
+/* Ajusta el tamaño del video para pantallas medianas (md) */
+@media (max-width: 992px) {
+    .responsive-video {
+        width: 480px;
+        /* Cambia este valor según tus necesidades */
+        height: 270px;
+        /* Mantén la proporción 16:9 */
+    }
+}
+
+/* Ajusta el tamaño del video para pantallas pequeñas (col) */
+
+@media (max-width: 768px) {
+    .responsive-video {
+        width: 320px;
+        /* Cambia este valor según tus necesidades */
+        height: 180px;
+        /* Mantén la proporción 16:9 */
+    }
+}
+
+@media (max-width: 600px) {
+    .responsive-video {
+        width: 220px;
+        /* Cambia este valor según tus necesidades */
+        height: 110px;
+        /* Mantén la proporción 16:9 */
+    }
+}
+
 .icon-img {
     width: 65px;
     height: 50px;

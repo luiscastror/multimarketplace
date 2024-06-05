@@ -4,6 +4,36 @@
 </div>
 <div class="container" *ngIf="!loading">
     <div class="row">
+        <div class="row">
+            <div class="col-12">
+                <app-banner img="../../assets/img/imgTienda.png" *ngIf="!loading"></app-banner>
+            </div>
+            <!-- <div class="col-12 col-md-6">
+                <input class="col-12 col-md-12 inputsButton" type="button" [style.backgroundColor]="color2"
+                    value="MASCULINO" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Camisetas" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Jeans" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Shorts" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Gorras" [disabled]="true">
+            </div>
+            <div class="col-12 col-md-6">
+                <input class="col-12 col-md-12 inputsButton" type="button" [style.backgroundColor]="color2"
+                    value="FEMENINO" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Camisetas" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Jeans" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Shorts" [disabled]="true">
+                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
+                    value="Gorras" [disabled]="true">
+            </div> -->
+
+        </div>
         <div class="col-12 col-md-3 pt-3 mb-3">
             <div class="portada" [ngStyle]="{'background-image': 'url(' + info.Tienda.Portada + ')'}"></div>
             <div class="logo" [ngStyle]="{'background-image': 'url(' + info.Tienda.Logo + ')'}"></div>

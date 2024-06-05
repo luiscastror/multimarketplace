@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent extends BaseComponent implements OnInit {
 
   item: any = {};
 
@@ -23,6 +24,7 @@ export class ItemComponent implements OnInit {
     private ruta: ActivatedRoute,
     private router: Router,
   ) {
+    super()
     this.ruta.params.subscribe(params => {
       this.id = params['id'];
       this.path_api = '/productos/' + this.id;

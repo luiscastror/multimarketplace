@@ -18,7 +18,7 @@
     margin-right: auto;
     margin-top: -60px;
     margin-bottom: 10px;
-    border: 3px solid var(--secondary);
+    border: 3px solid #74E65A;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: white;
@@ -27,7 +27,7 @@
 
 .item-store:hover {
     transition: 0.5s;
-    background-color: var(--secondary);
+    background-color: #74E65A;
     color: white !important;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
@@ -35,4 +35,12 @@
 
 .fs-66 {
     font-size: 14px;
+}
+
+.inputsButton {
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    /* Corregido: la propiedad correcta es "cursor" y no "pointer" */
 }

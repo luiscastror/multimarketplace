@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.css']
 })
-export class StoreComponent implements OnInit {
+export class StoreComponent extends BaseComponent implements OnInit {
 
   loading: boolean = true;
   id = this.ruta.snapshot.params.id;
@@ -19,7 +20,9 @@ export class StoreComponent implements OnInit {
     private MainService: MainService,
     private ruta: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
     this.load_store();
