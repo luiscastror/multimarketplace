@@ -5,7 +5,8 @@
                 <img [src]="logoBase" style="width: 200px; max-width: 250px;" routerLink="/" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
-                <mat-form-field class="w-100" appearance="outline" color="accent" style="background: white; border-radius: 8px; padding: 5px;">
+                <mat-form-field class="w-100" appearance="outline" color="accent"
+                    style="background: white; border-radius: 8px; padding: 5px;">
                     <mat-label>Busca productos, marcas y más...</mat-label>
                     <input matInput type="text" [(ngModel)]="searchInput" (keyup.enter)="search()">
                     <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="search()">
@@ -15,17 +16,20 @@
             </div>
             <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
                 <div class="d-none d-md-inline">
-                    <button mat-flat-button color="primary" routerLink="/cart" [style.backgroundColor]="color2" [style.color]="color1">
+                    <button mat-flat-button color="primary" routerLink="/cart" [style.backgroundColor]="color2"
+                        [style.color]="color1">
                         <span class="fw-bold f20">Haz parte de Quilla Vende</span>
                     </button>
                 </div>
                 <div class="d-inline d-md-none">
-                    <button mat-icon-button [style.backgroundColor]="color2" [style.color]="color1" routerLink="/search" (click)="search()">
+                    <button mat-icon-button [style.backgroundColor]="color2" [style.color]="color1" routerLink="/search"
+                        (click)="search()">
                         <mat-icon>search</mat-icon>
                     </button>
                 </div>
                 <div class="d-inline d-md-none">
-                    <button mat-icon-button [style.backgroundColor]="color2" [style.color]="color1" [routerLink]="isLog ? '/admin' : '/login'">
+                    <button mat-icon-button [style.backgroundColor]="color2" [style.color]="color1"
+                        [routerLink]="isLog ? '/admin' : '/login'">
                         <mat-icon>account_circle</mat-icon>
                     </button>
                 </div>
@@ -42,23 +46,29 @@
         <div class="row mt-3">
             <div class="col-12 d-flex justify-content-between">
                 <div class="d-flex justify-content-md-start justify-content-evenly flex-wrap flex-row gap-3 gap-md-5">
-                    <a class="fw-semibold text-decoration-none" routerLink="/categories" [style.color]="color4">Categorías</a>
-                    <a class="fw-semibold text-decoration-none" routerLink="/stores" [style.color]="color4">Tiendas</a>
-                    <a class="fw-semibold text-decoration-none" routerLink="/promo" [style.color]="color4">Promociones</a>
-                    <a class="fw-semibold text-decoration-none d-none d-md-inline" routerLink="/login" [style.color]="color4">
+                    <a class="fw-semibold text-decoration-none" routerLink="/categories"
+                        [style.color]="color4">Categorías</a>
+                    <a class="fw-semibold text-decoration-none" routerLink="/stores" [style.color]="color4">Marcas</a>
+                    <a class="fw-semibold text-decoration-none" routerLink="/promo"
+                        [style.color]="color4">Promociones</a>
+                    <a class="fw-semibold text-decoration-none d-none d-md-inline" routerLink="/login"
+                        [style.color]="color4">
                         Quiero vender, soy una tienda
                     </a>
-                    <button mat-flat-button [style.backgroundColor]="color2" [style.color]="color1" routerLink="/login" class="d-inline d-md-none">
+                    <button mat-flat-button [style.backgroundColor]="color2" [style.color]="color1" routerLink="/login"
+                        class="d-inline d-md-none">
                         <span class="fw-bold">Quiero vender, soy una tienda</span>
                     </button>
                 </div>
                 <div class="d-none d-md-inline">
                     <div class="d-flex gap-3">
-                        <a class="fw-semibold text-decoration-none d-flex gap-1" [routerLink]="isLog ? '/admin' : '/login'" [style.color]="color4">
+                        <a class="fw-semibold text-decoration-none d-flex gap-1"
+                            [routerLink]="isLog ? '/admin' : '/login'" [style.color]="color4">
                             <mat-icon>account_circle</mat-icon>
                             {{isLog ? MainService.AuthService.dataUser.Nombres :'Mi cuenta'}}
                         </a>
-                        <a class="fw-semibold text-decoration-none d-flex gap-1" routerLink="/cart" [style.color]="color4">
+                        <a class="fw-semibold text-decoration-none d-flex gap-1" routerLink="/cart"
+                            [style.color]="color4">
                             <mat-icon>shopping_cart</mat-icon> Carrito
                             <span *ngIf="MainService.CartService.count() > 0">
                                 ({{MainService.CartService.count()}})

@@ -10,8 +10,8 @@
     </div>
     <div class="row">
         <div class="d-flex justify-content-between align-items-center">
-            <img [src]="img" alt="" class="img-fluid w-100 h-50 rounded-3 mx-1">
-            <img [src]="img" alt="" class="img-fluid w-100 h-50 rounded-3 mx-1">
+            <img src="../../assets/img/Rectangle_1.png" alt="" class="img-fluid w-100 h-75 rounded-3 mx-1">
+            <img src="../../assets/img/Rectangle_2.png" alt="" class="img-fluid w-100 h-75 rounded-3 mx-1">
         </div>
     </div>
     <div class="row mb-5" *ngIf="random && random.Categorias">
@@ -23,23 +23,23 @@
         <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
             <div class="card mb-3 border-0">
                 <div class="card-body">
-                    <div class="w-100 d-flex justify-content-between align-items-center">
-                        <div class="w-50">
+                    <div class="content-wrapper w-100">
+                        <div class="w-50 image-container">
                             <img [src]="item.Imagen" class="img-fluid">
                         </div>
-                        <div class="w-50">
-                            <p class="fw-bold fs-5">
-                                {{item.Descripcion}}
-                            </p>
+                        <div class="w-50 description-container">
+                            <p class="descriptionCategory">{{item.Descripcion}}</p>
+                            <div class="barraColor" [style.background]="color3"></div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="row mb-5" *ngIf="random && random.Productos">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle title="Lo ultimo" [justify]="enum[1].justify">
+            <app-components-title-subtitle [title]="enum[1].title" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
@@ -48,7 +48,7 @@
     </div>
     <div class="row mb-5" *ngIf="random && random.Productos">
         <div class="col-12 mb-3">
-            <app-components-title-subtitle title="Lo más vendido" [justify]="enum[1].justify">
+            <app-components-title-subtitle [title]="enum[2].title" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
@@ -75,16 +75,15 @@
 <div class="container-fluid px-5">
     <div class="row bg-white p-5 rounded-4">
         <div class="col-12 col-md-6">
-            <div class="strong" style="color: #ED144C">
-                ¿Qué es quilla emprende?
+            <div class="strong" [style.color]="color1">
+                ¿Qué es <br> quilla <br>emprende?
             </div>
             <div class="my-3">
                 Quilla emprende donde la inovacion y el emprendimiento se unen Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Perspiciatis, consequuntur porro? Magni nihil voluptas nisi numquam, dicta delectus
                 atque, sequi ab tempore velit, ea sed minima voluptatibus. Soluta, atque minus?
             </div>
-            <button class="btn fw-semibold fs-4" [style.background]="color3"
-                [style.color]="color1">¡REGISTRATE!</button>
+            <button class="btn registrate" [style.background]="color3" [style.color]="color1">¡REGISTRATE!</button>
         </div>
         <div class="col-12 col-md-6 mt-3" style="text-align:center;">
             <iframe class="responsive-video" src="https://www.youtube.com/embed/ppAnpOXNvxI?si=TLMC_PMuQ8KoUBpW"
@@ -98,7 +97,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mb-3">
-                <app-components-title-subtitle title="Marcas destacadas" [justify]="enum[3].justify">
+                <app-components-title-subtitle [title]="enum[3].title" [justify]="enum[3].justify">
                 </app-components-title-subtitle>
             </div>
             <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Tiendas" [routerLink]="'/store/'+item.Id">
@@ -115,25 +114,28 @@
 <div class="w-100">
     <div class="container-fluid">
         <div class="row bg-white mx-3">
-            <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                <div class="fs-2 fw-semibold" [style.color]="color1">Confiable y seguro</div>
+            <div class="col-6 col-md-3 py-3 d-flex align-items-center justify-content-center">
+                <div class="fs-3 fw-semibold" [style.color]="color1" style="line-height: 1;">CONFIABLE<br>Y SEGURO</div>
             </div>
             <div class="col-6 col-md-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/llamadas.png" alt="" class="icon-img">
-                    <div class="fs-5 mt-3 tem" [style.color]="color5">Atención al cliente</div>
+                    <img src="../../assets/img/Vector.png" alt="" class="icon3-img">
+                    <div class="fs-6 mt-3 fw-medium" [style.color]="color5" style="line-height: 1;">Atención<br>al
+                        cliente</div>
                 </div>
             </div>
             <div class="col-6 col-md-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/verificado.png" alt="" class="icon-img">
-                    <div class="fs-5 mt-3" [style.color]="color5">compra 100% segura</div>
+                    <img src="../../assets/img/verificado.png" alt="" class="icon2-img">
+                    <div class="fs-6 mt-3 fw-medium" [style.color]="color5">Compra 100% segura</div>
                 </div>
             </div>
             <div class="col-6 col-md-3 pt-3">
                 <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="../../assets/img/domicilio-1.png" alt="" class="icon-img">
-                    <div class="fs-5 mt-3" [style.color]="color5">Envios a nivel nacional</div>
+                    <img src="../../assets/img/domicilio-1.png" alt="" class="icon2-img">
+                    <div class="fs-6 mt-3 fw-medium" [style.color]="color5" style="line-height: 1;">
+                        Envios a <br>nivel nacional
+                    </div>
                 </div>
             </div>
         </div>

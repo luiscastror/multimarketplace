@@ -85,6 +85,7 @@ import { AdminPasswordEditComponent } from './pages/admin/admin-password-edit/ad
 import { ChangePasswordComponent } from './pages/marketplace/change-password/change-password.component';
 import { ChangePasswordTwoComponent } from './pages/marketplace/change-password-two/change-password-two.component';
 import { CardLinkComponent } from './components/card-link/card-link.component';
+import { BusinessOfTheMonthComponent } from './components/business-of-the-month/business-of-the-month.component';
 
 
 @NgModule({
@@ -142,7 +143,8 @@ import { CardLinkComponent } from './components/card-link/card-link.component';
     AdminPasswordEditComponent,
     ChangePasswordComponent,
     ChangePasswordTwoComponent,
-    CardLinkComponent
+    CardLinkComponent,
+    BusinessOfTheMonthComponent
   ],
   imports: [
     BrowserModule,

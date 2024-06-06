@@ -11,22 +11,27 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   enum: any = [
     {
-      title: 'Categorías',
+      title: 'Categorías destacadas',
       subtitle: 'Mira la variedad de categorías que tenemos',
       justify: 'start'
     },
     {
-      title: 'Vende con nosotros',
+      title: 'Lo último',
       subtitle: 'Muestra todos tus productos aquí',
       justify: 'start'
     },
     {
-      title: 'Promocionate aquí',
+      title: 'Lo más vendido',
       subtitle: 'Muestra todos tus productos aquí',
       justify: 'start'
     },
     {
-      title: 'Más de 300 tiendas',
+      title: 'Marcas destacadas',
+      subtitle: 'Compra en más de 300 tiendas',
+      justify: 'start'
+    },
+    {
+      title: 'Emprendedoras del mes',
       subtitle: 'Compra en más de 300 tiendas',
       justify: 'start'
     }

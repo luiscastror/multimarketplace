@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
@@ -15,13 +16,17 @@ export class FooterComponent extends BaseComponent implements OnInit {
   loading: boolean = true;
 
   constructor(
-    private MainService: MainService
+    public MainService: MainService,
+    private router: Router,
+    private ruta: ActivatedRoute,
   ) {
     super();
+    this.searchInput = this.ruta.snapshot.queryParams.keyword || '';
   }
 
   ngOnInit(): void {
     this.load()
+    this.checkIsLogged();
   }
 
 
@@ -36,6 +41,13 @@ export class FooterComponent extends BaseComponent implements OnInit {
     }, error => {
       console.error(error)
     })
+  }
+
+  searchInput!: string;
+
+  isLog: boolean = false;
+  checkIsLogged() {
+    this.isLog = this.MainService.AuthService.isAuth();
   }
 
 

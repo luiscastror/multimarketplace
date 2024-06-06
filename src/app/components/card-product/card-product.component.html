@@ -5,6 +5,9 @@
     <span class="promo" *ngIf="item.Descuento > 0" [style.backgroundColor]="color1" [style.color]="color2">
         -{{item.Descuento}}%
     </span>
+    <span class="promo2" *ngIf="item.Descuento > 0" [style.backgroundColor]="color2" [style.color]="color1">
+        Promoción
+    </span>
     <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
         <p class="small fw-light" [style.color]="color3">{{item.Tienda}}</p>
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>

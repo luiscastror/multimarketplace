@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .txtCenter {
     text-align: center;
 }
@@ -8,6 +10,12 @@
     height: 5rem;
 }
 
+
+.letraCat {
+    font-weight: bold;
+    font-size: 20px
+}
+
 .imgStores {
     object-fit: contain;
     width: '100%';
@@ -15,32 +23,65 @@
 }
 
 .strong {
-    font-size: 70px;
+    font-size: 45px;
     font-weight: 900;
     text-transform: capitalize;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
     line-height: 1;
     /* Ajusta este valor según tus necesidades */
 }
 
-/* Ajusta el tamaño de la fuente para pantallas medianas (md) */
-@media (max-width: 992px) {
-    .strong {
-        font-size: 50px;
-        /* Cambia este valor según tus necesidades */
-    }
+.registrate {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
 }
 
-/* Ajusta el tamaño de la fuente para pantallas pequeñas (col) */
-@media (max-width: 768px) {
-    .strong {
-        font-size: 30px;
-        /* Cambia este valor según tus necesidades */
-    }
-}
+
 
 .responsive-video {
     width: 560px;
     height: 315px;
+}
+
+.icon-img {
+    width: 65px;
+    height: 50px;
+}
+
+.icon2-img {
+    width: 30px;
+    height: 20px;
+}
+
+.icon3-img {
+    width: 22px;
+    height: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* justify-content: center;
+    align-items: center;
+    font-size: 18px; */
+}
+
+.barraColor {
+    width: 30px;
+    height: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* Ajusta el tamaño del video para pantallas medianas (md) */
@@ -62,6 +103,30 @@
         height: 180px;
         /* Mantén la proporción 16:9 */
     }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-container,
+    .descriptionCategory,
+    .description-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 12px;
+    }
+
+
+    .barraColor {
+        width: 20px;
+        height: 3px;
+        border-radius: 10px;
+        display: flex;
+    }
 }
 
 @media (max-width: 600px) {
@@ -71,12 +136,36 @@
         height: 110px;
         /* Mantén la proporción 16:9 */
     }
+
+    /* 
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container,
+    .description-container {
+        width: 100%;
+    } */
 }
 
-.icon-img {
-    width: 65px;
-    height: 50px;
+/* Ajusta el tamaño de la fuente para pantallas medianas (md) */
+@media (max-width: 992px) {
+    .strong {
+        font-size: 50px;
+        /* Cambia este valor según tus necesidades */
+    }
 }
+
+/* Ajusta el tamaño de la fuente para pantallas pequeñas (col) */
+@media (max-width: 768px) {
+    .strong {
+        font-size: 30px;
+        /* Cambia este valor según tus necesidades */
+    }
+}
+
+
 
 /* .categoriesss {
     display: flex;

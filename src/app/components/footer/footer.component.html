@@ -24,12 +24,22 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p class="fw-bold h6 mb-2">Secciones</p>
-                        <a href="" class="nav-link mb-2 fw-light w-25">{{info.Master.Correo}}</a>
-                        <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
+                        <a class="nav-link mb-2 fw-light " routerLink="/cart" [style.color]="color5">
+                            Carrito
+                        </a>
+                        <a class="nav-link mb-2 fw-light" [routerLink]="isLog ? '/admin' : '/login'"
+                            [style.color]="color5">
+                            Mi cuenta
+                        </a>
+                        <a class="nav-link mb-2 fw-light" routerLink="/promo" [style.color]="color5">Promociones</a>
                     </div>
                     <div class="col-12 col-md-6">
-                        <a href="" class="nav-link mb-2 fw-light mt-4">{{info.Master.Correo}}</a>
-                        <a href="" class="nav-link mb-2 fw-light">Celular: {{info.Master.Telefono}}</a>
+                        <a class="nav-link navv mb-2 fw-light mt-4" routerLink="/login" [style.color]="color5">
+                            Quiero vender, <br> soy una tienda
+                        </a>
+                        <a class="nav-link mb-2 fw-light" routerLink="/categories" [style.color]="color5">Categorías</a>
+                        <a class="nav-link mb-2 fw-light" routerLink="/stores" [style.color]="color5">Tiendas</a>
+
                     </div>
                 </div>
             </div>
@@ -37,20 +47,28 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p class="fw-bold h6 mb-2">Secciones</p>
-                        <a [href]="item.URL" target="_blank" class="nav-link mb-2 fw-light"
-                            *ngFor="let item of info.RedesSociales">
-                            <p>Politicas</p>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Politicas de envíos</p>
+                        </a>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Politicas de cookies</p>
+                        </a>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Politicas de reembolso</p>
+                        </a>
+                        <a target="_blank" class="nav-link mb-2 fw-light">
+                            <p>Terminos y condiciones</p>
                         </a>
                     </div>
                     <div class="col-12 col-md-6">
                         <a target="_blank" class="nav-link mb-2 fw-light mt-4">
-                            <p>Politicas</p>
+                            <p>Politica de garantía</p>
                         </a>
                         <a target="_blank" class="nav-link mb-2 fw-light">
-                            <p>Politicas</p>
+                            <p>Preguntas frecuentes</p>
                         </a>
                         <a target="_blank" class="nav-link mb-2 fw-light">
-                            <p>Politicas</p>
+                            <p>Protección de datos</p>
                         </a>
                     </div>
                 </div>
