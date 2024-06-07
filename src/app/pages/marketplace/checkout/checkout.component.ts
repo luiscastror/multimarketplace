@@ -85,9 +85,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
   ped: any = {};
   idPed: string = '';
   submit() {
-
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
-
       if (this.form.controls["Metodo"].value == 'linea') {
         const referencia = this.id_store + '' + Number(new Date());
         const checkout = new WidgetCheckout({
@@ -101,7 +99,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
             // integrity: 'prod_integrity_l7juVOtVvUb1Jf2uKN3tGknFcsYzo4aQ'
             integrity: this.business.Tienda.Signature,
           },
-          redirectUrl: 'https://vivesucre.com', // Opcional
+          redirectUrl: 'https://quillaemprende.com', // Opcional
           // expirationTime: '2023-06-09T20:28:50.000Z', // Opcional
           // taxInCents: { // Opcional
           //   vat: 1900,
@@ -129,6 +127,8 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
       }
 
       if (this.form.controls["Metodo"].value == 'entrega') {
+        console.log('entro al de metodo');
+        // this.MainService.SnackbarService.show("pedido hecho correctamente");
         this.ped = this.form.value;
         this.idPed = resp.Id;
         console.log(this.idPed, 'IdStore', this.id_store);
@@ -144,9 +144,6 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
       }
       remover();
     })
-
-
-
   }
 
 

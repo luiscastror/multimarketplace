@@ -21,7 +21,7 @@
                     {{item.Descuento > 0 ? 'Antes: '+ (item.Valor | number ): '¡APROVECHA!'}}
                 </p>
                 <p class="fw-bold" [style.color]="color1">
-                    Ahora: ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
+                    Ahora:<br>${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
                 </p>
             </div>
             <div *ngIf="withCar">
