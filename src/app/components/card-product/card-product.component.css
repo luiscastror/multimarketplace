@@ -51,6 +51,7 @@
     font-size: 14px;
 }
 
+
 @media (max-width: 768px) {
 
     /* Puedes ajustar el ancho máximo según tus necesidades */
@@ -59,7 +60,7 @@
         /* Cambia este valor al que necesites para dispositivos móviles */
     }
 
-    .card-complemta {
+    .card-completa {
         height: 45vh;
     }
 

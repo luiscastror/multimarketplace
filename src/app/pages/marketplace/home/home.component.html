@@ -113,6 +113,17 @@
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <app-components-title-subtitle [title]="enum[4].title" [justify]="enum[3].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="col-12 col-md-6 my-2" *ngFor="let item of random.Productos">
+            <app-card-entrepreneur [item]="item"></app-card-entrepreneur>
+        </div>
+    </div>
+</div>
 <div class="w-100">
     <div class="container-fluid">
         <div class="row bg-white mx-3">

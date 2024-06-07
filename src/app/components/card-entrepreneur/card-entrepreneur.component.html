@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card card-entrepreneur">
+        <div class="row">
+            <div class="col-6">
+                <div class="bg-image"></div>
+                <span class="nombreEmprendedor" *ngIf="item.Descuento > 0" [style.backgroundColor]="color1"
+                    [style.color]="color4">
+                    Maria Patricia <br> Teheran Salgado
+                </span>
+            </div>
+            <div class="col-6">
+                <div class="p-4">
+                    <app-components-card-product [item]="item"></app-components-card-product>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
