@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 declare var WidgetCheckout: any;
@@ -10,13 +11,13 @@ declare var WidgetCheckout: any;
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent extends BaseComponent implements OnInit {
 
 
   id_store!: string;
   loading: boolean = true;
   order: any = {};
-  index! : number;
+  index!: number;
 
   business: any = {};
 
@@ -42,6 +43,7 @@ export class CheckoutComponent implements OnInit {
     private router: Router,
 
   ) {
+    super()
 
     if (this.ruta.snapshot.params && this.ruta.snapshot.params.id) {
       this.id_store = this.ruta.snapshot.params.id;
@@ -80,8 +82,8 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  ped : any = {};
-  idPed : string = '';
+  ped: any = {};
+  idPed: string = '';
   submit() {
 
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
@@ -126,16 +128,16 @@ export class CheckoutComponent implements OnInit {
         });
       }
 
-      if (this.form.controls["Metodo"].value == 'entrega'){
+      if (this.form.controls["Metodo"].value == 'entrega') {
         this.ped = this.form.value;
         this.idPed = resp.Id;
-        console.log(this.idPed, 'IdStore' , this.id_store);
-        this.router.navigate(['/order-info/'+this.id_store+'/'+this.idPed]);
+        console.log(this.idPed, 'IdStore', this.id_store);
+        this.router.navigate(['/order-info/' + this.id_store + '/' + this.idPed]);
       }
-      
+
       //this.MainService.CartService.listCart[businees].items.splice(item, 1);
-       
-      const remover = ()=> {
+
+      const remover = () => {
         //this.MainService.SnackbarService.show("Producto elminado correctamente");
         this.MainService.CartService.listCart.splice(this.index, 1);
         this.changeCart();

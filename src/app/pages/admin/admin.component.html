@@ -47,7 +47,8 @@
                         Mis pedidos
                     </a>
                 </ng-container>
-                <button color="primary" routerLink="/admin/new-store" mat-flat-button *ngIf="stores.length ==0 ">
+                <button mat-flat-button [style.background]="color3" routerLink="/admin/new-store"
+                    *ngIf="stores.length ==0 ">
                     Crear tienda
                 </button>
             </div>

@@ -51,13 +51,19 @@
     font-size: 14px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     /* Puedes ajustar el ancho máximo según tus necesidades */
     .promo2 {
         bottom: 220px;
         /* Cambia este valor al que necesites para dispositivos móviles */
     }
+
+    .card-complemta {
+        height: 45vh;
+    }
+
+
 }
 
 .bg-image {

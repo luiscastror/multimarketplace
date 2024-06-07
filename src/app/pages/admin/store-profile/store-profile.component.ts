@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BaseComponent } from 'src/app/base';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './store-profile.component.html',
   styleUrls: ['./store-profile.component.css']
 })
-export class StoreProfileComponent implements OnInit {
+export class StoreProfileComponent extends BaseComponent implements OnInit {
 
   form = new FormGroup({
     Id: new FormControl(''),
@@ -24,7 +25,9 @@ export class StoreProfileComponent implements OnInit {
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
     this.loadStore();
