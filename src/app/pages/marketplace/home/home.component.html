@@ -17,24 +17,27 @@
         </div>
     </div>
     <div class="row mb-5" *ngIf="random && random.Categorias">
-        <div class="col-12 mb-3">
-            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle" [justify]="enum[0].justify">
+        <div class="row mb-3">
+            <app-components-title-subtitle [title]="enum[0].title" [subtitle]="enum[0].subtitle"
+                [justify]="enum[0].justify">
             </app-components-title-subtitle>
         </div>
-        <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias" [routerLink]="'/category/'+item.Id">
-            <div class="card mb-3 border-0">
-                <div class="card-body">
-                    <div class="content-wrapper w-100">
-                        <div class="w-50 image-container">
-                            <img [src]="item.Imagen" class="img-fluid">
-                        </div>
-                        <div class="w-50 description-container">
-                            <p class="descriptionCategory">{{item.Descripcion}}</p>
-                            <div class="barraColor" [style.background]="color3"></div>
+        <div class="row container-category">
+            <div class="col-6 col-md-2 pointer" *ngFor="let item of random.Categorias"
+                [routerLink]="'/category/'+item.Id">
+                <div class="card mb-3 border-0">
+                    <div class="card-body">
+                        <div class="content-wrapper w-100">
+                            <div class="w-50 image-container">
+                                <img [src]="item.Imagen" class="img-fluid">
+                            </div>
+                            <div class="w-50 description-container">
+                                <p class="descriptionCategory">{{item.Descripcion}}</p>
+                                <div class="barraColor" [style.background]="color3"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -87,7 +90,10 @@
             <button class="btn registrate" [style.background]="color3" [style.color]="color1">¡REGISTRATE!</button>
         </div>
         <div class="col-12 col-md-6 mt-3" style="text-align:center;">
-            <iframe class="responsive-video" src="https://www.youtube.com/embed/ppAnpOXNvxI?si=TLMC_PMuQ8KoUBpW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="responsive-video" src="https://www.youtube.com/embed/ppAnpOXNvxI?si=TLMC_PMuQ8KoUBpW"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 </div>

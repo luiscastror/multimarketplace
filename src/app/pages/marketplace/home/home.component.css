@@ -127,6 +127,29 @@
         border-radius: 10px;
         display: flex;
     }
+
+    .container-category {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .container-category::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .container-category::-webkit-scrollbar-thumb {
+        background-color: #ED144C;
+        border-radius: 10px;
+    }
+
+    .container-category::-webkit-scrollbar-track {
+        background: #bb7082;
+        border-radius: 20px;
+
+    }
+
+
 }
 
 @media (max-width: 600px) {
@@ -135,6 +158,12 @@
         /* Cambia este valor según tus necesidades */
         height: 110px;
         /* Mantén la proporción 16:9 */
+    }
+
+    .container-category {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 
     /* 

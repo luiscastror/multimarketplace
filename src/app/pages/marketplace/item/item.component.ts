@@ -16,8 +16,10 @@ export class ItemComponent extends BaseComponent implements OnInit {
   image!: string;
   imageSelected: number = 0;
 
+  idStore = this.ruta.snapshot.params.idStore;
   id = this.ruta.snapshot.params.id;
   path_api: string = '/productos/' + this.id;
+  path_api_store: string = '/tiendas/' + this.idStore;
 
   constructor(
     private MainService: MainService,
@@ -25,14 +27,15 @@ export class ItemComponent extends BaseComponent implements OnInit {
     private router: Router,
   ) {
     super()
-    this.ruta.params.subscribe(params => {
-      this.id = params['id'];
-      this.path_api = '/productos/' + this.id;
-      this.load();
-    });
+    console.log(this.id + '   ' + this.idStore)
   }
 
-  ngOnInit(): void { }
+  ngOnInit() {
+    this.load()
+    this.load_store();
+    !this.arrow ? this.nombreIcon = 'keyboard_arrow_down' : this.nombreIcon = 'keyboard_arrow_up';
+
+  }
 
   load() {
     this.loading = true;
@@ -45,6 +48,22 @@ export class ItemComponent extends BaseComponent implements OnInit {
       this.MainService.SnackbarService.show(error.error.message);
       this.router.navigate(['/']);
     }, () => { })
+  }
+
+  info: any = {};
+  load_store() {
+    this.loading = true;
+    this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
+      this.info = resp;
+      this.loading = false;
+      console.log(this.info);
+    }, (error) => {
+      console.error(error)
+      this.MainService.SnackbarService.show(error.error.message);
+      this.router.navigate(['/']);
+    }, () => {
+      this.loading = false;
+    })
   }
 
 
@@ -61,5 +80,12 @@ export class ItemComponent extends BaseComponent implements OnInit {
   add() {
     this.MainService.SnackbarService.show("Añadido correctamente");
     this.MainService.CartService.add(this.item.Producto)
+  }
+
+  arrow: boolean = false;
+  nombreIcon: string = "";
+  cambiar() {
+    this.arrow = !this.arrow;
+    !this.arrow ? this.nombreIcon = 'keyboard_arrow_down' : this.nombreIcon = 'keyboard_arrow_up';
   }
 }

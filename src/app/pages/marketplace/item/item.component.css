@@ -5,6 +5,23 @@
     opacity: 0.5;
 }
 
+.imageDos {
+    width: 100px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 10%;
+}
+
 .no-border {
     border: none;
+}
+
+.margintop {
+    margin-top: 180px;
+}
+
+@media (max-width: 768px) {
+    .margintop {
+        margin-top: 70px;
+    }
 }
