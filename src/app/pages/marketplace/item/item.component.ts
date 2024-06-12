@@ -16,10 +16,8 @@ export class ItemComponent extends BaseComponent implements OnInit {
   image!: string;
   imageSelected: number = 0;
 
-  idStore = this.ruta.snapshot.params.idStore;
   id = this.ruta.snapshot.params.id;
   path_api: string = '/productos/' + this.id;
-  path_api_store: string = '/tiendas/' + this.idStore;
 
   constructor(
     private MainService: MainService,
@@ -27,14 +25,14 @@ export class ItemComponent extends BaseComponent implements OnInit {
     private router: Router,
   ) {
     super()
-    console.log(this.id + '   ' + this.idStore)
+    this.ruta.params.subscribe(params => {
+      this.id = params['id'];
+      this.path_api = '/productos/' + this.id;
+      this.load();
+    });
   }
 
-  ngOnInit() {
-    this.load()
-    // this.load_store();
-
-  }
+  ngOnInit(): void { }
 
   load() {
     this.loading = true;
@@ -48,22 +46,6 @@ export class ItemComponent extends BaseComponent implements OnInit {
       this.router.navigate(['/']);
     }, () => { })
   }
-
-  // info: any = {};
-  // load_store() {
-  //   this.loading = true;
-  //   this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
-  //     this.info = resp;
-  //     this.loading = false;
-  //     console.log(this.info);
-  //   }, (error) => {
-  //     console.error(error)
-  //     this.MainService.SnackbarService.show(error.error.message);
-  //     this.router.navigate(['/']);
-  //   }, () => {
-  //     this.loading = false;
-  //   })
-  // }
 
 
   itemsToo: any = []

@@ -53,17 +53,17 @@
             </div>
             <div class="row margintop">
                 <div class="d-flex flex-column">
-                    <!-- <div class="d-flex flex-row align-items-center gap-3">
+                    <div class="d-flex flex-row align-items-center gap-3">
                         <div>
-                            <img [src]="info.Tienda.Logo" alt="Logo tienda" class="imageDos">
+                            <img [src]="item.Producto.LogoTienda" alt="Logo tienda" class="imageDos">
                         </div>
                         <div>
-                            <a href="" [routerLink]="'/store/'+idStore" class="btn pointer" [style.color]="color3">
-                                Conoce mas productos de <strong
-                                    class="text-uppercase">{{info.Tienda.Descripcion}}</strong>
+                            <a href="" [routerLink]="'/store/'+item.Producto.TiendaId" class="btn pointer"
+                                [style.color]="color3">
+                                Conoce mas productos de <strong class="text-uppercase">{{item.Producto.Tienda}}</strong>
                             </a>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="mt-4 border-bottom border-black w-100">
                         <div class="f20 fw-semibold" [style.color]="color5">Sobre el producto</div>
                         <p class="fw-light f14 mb-3" [style.color]="color5">
