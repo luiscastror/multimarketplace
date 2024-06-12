@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12 col-md-4">
             <div class="logo"
-                [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logo.jpg' ) + ')'}">
+                [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logocolor.png' ) + ')'}">
             </div>
             <app-file-saver (urlFile)="store.Logo = $event; setForm('Logo', $event)" path="marca" [isString]="true"
                 title="Subir logo" [showImages]="false">
@@ -11,7 +11,7 @@
         </div>
         <div class="col-12 col-md-8">
             <div class="portada"
-                [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logo.jpg' ) + ')'}">
+                [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logocolor.png' ) + ')'}">
             </div>
             <app-file-saver (urlFile)="store.Portada = $event; setForm('Portada', $event);" path="marca"
                 [isString]="true" title="Subir portada" [showImages]="false">
