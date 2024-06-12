@@ -1,5 +1,5 @@
 <div class="card mb-3 border-0 card-completa">
-    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id+'/'+item.TiendaId"
+    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id"
         [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
     </div>
     <span class="promo" *ngIf="item.Descuento > 0" [style.backgroundColor]="color1" [style.color]="color2">
@@ -16,8 +16,8 @@
     </div>
     <div class="card-footer border-top-0 bg-white py-3">
         <div class="row">
-            <div class="col-12 col-md-6 d-flex flex-column justify-content-between align-items-center">
-                <div class=" small text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
+            <div class="col-12 col-md-6 d-flex flex-column">
+                <div class="f12 text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
                     {{item.Descuento > 0 ? (item.Valor | number ): '¡APROVECHA!'}}
                 </div>
                 <div class="fw-bold" [style.color]="color1">
@@ -26,9 +26,9 @@
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-between align-items-center" *ngIf="withCar">
                 <button mat-flat-button [style.backgroundColor]="color1" [style.color]="color4" (click)="add()"
-                    class="d-flex align-items-center justify-content-center">
-                    <span class="d-md-none d-inline ms-2">Añadir al carrito</span>
-                    <mat-icon>add_shopping_cart</mat-icon>
+                    class="d-flex align-items-center justify-content-center w-100 mt-1">
+                    <span class="d-md-none d-inline ms-2 f12">Añadir al carrito</span>
+                    <mat-icon class="mat-icon2">add_shopping_cart</mat-icon>
                 </button>
             </div>
         </div>

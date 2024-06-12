@@ -44,6 +44,7 @@ import { ChangePasswordTwoComponent } from './pages/marketplace/change-password-
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'item/:id', component: ItemComponent },
     { path: 'item/:id/:idStore', component: ItemComponent },
     { path: 'cart', component: CartComponent },
     { path: 'search', component: SearchComponent },

@@ -6,15 +6,15 @@
     <div class="row border-bottom" *ngIf="!loading">
         <div class="col-12 col-md-7 border-end py-5">
             <div class="row">
-                <div class="col-3">
-                    <div class="d-flex flex-column gap-2  justify-content-start mt-3">
+                <div class="col-12 col-md-3 mb-1">
+                    <div class="d-flex flex-row flex-md-column gap-2  justify-content-start mt-3">
                         <div *ngFor="let item of item.Imagenes, index as index"
                             [ngStyle]="{'background-image': 'url(' + item.URL + ')'}"
                             [ngClass]="{'opacity-100 border': index == imageSelected}"
                             class="image img-thumbnail pointer" (click)="image = item.URL; imageSelected = index"></div>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-md-9">
                     <img class="img-fluid mx-auto" [src]="image" style="max-height: 60vh;">
                 </div>
             </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="row margintop">
                 <div class="d-flex flex-column">
-                    <div class="d-flex flex-row align-items-center gap-3">
+                    <!-- <div class="d-flex flex-row align-items-center gap-3">
                         <div>
                             <img [src]="info.Tienda.Logo" alt="Logo tienda" class="imageDos">
                         </div>
@@ -63,18 +63,11 @@
                                     class="text-uppercase">{{info.Tienda.Descripcion}}</strong>
                             </a>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom border-black w-100 py-2">
-                        <div>
-                            <div class="f20 fw-semibold" [style.color]="color5">Sobre el producto</div>
-                            <p class="fw-light f14 my-3" *ngIf="arrow" [style.color]="color5">
-                                "{{item.Producto.Observacion}}"</p>
-                        </div>
-                        <div (click)="cambiar()" class="pointer">
-                            <mat-icon>
-                                {{nombreIcon}}
-                            </mat-icon>
-                        </div>
+                    </div> -->
+                    <div class="mt-4 border-bottom border-black w-100">
+                        <div class="f20 fw-semibold" [style.color]="color5">Sobre el producto</div>
+                        <p class="fw-light f14 mb-3" [style.color]="color5">
+                            "{{item.Producto.Observacion}}"</p>
                     </div>
                 </div>
             </div>

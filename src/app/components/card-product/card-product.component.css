@@ -64,6 +64,13 @@
         height: 45vh;
     }
 
+    .mat-icon2 {
+        height: 16px;
+        width: 16px;
+        font-size: 16px;
+        /* Ajusta el tamaño según tus necesidades */
+    }
+
 
 }
 

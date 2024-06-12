@@ -32,8 +32,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.load()
-    this.load_store();
-    !this.arrow ? this.nombreIcon = 'keyboard_arrow_down' : this.nombreIcon = 'keyboard_arrow_up';
+    // this.load_store();
 
   }
 
@@ -50,21 +49,21 @@ export class ItemComponent extends BaseComponent implements OnInit {
     }, () => { })
   }
 
-  info: any = {};
-  load_store() {
-    this.loading = true;
-    this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
-      this.info = resp;
-      this.loading = false;
-      console.log(this.info);
-    }, (error) => {
-      console.error(error)
-      this.MainService.SnackbarService.show(error.error.message);
-      this.router.navigate(['/']);
-    }, () => {
-      this.loading = false;
-    })
-  }
+  // info: any = {};
+  // load_store() {
+  //   this.loading = true;
+  //   this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
+  //     this.info = resp;
+  //     this.loading = false;
+  //     console.log(this.info);
+  //   }, (error) => {
+  //     console.error(error)
+  //     this.MainService.SnackbarService.show(error.error.message);
+  //     this.router.navigate(['/']);
+  //   }, () => {
+  //     this.loading = false;
+  //   })
+  // }
 
 
   itemsToo: any = []
@@ -82,10 +81,4 @@ export class ItemComponent extends BaseComponent implements OnInit {
     this.MainService.CartService.add(this.item.Producto)
   }
 
-  arrow: boolean = false;
-  nombreIcon: string = "";
-  cambiar() {
-    this.arrow = !this.arrow;
-    !this.arrow ? this.nombreIcon = 'keyboard_arrow_down' : this.nombreIcon = 'keyboard_arrow_up';
-  }
 }
