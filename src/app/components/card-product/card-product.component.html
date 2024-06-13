@@ -9,7 +9,8 @@
         Promoción
     </span>
     <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
-        <p class="small fw-light" [style.color]="color3">{{item.Tienda}}</p>
+        <p class="small fw-light d-none d-md-block" [style.color]="color3">{{item.Tienda}}</p>
+        <p class="small fw-light d-md-none d-block" [style.color]="color3">{{item.Tienda | truncate:10}}</p>
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>
         <p class="fw-light f14 text-truncate">{{item.Observacion}}
         </p>

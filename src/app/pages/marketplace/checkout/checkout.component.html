@@ -80,17 +80,15 @@
                         </div>
                         <div class="d-flex flex-row">
                             <p class="w-100 d-flex justify-content-start">Subtotal compra</p>
-                            <p class="w-100 d-flex justify-content-center">${{order.subtotal | number}}</p>
+                            <p class="w-100 d-flex justify-content-end">${{order.subtotal | number}}</p>
                         </div>
                         <div class="d-flex flex-row">
                             <p class="w-100 d-flex justify-content-start">Descuento</p>
-                            <p class="w-100 d-flex justify-content-center text-danger">${{order.discount | number}}</p>
+                            <p class="w-100 d-flex justify-content-end text-danger">${{order.discount | number}}</p>
                         </div>
                         <div class="d-flex flex-row">
                             <p class="w-100 d-flex justify-content-start">Total a pagar</p>
-                            <p class="w-100 d-flex justify-content-center text-success fw-bold">
-                                ${{order.total | number}}
-                            </p>
+                            <p class="w-100 d-flex justify-content-end text-success fw-bold">${{order.total | number}}
                         </div>
                     </div>
                     <div class="form-check m-3" *ngIf="business && !loading">

@@ -1,34 +1,99 @@
-<div class="container-fluid">
+<!-- tu-componente.component.html -->
+<div class="d-md-none">
     <div class="row">
-        <div class="col-12 col-md-4">
-            <div class="w-100 bg-white rounded-5 py-2 px-4">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="fw-semibold fs-5">{{title}}</div>
-                    <img src="../../assets/img/documento.png" alt="" class="w-25 h-25 py-3">
-                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
-                    <button class="btn fw-semibold" [style.background]="color3">{{nameButtom}}</button>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="div w-75 h-100" *ngIf="currentCardIndex === 0">
+                <div class="w-100 bg-white rounded-5 py-2 px-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="fw-semibold fs-5">{{title}}</div>
+                        <img src="../../assets/img/documento.png" alt="" class="w-25 h-25 py-3">
+                        <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                        <button class="btn fw-semibold" [style.background]="color3"
+                            routerLink="/login">{{nameButtom}}</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="w-100 bg-white rounded-5 py-2 px-4">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="fw-semibold fs-5">{{title}}</div>
-                    <img src="../../assets/img/verificado-2.png" alt="" class="w-25 h-25 py-3">
-                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
-                    <button class="btn fw-semibold" [style.background]="color3">{{nameButtom}}</button>
+            <div class="div w-75" *ngIf="currentCardIndex === 1">
+                <div class="w-100 bg-white rounded-5 py-2 px-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="fw-semibold fs-5">{{title}}</div>
+                        <img src="../../assets/img/verificado-2.png" alt="" class="w-25 h-25 py-3">
+                        <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                        <button class="btn fw-semibold" [style.background]="color3"
+                            routerLink="/login">{{nameButtom}}</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="w-100 bg-white rounded-5 py-2 px-4">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="fw-semibold fs-5">{{title}}</div>
-                    <img src="../../assets/img/acuerdo.png" alt="" class="w-25 h-25 py-3">
-                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
-                    <button class="btn fw-semibold" [style.background]="color3">{{nameButtom}}</button>
+            <div class="div w-75" *ngIf="currentCardIndex === 2">
+                <div class="w-100 bg-white rounded-5 py-2 px-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="fw-semibold fs-5">{{title}}</div>
+                        <img src="../../assets/img/acuerdo.png" alt="" class="w-25 h-25 py-3">
+                        <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                        <button class="btn fw-semibold" [style.background]="color3"
+                            routerLink="/login">{{nameButtom}}</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="d-flex justify-content-center align-items-center gap-2">
+            <button type="button" class="btn fw-bold"
+                [ngClass]="{'active-btn': currentCardIndex === 0, 'inactive-btn': currentCardIndex !== 0}"
+                aria-current="true" aria-label="Slide 1" (click)="setCardIndex(0)">_</button>
+            <button type="button" aria-label="Slide 2" class="btn fw-bold"
+                [ngClass]="{'active-btn': currentCardIndex === 1, 'inactive-btn': currentCardIndex !== 1}"
+                (click)="setCardIndex(1)">_</button>
+            <button type="button" aria-label="Slide 3" class="btn fw-bold"
+                [ngClass]="{'active-btn': currentCardIndex === 2, 'inactive-btn': currentCardIndex !== 2}"
+                (click)="setCardIndex(2)">_</button>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+<div class="container-fluid d-none d-md-block">
+    <div class="row my-4">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div class="w50 bg-white rounded-5 py-2 px-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="fw-semibold fs-5">{{title}}</div>
+                    <img src="../../assets/img/documento.png" alt="" class="w-25 h-25 py-3">
+                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                    <button class="btn fw-semibold" [style.background]="color3"
+                        routerLink="/login">{{nameButtom}}</button>
+                </div>
+            </div>
+            <div class="w50 bg-white rounded-5 py-2 px-4 mx-5">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="fw-semibold fs-5">{{title}}</div>
+                    <img src="../../assets/img/verificado-2.png" alt="" class="w-25 h-25 py-3">
+                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                    <button class="btn fw-semibold" [style.background]="color3"
+                        routerLink="/login">{{nameButtom}}</button>
+                </div>
+            </div>
+            <div class="w50 bg-white rounded-5 py-2 px-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="fw-semibold fs-5">{{title}}</div>
+                    <img src="../../assets/img/acuerdo.png" alt="" class="w-25 h-25 py-3">
+                    <div class="fw-medium fs-6 pb-3">{{body}}</div>
+                    <button class="btn fw-semibold" [style.background]="color3"
+                        routerLink="/login">{{nameButtom}}</button>
+                </div>
+            </div>
+            <!-- </div>
+        <div class="col-12 col-md-4">
+        </div>
+        <div class="col-12 col-md-4">
+        </div>
+        <div class="col-12 col-md-4">
+        </div> -->
+        </div>
+    </div>

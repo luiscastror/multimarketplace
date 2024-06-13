@@ -25,6 +25,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.activeItem);
     this.load_store();
     this.load_store_items();
   }
@@ -83,10 +84,12 @@ export class StoreComponent extends BaseComponent implements OnInit {
   vacio2: boolean = false;
   search(productSearch: string) { //Carga array por busqeueda sea por descripcion o Subcategoria
     this.productForSearch = true;
-    if (this.descriptionItem !== 'Todas') {
+    if (this.activeItem !== 'all') {
       this.groupProductSearch = this.items2.filter(
-        (product) => (product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
-          || (product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
+        (product) =>
+          (product.Descripcion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
+          ||
+          (product.Observacion.toLowerCase().indexOf(productSearch.toLowerCase()) > -1 && product.SubCategoria == this.descriptionItem)
       );
       this.productsEvery = false;
       this.productForCategory = false;

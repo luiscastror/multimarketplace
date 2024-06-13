@@ -2,3 +2,17 @@
     background-color: ;
     /* bg-success text-bg-dark text-center 
 } */
+
+.active-btn {
+    color: #ED144C;
+    /* Color destacado */
+}
+
+.inactive-btn {
+    color: #c59ba5;
+    /* Color opaco */
+}
+
+.w50 {
+    width: 300px;
+}

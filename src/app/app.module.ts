@@ -87,6 +87,7 @@ import { ChangePasswordTwoComponent } from './pages/marketplace/change-password-
 import { CardLinkComponent } from './components/card-link/card-link.component';
 import { BusinessOfTheMonthComponent } from './components/business-of-the-month/business-of-the-month.component';
 import { CardEntrepreneurComponent } from './components/card-entrepreneur/card-entrepreneur.component';
+import { TruncatePipe } from './truncate.pipe';
 
 
 @NgModule({
@@ -146,7 +147,8 @@ import { CardEntrepreneurComponent } from './components/card-entrepreneur/card-e
     ChangePasswordTwoComponent,
     CardLinkComponent,
     BusinessOfTheMonthComponent,
-    CardEntrepreneurComponent
+    CardEntrepreneurComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
