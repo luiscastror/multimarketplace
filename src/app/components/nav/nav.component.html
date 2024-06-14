@@ -1,7 +1,7 @@
 <nav class="py-3 border-bottom" [style.backgroundColor]="color1">
     <div class="container">
         <div class="row">
-            <div class="col-4 col-md-3">
+            <div class="col-4 col-md-3 d-flex   align-items-center">
                 <img [src]="logoBase" style="width: 200px; max-width: 250px;" routerLink="/" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
@@ -16,10 +16,10 @@
             </div>
             <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
                 <div class="d-none d-md-inline">
-                    <button mat-flat-button color="primary" routerLink="/login" [style.backgroundColor]="color2"
-                        [style.color]="color1">
-                        <span class="fw-bold f20">Haz parte de Quilla Vende</span>
-                    </button>
+                    <a mat-flat-button color="primary" href="https://quillaemprende.com/" target="_blank"
+                        [style.backgroundColor]="color2" [style.color]="color1" class="f18 fw-bold">
+                        Haz parte de Quilla Emprende
+                    </a>
                 </div>
                 <div class="d-inline d-md-none">
                     <button mat-icon-button [style.backgroundColor]="color2" [style.color]="color1" routerLink="/search"
@@ -35,7 +35,7 @@
                 </div>
                 <div class="d-inline d-md-none">
                     <button mat-icon-button [style.backgroundColor]="color4" [style.color]="color1" routerLink="/cart">
-                        <mat-icon>shopping_cart</mat-icon>
+                        <img src="../assets/img/carrito.png" alt="carrito" class="imgCarrito">
                         <span class="badge-cart" *ngIf="MainService.CartService.count() > 0">
                             {{MainService.CartService.count()}}
                         </span>

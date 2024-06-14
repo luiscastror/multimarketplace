@@ -9,15 +9,15 @@
         Promoción
     </span>
     <div class="card-body pointer" [routerLink]="'/item/'+item.Id">
-        <p class="small fw-light d-none d-md-block" [style.color]="color3">{{item.Tienda}}</p>
-        <p class="small fw-light d-md-none d-block" [style.color]="color3">{{item.Tienda | truncate:10}}</p>
+        <p class="small fw-light text-truncate" [style.color]="color3">{{item.Tienda}}</p>
+        <!-- <p class="small fw-light" [style.color]="color3">{{item.Tienda | truncate:10}}</p> -->
         <p class="fw-bold f18 text-truncate">{{item.Descripcion}}</p>
         <p class="fw-light f14 text-truncate">{{item.Observacion}}
         </p>
     </div>
     <div class="card-footer border-top-0 bg-white py-3">
         <div class="row">
-            <div class="col-12 col-md-6 d-flex flex-column">
+            <div class="col-12 d-flex flex-column">
                 <div class="f12 text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
                     {{item.Descuento > 0 ? (item.Valor | number ): '¡APROVECHA!'}}
                 </div>
@@ -25,13 +25,13 @@
                     ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}
                 </div>
             </div>
-            <div class="col-12 col-md-6 d-flex flex-column justify-content-between align-items-center" *ngIf="withCar">
+            <!-- <div class="col-12 col-md-6 d-flex flex-column justify-content-between align-items-center" *ngIf="withCar">
                 <button mat-flat-button [style.backgroundColor]="color1" [style.color]="color4" (click)="add()"
                     class="d-flex align-items-center justify-content-center w-100 mt-1">
                     <span class="d-md-none d-inline ms-2 f12">Añadir al carrito</span>
                     <mat-icon class="mat-icon2">add_shopping_cart</mat-icon>
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

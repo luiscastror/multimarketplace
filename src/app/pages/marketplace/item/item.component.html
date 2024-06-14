@@ -22,7 +22,8 @@
         </div>
         <div class="col-12 col-md-5 py-5 px-3">
             <div class="row">
-                <div class="col-12 col-md-8">
+                <div class="col-12">
+                    <div class="f-14 fw-medium" [style]="color5"> Vendido y enviado por:</div>
                     <p class="fw-bold f20 pointer text-decoration-underline text-uppercase" [style.color]="color3"
                         [routerLink]="'/store/'+item.Producto.TiendaId">{{item.Producto.Tienda}}</p>
                     <p class="fw-bold f14 color-primary mb-3 ">{{item.Producto.Descripcion}}</p>

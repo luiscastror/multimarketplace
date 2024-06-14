@@ -92,21 +92,29 @@
                 </div>
             </div>
             <div class="row" *ngIf="productForCategory">
+                <div class="row mt-5 fw-semibold f20 mx-5" *ngIf="vacio">
+                    No se encontraron productos dentro de esta categoria
+                </div>
                 <div class="col-6 col-md-3" *ngFor="let item of itemsForSubCategory">
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
             <div class="row" *ngIf="productForSearch">
+                <div class="fw-semibold f20" *ngIf="!vacio2">
+                    {{this.groupProductSearch.length === 1
+                    ? 'Se encontró 1 producto con la palabra "' + productSearch + '"'
+                    : 'Se encontraron (' + this.groupProductSearch.length + ') productos con la palabra "' +
+                    productSearch + '"'
+                    }}
+                </div>
+                <div class="row mt-5 fw-semibold f20 mx-5" *ngIf="vacio2">
+                    No se encontraron productos con la palabra "{{productSearch}}"
+                </div>
                 <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch">
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
             </div>
-            <div class="row mt-5 fw-semibold fs-3 mx-5" *ngIf="vacio">
-                No se encontraron productos dentro de esta categoria
-            </div>
-            <div class="row mt-5 fw-semibold fs-3 mx-5" *ngIf="vacio2">
-                No se encontraron productos asimilados a "{{productSearch}}"
-            </div>
+
         </div>
     </div>
 </div>
