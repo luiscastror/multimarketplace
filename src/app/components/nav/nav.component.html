@@ -1,7 +1,7 @@
 <nav class="py-3 border-bottom" [style.backgroundColor]="color1">
     <div class="container">
         <div class="row">
-            <div class="col-4 col-md-3 d-flex   align-items-center">
+            <div class="col-4 col-md-3 d-flex align-items-center">
                 <img [src]="logoBase" style="width: 200px; max-width: 250px;" routerLink="/" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="d-inline d-md-none">
                     <button mat-icon-button [style.backgroundColor]="color4" [style.color]="color1" routerLink="/cart">
-                        <img src="../assets/img/carrito.png" alt="carrito" class="imgCarrito">
+                        <mat-icon>shopping_cart</mat-icon>
                         <span class="badge-cart" *ngIf="MainService.CartService.count() > 0">
                             {{MainService.CartService.count()}}
                         </span>
