@@ -4,36 +4,6 @@
 </div>
 <div class="container" *ngIf="!loading">
     <div class="row">
-        <div class="row">
-            <!-- <div class="col-12">
-                <app-banner img="../../assets/img/imgTienda.png" *ngIf="!loading"></app-banner>
-            </div> -->
-            <!-- <div class="col-12 col-md-6">
-                <input class="col-12 col-md-12 inputsButton" type="button" [style.backgroundColor]="color2"
-                    value="MASCULINO" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Camisetas" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Jeans" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Shorts" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Gorras" [disabled]="true">
-            </div>
-            <div class="col-12 col-md-6">
-                <input class="col-12 col-md-12 inputsButton" type="button" [style.backgroundColor]="color2"
-                    value="FEMENINO" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Camisetas" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Jeans" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Shorts" [disabled]="true">
-                <input class="col-12 col-md-3 inputsButton mt-1" type="button" [style.backgroundColor]="color2"
-                    value="Gorras" [disabled]="true">
-            </div> -->
-
-        </div>
         <div class="col-12 col-md-3 pt-3 mb-3">
             <div class="portada" [ngStyle]="{'background-image': 'url(' + info.Tienda.Portada + ')'}"></div>
             <div class="logo" [ngStyle]="{'background-image': 'url(' + info.Tienda.Logo + ')'}"></div>
@@ -41,35 +11,71 @@
             <p class="fw-light f16 text-center mb-3 ">{{info.Tienda.Biografia}}</p>
             <!-- <div class="d-none d-md-inline"> -->
             <app-components-title-subtitle title="Categorías" justify="start"></app-components-title-subtitle>
-            <div class="d-flex flex-row flex-md-column mb-3 " style="overflow-x: auto;">
-                <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
-                    (click)="cargar(); setActiveItem('all');setDescripcionItem('Todas')">
-                    Todas
-                    <mat-icon *ngIf="activeItem === 'all'"
-                        style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+            <div class="d-flex flex-row flex-md-column mb-3 container-category" style="overflow-x: auto;">
+                <div class="d-none d-md-block">
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
+                        (click)="cargar(); setActiveItem('all');setDescripcionItem('Todas')">
+                        Todas
+                        <mat-icon *ngIf="activeItem === 'all'"
+                            style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+                    </div>
                 </div>
-                <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
-                    *ngFor="let item of info.SubCategorias; index as index;"
-                    (click)="load_items_subcategory(item.Descripcion); setActiveItem(index); setDescripcionItem(item.Descripcion)">
-                    {{item.Descripcion}}
-                    <mat-icon *ngIf="activeItem === index"
-                        style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+                <div class="d-md-none d-block">
+                    <div class="pointer item-store2 border border-black rounded-2 fw-semibold mb-1"
+                        (click)="cargar(); setActiveItem('all');setDescripcionItem('Todas')"
+                        [ngClass]="{'categoryBackground': activeItem === 'all'}">
+                        Todas
+                    </div>
+                </div>
+                <div class="d-none d-md-block d-flex flex-column">
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
+                        *ngFor="let item of info.SubCategorias; index as index;"
+                        (click)="load_items_subcategory(item.Descripcion); setActiveItem(index); setDescripcionItem(item.Descripcion)">
+                        {{item.Descripcion}}
+                        <mat-icon *ngIf="activeItem === index"
+                            style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+                    </div>
+                </div>
+                <div class="d-md-none d-block d-flex flex-row">
+                    <div class="pointer item-store2 border border-black rounded-2 fw-semibold mb-1"
+                        *ngFor="let item of info.SubCategorias; index as index;"
+                        (click)="load_items_subcategory(item.Descripcion); setActiveItem(index); setDescripcionItem(item.Descripcion)"
+                        [ngClass]="{'categoryBackground': activeItem === index}">
+                        {{item.Descripcion}}
+                    </div>
                 </div>
             </div>
             <app-components-title-subtitle title="Sucursales" justify="start"></app-components-title-subtitle>
             <div class="d-flex flex-column mb-3">
-                <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
-                    *ngFor="let item of info.Sucursales; index as index;" (click)="showBranch(index)">
-                    {{item.Descripcion}}
+                <div>
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
+                        *ngFor="let item of info.Sucursales; index as index;" (click)="showBranch(index)">
+                        {{item.Descripcion}}
+                        <mat-icon *ngIf="this.show === true"
+                            style="font-size: 15px; padding-top: 4px;">push_pin</mat-icon>
+                    </div>
                 </div>
                 <div class="py-2 px-3" *ngIf="show" [innerHtml]="messageBranch" class="px-4 text-capitalize fs-66">
                 </div>
             </div>
             <!-- </div> -->
-            <app-components-title-subtitle title="Redes sociales" justify="start"></app-components-title-subtitle>
-            <div class="d-flex flex-row flex-md-column justify-content-between mb-3" style="overflow-x: auto;">
-                <div class="pointer item-store py-2 px-3" *ngFor="let item of info.RedesSociales; index as index;">
-                    <a class="text-dark text-decoration-none" [href]="item.URL" target="_blank">{{item.RedSocial}}</a>
+            <div *ngIf="info.RedesSociales.length > 0">
+                <app-components-title-subtitle title="Redes sociales" justify="start"></app-components-title-subtitle>
+                <div class="d-flex flex-row flex-md-column container-category">
+                    <div class="d-none d-md-block d-flex flex-column">
+                        <div class="pointer item-store py-2 px-3"
+                            *ngFor="let item of info.RedesSociales; index as index;">
+                            <a class="text-dark text-decoration-none w-100 d-block" [href]="item.URL"
+                                target="_blank">{{item.RedSocial}}</a>
+                        </div>
+                    </div>
+                    <div class="d-md-none d-block d-flex flex-row">
+                        <div class="pointer item-store2 border border-black rounded-2 mb-1" style="overflow-x: auto;"
+                            *ngFor="let item of info.RedesSociales; index as index;">
+                            <a class="text-dark text-decoration-none w-100 d-block" [href]="item.URL"
+                                target="_blank">{{item.RedSocial}}</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

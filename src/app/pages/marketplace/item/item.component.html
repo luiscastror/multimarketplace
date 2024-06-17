@@ -8,11 +8,14 @@
             <div class="row">
                 <div class="col-12 col-md-3 mb-1">
                     <div class="d-flex flex-row flex-md-column gap-2  justify-content-start mt-3">
-                        <div *ngFor="let item of item.Imagenes, index as index" [ngStyle]="{'background-image': 'url(' + item.URL + ')'}" [ngClass]="{'opacity-100 border': index == imageSelected}" class="image img-thumbnail pointer" (click)="image = item.URL; imageSelected = index"></div>
+                        <div *ngFor="let item of item.Imagenes, index as index"
+                            [ngStyle]="{'background-image': 'url(' + item.URL + ')'}"
+                            [ngClass]="{'opacity-100 border': index == imageSelected}"
+                            class="image img-thumbnail pointer" (click)="image = item.URL; imageSelected = index"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
-                    <img class="img-fluid mx-auto" [src]="image" style="max-height: 60vh;">
+                    <img class="imgBig" [src]="image">
                 </div>
             </div>
 
@@ -21,13 +24,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="f-14 fw-medium" [style]="color5"> Vendido y enviado por:</div>
-                    <p class="fw-bold f20 pointer text-decoration-underline text-uppercase" [style.color]="color3" [routerLink]="'/store/'+item.Producto.TiendaId">{{item.Producto.Tienda}}</p>
+                    <p class="fw-bold f20 pointer text-decoration-underline text-uppercase" [style.color]="color3"
+                        [routerLink]="'/store/'+item.Producto.TiendaId">{{item.Producto.Tienda}}</p>
                     <p class="fw-bold f14 color-primary mb-3 ">{{item.Producto.Descripcion}}</p>
-                    <div class="w-100 d-flex flex-row justify-content-between align-items-center" *ngIf="item.Producto.Descuento > 0">
+                    <div class="w-100 d-flex flex-row justify-content-between align-items-center"
+                        *ngIf="item.Producto.Descuento > 0">
                         <p>Valor: </p>
                         <p>${{item.Producto.Valor | number}}</p>
                     </div>
-                    <div class="w-100 d-flex flex-row justify-content-between align-items-center" *ngIf="item.Producto.Descuento > 0">
+                    <div class="w-100 d-flex flex-row justify-content-between align-items-center"
+                        *ngIf="item.Producto.Descuento > 0">
                         <p>Descuento: </p>
                         <p class="text-danger fw-bold">%{{item.Producto.Descuento}} (${{item.Producto.Descuento/100 *
                             item.Producto.Valor | number}})</p>
@@ -39,7 +45,8 @@
                     </div>
 
                     <div class="w-100 mt-3">
-                        <button [style.backgroundColor]="color3" (click)="add()" class="w-100 no-border d-flex justify-content-center align-items-center py-1">
+                        <button [style.backgroundColor]="color3" (click)="add()"
+                            class="w-100 no-border d-flex justify-content-center align-items-center py-1">
                             <mat-icon>add_shopping_cart</mat-icon>
                             <span>Agregar al carrito</span>
                         </button>
@@ -53,7 +60,8 @@
                             <img [src]="item.Producto.LogoTienda" alt="Logo tienda" class="imageDos">
                         </div>
                         <div>
-                            <a href="" [routerLink]="'/store/'+item.Producto.TiendaId" class="btn pointer" [style.color]="color3">
+                            <a href="" [routerLink]="'/store/'+item.Producto.TiendaId" class="btn pointer"
+                                [style.color]="color3">
                                 Conoce mas productos de <strong class="text-uppercase">{{item.Producto.Tienda}}</strong>
                             </a>
                         </div>

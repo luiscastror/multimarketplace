@@ -25,7 +25,6 @@ export class StoreComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.activeItem);
     this.load_store();
     this.load_store_items();
   }
@@ -35,6 +34,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
     this.loading = true;
     this.MainService.ApiService.get(this.path_api_store).subscribe((resp: any) => {
       this.info = resp;
+      console.dir(this.info);
     }, (error) => {
       console.error(error)
       this.MainService.SnackbarService.show(error.error.message);
@@ -130,7 +130,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
   show: boolean = false;
   messageBranch: string = '';
   showBranch(index: number) {
-    this.show = true;
+    this.show = !this.show;
     this.messageBranch = `Sucursal ${this.info.Sucursales[index].Descripcion},<br/>
     Direccion: ${this.info.Sucursales[index].Direccion},<br/>
     Telefono: ${this.info.Sucursales[index].Telefono},<br/>

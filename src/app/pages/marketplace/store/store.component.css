@@ -25,6 +25,25 @@
     background-position: center;
 }
 
+.item-store2 {
+    border-radius: 10%;
+    height: 40px;
+    background-color: #f2f8f1;
+    color: #70555F !important;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    overflow: hidden;
+    /* Para truncar el texto si es necesario */
+    text-overflow: ellipsis;
+    /* Para mostrar puntos suspensivos si se trunca el texto */
+    white-space: nowrap;
+    /* Para evitar saltos de línea */
+}
+
 .item-store:hover {
     transition: 0.5s;
     background-color: #74E65A;
@@ -43,4 +62,37 @@
     font-weight: 700;
     cursor: pointer;
     /* Corregido: la propiedad correcta es "cursor" y no "pointer" */
+}
+
+.categoryBackground {
+    background: #74E65A;
+    color: #fff !important;
+}
+
+@media (max-width: 768px) {
+
+    .container-category {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        /* margin-left: 10px;
+        margin-right: 20px; */
+    }
+
+    .container-category::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .container-category::-webkit-scrollbar-thumb {
+        background-color: #ED144C;
+        border-radius: 10px;
+    }
+
+    .container-category::-webkit-scrollbar-track {
+        background: #c59ba5;
+        border-radius: 20px;
+
+    }
+
+
 }

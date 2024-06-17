@@ -1,16 +1,18 @@
 <app-nav></app-nav>
 <app-banner [img]="imgBanner" *ngIf="!loading4"></app-banner>
 <div class="container">
-    <div class="row">
-        <app-card-link></app-card-link>
-    </div>
+    <app-card-link></app-card-link>
     <!-- <div class="container-fluid"> -->
     <div class="row my-2">
         <div class="col-12 col-md-6">
-            <img src="../../assets/img/Rectangle_1.png" alt="" class="img-fluid w-100 rounded-3 m-1">
+            <div class="w-100" style="cursor: pointer;" routerLink="/search" [queryParams]="{ keyword: 'muñecas'}">
+                <img src="../../assets/img/Rectangle_1.png" alt="" class="img-fluid w-100 rounded-3 m-1">
+            </div>
         </div>
         <div class="col-12 col-md-6">
-            <img src="../../assets/img/Rectangle_2.png" alt="" class="img-fluid w-100 rounded-3 m-1">
+            <div class="w-100" style="cursor: pointer;" routerLink="/search" [queryParams]="{ keyword: 'joyas'}">
+                <img src="../../assets/img/Rectangle_2.png" alt="" class="img-fluid w-100 rounded-3 m-1">
+            </div>
         </div>
     </div>
     <!-- </div> -->
@@ -56,13 +58,13 @@
     </div>
     <!-- </div> -->
     <!-- <div class="container-fluid"> -->
-    <div class="row mb-5" *ngIf="random && random.Productos">
+    <div class="row mb-5" *ngIf="random2 && random2.Productos">
         <div class="row">
             <app-components-title-subtitle [title]="enum[2].title" [justify]="enum[1].justify">
             </app-components-title-subtitle>
         </div>
         <div class="row container-category mx-1">
-            <div class="col-6 col-md-2" *ngFor="let item of random.Productos">
+            <div class="col-6 col-md-2" *ngFor="let item of random2.Productos">
                 <app-components-card-product [item]="item"></app-components-card-product>
             </div>
         </div>
