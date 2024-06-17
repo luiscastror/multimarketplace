@@ -103,6 +103,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   random2: any;
   getRandom2() {
     this.MainService.ApiService.get('/random').subscribe((resp: any) => {
+      console.log(resp)
       this.random2 = resp;
     }, error => {
       console.error(error)
