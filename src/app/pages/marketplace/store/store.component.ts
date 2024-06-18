@@ -136,4 +136,24 @@ export class StoreComponent extends BaseComponent implements OnInit {
     Telefono: ${this.info.Sucursales[index].Telefono},<br/>
     Correo: ${this.info.Sucursales[index].Correo}`
   }
+
+  getLogoStyles() {
+    return {
+      'background-image': `url(${this.info.Tienda.Logo})`,
+      'border-color': this.color1,
+      'border-style': 'solid',
+      'border-width': '1px',
+      'width': '13vh',
+      'height': '13vh',
+      'border-radius': '50%',
+      'margin-left': 'auto',
+      'margin-right': 'auto',
+      'margin-top': '-60px',
+      'margin-bottom': '10px',
+      'background-size': 'cover',
+      'background-repeat': 'no-repeat',
+      'background-color': 'white',
+      'background-position': 'center'
+    };
+  }
 }

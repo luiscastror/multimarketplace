@@ -122,18 +122,21 @@
                     <div
                         class="card-footer d-flex flex-column flex-md-row justify-content-between gap-3 align-items-center">
                         <div>
-                            <p>**Esta checkout se procesa por separado a el resto y pertenece al negocio
-                                <span class="pointer fw-bold"
-                                    [routerLink]="'/store/'+business.TiendaId">({{business.Tienda
-                                    | uppercase}})</span>
+                            <p>**Esta compra se procesa por separado ya que pertenece al negocio
+                                <span class="fw-bold">"{{business.Tienda | uppercase}}"</span>
                             </p>
                         </div>
-                        <div>
-                            <button mat-flat-button color="accent"
+                        <div class="d-flex gap-3 flex-column flex-md-row">
+                            <button mat-flat-button [style.backgroundColor]="color5" [style.color]="color4"
+                                [routerLink]="'/store/'+business.TiendaId">
+                                <span class="mx-2 f16">Ver productos de {{business.Tienda}}</span>
+                            </button>
+                            <button mat-flat-button [style.backgroundColor]="color1" [style.color]="color4"
                                 [routerLink]="'/checkout/'+business.TiendaId+'/'+indexBusiness"
                                 (click)="press(indexBusiness)">
                                 <mat-icon>shopping_cart_checkout</mat-icon>
-                                <span>Procesar pedido -> Pagar -> ${{business.total| number}}</span>
+                                <span class="mx-2 f16">ENVIAR PEDIDO</span>
+                                <!-- <span>Procesar pedido -> Pagar -> ${{business.total| number}}</span> -->
                             </button>
                         </div>
                     </div>

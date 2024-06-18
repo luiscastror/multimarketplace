@@ -18,3 +18,34 @@
 .imgCarrito {
     width: 30px;
 }
+
+.heightSearch {
+    height: 80px;
+}
+
+/*.custom-mat-form-field .mat-form-field-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-mat-form-field .mat-form-field-flex {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-mat-form-field .mat-form-field-infix {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-mat-form-field input.mat-input-element {
+    height: 75%;
+    padding: 0 10px;
+    align-items: center;
+     Asegura que el padding esté presente 
+    box-sizing: border-box;
+}
+*/

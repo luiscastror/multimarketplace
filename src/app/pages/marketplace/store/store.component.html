@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12 col-md-3 pt-3 mb-3">
             <div class="portada" [ngStyle]="{'background-image': 'url(' + info.Tienda.Portada + ')'}"></div>
-            <div class="logo" [ngStyle]="{'background-image': 'url(' + info.Tienda.Logo + ')'}"></div>
+            <div [ngStyle]="getLogoStyles()"></div>
             <p class="fw-bold f18 text-center text-uppercase">{{info.Tienda.Descripcion}}</p>
             <p class="fw-light f16 text-center mb-3 ">{{info.Tienda.Biografia}}</p>
             <!-- <div class="d-none d-md-inline"> -->
@@ -48,7 +48,7 @@
             <app-components-title-subtitle title="Sucursales" justify="start"></app-components-title-subtitle>
             <div class="d-flex flex-column mb-3">
                 <div>
-                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between"
+                    <div class="pointer item-store py-2 px-3 d-flex justify-content-between text-uppercase"
                         *ngFor="let item of info.Sucursales; index as index;" (click)="showBranch(index)">
                         {{item.Descripcion}}
                         <mat-icon *ngIf="this.show === true"
