@@ -1,13 +1,10 @@
 <app-nav></app-nav>
 <div class="container my-5">
-    <app-components-title-subtitle *ngIf="pedido && pedido.Id"
-        [title]="'Pedido '+ pedido.Id.substring(pedido.Id.length - 5) + ' - ' + pedido.Nombres + ' - ' + pedido.EstadoPedido "
-        justify="start"></app-components-title-subtitle>
+    <app-components-title-subtitle *ngIf="pedido && pedido.Id" [title]="'Pedido '+ pedido.Id.substring(pedido.Id.length - 5) + ' - ' + pedido.Nombres + ' - ' + pedido.EstadoPedido " justify="start"></app-components-title-subtitle>
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 col-md-8">
-                <div *ngFor="let item of pedido.Items"
-                    class="d-flex flex-row justify-content-between card mb-2 px-4 py-2 gap-3">
+                <div *ngFor="let item of pedido.Items" class="d-flex flex-row justify-content-between card mb-2 px-4 py-2 gap-3">
                     <div class="w-25">
                         <img [src]="item.ImagenUrl" alt="Img produc" style="width: 70px;">
                     </div>
@@ -79,28 +76,22 @@
         </div>
         <div class="row containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showRating">
             <div class="py-3 gap-4 d-flex flex-column align-items-center">
-                <app-components-title-subtitle title="Califique su experiencia"
-                    justify="center"></app-components-title-subtitle>
+                <app-components-title-subtitle title="Califique su experiencia" justify="center"></app-components-title-subtitle>
 
                 <div class="d-flex justify-content-between">
-                    <span class="material-symbols-outlined pointer" (click)="setRating(1)"
-                    [ngClass]="{'filled': rating >= 1}">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(1)" [ngClass]="{'filled': rating >= 1}">
                         star
                     </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(2)"
-                    [ngClass]="{'filled': rating >= 2}">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(2)" [ngClass]="{'filled': rating >= 2}">
                         star
                     </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(3)"
-                    [ngClass]="{'filled': rating >= 3}">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(3)" [ngClass]="{'filled': rating >= 3}">
                         star
                     </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(4)"
-                    [ngClass]="{'filled': rating >= 4}">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(4)" [ngClass]="{'filled': rating >= 4}">
                         star
                     </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(5)"
-                    [ngClass]="{'filled': rating >= 5}">
+                    <span class="material-symbols-outlined pointer" (click)="setRating(5)" [ngClass]="{'filled': rating >= 5}">
                         star
                     </span>
 
