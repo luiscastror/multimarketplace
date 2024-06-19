@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store-dashboard.component.html',
   styleUrls: ['./store-dashboard.component.css']
 })
-export class StoreDashboardComponent implements OnInit {
+export class StoreDashboardComponent extends BaseComponent implements OnInit {
 
 
   maxDate!: Date;
@@ -18,7 +19,7 @@ export class StoreDashboardComponent implements OnInit {
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
 
@@ -41,9 +42,9 @@ export class StoreDashboardComponent implements OnInit {
   active: boolean = false;
   active2: boolean = false;
   active3: boolean = false;
-  pedidosPorDia : any = [];
-  producMasVendidos : any = [];
-  ventas : any = {};
+  pedidosPorDia: any = [];
+  producMasVendidos: any = [];
+  ventas: any = {};
   buscar() {
     let ini = new Date(this.buscador.controls['fechaInicial'].value);
     let end = new Date(this.buscador.controls['fechaFinal'].value);
@@ -58,10 +59,10 @@ export class StoreDashboardComponent implements OnInit {
       // console.log(this.pedidosPorDia);
       // console.log(this.producMasVendidos);
       //console.log(this.ventas.Cantidad);
-      this.producMasVendidos.length>0 ? this.active = true : this.active = false; 
-      this.ventas.Cantidad> 0 ? this.active2 = true : this.active2 = false; 
+      this.producMasVendidos.length > 0 ? this.active = true : this.active = false;
+      this.ventas.Cantidad > 0 ? this.active2 = true : this.active2 = false;
       this.producMasVendidos.length > 0 ? this.active3 = true : this.active3 = false;
-      console.log(this.active , this.active2, this.active3);
+      console.log(this.active, this.active2, this.active3);
       this.loading = false;
     })
   }

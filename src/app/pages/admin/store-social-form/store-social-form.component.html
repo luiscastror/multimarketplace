@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row">
         <div class="col-10 col-md-6 mx-auto d-flex flex-column">
-            <p class="fw-bold f28 color-primary mb-3">{{edit ? 'Editar Red' : 'Nuevo Red'}}</p>
+            <p class="fw-bold f28 mb-3" [style.color]="color6">{{edit ? 'Editar Red' : 'Nuevo Red'}}</p>
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Redes</mat-label>
                 <mat-select formControlName="RedSocialId" required>
@@ -12,7 +12,8 @@
                 <mat-label>URL</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="URL" required>
             </mat-form-field>
-            <button mat-flat-button color="accent" class="mb-3 w-100" type="submit">{{edit? 'Editar':'Crear'}}</button>
+            <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="mb-3 w-100"
+                type="submit">{{edit? 'Editar':'Crear'}}</button>
             <button mat-stroked-button class="mb-3 w-100" type="button" routerLink="/admin/my-store-social">
                 Atrás
             </button>

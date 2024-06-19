@@ -14,8 +14,8 @@
                 <div class="image-control" style="background-image: url({{file}});"></div>
             </div>
             <div class="w-100 d-flex">
-                <button mat-flat-button color="accent" class="mx-auto" type="button"
-                    (click)="remove(index)">Eliminar</button>
+                <button mat-flat-button [style.color]="color2" [style.backgroundColor]="color1" class="mx-auto"
+                    type="button" (click)="remove(index)">Eliminar</button>
             </div>
         </div>
     </div>

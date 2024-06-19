@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 
@@ -9,7 +10,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store-locations-form.component.html',
   styleUrls: ['./store-locations-form.component.css']
 })
-export class StoreLocationsFormComponent implements OnInit {
+export class StoreLocationsFormComponent extends BaseComponent implements OnInit {
 
   form = new FormGroup({
     Id: new FormControl(),
@@ -30,6 +31,7 @@ export class StoreLocationsFormComponent implements OnInit {
     private router: Router,
     private ruta: ActivatedRoute,
   ) {
+    super()
     this.id = this.ruta.snapshot.params.id;
     this.edit = this.id ? true : false;
   }

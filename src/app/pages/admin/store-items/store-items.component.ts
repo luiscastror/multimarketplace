@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/modal-confirm.component';
+import { BaseComponent } from 'src/app/base';
 
 @Component({
   selector: 'app-store-items',
   templateUrl: './store-items.component.html',
   styleUrls: ['./store-items.component.css']
 })
-export class StoreItemsComponent implements OnInit {
+export class StoreItemsComponent extends BaseComponent implements OnInit {
 
 
   view: string = 'list';
@@ -19,7 +20,7 @@ export class StoreItemsComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private MatDialog: MatDialog
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.load();

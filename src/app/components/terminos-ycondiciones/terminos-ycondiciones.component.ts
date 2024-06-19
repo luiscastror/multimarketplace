@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 
 @Component({
   selector: 'app-components-terminos-y-condiciones',
   templateUrl: './terminos-ycondiciones.component.html',
   styleUrls: ['./terminos-ycondiciones.component.css']
 })
-export class TerminosYCondicionesComponent implements OnInit {
+export class TerminosYCondicionesComponent extends BaseComponent implements OnInit {
 
-  constructor() { }
+  constructor() { super() }
 
   ngOnInit(): void {
   }

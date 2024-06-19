@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,13 +7,13 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store-orders.component.html',
   styleUrls: ['./store-orders.component.css']
 })
-export class StoreOrdersComponent implements OnInit {
+export class StoreOrdersComponent extends BaseComponent implements OnInit {
 
   path_ped_store: string = '/admin/pedidos/';
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) { super() }
   ngOnInit(): void {
     this.loadPedStore();
   }

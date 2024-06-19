@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,11 +7,11 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.css']
 })
-export class ProductSearchComponent implements OnInit {
+export class ProductSearchComponent extends BaseComponent implements OnInit {
 
   constructor(
     public MainService: MainService
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
   }

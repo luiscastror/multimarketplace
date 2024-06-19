@@ -5,7 +5,7 @@
                 <img [src]="logoBase" style="width: 200px; max-width: 250px;" routerLink="/" class="pointer">
             </div>
             <div class="col-8 col-md-5 d-none d-md-inline">
-                <input type="text" class="form-control p-2" placeholder="Busca productos, marcas y más..."
+                <input type="search" class="form-control p-2" placeholder="Busca productos, marcas y más..."
                     [(ngModel)]="searchInput" (keyup.enter)="search()" style="height: 100%;">
             </div>
             <div class="col-8 col-md-4 d-flex flex-row justify-content-end align-items-center gap-3">
@@ -41,9 +41,10 @@
             <div class="col-12 d-flex justify-content-between">
                 <div class="d-flex justify-content-md-start justify-content-evenly flex-wrap flex-row gap-3 gap-md-5">
                     <div class="d-md-none d-block w-100">
-                        <input type="text" class="form-control p-2 w-100" placeholder="Busca productos, marcas y más..."
-                            [(ngModel)]="searchInput" (keyup.enter)="search()" style="height: 100%;">
-                        <!-- <mat-form-field class="w-100" appearance="outline" color="accent"
+                        <input type="search" class="form-control p-2 w-100"
+                            placeholder="Busca productos, marcas y más..." [(ngModel)]="searchInput"
+                            (keyup.enter)="search()" style="height: 100%;">
+                        <!-- <mat-form-field class="w-100" appearance="outline"
                             style="background: white; border-radius: 8px; padding: 5px;">
                             <mat-label>Busca productos, marcas y más...</mat-label>
                             <input matInput type="text" [(ngModel)]="searchInput" (keyup.enter)="search()">

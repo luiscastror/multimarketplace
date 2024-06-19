@@ -127,15 +127,15 @@
                             </p>
                         </div>
                         <div class="d-flex gap-3 flex-column flex-md-row">
-                            <button mat-flat-button [style.backgroundColor]="color5" [style.color]="color4"
+                            <button mat-flat-button [style.backgroundColor]="color2" [style.color]="color1"
                                 [routerLink]="'/store/'+business.TiendaId">
-                                <span class="mx-2 f16">Ver productos de {{business.Tienda}}</span>
+                                <span class="mx-2 f16 fw-semibold">Ver productos de {{business.Tienda}}</span>
                             </button>
                             <button mat-flat-button [style.backgroundColor]="color1" [style.color]="color4"
                                 [routerLink]="'/checkout/'+business.TiendaId+'/'+indexBusiness"
                                 (click)="press(indexBusiness)">
                                 <mat-icon>shopping_cart_checkout</mat-icon>
-                                <span class="mx-2 f16">ENVIAR PEDIDO</span>
+                                <span class="mx-2 f16 fw-semibold">ENVIAR PEDIDO</span>
                                 <!-- <span>Procesar pedido -> Pagar -> ${{business.total| number}}</span> -->
                             </button>
                         </div>

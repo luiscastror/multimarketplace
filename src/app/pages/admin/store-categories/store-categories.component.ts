@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { BaseComponent } from 'src/app/base';
 import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/modal-confirm.component';
 
 import { MainService } from 'src/app/services/main.service';
@@ -9,7 +10,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store-categories.component.html',
   styleUrls: ['./store-categories.component.css']
 })
-export class StoreCategoriesComponent implements OnInit {
+export class StoreCategoriesComponent extends BaseComponent implements OnInit {
 
   path_api: string = '/admin/subCategorias/';
   loading: boolean = false;
@@ -18,7 +19,7 @@ export class StoreCategoriesComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private MatDialog: MatDialog
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.load();

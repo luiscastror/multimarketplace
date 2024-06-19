@@ -1,4 +1,4 @@
-<h3 class="color-primary fw-bold">Mis productos</h3>
+<h3 class="fw-bold" [style.color]="color6">Mis productos</h3>
 <p>Estos son los productos que vendes en el marketplace</p>
 <div *ngIf="loading">
     <app-loading></app-loading>
@@ -12,19 +12,20 @@
             </mat-form-field>
         </div>
         <div class="d-flex flex-row justify-content-end align-items-center">
-            <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
+            <button mat-icon-button [style.color]="color2" [ngClass]="{'bg-secondary bg-opacity-25': view == 'list'}"
                 (click)="view = 'list'">
                 <span class="material-symbols-outlined">
                     list
                 </span>
             </button>
-            <button mat-icon-button color="primary" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
+            <button mat-icon-button [style.color]="color2" [ngClass]="{'bg-secondary bg-opacity-25': view == 'grid'}"
                 (click)="view = 'grid'">
                 <span class="material-symbols-outlined">
                     grid_view
                 </span>
             </button>
-            <button mat-flat-button color="primary" class="ms-3" routerLink="/admin/my-store-items/form">Nuevo</button>
+            <button mat-flat-button class="ms-3 fw-semibold" routerLink="/admin/my-store-items/form"
+                [style.color]="color5" [style.backgroundColor]="color2">Nuevo</button>
         </div>
     </div>
     <ng-container *ngIf="view == 'list'">

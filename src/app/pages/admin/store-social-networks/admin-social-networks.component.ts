@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/modal-confirm.component';
+import { BaseComponent } from 'src/app/base';
 
 @Component({
   selector: 'app-admin-social-networks',
   templateUrl: './admin-social-networks.component.html',
   styleUrls: ['./admin-social-networks.component.css']
 })
-export class AdminSocialNetworksComponent implements OnInit {
+export class AdminSocialNetworksComponent extends BaseComponent implements OnInit {
 
   path_api: string = '/admin/redesSociales/'
   loading: boolean = false;
@@ -18,7 +19,7 @@ export class AdminSocialNetworksComponent implements OnInit {
     private MainService: MainService,
     private MatDialog: MatDialog
 
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.loadSocial();

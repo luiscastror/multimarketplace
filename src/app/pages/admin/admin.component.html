@@ -3,47 +3,47 @@
     <div class="row">
         <div class="col-12 col-md-2 py-3">
             <div class="d-flex flex-column gap-3">
-                <h3 class="fw-bold color-primary">Usuario</h3>
+                <h3 class="fw-bold" [style.color]="color6">Usuario</h3>
                 <a routerLink="/admin/my-info" [routerLinkActive]="'color-secondary fw-bold'"
-                    class="color-primary text-decoration-none hv-secondary">
+                    class="text-decoration-none hv-secondary" [style.color]="color6">
                     Mi cuenta
                 </a>
                 <a routerLink="/admin/my-orders" [routerLinkActive]="'color-secondary fw-bold'"
-                    class="color-primary text-decoration-none hv-secondary">
+                    class="text-decoration-none hv-secondary" [style.color]="color6">
                     Mis pedidos
                 </a>
-                <a routerLink="/" (click)="logout()" class="color-primary text-decoration-none hv-secondary">
+                <a routerLink="/" (click)="logout()" class="text-decoration-none hv-secondary" [style.color]="color6">
                     Salir
                 </a>
                 <hr>
                 <ng-container *ngIf="stores.length > 0">
-                    <h3 class="fw-bold color-primary">Tienda</h3>
+                    <h3 class="fw-bold" [style.color]="color6">Tienda</h3>
                     <a routerLink="/admin/my-store" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mi tienda
                     </a>
                     <a routerLink="/admin/my-store-profile" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mi perfil
                     </a>
                     <a routerLink="/admin/my-store-locations" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mis sucursales
                     </a>
                     <a routerLink="/admin/my-store-social" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mis Redes
                     </a>
                     <a routerLink="/admin/my-store-categories" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mis categorias
                     </a>
                     <a routerLink="/admin/my-store-items" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mis productos
                     </a>
                     <a routerLink="/admin/my-store-orders" [routerLinkActive]="'color-secondary fw-bold'"
-                        class="color-primary text-decoration-none hv-secondary">
+                        class="text-decoration-none hv-secondary" [style.color]="color6">
                         Mis pedidos
                     </a>
                 </ng-container>

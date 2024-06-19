@@ -90,7 +90,8 @@
                     <mat-option *ngFor="let item of ['PENDIENTE','PAGADO']" [value]="item">{{item}}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-flat-button color="primary" class="w-100 my-3" (click)="updateStatus()">ACTUALIZAR PEDIDO
+            <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2"
+                class="w-100 my-3 fw-semibold" (click)="updateStatus()">ACTUALIZAR PEDIDO
             </button>
         </div>
     </div>

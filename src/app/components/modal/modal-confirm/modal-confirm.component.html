@@ -7,7 +7,8 @@
         </div>
         <div class="col-12 d-flex flex-row justify-content-center gap-3">
             <button mat-stroked-button (click)="close()">{{data.buttonCancel}}</button>
-            <button mat-flat-button color="accent" (click)="confirm()">{{data.buttonConfirm}}</button>
+            <button mat-flat-button [style.color]="color4" [style.backgroundColor]="color3"
+                (click)="confirm()">{{data.buttonConfirm}}</button>
         </div>
     </div>
 </div>

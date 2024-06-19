@@ -2,13 +2,14 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { finalize } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { BaseComponent } from 'src/app/base';
 
 @Component({
   selector: 'app-file-saver',
   templateUrl: './file-saver.component.html',
   styleUrls: ['./file-saver.component.css']
 })
-export class FileSaverComponent implements OnInit {
+export class FileSaverComponent extends BaseComponent implements OnInit {
 
   @Output() urlFile = new EventEmitter<string>();
   @Input() files: any = [];
@@ -23,7 +24,9 @@ export class FileSaverComponent implements OnInit {
   constructor(
     private MainService: MainService,
     private storage: AngularFireStorage
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void { }
 

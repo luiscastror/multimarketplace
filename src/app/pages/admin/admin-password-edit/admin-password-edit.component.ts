@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './admin-password-edit.component.html',
   styleUrls: ['./admin-password-edit.component.css']
 })
-export class AdminPasswordEditComponent implements OnInit {
+export class AdminPasswordEditComponent extends BaseComponent implements OnInit {
 
   form = new FormGroup({
     ContraseñaActual: new FormControl(''),
@@ -18,6 +19,7 @@ export class AdminPasswordEditComponent implements OnInit {
   constructor(
     private MainService: MainService
   ) {
+    super();
   }
 
   ngOnInit(): void {

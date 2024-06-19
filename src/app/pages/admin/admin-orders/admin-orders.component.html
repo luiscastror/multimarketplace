@@ -1,13 +1,13 @@
-<h3 class="color-primary fw-bold">Mis pedidos</h3>
+<h3 class="fw-bold" [style.color]="color6">Mis pedidos</h3>
 <div *ngIf="loading">
     <app-loading></app-loading>
 </div>
 <div *ngIf="!loading">
-    <div *ngIf="!many_items">
+    <div *ngIf="!many_items" [style.color]="color5">
         No tienes pedidos registrados en el momento.
     </div>
     <div *ngIf="many_items">
-        <p>Esta es la lista de tus {{num_items}} pedidos</p>
+        <p [style.color]="color5">Esta es la lista de tus {{num_items}} pedidos</p>
         <div class="row my-3">
             <div class="col-12">
                 <div class="table-responsive-sm">

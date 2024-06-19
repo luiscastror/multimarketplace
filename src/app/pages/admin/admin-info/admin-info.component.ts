@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,12 +7,12 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './admin-info.component.html',
   styleUrls: ['./admin-info.component.css']
 })
-export class AdminInfoComponent implements OnInit {
+export class AdminInfoComponent extends BaseComponent implements OnInit {
 
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.loadUser()

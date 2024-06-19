@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './store-order-details.component.html',
   styleUrls: ['./store-order-details.component.css']
 })
-export class StoreOrderDetailsComponent implements OnInit {
+export class StoreOrderDetailsComponent extends BaseComponent implements OnInit {
 
   id: string = '';
   idStore: string = this.MainService.AuthService.dataStore.Id;
@@ -19,6 +20,7 @@ export class StoreOrderDetailsComponent implements OnInit {
     public MainService: MainService,
     private ruta: ActivatedRoute,
   ) {
+    super()
     this.id = this.ruta.snapshot.params.id;
   }
 

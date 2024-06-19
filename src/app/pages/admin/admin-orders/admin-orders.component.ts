@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from 'src/app/base';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -6,13 +7,13 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './admin-orders.component.html',
   styleUrls: ['./admin-orders.component.css']
 })
-export class AdminOrdersComponent implements OnInit {
+export class AdminOrdersComponent extends BaseComponent implements OnInit {
 
   path_ped_user: string = '/usuarios/MisPedidos';
 
   constructor(
     private MainService: MainService
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.loadPedUser();

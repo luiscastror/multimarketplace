@@ -1,13 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row d-flex flex-column justify-content-center align-content-center" style="height: 50vh;">
         <div class="col-10 col-md-6 mx-auto d-flex flex-column">
-            <p class="fw-bold f28 color-primary mb-3">{{edit ? 'Editar categoría':'Nueva categoría'}}</p>
+            <p class="fw-bold f28 mb-3" [style.color]="color6">{{edit ? 'Editar categoría':'Nueva categoría'}}</p>
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
                 <mat-label>Nombre de la categoría</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
             </mat-form-field>
-            <button mat-flat-button color="accent" class="mb-3" type="submit" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
+            <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="mb-3" type="submit"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
                 {{edit ? 'Editar':'Crear'}}
             </button>
             <button mat-stroked-button class="mb-3" type="button" routerLink="/admin/my-store-categories">Atrás</button>

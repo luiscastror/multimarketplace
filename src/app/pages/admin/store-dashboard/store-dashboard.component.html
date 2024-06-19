@@ -1,5 +1,11 @@
 <div class="w-100 d-flex flex-row justify-content-between mb-3">
-    <app-components-title-subtitle title="Analisis de tu tienda" subtitle="Breve resumen sobre los datos mas importantes y necesarios" justify="start"></app-components-title-subtitle>
+    <div>
+        <h3 class="fw-bold" [style.color]="color6">Analisis de tu tienda</h3>
+        <p>Breve resumen sobre los datos mas importantes y necesarios</p>
+    </div>
+    <!-- <app-components-title-subtitle title="Analisis de tu tienda"
+        subtitle="Breve resumen sobre los datos mas importantes y necesarios"
+        justify="start"></app-components-title-subtitle> -->
     <div class="d-flex flex-row flex-wrap align-items-center justify-content-between gap-3">
         <form [formGroup]="buscador" novalidate>
             <mat-form-field class="w-100" appearance="outline">
@@ -12,7 +18,8 @@
                 </mat-date-range-picker>
             </mat-form-field>
         </form>
-        <button (click)="buscar()" mat-flat-button color="primary">Buscar</button>
+        <button (click)="buscar()" mat-flat-button class="fw-semibold" [style.color]="color5"
+            [style.backgroundColor]="color2">Buscar</button>
     </div>
 </div>
 <div *ngIf="loading">
@@ -77,16 +84,16 @@
             <div class="fs-4 fw-semibold text-center">Productos mas vendidos</div>
             <table class="table table-striped border">
                 <thead>
-                  <tr>
-                    <th  class="text-center">Producto</th>
-                    <th class="text-center">Cantidad vendidas</th>
-                  </tr>
+                    <tr>
+                        <th class="text-center">Producto</th>
+                        <th class="text-center">Cantidad vendidas</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of producMasVendidos ; index as index">
-                    <td class="text-center">{{item.Descripcion}}</td>
-                    <td class="text-center">{{item.Cantidad}}</td>
-                  </tr>
+                    <tr *ngFor="let item of producMasVendidos ; index as index">
+                        <td class="text-center">{{item.Descripcion}}</td>
+                        <td class="text-center">{{item.Cantidad}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -94,16 +101,16 @@
             <div class="fs-4 fw-semibold text-center">Pedidos por dias</div>
             <table class="table table-striped border">
                 <thead>
-                  <tr>
-                    <th  class="text-center">Dia</th>
-                    <th class="text-center">Cantidad vendidas</th>
-                  </tr>
+                    <tr>
+                        <th class="text-center">Dia</th>
+                        <th class="text-center">Cantidad vendidas</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of pedidosPorDia ; index as index">
-                    <td class="text-center">{{item.NombreDiaSemana}}-{{item.DiaSemana}}</td>
-                    <td class="text-center">{{item.CantidadVentas}}</td>
-                  </tr>
+                    <tr *ngFor="let item of pedidosPorDia ; index as index">
+                        <td class="text-center">{{item.NombreDiaSemana}}-{{item.DiaSemana}}</td>
+                        <td class="text-center">{{item.CantidadVentas}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

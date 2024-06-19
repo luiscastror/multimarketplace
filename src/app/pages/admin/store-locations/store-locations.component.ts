@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmComponent } from 'src/app/components/modal/modal-confirm/modal-confirm.component';
+import { BaseComponent } from 'src/app/base';
 
 @Component({
   selector: 'app-store-locations',
   templateUrl: './store-locations.component.html',
   styleUrls: ['./store-locations.component.css']
 })
-export class StoreLocationsComponent implements OnInit {
+export class StoreLocationsComponent extends BaseComponent implements OnInit {
 
   // view: string = 'list';
   path_api: string = '/admin/sucursales/';
@@ -18,7 +19,7 @@ export class StoreLocationsComponent implements OnInit {
     private MainService: MainService,
     private MatDialog: MatDialog
 
-  ) { }
+  ) { super() }
 
   ngOnInit(): void {
     this.load();

@@ -1,10 +1,13 @@
 <app-nav></app-nav>
 <div class="container my-5">
-    <app-components-title-subtitle *ngIf="pedido && pedido.Id" [title]="'Pedido '+ pedido.Id.substring(pedido.Id.length - 5) + ' - ' + pedido.Nombres + ' - ' + pedido.EstadoPedido " justify="start"></app-components-title-subtitle>
+    <app-components-title-subtitle *ngIf="pedido && pedido.Id"
+        [title]="'Pedido '+ pedido.Id.substring(pedido.Id.length - 5) + ' - ' + pedido.Nombres + ' - ' + pedido.EstadoPedido "
+        justify="start"></app-components-title-subtitle>
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 col-md-8">
-                <div *ngFor="let item of pedido.Items" class="d-flex flex-row justify-content-between card mb-2 px-4 py-2 gap-3">
+                <div *ngFor="let item of pedido.Items"
+                    class="d-flex flex-row justify-content-between card mb-2 px-4 py-2 gap-3">
                     <div class="w-25">
                         <img [src]="item.ImagenUrl" alt="Img produc" style="width: 70px;">
                     </div>
@@ -26,6 +29,71 @@
                             <div class="fw-semibold text-center mb-1">Precio total</div>
                             <p class="text-success text-center fw-bold">${{(item.Total | number)}}</p>
                         </div>
+                    </div>
+                </div>
+                <div class="containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showRating">
+                    <div class="py-3 gap-4 d-flex flex-column align-items-center">
+                        <app-components-title-subtitle title="Califique su experiencia"
+                            justify="center"></app-components-title-subtitle>
+
+                        <div class="d-flex justify-content-between">
+                            <span class="material-symbols-outlined pointer" (click)="setRating(1)"
+                                [ngClass]="{'filled': rating >= 1}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined pointer" (click)="setRating(2)"
+                                [ngClass]="{'filled': rating >= 2}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined pointer" (click)="setRating(3)"
+                                [ngClass]="{'filled': rating >= 3}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined pointer" (click)="setRating(4)"
+                                [ngClass]="{'filled': rating >= 4}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined pointer" (click)="setRating(5)"
+                                [ngClass]="{'filled': rating >= 5}">
+                                star
+                            </span>
+
+                        </div>
+                        <div class="fw-medium">
+                            Seleccione con cuantas estrellas desea calificar su experiencia
+                        </div>
+                        <mat-form-field class="w-75 mb-3" appearance="outline" color="accent">
+                            <mat-label>Descripcion</mat-label>
+                            <input matInput type="text" autocomplete="off" [(ngModel)]="description"
+                                (input)="setDescription(description)">
+                        </mat-form-field>
+                        <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="w-80"
+                            (click)="sendRating()">Enviar Calificación
+                        </button>
+                    </div>
+                </div>
+                <div class="containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showCalificacion">
+                    <div class="py-3 gap-4 d-flex flex-column align-items-center">
+                        <app-components-title-subtitle title="Calificación del producto"
+                            justify="center"></app-components-title-subtitle>
+                        <div class="d-flex justify-content-between">
+                            <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 1}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 2}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 3}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 4}">
+                                star
+                            </span>
+                            <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 5}">
+                                star
+                            </span>
+                        </div>
+                        <p class="f-12 fw-medium" [style.color]="color5">Reseña: {{resena}}</p>
                     </div>
                 </div>
             </div>
@@ -71,43 +139,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="row containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showRating">
-            <div class="py-3 gap-4 d-flex flex-column align-items-center">
-                <app-components-title-subtitle title="Califique su experiencia" justify="center"></app-components-title-subtitle>
-
-                <div class="d-flex justify-content-between">
-                    <span class="material-symbols-outlined pointer" (click)="setRating(1)" [ngClass]="{'filled': rating >= 1}">
-                        star
-                    </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(2)" [ngClass]="{'filled': rating >= 2}">
-                        star
-                    </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(3)" [ngClass]="{'filled': rating >= 3}">
-                        star
-                    </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(4)" [ngClass]="{'filled': rating >= 4}">
-                        star
-                    </span>
-                    <span class="material-symbols-outlined pointer" (click)="setRating(5)" [ngClass]="{'filled': rating >= 5}">
-                        star
-                    </span>
-
-                </div>
-
-                <div class="fw-medium">
-                    Seleccione con cuantas estrellas desea calificar su experiencia
-                </div>
-
-
-                <mat-form-field class="w-75 mb-3" appearance="outline" color="accent">
-                    <mat-label>Descripcion</mat-label>
-                    <input matInput type="text" autocomplete="off" [(ngModel)]="description" (input)="setDescription(description)">
-                </mat-form-field>
-                <button mat-flat-button color="primary" class="w-80" (click)="sendRating()">Enviar Calificación
-                </button>
 
             </div>
         </div>

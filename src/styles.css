@@ -8,6 +8,7 @@
 :root {
     --primary: #1a237e;
     --secondary: #43a047;
+    --danger: #ED144C;
 }
 
 body {
@@ -50,11 +51,11 @@ button {
 }
 
 .color-secondary {
-    color: var(--secondary) !important;
+    color: var(--danger) !important;
 }
 
 .hv-secondary:hover {
-    color: var(--secondary) !important;
+    color: var(--danger) !important;
 }
 
 .pointer {

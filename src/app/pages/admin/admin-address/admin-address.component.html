@@ -1,4 +1,4 @@
-<h3 class="color-primary fw-bold">Mis direcciones</h3>
+<h3 class="fw-bold" [style.color]="color6">Mis direcciones</h3>
 <p>Esta es la lista de tus direcciones</p>
 <div class="row my-3">
     <div class="col-12">
@@ -20,8 +20,9 @@
                         <td>john@example.com</td>
                         <td>john@example.com</td>
                         <td class="d-flex justify-content-center gap-3 w-auto">
-                            <button mat-flat-button color="primary">Acción</button>
-                            <button mat-flat-button color="accent">Acción</button>
+                            <button mat-flat-button [style.color]="color4"
+                                [style.backgroundColor]="color6">Acción</button>
+                            <button mat-flat-button>Acción</button>
                         </td>
                     </tr>
                 </tbody>
