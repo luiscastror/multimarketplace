@@ -103,6 +103,11 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
     }, (error) => {
       this.MainService.SnackbarService.show(error);
     });
+    this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp2).subscribe((res) => {
+      console.log('Notificación enviada:', res);
+    }, (error) => {
+      this.MainService.SnackbarService.show(error);
+    });
   }
 
 
