@@ -14,7 +14,6 @@ export class StoreProfileComponent extends BaseComponent implements OnInit {
   form = new FormGroup({
     Id: new FormControl(''),
     Biografia: new FormControl(''),
-    whatsappTienda: new FormControl(''),
     CategoriaId: new FormControl(''),
     Descripcion: new FormControl(''),
     Logo: new FormControl(''),
@@ -22,6 +21,7 @@ export class StoreProfileComponent extends BaseComponent implements OnInit {
     UsuarioId: new FormControl(''),
     PublicKey: new FormControl(''),
     Signature: new FormControl(''),
+    Telefono: new FormControl(''),
   });
 
   constructor(
@@ -40,13 +40,13 @@ export class StoreProfileComponent extends BaseComponent implements OnInit {
   loadStore() {
     this.loading = true;
     this.MainService.ApiService.get('/admin/tiendas/' + this.MainService.AuthService.dataStore.Id).subscribe((resp: any) => {
+      console.log(resp)
       this.store = resp;
       this.form.patchValue(this.store);
       this.form.patchValue({
         UsuarioId: this.MainService.AuthService.dataUser.UsuarioId,
         Id: this.MainService.AuthService.dataStore.Id
       })
-
       this.loading = false;
     })
   }

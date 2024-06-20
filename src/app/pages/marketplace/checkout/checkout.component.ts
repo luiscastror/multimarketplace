@@ -87,27 +87,30 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
       const itemTotal = item.Cantidad * item.Valor;
       const itemDescuento = itemTotal * (item.Descuento / 100);
       const itemPrecioFinal = itemTotal - itemDescuento;
-      return `${index + 1}) ${item.Descripcion.trim()} * ${item.Cantidad}\nPrecio Unitario: $${formatNumber(item.Valor)}\n${item.Descuento > 0 ? 'Descuento: ' + item.Descuento + '% Dto' : ''}\n${item.Descuento > 0 ? 'Precio Total: $' + formatNumber(itemPrecioFinal) : ''}`;
+      return `${item.Descripcion.trim()}\nCantidad: ${item.Cantidad}\nPrecio Unitario: $${formatNumber(item.Valor)}\n${item.Descuento > 0 ? 'Descuento: ' + item.Descuento + '% Dto' : ''}\n${item.Descuento > 0 ? 'Precio Total: $' + formatNumber(itemPrecioFinal) : ''}\n`;
     }).join('\n');
-    const payloadWhatsapp = {
-      body: `💰!\n\nHola *${order.Tienda}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\nLista de productos:\n${productsList}\n\nTotal de la compra: $${formatNumber(totalCompra)}`,
-      to: this.MainService.AuthService.dataUser.Telefono
-    };
 
-    const payloadWhatsapp2 = {
-      body: `🎉 ¡Hemos recibido tu pedido de: *${order.Tienda}* 💰!\n\n Total del pedido: $${formatNumber(totalCompra)}\n Puedes ver tu pedido aqui:`,
-      to: "3023984726"
+
+
+    const payloadWhatsapp = {
+      body: `💰!Hola *${order.Tienda}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\n*Lista de productos en este pedido:*\n${productsList}\n\n*Total de la compra en este pedido:* $${formatNumber(totalCompra)}\n\nMira los detalles de tu pedido en el siguiente enlace: https://quillavende.com/order-info/${this.id_store}/${this.idPed}`,
+      to: this.MainService.AuthService.dataUser.Telefono
     };
     this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp).subscribe((res) => {
       console.log('Notificación enviada:', res);
     }, (error) => {
       this.MainService.SnackbarService.show(error);
     });
-    this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp2).subscribe((res) => {
-      console.log('Notificación enviada:', res);
-    }, (error) => {
-      this.MainService.SnackbarService.show(error);
-    });
+
+    // const payloadWhatsapp2 = {
+    //   body: `🎉 ¡Hemos recibido tu pedido de: *${order.Tienda}* 💰!\n\n Total del pedido: $${formatNumber(totalCompra)}\n Puedes ver tu pedido aqui:`,
+    //   to: "3023984726"
+    // };
+    // this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp2).subscribe((res) => {
+    //   console.log('Notificación enviada:', res);
+    // }, (error) => {
+    //   this.MainService.SnackbarService.show(error);
+    // });
   }
 
 
@@ -120,6 +123,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
   idPed: string = '';
   submit() {
     this.MainService.ApiService.post('/admin/pedidos/', this.form.value).subscribe((resp: any) => {
+
       if (this.form.controls["Metodo"].value == 'linea') {
         const referencia = this.id_store + '' + Number(new Date());
         const checkout = new WidgetCheckout({

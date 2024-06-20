@@ -26,8 +26,7 @@
                     <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="mb-3 w-100"
-                type="submit">{{edit ?
+            <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="mb-3 w-100" type="submit">{{edit ?
                 'Editar':'Crear'}}</button>
             <button mat-stroked-button class="mb-3 w-100" type="button" routerLink="/admin/my-store-items">
                 Atrás
@@ -35,7 +34,6 @@
         </div>
         <div class="col-10 col-md-6">
             <app-file-saver [files]="files" (urlFile)="urlFile($event)" path="items"></app-file-saver>
-            {{this.form.value | json}}
         </div>
 
     </div>

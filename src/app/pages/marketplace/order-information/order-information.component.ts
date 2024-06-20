@@ -37,7 +37,7 @@ export class OrderInformationComponent extends BaseComponent implements OnInit {
 
   pedido: any = {};
   loadPed() {
-    this.MainService.ApiService.get('/admin/pedidos/' + this.idStore + '/' + this.id).subscribe((resp: any) => {
+    this.MainService.ApiService.get('/pedidos/' + this.idStore + '/' + this.id).subscribe((resp: any) => {
       this.pedido = resp;
       this.statePed = resp.EstadoPedido;
       this.statePay = resp.Estado;

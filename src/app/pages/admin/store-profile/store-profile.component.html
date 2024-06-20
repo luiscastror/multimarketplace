@@ -2,23 +2,20 @@
 <form [formGroup]="form" (ngSubmit)="change()">
     <div class="row">
         <div class="col-12 col-md-4">
-            <div class="logo"
-                [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logocolor.png' ) + ')'}">
+            <div class="logo" [ngStyle]="{'background-image': 'url(' + (store.Logo != '' ? store.Logo : 'assets/img/logocolor.png' ) + ')'}">
             </div>
-            <app-file-saver (urlFile)="store.Logo = $event; setForm('Logo', $event)" path="marca" [isString]="true"
-                title="Subir logo" [showImages]="false">
+            <app-file-saver (urlFile)="store.Logo = $event; setForm('Logo', $event)" path="marca" [isString]="true" title="Subir logo" [showImages]="false">
             </app-file-saver>
         </div>
         <div class="col-12 col-md-8">
-            <div class="portada"
-                [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logocolor.png' ) + ')'}">
+            <div class="portada" [ngStyle]="{'background-image': 'url(' + (store.Portada != '' ? store.Portada : 'assets/img/logocolor.png' ) + ')'}">
             </div>
-            <app-file-saver (urlFile)="store.Portada = $event; setForm('Portada', $event);" path="marca"
-                [isString]="true" title="Subir portada" [showImages]="false">
+            <app-file-saver (urlFile)="store.Portada = $event; setForm('Portada', $event);" path="marca" [isString]="true" title="Subir portada" [showImages]="false">
             </app-file-saver>
         </div>
         <div class="col-12 col-md-6 d-flex flex-column">
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+            <p>Manten actualizada la información principal de tu tienda en {{marketplace}}</p>
+            <mat-form-field class="w-100 my-3" appearance="outline" color="accent">
                 <mat-label>Nombre de la tienda</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Descripcion" required>
             </mat-form-field>
@@ -26,8 +23,6 @@
                 <mat-label>Biografia</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
             </mat-form-field>
-        </div>
-        <div class="col-12 col-md-6 d-flex flex-column">
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Categoría</mat-label>
                 <mat-select formControlName="CategoriaId" required>
@@ -35,23 +30,40 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Whatsapp Tienda</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="whatsappTienda" required>
+                <mat-label>WhatsApp Tienda</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Telefono" required>
             </mat-form-field>
-        </div>
-        <div class="col-12">
-            <div class="d-flex justify-content-center">
-                <button mat-flat-button aparence="outline" class="mt-5 fw-semibold" type="submit" [style.color]="color5"
-                    [style.backgroundColor]="color2">
+            <div class="d-flex justify-content-end">
+                <button mat-flat-button aparence="outline" class="fw-semibold" type="submit" [style.color]="color5" [style.backgroundColor]="color2">
                     Guardar informacion
                 </button>
             </div>
         </div>
-        <div class="col-12 mt-5">
-            <p class="f14 fw-meidum"><b>Credenciales Wompi:</b>
-                acepta pagos en línea vinculando tu cuenta Wompi Bancolombia
-                más información en: <a href="https://wompi.com/" target="_blank">wompi.com</a>
-            </p>
+        <div class="col-12 col-md-6 d-flex flex-column">
+            <p>Acepta pagos en línea vinculando tu cuenta Wompi de Bancolombia</p>
+            <mat-form-field class="w-100 my-3 " appearance="outline" color="accent">
+                <mat-label>Wompi publicKey</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="PublicKey">
+            </mat-form-field>
+            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
+                <mat-label>Wompi integrity</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="Signature">
+            </mat-form-field>
+            <div class="d-flex  justify-content-end">
+                <button mat-flat-button aparence="outline" class="fw-semibold" type="submit" [style.color]="color5" [style.backgroundColor]="color2">
+                    Guardar integración de pagos
+                </button>
+            </div>
+            <p class="text-end small mt-1">Puedes crear tu cuenta Wompi en <a href="https://wompi.com/" target="_blank">wompi.com</a></p>
+
         </div>
     </div>
+    <!-- <div class="row mt-3">
+        <div class="col-12 col-md-2 ">
+            <img src="https://wompi.com/assets/img/recursos_graficos/logo_principal-Wompi.svg" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-2 ">
+            <img src="../../assets/img/logocolor.png" class="img-fluid">
+        </div>
+    </div> -->
 </form>
