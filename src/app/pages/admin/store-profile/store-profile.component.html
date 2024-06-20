@@ -26,21 +26,17 @@
                 <mat-label>Biografia</mat-label>
                 <input matInput type="text" autocomplete="off" formControlName="Biografia" required>
             </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column">
             <mat-form-field appearance="outline" class="w-100 mb-3" color="accent">
                 <mat-label>Categoría</mat-label>
                 <mat-select formControlName="CategoriaId" required>
                     <mat-option *ngFor="let item of categorias" [value]="item.Id">{{item.Descripcion}}</mat-option>
                 </mat-select>
             </mat-form-field>
-        </div>
-        <div class="col-12 col-md-6 d-flex flex-column">
             <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Wompi publicKey</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="PublicKey">
-            </mat-form-field>
-            <mat-form-field class="w-100 mb-3" appearance="outline" color="accent">
-                <mat-label>Wompi integrity</mat-label>
-                <input matInput type="text" autocomplete="off" formControlName="Signature">
+                <mat-label>Whatsapp Tienda</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="whatsappTienda" required>
             </mat-form-field>
         </div>
         <div class="col-12">
@@ -50,6 +46,12 @@
                     Guardar informacion
                 </button>
             </div>
+        </div>
+        <div class="col-12 mt-5">
+            <p class="f14 fw-meidum"><b>Credenciales Wompi:</b>
+                acepta pagos en línea vinculando tu cuenta Wompi Bancolombia
+                más información en: <a href="https://wompi.com/" target="_blank">wompi.com</a>
+            </p>
         </div>
     </div>
 </form>

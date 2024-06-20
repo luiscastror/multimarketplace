@@ -18,6 +18,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
   loading: boolean = true;
   order: any = {};
   index!: number;
+  telefono: string = '';
 
   business: any = {};
 
@@ -61,21 +62,44 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
 
   loadOrder() {
     this.order = this.MainService.CartService.listCart.filter((business: any) => business.TiendaId == this.id_store)[0]
-
+    console.log(this.order);
     this.form.patchValue({
       Orden: this.order
     })
-
+    console.log(this.form.value)
     if (this.MainService.AuthService.isAuth()) {
       this.form.patchValue(this.MainService.AuthService.dataUser)
     }
-
     this.MainService.ApiService.get('/tiendas/' + this.id_store).subscribe((resp: any) => {
       this.business = resp;
       this.loading = false;
     })
-
   }
+
+  sendNotification(order: any, userName: string) {
+    const formatNumber = (num: number) => num.toLocaleString();
+    const totalCompra = order.items.reduce((total: number, item: { Cantidad: number; Valor: number; Descuento: number }) => {
+      const itemTotal = item.Cantidad * item.Valor;
+      const itemDescuento = itemTotal * (item.Descuento / 100);
+      return total + (itemTotal - itemDescuento);
+    }, 0);
+    let productsList = order.items.map((item: { Descripcion: string; Cantidad: number; Valor: number; Descuento: number }, index: number) => {
+      const itemTotal = item.Cantidad * item.Valor;
+      const itemDescuento = itemTotal * (item.Descuento / 100);
+      const itemPrecioFinal = itemTotal - itemDescuento;
+      return `${index + 1}) ${item.Descripcion.trim()} * ${item.Cantidad}\nPrecio Unitario: $${formatNumber(item.Valor)}\n${item.Descuento > 0 ? 'Descuento: ' + item.Descuento + '% Dto' : ''}\n${item.Descuento > 0 ? 'Precio Total: $' + formatNumber(itemPrecioFinal) : ''}`;
+    }).join('\n');
+    const payloadWhatsapp = {
+      body: `🎉 ¡Gracias por tu compra en *${order.Tienda}* 💰!\n\nHola *${userName}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\nLista de productos:\n${productsList}\n\nTotal de la compra: $${formatNumber(totalCompra)}`,
+      to: this.MainService.AuthService.dataUser.Telefono
+    };
+    this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp).subscribe((res) => {
+      console.log('Notificación enviada:', res);
+    }, (error) => {
+      this.MainService.SnackbarService.show(error);
+    });
+  }
+
 
   changeCart() {
     this.MainService.CartService.updateCart();
@@ -143,6 +167,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
         this.changeCart();
       }
       remover();
+      this.sendNotification(this.order, this.form.get('Nombres')?.value);
     })
   }
 

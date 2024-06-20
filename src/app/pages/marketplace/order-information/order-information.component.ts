@@ -47,7 +47,7 @@ export class OrderInformationComponent extends BaseComponent implements OnInit {
       this.statePay == 'ACT' && this.statePed == 'RECIBIDO' && this.calificacion == null ? this.showRating = true : this.showRating = false;
       this.calificacion !== null ? this.showCalificacion = true : this.showCalificacion = false;
       // console.log('La calificacion es:', this.calificacion);
-      // console.log(this.reseña);
+      console.log(this.pedido);
     })
   }
 

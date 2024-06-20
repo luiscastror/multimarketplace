@@ -4,6 +4,7 @@ import { SnackbarService } from './snackbar.service';
 import { AuthService } from './auth.service';
 import { ApiService } from './api.service';
 import { MasterService } from './master.service';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class MainService {
     public SnackbarService: SnackbarService,
     public AuthService: AuthService,
     public ApiService: ApiService,
-    public MasterServe: MasterService
+    public MasterServe: MasterService,
+    public NotificationService: NotificationService
   ) { }
 }

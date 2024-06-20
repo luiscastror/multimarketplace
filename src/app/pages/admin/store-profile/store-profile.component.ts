@@ -14,6 +14,7 @@ export class StoreProfileComponent extends BaseComponent implements OnInit {
   form = new FormGroup({
     Id: new FormControl(''),
     Biografia: new FormControl(''),
+    whatsappTienda: new FormControl(''),
     CategoriaId: new FormControl(''),
     Descripcion: new FormControl(''),
     Logo: new FormControl(''),

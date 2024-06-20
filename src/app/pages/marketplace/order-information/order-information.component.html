@@ -6,36 +6,39 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 col-md-8">
-                <div *ngFor="let item of pedido.Items"
-                    class="d-flex flex-row justify-content-between card mb-2 px-4 py-2 gap-3">
-                    <div class="w-25">
-                        <img [src]="item.ImagenUrl" alt="Img produc" style="width: 70px;">
-                    </div>
-                    <div class="w-25">
-                        <div class="fw-semibold mb-1">Producto</div>
-                        <p class=" fw-medium">{{item.Nombre}}</p>
-                        <p class="fw-medium">${{(item.Valor | number)}}</p>
-                    </div>
-                    <div class="w-25">
-                        <div class="fw-semibold text-center mb-1">Cantidad</div>
-                        <p class="text-center fw-medium">{{item.Cantidad}}</p>
-                    </div>
-                    <div class="w-25 gap-3 d-flex flex-column">
-                        <div>
-                            <div class="fw-semibold text-center mb-1">Descuento</div>
-                            <p class="text-danger fw-medium text-center"><s>{{'$'+(item.Descuento | number)}}</s></p>
+                <div *ngFor="let item of pedido.Items" class="card mb-2 px-4 py-2 gap-3">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <img [src]="item.ImagenUrl" alt="Img produc" style="width: 70px;">
                         </div>
-                        <div>
-                            <div class="fw-semibold text-center mb-1">Precio total</div>
-                            <p class="text-success text-center fw-bold">${{(item.Total | number)}}</p>
+                        <div class="col-6 col-md-3">
+                            <div class="fw-semibold mb-1">Producto</div>
+                            <p class=" fw-medium">"{{item.Nombre}}"</p>
+                            <p class="fw-medium">${{(item.Valor | number)}}</p>
+                        </div>
+                        <div class="col-6 col-md-3 d-flex flex-column justify-content-md-start justify-content-center">
+                            <div class="fw-semibold text-md-center mb-1">Cantidad</div>
+                            <p class="text-md-center fw-medium">{{item.Cantidad}}</p>
+                        </div>
+                        <div
+                            class="col-6 col-md-3 gap-md-3 gap-2 d-flex flex-column justify-content-md-start justify-content-center">
+                            <div>
+                                <div class="fw-semibold text-md-center mb-1">Descuento</div>
+                                <p class="text-danger fw-medium text-md-center"><s>{{'$'+(item.Descuento | number)}}</s>
+                                </p>
+                            </div>
+                            <div>
+                                <div class="fw-semibold text-md-center mb-1">Precio total</div>
+                                <p class="text-success text-md-center fw-bold">${{(item.Total | number)}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showRating">
-                    <div class="py-3 gap-4 d-flex flex-column align-items-center">
-                        <app-components-title-subtitle title="Califique su experiencia"
-                            justify="center"></app-components-title-subtitle>
-
+                <div class="containerRating mt-1 d-flex justify-content-center rounded-2 card" *ngIf="showRating">
+                    <div class="py-3 gap-2 d-flex flex-column align-items-center">
+                        <div class="fw-semibold f20 mb-2">
+                            Califique su experiencia
+                        </div>
                         <div class="d-flex justify-content-between">
                             <span class="material-symbols-outlined pointer" (click)="setRating(1)"
                                 [ngClass]="{'filled': rating >= 1}">
@@ -59,23 +62,24 @@
                             </span>
 
                         </div>
-                        <div class="fw-medium">
+                        <div class="fw-medium mb-2">
                             Seleccione con cuantas estrellas desea calificar su experiencia
                         </div>
                         <mat-form-field class="w-75 mb-3" appearance="outline" color="accent">
-                            <mat-label>Descripcion</mat-label>
+                            <mat-label>Descripción sobre su experiencia</mat-label>
                             <input matInput type="text" autocomplete="off" [(ngModel)]="description"
                                 (input)="setDescription(description)">
                         </mat-form-field>
-                        <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2" class="w-80"
-                            (click)="sendRating()">Enviar Calificación
+                        <button mat-flat-button [style.color]="color5" [style.backgroundColor]="color2"
+                            class="w-80 fw-semibold" (click)="sendRating()">Enviar Calificación
                         </button>
                     </div>
                 </div>
-                <div class="containerRating mt-5 d-flex justify-content-center rounded-1" *ngIf="showCalificacion">
-                    <div class="py-3 gap-4 d-flex flex-column align-items-center">
-                        <app-components-title-subtitle title="Calificación del producto"
-                            justify="center"></app-components-title-subtitle>
+                <div class="containerRating mt-1 d-flex justify-content-center rounded-2 card" *ngIf="showCalificacion">
+                    <div class="py-3 gap-3 d-flex flex-column align-items-center">
+                        <div class="fw-semibold f20">
+                            Calificación del pedido
+                        </div>
                         <div class="d-flex justify-content-between">
                             <span class="material-symbols-outlined" [ngClass]="{'filled': this.calificacion >= 1}">
                                 star
@@ -104,6 +108,14 @@
                         <div class="d-flex justify-content-between flex-row">
                             <div class="fw-semibold">Nombre:</div>
                             <div>{{pedido.Nombres}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Departamento:</div>
+                            <div>{{pedido.Departamento}}</div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <div class="fw-semibold">Ciudad:</div>
+                            <div>{{pedido.Ciudad}}</div>
                         </div>
                         <div class="d-flex justify-content-between flex-row">
                             <div class="fw-semibold">Dirección:</div>
