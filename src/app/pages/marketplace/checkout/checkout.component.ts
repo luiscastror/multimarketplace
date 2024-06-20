@@ -90,7 +90,12 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
       return `${index + 1}) ${item.Descripcion.trim()} * ${item.Cantidad}\nPrecio Unitario: $${formatNumber(item.Valor)}\n${item.Descuento > 0 ? 'Descuento: ' + item.Descuento + '% Dto' : ''}\n${item.Descuento > 0 ? 'Precio Total: $' + formatNumber(itemPrecioFinal) : ''}`;
     }).join('\n');
     const payloadWhatsapp = {
-      body: `🎉 ¡Gracias por tu compra en *${order.Tienda}* 💰!\n\nHola *${userName}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\nLista de productos:\n${productsList}\n\nTotal de la compra: $${formatNumber(totalCompra)}`,
+      body: `💰!\n\nHola *${order.Tienda}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\nLista de productos:\n${productsList}\n\nTotal de la compra: $${formatNumber(totalCompra)}`,
+      to: this.MainService.AuthService.dataUser.Telefono
+    };
+
+    const payloadWhatsapp2 = {
+      body: `🎉 ¡Hemos recibido tu pedido de: *${order.Tienda}* 💰!\n\n Total del pedido: $${formatNumber(totalCompra)}\n Puedes ver tu pedido aqui:`,
       to: this.MainService.AuthService.dataUser.Telefono
     };
     this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp).subscribe((res) => {
