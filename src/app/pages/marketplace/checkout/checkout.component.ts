@@ -96,7 +96,7 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
 
     const payloadWhatsapp2 = {
       body: `🎉 ¡Hemos recibido tu pedido de: *${order.Tienda}* 💰!\n\n Total del pedido: $${formatNumber(totalCompra)}\n Puedes ver tu pedido aqui:`,
-      to: this.MainService.AuthService.dataUser.Telefono
+      to: "3023984726"
     };
     this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp).subscribe((res) => {
       console.log('Notificación enviada:', res);
