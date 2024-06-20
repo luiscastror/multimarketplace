@@ -91,12 +91,12 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
     }).join('\n');
     const payloadWhatsapp = {
       body: `💰!\n\nHola *${order.Tienda}* 👋\n\nTienes un nuevo pedido en Quillavende 🤑\n\nLista de productos:\n${productsList}\n\nTotal de la compra: $${formatNumber(totalCompra)}`,
-      to: this.MainService.AuthService.dataUser.Telefono
+      to: "3023984726"
     };
 
     const payloadWhatsapp2 = {
       body: `🎉 ¡Hemos recibido tu pedido de: *${order.Tienda}* 💰!\n\n Total del pedido: $${formatNumber(totalCompra)}\n Puedes ver tu pedido aqui:`,
-      to: "3023984726"
+      to: this.MainService.AuthService.dataUser.Telefono
     };
     this.MainService.NotificationService.sendNotificationPOS(payloadWhatsapp).subscribe((res) => {
       console.log('Notificación enviada:', res);
