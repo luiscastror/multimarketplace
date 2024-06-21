@@ -88,6 +88,8 @@ import { CardLinkComponent } from './components/card-link/card-link.component';
 import { BusinessOfTheMonthComponent } from './components/business-of-the-month/business-of-the-month.component';
 import { CardEntrepreneurComponent } from './components/card-entrepreneur/card-entrepreneur.component';
 import { TruncatePipe } from './truncate.pipe';
+import { ChangePasswordThreeComponent } from './pages/admin/change-password-three/change-password-three.component';
+import { CardBanksComponent } from './pages/marketplace/card-banks/card-banks.component';
 
 
 @NgModule({
@@ -148,7 +150,9 @@ import { TruncatePipe } from './truncate.pipe';
     CardLinkComponent,
     BusinessOfTheMonthComponent,
     CardEntrepreneurComponent,
-    TruncatePipe
+    TruncatePipe,
+    ChangePasswordThreeComponent,
+    CardBanksComponent
   ],
   imports: [
     BrowserModule,

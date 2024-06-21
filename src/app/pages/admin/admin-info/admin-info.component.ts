@@ -22,6 +22,7 @@ export class AdminInfoComponent extends BaseComponent implements OnInit {
   loadUser() {
     this.MainService.ApiService.get('/usuarios/Miperfil').subscribe((resp: any) => {
       this.user = resp;
+      console.log(this.user);
     })
   }
 

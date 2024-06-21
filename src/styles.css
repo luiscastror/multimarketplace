@@ -93,3 +93,7 @@ button {
 .f30 {
     font-size: 30px;
 }
+
+.text-justify {
+    text-align: justify;
+}

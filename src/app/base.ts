@@ -9,6 +9,7 @@ export class BaseComponent {
     public color4: string = '#fff'; // blanco 70555F
     public color5: string = '#70555F'; // Negro/Gris 
     public color6: string = '#006400'; // naranja
+    public color7: string = '#0c0d0c'; // negroIcons
 
     public logoBase: string = 'https://firebasestorage.googleapis.com/v0/b/marketplace-vivesucre.appspot.com/o/quillavende%2Fmultimedia%2Flogo%2FGroup.png?alt=media&token=939121e8-e26c-4bd3-9544-2b72e54fe734'
 

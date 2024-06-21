@@ -41,6 +41,7 @@ import { OrderInformationComponent } from './pages/marketplace/order-information
 import { AdminPasswordEditComponent } from './pages/admin/admin-password-edit/admin-password-edit.component';
 import { ChangePasswordComponent } from './pages/marketplace/change-password/change-password.component';
 import { ChangePasswordTwoComponent } from './pages/marketplace/change-password-two/change-password-two.component';
+import { ChangePasswordThreeComponent } from './pages/admin/change-password-three/change-password-three.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -157,6 +158,11 @@ const routes: Routes = [
                 path: 'my-store-social/form/:id',
                 component: StoreSocialFormComponent
             },
+            {
+                path: 'my-store-changePassword',
+                component: ChangePasswordThreeComponent
+            },
+
         ]
     },
     {

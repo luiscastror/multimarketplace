@@ -26,8 +26,17 @@
     margin-top: 180px;
 }
 
+.iconVerified {
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
 @media (max-width: 768px) {
     .margintop {
         margin-top: 70px;
+    }
+
+    .iconVerified {
+        font-size: 35px;
     }
 }
