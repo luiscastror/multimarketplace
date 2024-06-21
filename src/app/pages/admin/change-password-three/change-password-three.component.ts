@@ -14,12 +14,13 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
 export class ChangePasswordThreeComponent extends BaseComponent implements OnInit {
 
   loading: boolean = false;
-  path_api: string = '/usuarios/cambiarClave/';
+  path_api: string = '/usuarios/cambiarClaveAdmin/';
 
   form = new FormGroup({
-    Clave: new FormControl('', [Validators.required, Validators.maxLength(70)]),
-    Clave2: new FormControl('', [Validators.required, Validators.maxLength(6)]),
-    Clave3: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    Correo: new FormControl(this.MainService.AuthService.dataUser.Correo, [Validators.required, Validators.email]),
+    ClaveActual: new FormControl(null, [Validators.required]),
+    Clave: new FormControl(null, [Validators.required]),
+    ClaveRepetida: new FormControl(null),
   })
 
   constructor(
@@ -27,7 +28,9 @@ export class ChangePasswordThreeComponent extends BaseComponent implements OnIni
     private SnackbarService: SnackbarService,
     private router: Router,
     private location: Location
-  ) { super() }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
   }
@@ -36,17 +39,26 @@ export class ChangePasswordThreeComponent extends BaseComponent implements OnIni
   submit() {
     if (this.form.valid) {
       this.loading = true;
-      this.MainService.ApiService.post(this.path_api, this.form.value).subscribe((resp: any) => {
-        console.log(resp);
-        this.SnackbarService.show('Su contraseña se ha actualizado con exito');
-        this.loading = false;
-        this.router.navigate(['/login']);
-      }, (err: any) => {
-        this.SnackbarService.show(err.error.message);
-        this.loading = false;
+      const claveRepetidaValue = this.form.controls['ClaveRepetida'].value;
+      if (this.form.controls['Clave'].value === this.form.controls['ClaveRepetida'].value) {
+        this.form.removeControl('ClaveRepetida');
+        this.MainService.ApiService.post(this.path_api, this.form.value).subscribe((resp: any) => {
+          console.log(resp);
+          this.SnackbarService.show('Su contraseña se ha actualizado con exito');
+          this.form.reset();
+          this.form.addControl('ClaveRepetida', new FormControl(null, [Validators.required]));
+          this.goBack();
+          this.loading = false;
+        }, (err: any) => {
+          this.form.addControl('ClaveRepetida', new FormControl(claveRepetidaValue, [Validators.required]));
+          this.SnackbarService.show('error: ' + err.error.message);
+          this.loading = false;
 
-      })
-      // console.log(this.form.value)
+        })
+      } else {
+        this.SnackbarService.show('Las claves no coinciden');
+        this.loading = false;
+      }
     }
   }
 
