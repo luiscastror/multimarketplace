@@ -4,9 +4,10 @@
         <app-loading></app-loading>
     </div>
     <div class="row border-bottom" *ngIf="!loading">
-        <div class="col-12 col-md-7 border-end py-5">
+        <div class="col-12 col-md-7 border-end py-md-3 pt-3">
             <div class="row">
-                <div class="col-12 col-md mb-1" style="border-right: 1px solid #dee2e6;">
+                <div class="col-12 col-md mb-1" style="border-right: 1px solid #dee2e6;"
+                    [ngClass]="{'container-category': item.Imagenes}">
                     <div class="d-flex flex-row flex-md-column gap-2  justify-content-start mt-3 align-items-center">
                         <div *ngFor="let item of item.Imagenes, index as index"
                             [ngStyle]="{'background-image': 'url(' + item.URL + ')'}"
@@ -18,49 +19,52 @@
                     <img class="imgBig" [src]="image">
                 </div>
             </div>
-            <div class="card mt-5 d-none d-md-block">
-                <div class="row">
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <mat-icon [style.color]="color7" class="iconVerified">verified</mat-icon>
-                    </div>
-                    <div class="col-8">
-                        <strong class="py-2">Satisfación garantizada</strong>
-                        <p class="text-justify ">Puedes devolver este producto dentro de un plazo máximo de 30 días.
-                            Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin uso, con
-                            todos sus componentes y en su embalaje original.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-5 d-none d-md-block">
-                <div class="row">
-                    <strong class="mb-2 px-md-5">Opciones de entrega</strong>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <mat-icon [style.color]="color7" class="iconVerified">local_shipping</mat-icon>
-                    </div>
-                    <div class="col-10 d-flex align-items-center">
-                        Despacho a domicilio
+            <div class="container">
+                <div class="card mt-5 d-none d-md-block">
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <mat-icon [style.color]="color7" class="iconVerified">verified</mat-icon>
+                        </div>
+                        <div class="col-8">
+                            <strong class="py-2">Satisfación garantizada</strong>
+                            <p class="text-justify ">Puedes devolver este producto dentro de un plazo máximo de 30 días.
+                                Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin uso,
+                                con
+                                todos sus componentes y en su embalaje original.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <mat-icon [style.color]="color7" class="iconVerified">store</mat-icon>
+                <div class="mt-5 d-none d-md-block">
+                    <div class="row">
+                        <strong class="mb-2 px-md-5">Opciones de entrega</strong>
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <mat-icon [style.color]="color7" class="iconVerified">local_shipping</mat-icon>
+                        </div>
+                        <div class="col-10 d-flex align-items-center">
+                            Despacho a domicilio
+                        </div>
                     </div>
-                    <div class="col-10 d-flex align-items-center">
-                        Despacho a domicilio
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <mat-icon [style.color]="color7" class="iconVerified">store</mat-icon>
+                        </div>
+                        <div class="col-10 d-flex align-items-center">
+                            Retiro en tienda
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <mat-icon [style.color]="color7" class="iconVerified">grid_view</mat-icon>
-                    </div>
-                    <div class="col-10 d-flex align-items-center">
-                        Despacho a domicilio
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <mat-icon [style.color]="color7" class="iconVerified">grid_view</mat-icon>
+                        </div>
+                        <div class="col-10 d-flex align-items-center">
+                            Stock en la tienda
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="col-12 col-md-5 py-5 px-3">
+        <div class="col-12 col-md-5 py-md-3 px-3 py-0">
             <div class="row">
                 <div class="col-12">
                     <div class="f-14 fw-medium" [style]="color5"> Vendido y enviado por:</div>
@@ -113,44 +117,49 @@
                     </div>
                 </div>
                 <app-card-banks [complete]="true"></app-card-banks>
-                <div class="card mt-5 d-md-none d-block">
-                    <div class="row">
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <mat-icon [style.color]="color7" class="iconVerified">verified</mat-icon>
-                        </div>
-                        <div class="col-8">
-                            <strong class="py-2">Satisfación garantizada</strong>
-                            <p class="text-justify ">Puedes devolver este producto dentro de un plazo máximo de 30 días.
-                                Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin uso,
-                                con
-                                todos sus componentes y en su embalaje original.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-5 d-md-none d-block">
-                    <div class="row">
-                        <strong class="mb-2 px-md-5">Opciones de entrega</strong>
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <mat-icon [style.color]="color7" class="iconVerified">local_shipping</mat-icon>
-                        </div>
-                        <div class="col-10 d-flex align-items-center">
-                            Despacho a domicilio
+                <div class="container">
+                    <div class="card d-md-none d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center">
+                                    <strong class="pe-2 pt-2">Satisfación garantizada</strong>
+                                    <mat-icon [style.color]="color7">verified</mat-icon>
+                                </div>
+                                <p class="text-justify pb-2">Puedes devolver este producto dentro de un plazo máximo de
+                                    30
+                                    días.
+                                    Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin
+                                    uso,
+                                    con
+                                    todos sus componentes y en su embalaje original.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <mat-icon [style.color]="color7" class="iconVerified">store</mat-icon>
+                    <div class="mt-5 d-md-none d-block">
+                        <div class="row">
+                            <strong class="mb-2 px-md-5">Opciones de entrega</strong>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <mat-icon [style.color]="color7" class="iconVerified">local_shipping</mat-icon>
+                            </div>
+                            <div class="col-10 d-flex align-items-center">
+                                Despacho a domicilio
+                            </div>
                         </div>
-                        <div class="col-10 d-flex align-items-center">
-                            Despacho a domicilio
+                        <div class="row">
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <mat-icon [style.color]="color7" class="iconVerified">store</mat-icon>
+                            </div>
+                            <div class="col-10 d-flex align-items-center">
+                                Retiro en tienda
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <mat-icon [style.color]="color7" class="iconVerified">grid_view</mat-icon>
-                        </div>
-                        <div class="col-10 d-flex align-items-center">
-                            Despacho a domicilio
+                        <div class="row">
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <mat-icon [style.color]="color7" class="iconVerified">grid_view</mat-icon>
+                            </div>
+                            <div class="col-10 d-flex align-items-center">
+                                Stick en la tienda
+                            </div>
                         </div>
                     </div>
                 </div>

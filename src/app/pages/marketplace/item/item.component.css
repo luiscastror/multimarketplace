@@ -39,4 +39,28 @@
     .iconVerified {
         font-size: 35px;
     }
+
+
+    .container-category {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        /* margin-left: 10px;
+        margin-right: 20px; */
+    }
+
+    .container-category::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .container-category::-webkit-scrollbar-thumb {
+        background-color: #ED144C;
+        border-radius: 10px;
+    }
+
+    .container-category::-webkit-scrollbar-track {
+        background: #c59ba5;
+        border-radius: 20px;
+
+    }
 }
