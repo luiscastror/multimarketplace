@@ -22,6 +22,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
     private router: Router,
   ) {
     super()
+    this.load_store_items();
   }
 
   ngOnInit(): void {
@@ -47,11 +48,28 @@ export class StoreComponent extends BaseComponent implements OnInit {
   items: any = [];
   loading_items: boolean = true;
   items2: any[] = [];
+  cantItemsSubCategory: any[] = [];
   load_store_items() {
     this.loading_items = true;
     this.MainService.ApiService.get(this.path_api_store_items).subscribe((resp: any) => {
       this.items = resp;
       this.items2 = resp.Productos;
+      // Calcula la cantidad de productos por subcategoría y agrégalo a info.SubCategorias
+      // Asegurarse de que info y SubCategorias están definidos
+      if (this.info && Array.isArray(this.info.SubCategorias)) {
+        // Calcula la cantidad de productos por subcategoría y agrégalo a info.SubCategorias
+        this.info.SubCategorias.forEach((subCategoria: any) => {
+          const cantidad = this.items2.filter((product: any) => product.SubCategoria == subCategoria.Descripcion).length;
+          subCategoria.Cantidad = cantidad;
+        });
+
+        console.log(this.info.SubCategorias);
+      } else {
+        console.error('SubCategorias no está definido o no es un array');
+      }
+      console.dir(this.info);
+      // console.log(this.cantItemsSubCategory[0].length);
+      // console.dir('necesito ver: ' + this.items2)
     }, (error) => {
       console.error(error)
     }, () => {

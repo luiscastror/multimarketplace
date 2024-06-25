@@ -2,9 +2,9 @@
 <div class="container">
     <div class="row my-3">
         <div class="col-12 d-flex flex-row justify-content-between">
-            <app-components-title-subtitle title="Promociones"
-                subtitle="Estas son las promociones activas en vive sucre" justify="start">
-            </app-components-title-subtitle>    
+            <app-components-title-subtitle title="Ofertas especiales"
+                subtitle="Estas son las ofertas especiales activas en quilla vende" justify="start">
+            </app-components-title-subtitle>
             <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
                 <mat-label>Busca productos</mat-label>
                 <input matInput type="text" [(ngModel)]="productSearch" (input)="search(productSearch)">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="row" *ngIf="productForSearch">
-            <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch" >
+            <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch">
                 <app-components-card-product [item]="item"></app-components-card-product>
             </div>
         </div>
