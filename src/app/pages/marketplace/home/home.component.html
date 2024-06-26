@@ -69,6 +69,18 @@
             </div>
         </div>
     </div>
+
+    <div class="row mb-5" *ngIf="random3 && random3.Productos">
+        <div class="row">
+            <app-components-title-subtitle [title]="enum[5].title" [justify]="enum[1].justify">
+            </app-components-title-subtitle>
+        </div>
+        <div class="row container-category mx-1">
+            <div class="col-6 col-md-2" *ngFor="let item of random3.Productos">
+                <app-components-card-product [item]="item"></app-components-card-product>
+            </div>
+        </div>
+    </div>
     <!-- </div> -->
 
     <!-- <app-components-wall [blocks]="blocks"></app-components-wall> -->

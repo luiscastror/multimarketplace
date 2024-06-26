@@ -1,7 +1,7 @@
+import { MainService } from './../../../services/main.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseComponent } from 'src/app/base';
-import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-item',
@@ -18,6 +18,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
 
   id = this.ruta.snapshot.params.id;
   path_api: string = '/productos/' + this.id;
+  numberStore: string = '';
 
   constructor(
     private MainService: MainService,
@@ -28,6 +29,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
     this.ruta.params.subscribe(params => {
       this.id = params['id'];
       this.path_api = '/productos/' + this.id;
+      this.numberStore = this.MainService.AuthService.dataUser.Telefono;
       this.load();
     });
   }
@@ -36,6 +38,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
 
   load() {
     this.loading = true;
+    console.dir(this.MainService.AuthService.dataUser.Telefono);
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
       this.item = resp
       this.loading = false;
@@ -46,6 +49,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
       this.router.navigate(['/']);
     }, () => { })
   }
+
 
 
   itemsToo: any = []

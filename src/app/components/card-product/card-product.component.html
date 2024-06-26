@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-12 d-flex flex-column">
                 <div class="f12 text-black-50" [ngClass]="{'text-decoration-line-through': item.Descuento > 0}">
-                    {{item.Descuento > 0 ? (item.Valor | number ): '¡APROVECHA!'}}
+                    {{item.Descuento > 0 ? '$'+(item.Valor | number ): '¡APROVECHA!'}}
                 </div>
                 <div class="fw-bold" [style.color]="color1">
                     ${{item.Valor - (item.Descuento/100 *item.Valor) | number}}

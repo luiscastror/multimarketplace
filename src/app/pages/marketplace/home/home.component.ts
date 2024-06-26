@@ -34,6 +34,11 @@ export class HomeComponent extends BaseComponent implements OnInit {
       title: 'Emprendedoras del mes',
       subtitle: 'Compra en más de 300 tiendas',
       justify: 'start'
+    },
+    {
+      title: 'Lista de ofertas especiales',
+      subtitle: 'Encontraras las mejores promociones aquí.',
+      justify: 'start'
     }
   ]
 
@@ -105,6 +110,17 @@ export class HomeComponent extends BaseComponent implements OnInit {
     this.MainService.ApiService.get('/random').subscribe((resp: any) => {
       console.log(resp)
       this.random2 = resp;
+      this.getRandom3()
+    }, error => {
+      console.error(error)
+    })
+  }
+
+  random3: any;
+  getRandom3() {
+    this.MainService.ApiService.get('/random').subscribe((resp: any) => {
+      console.log(resp)
+      this.random3 = resp;
     }, error => {
       console.error(error)
     })
