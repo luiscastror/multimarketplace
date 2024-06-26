@@ -84,23 +84,26 @@
         <div class="col-12 col-md-9 pt-3">
             <div class="row mb-3">
                 <div class="col-12 d-flex flex-row justify-content-between">
-                    <app-components-title-subtitle title="Productos" justify="start"></app-components-title-subtitle>
-                    <mat-form-field appearance="outline" color="accent" class="" #buscar>
+                    <app-components-title-subtitle [title]="'Productos ('+this.items2.length+')'"
+                        justify="start"></app-components-title-subtitle>
+                    <input type="search" class="form-control p-2 w-50" placeholder="Busca productos"
+                        [(ngModel)]="productSearch" (input)="search(productSearch)" style="height: 100%;">
+                    <!-- <mat-form-field appearance="outline" color="accent" class="" #buscar>
                         <mat-label>Busca productos</mat-label>
-                        <input matInput type="text" [(ngModel)]="productSearch" (input)="search(productSearch)">
+                        <input type="search" [(ngModel)]="productSearch" (input)="search(productSearch)">
                         <button matSuffix mat-icon-button aria-label="Clear" (click)="search(productSearch)">
                             <mat-icon>search</mat-icon>
                         </button>
-                    </mat-form-field>
+                    </mat-form-field> -->
                 </div>
             </div>
             <div class="row" *ngIf="productsEvery">
-                <div class="fw-semibold f20" *ngIf="items2.length>0">
+                <!-- <div class="fw-semibold f20" *ngIf="items2.length>0">
                     {{this.groupProductSearch.length === 1
                     ? 'Se encontró 1 producto'
                     : 'Se encontraron (' + items2.length + ') productos'
                     }}
-                </div>
+                </div> -->
                 <div class="col-6 col-md-3" *ngFor="let item of items.Productos">
                     <app-components-card-product [item]="item"></app-components-card-product>
                 </div>
@@ -109,7 +112,7 @@
                 <div class="row mt-5 fw-semibold f20 mx-5" *ngIf="vacio">
                     No se encontraron productos dentro de esta categoria
                 </div>
-                <div class="fw-semibold f20" *ngIf="!vacio">
+                <div class="fw-semibold f20 mb-1" *ngIf="!vacio">
                     {{this.itemsForSubCategory.length === 1
                     ? 'Se encontró 1 producto en: "' + this.descriptionItem + '"'
                     : 'Se encontraron (' + this.itemsForSubCategory.length + ') productos en: "' +
@@ -121,12 +124,13 @@
                 </div>
             </div>
             <div class="row" *ngIf="productForSearch">
-                <div class="fw-semibold f20" *ngIf="!vacio2">
-                    {{this.groupProductSearch.length === 1
-                    ? 'Se encontró 1 producto con la palabra "' + productSearch + '"'
-                    : 'Se encontraron (' + this.groupProductSearch.length + ') productos con la palabra "' +
-                    productSearch + '"'
-                    }}
+                <div class="fw-semibold f20 mb-1" *ngIf="!vacio2">
+                    {{this.groupProductSearch.length === 1 ? 'Se encontró 1 producto con la palabra "' + productSearch +
+                    '"': ''}}
+                    {{this.productSearch.length > 1 && this.groupProductSearch.length > 1 ?
+                    'Se encontraron (' + this.groupProductSearch.length + ') productos con la palabra "' +
+                    productSearch+'"'
+                    : ''}}
                 </div>
                 <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch">
                     <app-components-card-product [item]="item"></app-components-card-product>

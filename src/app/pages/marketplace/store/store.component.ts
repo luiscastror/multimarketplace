@@ -113,7 +113,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
       this.productForCategory = false;
       this.vacio = false
       this.show = false;
-      this.groupProductSearch.length == 0 ? this.vacio2 = true : this.vacio2 = false;
+      this.groupProductSearch.length == 0 && this.productSearch !== '' ? this.vacio2 = true : this.vacio2 = false;
     } else {
       this.productForSearch = true;
       this.groupProductSearch = this.items2.filter(
