@@ -6,17 +6,24 @@
             <app-components-title-subtitle
                 [title]="'Categoría / '+ items.Categoria.Descripcion+ ' ('+items.Productos.length+')'" justify="start">
             </app-components-title-subtitle>
-            <div class="d-flex flex-row justify-content-around gap-3">
+            <input type="search" class="form-control p-2 w-50" placeholder="Busca productos de esta catgeoria"
+                style="height: 100%;" [(ngModel)]="productSearch" (input)="search(productSearch)">
+            <!-- <div class="d-flex flex-row justify-content-around gap-3">
                 <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
                     <mat-label>Busca productos</mat-label>
                     <input matInput type="text">
                 </mat-form-field>
                 <button mat-flat-button color="primary">Filtro</button>
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="vacio1">
         <div class="col-6 col-md-3" *ngFor="let item of items.Productos">
+            <app-components-card-product [item]="item"></app-components-card-product>
+        </div>
+    </div>
+    <div class="row" *ngIf="vacio2">
+        <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch">
             <app-components-card-product [item]="item"></app-components-card-product>
         </div>
     </div>

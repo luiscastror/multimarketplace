@@ -1,5 +1,6 @@
 <!-- <div class="row my-3">
     <div class="col-12"> -->
-<img class="rounded-bottom img-fluid w-100" [src]="img">
+<img class="rounded-bottom img-fluid w-100" [src]="img" *ngIf="!link">
+<img class="rounded-bottom img-fluid w-100 pointer" [src]="img" *ngIf="link" routerLink="/promo">
 <!-- </div>
 </div> -->

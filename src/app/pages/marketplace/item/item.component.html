@@ -4,7 +4,7 @@
         <app-loading></app-loading>
     </div>
     <div class="row border-bottom" *ngIf="!loading">
-        <div class="col-12 col-md-7 border-end py-md-3 pt-3">
+        <div class="col-12 col-md-6 border-end py-md-3 pt-3">
             <div class="row">
                 <div class="col-12 col-md mb-1" style="border-right: 1px solid #dee2e6;"
                     [ngClass]="{'container-category': item.Imagenes}">
@@ -18,140 +18,123 @@
                 <div class="col-12 col-md-10 d-flex justify-content-center flex-column">
                     <img class="imgBig" [src]="image">
                 </div>
-            </div>
-            <div class="container">
-                <div class="card mt-5 d-none d-md-block">
-                    <div class="row">
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <mat-icon [style.color]="color7" class="iconVerified">verified</mat-icon>
-                        </div>
-                        <div class="col-8">
-                            <strong class="py-2">Satisfación garantizada</strong>
-                            <p class="text-justify ">Puedes devolver este producto dentro de un plazo máximo de 30 días.
-                                Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin uso,
-                                con
-                                todos sus componentes y en su embalaje original.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-5 d-none d-md-block">
-                    <div class="row d-flex flex-column gap-1">
-                        <strong class="">Plus Quillavende</strong>
-                        <div class="f12 mb-2">"Envio a convenir con el vendedor"</div>
-                        <div class="col-12 col-md-9">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <mat-icon [style.color]="color7">local_shipping</mat-icon>
-                                    <div class="d-flex align-items-center mx-3">
-                                        Despacho a domicilio
-                                    </div>
-                                </div>
-                                <a class="d-flex align-items-center link-underline pointer f12"
-                                    [href]="'https:/wa.me/'+this.numberStore" target="_blank">
-                                    Contactar al vendedor
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <mat-icon [style.color]="color7">store</mat-icon>
-                                    <div class="d-flex align-items-center mx-3">
-                                        Retiro en tienda
-                                    </div>
-                                </div>
-                                <a class="d-flex align-items-center link-underline pointer f12"
-                                    [href]="'https:/wa.me/'+this.numberStore" target="_blank">
-                                    Contactar al vendedor
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <mat-icon [style.color]="color7">grid_view</mat-icon>
-                                    <div class="d-flex align-items-center mx-3">
-                                        Stock en la tienda
-                                    </div>
-                                </div>
-                                <a class="d-flex align-items-center link-underline pointer f12"
-                                    [href]="'https:/wa.me/'+this.numberStore" target="_blank">
-                                    Contactar al vendedor
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <mat-icon [style.color]="color7">lock</mat-icon>
-                                    <div class="d-flex align-items-center mx-3">
-                                        Compra protegida
-                                    </div>
-                                </div>
-                                <a class="d-flex align-items-center link-underline pointer f12"
-                                    [href]="'https:/wa.me/'+this.numberStore" target="_blank">
-                                    Contactar al vendedor
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="mt-5 w-100">
+                    <div class="f20 fw-semibold" [style.color]="color5">Sobre el producto</div>
+                    <p class="fw-light f14 mb-3" [style.color]="color5">
+                        "{{item.Producto.Observacion}}"</p>
                 </div>
             </div>
-
         </div>
-        <div class="col-12 col-md-5 py-md-3 px-3 py-0">
+        <div class="col-12 col-md-3 py-md-3 px-3 py-0 border-end">
             <div class="row">
                 <div class="col-12">
+                    <!-- <div class="container"> -->
                     <div class="f-14 fw-medium" [style]="color5"> Vendido y enviado por:</div>
                     <p class="fw-bold f20 pointer text-decoration-underline text-uppercase" [style.color]="color2"
                         [routerLink]="'/store/'+item.Producto.TiendaId">{{item.Producto.Tienda}}</p>
                     <p class="fw-bold f14 mb-3" [style.color]="color6">{{item.Producto.Descripcion}}</p>
-                    <div class="w-100 d-flex flex-row justify-content-between align-items-center"
-                        *ngIf="item.Producto.Descuento > 0">
-                        <p>Valor: </p>
+                    <div class="w-100 d-flex flex-row align-items-center" *ngIf="item.Producto.Descuento > 0">
                         <p>${{item.Producto.Valor | number}}</p>
                     </div>
-                    <div class="w-100 d-flex flex-row justify-content-between align-items-center"
-                        *ngIf="item.Producto.Descuento > 0">
-                        <p>Descuento: </p>
-                        <p class="text-danger fw-bold">%{{item.Producto.Descuento}} (${{item.Producto.Descuento/100 *
+                    <div class="w-100 d-flex flex-row align-items-center" *ngIf="item.Producto.Descuento > 0">
+                        <p class="text-danger fw-bold">%{{item.Producto.Descuento}} (Ahorra
+                            ${{item.Producto.Descuento/100 *
                             item.Producto.Valor | number}})</p>
                     </div>
-                    <div class="w-100 d-flex flex-row justify-content-between align-items-center">
-                        <p>Ahora: </p>
-                        <p class="f18 fw-bold" [style.color]="color1">${{item.Producto.Valor -
+                    <div class="w-100 d-flex flex-row align-items-center">
+                        <p class="f18 fw-bold" [style.color]="color6">${{item.Producto.Valor -
                             (item.Producto.Descuento/100 * item.Producto.Valor) | number}}</p>
                     </div>
-
-                    <div class="w-100 mt-3">
-                        <button [style.backgroundColor]="color2" (click)="add()"
-                            class="w-100 no-border d-flex justify-content-center align-items-center py-1">
-                            <mat-icon>add_shopping_cart</mat-icon>
-                            <span>Agregar al carrito</span>
-                        </button>
+                    <!-- </div> -->
+                    <!-- <div class="container">  d-none d-md-block-->
+                    <div class="mt-3">
+                        <strong class="py-2 f20">Satisfación garantizada</strong>
+                        <p class="text-justify">Puedes devolver este producto dentro de un plazo máximo de 30
+                            días.
+                            Para que la devolución sea aceptada, el producto debe estar en perfecto estado:
+                            sin uso, con todos sus componentes y en su embalaje original.</p>
                     </div>
+                    <div class="mt-3">
+                        <div class="row d-flex flex-column gap-2">
+                            <div>
+                                <strong class="f20">Plus Quillavende</strong>
+                                <div class="f12 mb-2">"Envio a convenir con el vendedor"</div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <mat-icon [style.color]="color7">local_shipping</mat-icon>
+                                        <div class="d-flex align-items-center mx-3" style="line-height: 1;">
+                                            Despacho a domicilio
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0" style="line-height: 1;">
+                                        <a class="link-underline pointer f12"
+                                            [href]="'https:/wa.me/+57'+this.numberStore" target="_blank"
+                                            *ngIf="this.numberStore!==undefined">
+                                            Contactar al vendedor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <mat-icon [style.color]="color7">store</mat-icon>
+                                        <div class="d-flex align-items-center mx-3" style="line-height: 1;">
+                                            Retiro en<br>tienda
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0" style="line-height: 1;">
+                                        <a class="link-underline pointer f12"
+                                            [href]="'https:/wa.me/+57'+this.numberStore" target="_blank"
+                                            *ngIf="this.numberStore!==undefined">
+                                            Contactar al vendedor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <mat-icon [style.color]="color7">grid_view</mat-icon>
+                                        <div class="d-flex align-items-center mx-3" style="line-height: 1;">
+                                            Stock en la<br>tienda
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0" style="line-height: 1;">
+                                        <a class="link-underline pointer f12"
+                                            [href]="'https:/wa.me/+57'+this.numberStore" target="_blank"
+                                            *ngIf="this.numberStore!==undefined">
+                                            Contactar al vendedor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <mat-icon [style.color]="color7">lock</mat-icon>
+                                        <div class="d-flex align-items-center mx-3" style="line-height: 1;">
+                                            Compra<br>protegida
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0" style="line-height: 1;">
+                                        <a class="link-underline pointer f12"
+                                            [href]="'https:/wa.me/+57'+this.numberStore" target="_blank"
+                                            *ngIf="this.numberStore!==undefined">
+                                            Contactar al vendedor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="d-flex flex-column">
-                    <div class="d-flex flex-row align-items-center gap-3">
-                        <div>
-                            <img [src]="item.Producto.LogoTienda" alt="Logo tienda" class="imageDos">
-                        </div>
-                        <div>
-                            <a href="" [routerLink]="'/store/'+item.Producto.TiendaId" class="btn pointer"
-                                [style.color]="color6">
-                                Conoce mas productos de <strong class="text-uppercase">{{item.Producto.Tienda}}</strong>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 border-bottom border-black w-100">
-                        <div class="f20 fw-semibold" [style.color]="color5">Sobre el producto</div>
-                        <p class="fw-light f14 mb-3" [style.color]="color5">
-                            "{{item.Producto.Observacion}}"</p>
-                    </div>
-                </div>
-                <app-card-banks [complete]="true"></app-card-banks>
+            <!-- <div class="row mt-5">
                 <div class="container">
                     <div class="card d-md-none d-block">
                         <div class="row">
@@ -171,7 +154,62 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-3 d-md-none d-block">
+
+                </div>
+            </div> -->
+        </div>
+        <div class="col-12 col-md-3 py-md-3 px-3 py-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <div>
+                            <img [src]="item.Producto.LogoTienda" alt="Logo tienda" class="imageDos">
+                        </div>
+                        <div class="" [style.color]="color6">
+                            Conoce mas productos de <strong class="text-uppercase">{{item.Producto.Tienda}}</strong>
+                        </div>
+                    </div>
+                    <div class="w-100 mt-3 d-flex flex-column gap-1">
+                        <button [style.backgroundColor]="color6" [style.color]="color4"
+                            class="w-100 no-border d-flex justify-content-center align-items-center py-1"
+                            [routerLink]="'/store/'+item.Producto.TiendaId">
+                            <span>Ver más productos de esta tienda</span>
+                        </button>
+                        <button [style.backgroundColor]="color1" [style.color]="color4" (click)="share()"
+                            class="w-100 no-border d-flex justify-content-center align-items-center py-1">
+                            <mat-icon>share</mat-icon>
+                            <span>Compartir producto</span>
+                        </button>
+                        <button [style.backgroundColor]="color2" (click)="add()"
+                            class="w-100 no-border d-flex justify-content-center align-items-center py-1">
+                            <mat-icon>add_shopping_cart</mat-icon>
+                            <span>Agregar al carrito</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <app-card-banks [complete]="true"></app-card-banks>
+                <!--<div class="container">
+                    <div class="card d-md-none d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center">
+                                    <strong class="px-2 pt-2">Satisfación garantizada</strong>
+                                    <mat-icon [style.color]="color7">verified</mat-icon>
+                                </div>
+                                <p class="text-justify pb-2 px-2">Puedes devolver este producto dentro de un plazo
+                                    máximo de
+                                    30
+                                    días.
+                                    Para que la devolución sea aceptada, el producto debe estar en perfecto estado: sin
+                                    uso,
+                                    con
+                                    todos sus componentes y en su embalaje original.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="mt-3 d-md-none d-block">
                         <div class="row d-flex flex-column gap-1">
                             <strong class="mb-2">Plus Quillavende</strong>
                             <div class="f9">Nota:"Envio a convenir con el vendedor"</div>
@@ -234,21 +272,21 @@
                         </div>
                     </div>
                 </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-12">
+                <app-components-title-subtitle
+                    title="Te puede interesar más productos de esta tienda {{item.Producto.Tienda}}" justify="start">
+                </app-components-title-subtitle>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-6 col-md-2" *ngFor="let item of itemsToo">
+                <app-components-card-product [item]="item"></app-components-card-product>
             </div>
         </div>
     </div>
-    <div class="row my-3">
-        <div class="col-12">
-            <app-components-title-subtitle
-                title="Te puede interesar más productos de esta tienda {{item.Producto.Tienda}}" justify="start">
-            </app-components-title-subtitle>
-        </div>
-    </div>
-    <div class="row py-3">
-        <div class="col-6 col-md-2" *ngFor="let item of itemsToo">
-            <app-components-card-product [item]="item"></app-components-card-product>
-        </div>
-    </div>
-</div>
 
-<app-components-footer></app-components-footer>
+    <app-components-footer></app-components-footer>

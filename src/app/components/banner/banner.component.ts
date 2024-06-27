@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BannerComponent implements OnInit {
 
   @Input() img: string = 'https://th.bing.com/th/id/OIP.gpB7_qn-l-hIYeLufFtPWwAAAA?rs=1&pid=ImgDetMain';
+  @Input() link: boolean = false;
 
   constructor() { }
 
