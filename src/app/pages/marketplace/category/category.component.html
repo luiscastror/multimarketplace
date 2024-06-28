@@ -6,7 +6,7 @@
             <app-components-title-subtitle
                 [title]="'Categoría / '+ items.Categoria.Descripcion+ ' ('+items.Productos.length+')'" justify="start">
             </app-components-title-subtitle>
-            <input type="search" class="form-control p-2 w-50" placeholder="Busca productos de esta catgeoria"
+            <input type="search" class="form-control p-2 w-50" placeholder="Busca productos de esta categoria"
                 style="height: 100%;" [(ngModel)]="productSearch" (input)="search(productSearch)">
             <!-- <div class="d-flex flex-row justify-content-around gap-3">
                 <mat-form-field appearance="outline" color="accent" class="d-none d-md-inline">
@@ -23,6 +23,10 @@
         </div>
     </div>
     <div class="row" *ngIf="vacio2">
+        <p class="mb-2">{{this.cantidadEncontrada === 1 ?
+            'Se encontró un producto dentro de esta categoria':
+            'Se encontraron ('+this.cantidadEncontrada+') productos dentro de esta categoria'}}
+        </p>
         <div class="col-6 col-md-3" *ngFor="let item of groupProductSearch">
             <app-components-card-product [item]="item"></app-components-card-product>
         </div>

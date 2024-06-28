@@ -40,6 +40,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
     // console.dir(this.MainService.AuthService.dataUser.Telefono);
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
       this.item = resp
+      console.log(this.item)
       // this.numberStore = this.item.Producto.Telefono;
       this.loading = false;
       this.image = this.item.Imagenes[0].URL;

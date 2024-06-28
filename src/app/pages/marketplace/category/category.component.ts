@@ -41,6 +41,7 @@ export class CategoryComponent implements OnInit {
     }, () => { });
   }
 
+  cantidadEncontrada: number = 0;
   search(productSearch: string) { // Carga array por búsqueda sea por descripción o subcategoría
     this.productForSearch = true;
     this.groupProductSearch = this.items.Productos.filter(
@@ -48,6 +49,7 @@ export class CategoryComponent implements OnInit {
         product.Descripcion.toLowerCase().includes(productSearch.toLowerCase()) ||
         product.Observacion.toLowerCase().includes(productSearch.toLowerCase())
     );
+    this.cantidadEncontrada = this.groupProductSearch.length
     this.vacio1 = this.productSearch === '' ? true : false;
     this.vacio2 = this.groupProductSearch.length > 0 && this.productSearch !== '';
   }

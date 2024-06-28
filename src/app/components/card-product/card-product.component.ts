@@ -32,5 +32,9 @@ export class CardProductComponent extends BaseComponent implements OnInit {
     this.MainService.CartService.clear()
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }
 

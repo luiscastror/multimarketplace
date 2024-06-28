@@ -156,8 +156,9 @@ export class StoreComponent extends BaseComponent implements OnInit {
   }
 
   getLogoStyles() {
+    const logoUrl = this.info.Tienda.Logo || '../../assets/img/logocolor.png';
     return {
-      'background-image': `url(${this.info.Tienda.Logo})`,
+      'background-image': `url(${logoUrl})`,
       'border-color': this.color1,
       'border-style': 'solid',
       'border-width': '1px',
@@ -168,7 +169,7 @@ export class StoreComponent extends BaseComponent implements OnInit {
       'margin-right': 'auto',
       'margin-top': '-60px',
       'margin-bottom': '10px',
-      'background-size': 'cover',
+      'background-size': 'contain',
       'background-repeat': 'no-repeat',
       'background-color': 'white',
       'background-position': 'center'

@@ -1,6 +1,5 @@
-<div class="card mb-3 border-0 card-completa">
-    <div class="card-img-top pointer bg-image" [routerLink]="'/item/'+item.Id"
-        [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
+<div class="card mb-3 border-0 card-completa" [routerLink]="'/item/'+item.Id" (click)="scrollToTop()">
+    <div class="card-img-top pointer bg-image" [ngStyle]="{'background-image': 'url(' + item.Imagen + ')'}">
     </div>
     <span class="promo" *ngIf="item.Descuento > 0" [style.backgroundColor]="color1" [style.color]="color2">
         -{{item.Descuento}}%
