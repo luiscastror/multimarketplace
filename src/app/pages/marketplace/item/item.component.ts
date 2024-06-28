@@ -18,7 +18,7 @@ export class ItemComponent extends BaseComponent implements OnInit {
 
   id = this.ruta.snapshot.params.id;
   path_api: string = '/productos/' + this.id;
-  numberStore: string = '3023984726';
+  numberStore: string = '';
 
   constructor(
     private MainService: MainService,
@@ -40,8 +40,8 @@ export class ItemComponent extends BaseComponent implements OnInit {
     // console.dir(this.MainService.AuthService.dataUser.Telefono);
     this.MainService.ApiService.get(this.path_api).subscribe((resp: any) => {
       this.item = resp
-      console.log(this.item)
-      // this.numberStore = this.item.Producto.Telefono;
+      console.log('Este es el cel: ' + this.item.Producto.Telefono)
+      this.numberStore = this.item.Producto.Telefono;
       this.loading = false;
       this.image = this.item.Imagenes[0].URL;
       this.loadToo();
